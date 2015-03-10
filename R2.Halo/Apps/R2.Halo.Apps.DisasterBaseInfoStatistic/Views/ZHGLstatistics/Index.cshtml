@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Apps/Apps.DisasterBaseInfoStatistic/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ZHGL/Statistics.css")" rel="stylesheet" ) />
+<script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/highchartsVersion3.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/global/data.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/ZHGL/Statistics.js")"></script>
+@*<h2>Index</h2>*@
+<div id="statisContent">
+    <div id="head">
+        <div id="head_left">
+            <div id="shixian" class="selected"><div class="image1"></div>按灾害统计</div>
+            <div id="zaihai" class="unselected"><div class="image2"></div>按市县统计</div>
+            <div id="textContent">
+                <label class="text_quyu">区域</label>：
+                <select id="List_shi" class="List" disabled="true">
+                    <option value="济南市">济南市</option>
+                </select>
+                <select id="List_xian" class="List">
+                    <option value="">区县（全部）</option>
+                    <option value="370101">市辖区</option>
+                    <option value="370188">高新区</option>
+                    <option value="370102">历下区</option>
+                    <option value="370103">市中区</option>
+                    <option value="370104">槐荫区</option>
+                    <option value="370105">天桥区</option>
+                    <option value="370112">历城区</option>
+                    <option value="370113">长清区</option>
+                    <option value="370124">平阴县</option>
+                    <option value="370125">济阳县</option>
+                    <option value="370126">商河县</option>
+                    <option value="370181">章丘市</option>
+                </select>
+                <label class="text_tjfs">统计方式：</label>
+                <div id="img_zzt" class="img_1"></div>
+                <div id="img_bzt" class="img_1"></div>
+                </br>
+                <label class="text_zhlx">灾害类型：</label>
+                <div id="statisCheckBox">
+                    <div class="Checkbox_sty"><input type="checkbox" name="statisName" class="statisCheckbox" checked value="滑坡" /><label class="statislabel">滑坡</label></div>
+                    <div class="Checkbox_sty"><input type="checkbox" name="statisName" class="statisCheckbox" checked value="崩塌" /><label class="statislabel">崩塌</label></div>
+                    <div class="Checkbox_sty"><input type="checkbox" name="statisName" class="statisCheckbox" checked value="泥石流" /><label class="statislabel">泥石流</label></div>
+                    <div class="Checkbox_sty"><input type="checkbox" name="statisName" class="statisCheckbox" checked value="地面塌陷" /><label class="statislabel">地面塌陷</label></div>
+                    <div class="Checkbox_sty"><input type="checkbox" name="statisName" class="statisCheckbox" checked value="地裂缝" /><label class="statislabel">地裂缝</label></div>
+                </div>
+            </div>
+        </div>
+        <div id="statis_submit"></div>
+    </div>
+    <div id="statistic"></div>
+</div>

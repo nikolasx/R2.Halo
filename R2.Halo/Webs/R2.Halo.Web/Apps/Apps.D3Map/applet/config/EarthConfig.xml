@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+  <!-- 基本图层配置 -->
+  <BasicLayers>
+    <LayerInfo>
+      <LayerName>StarsLayer</LayerName>
+      <AliasName>星际图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>SkyGradientLayer</LayerName>
+      <AliasName>大气层图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>BMNGOneImage</LayerName>
+      <AliasName>地球基本图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>WorldMapLayer</LayerName>
+      <AliasName>鹰眼图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>CompassLayer</LayerName>
+      <AliasName>指北针图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>CrossLayer</LayerName>
+      <AliasName>十字架图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>ScalebarLayer</LayerName>
+      <AliasName>比例尺图层</AliasName>
+      <Visible>true</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>LogoLayer</LayerName>
+      <AliasName>Logo图层</AliasName>
+      <Visible>false</Visible>
+    </LayerInfo>
+    <LayerInfo>
+      <LayerName>ViewControlsLayer</LayerName>
+      <AliasName>视角控制器图层</AliasName>
+      <Visible>false</Visible>
+    </LayerInfo>
+  </BasicLayers>
+
+  <!-- 公共图层数据配置 -->
+  <CommonLayers>
+    <!-- 图层数据服务器配置 -->
+    <DataServer url="http://192.168.83.87:8080/VEServer/">
+      <!-- 基本影像图层配置 -->
+      <LayerInfo>
+        <DataType>-1</DataType>
+        <LayerName>SurfaceLayer</LayerName>
+        <AliasName>基本影像图层</AliasName>
+        <Visible>false</Visible>
+        <RequestPage>EarthBasicSurface.jsp</RequestPage>
+      </LayerInfo>
+      <!-- 详细卫星影像图层 -->
+      <LayerInfo>
+        <DataType>-1</DataType>
+        <LayerName>LandsatLayer</LayerName>
+        <AliasName>详细卫星影像图层</AliasName>
+        <Visible>false</Visible>
+        <RequestPage>EarthLandSat.jsp</RequestPage>
+      </LayerInfo>
+      <!--			 详细影像图层 -->
+      <LayerInfo>
+        <DataType>-1</DataType>
+        <LayerName>EarthCityLayer</LayerName>
+        <AliasName>高清影像图层</AliasName>
+        <Visible>false</Visible>
+        <RequestPage>EarthCity.jsp</RequestPage>
+      </LayerInfo>
+      <!-- 全球高程数据图层 -->
+      <LayerInfo>
+        <DataType>-1</DataType>
+        <LayerName>ElevationLayer</LayerName>
+        <AliasName>高程数据图层</AliasName>
+        <Visible>false</Visible>
+        <RequestPage>EarthElevation.jsp</RequestPage>
+      </LayerInfo>
+      <!-- 全球国界数据图层 -->
+      <LayerInfo>
+        <DataType>-1</DataType>
+        <LayerName>CountryBoundariesLayer</LayerName>
+        <AliasName>国界图层</AliasName>
+        <Visible>false</Visible>
+        <RequestPage>PoliticalBoundaries.jsp</RequestPage>
+      </LayerInfo>
+    </DataServer>
+  </CommonLayers>
+  <ModelLayers>
+    <DataServer url="http://192.168.83.87:8080/VEServer/">
+      <LayerInfo>
+        <DataType>11</DataType>
+        <LayerName>MaxLayer</LayerName>
+        <AliasName>3ds模型</AliasName>
+        <Version>1</Version>
+        <Visible>true</Visible>
+        <Sector>-180,-90,180,90</Sector>
+        <MinVisibleDistance>0</MinVisibleDistance>
+        <MaxVisibleDistance>20000</MaxVisibleDistance>
+        <ModelType>3ds</ModelType>
+        <Grid>3</Grid>
+        <RequestPage>max.jsp</RequestPage>
+      </LayerInfo>
+    </DataServer>
+  </ModelLayers>
+
+  <!-- 用户自定义数据配置 0是长方形裁剪，1是正方形裁剪，2是失量地图文档,3是图层，4是旧的256HDF,10天地图512,11天地图256 -->
+  <CustomLayers>
+    <DataServer url="http://192.168.83.87:8080/VEServer/">
+
+
+      <LayerInfo>
+        <DataType>11</DataType>
+        <AliasName>天地图影像</AliasName>
+        <LayerName>EarthTDTYX_256</LayerName>
+        <Version>1</Version>
+        <VisibleStartLevel>2</VisibleStartLevel>
+        <VisibleEndLevel>20</VisibleEndLevel>
+        <Visible>true</Visible>
+        <DrawType>dds</DrawType>
+        <Opacity>1</Opacity>
+        <Sector>-180,-90,180,90</Sector>
+        <RequestPage>GetEarthTDT256.jsp</RequestPage>
+        <Delta>90</Delta>
+        <TileSize>256</TileSize>
+      </LayerInfo>
+      <!---->
+      <!--			<LayerInfo>-->
+      <!--				<DataType>10</DataType>-->
+      <!--				<AliasName>天地图地形</AliasName>-->
+      <!--				<LayerName>EarthTDTDX</LayerName>-->
+      <!--				<Version>1</Version>-->
+      <!--				<VisibleStartLevel>0</VisibleStartLevel>-->
+      <!--				<VisibleEndLevel>20</VisibleEndLevel>-->
+      <!--				<Visible>false</Visible>-->
+      <!--				<DrawType>dds</DrawType>-->
+      <!--				<Opacity>1</Opacity>-->
+      <!--				<Sector>-180,-90,180,90</Sector>-->
+      <!--				<RequestPage>GetEarthTDT.jsp</RequestPage>-->
+      <!--				<Delta>180</Delta>-->
+      <!--			</LayerInfo>-->
+
+      <!--			<LayerInfo>-->
+      <!--				<DataType>10</DataType>-->
+      <!--				<AliasName>天地图矢量</AliasName>-->
+      <!--				<LayerName>EarthTDTSHL</LayerName>-->
+      <!--				<Version>1</Version>-->
+      <!--				<VisibleStartLevel>0</VisibleStartLevel>-->
+      <!--				<VisibleEndLevel>20</VisibleEndLevel>-->
+      <!--				<Visible>false</Visible>-->
+      <!--				<DrawType>dds</DrawType>-->
+      <!--				<Opacity>1</Opacity>-->
+      <!--				<Sector>-180,-90,180,90</Sector>-->
+      <!--				<RequestPage>GetEarthTDT.jsp</RequestPage>-->
+      <!--				<Delta>180</Delta>-->
+      <!--			</LayerInfo>-->
+      <!---->
+      <LayerInfo>
+        <DataType>11</DataType>
+        <AliasName>天地图注记线</AliasName>
+        <LayerName>EarthTDTSLX_256</LayerName>
+        <Version>1</Version>
+        <VisibleStartLevel>0</VisibleStartLevel>
+        <VisibleEndLevel>20</VisibleEndLevel>
+        <Visible>false</Visible>
+        <DrawType>dds</DrawType>
+        <Opacity>1</Opacity>
+        <Sector>-180,-90,180,90</Sector>
+        <RequestPage>GetEarthTDT256.jsp</RequestPage>
+        <TileSize>256</TileSize>
+        <Delta>180</Delta>
+      </LayerInfo>
+
+      <LayerInfo>
+        <DataType>11</DataType>
+        <AliasName>天地图注记</AliasName>
+        <LayerName>EarthTDTZHJ_256</LayerName>
+        <Version>1</Version>
+        <VisibleStartLevel>0</VisibleStartLevel>
+        <VisibleEndLevel>20</VisibleEndLevel>
+        <Visible>true</Visible>
+        <DrawType>dds</DrawType>
+        <Opacity>1</Opacity>
+        <Sector>-180,-90,180,90</Sector>
+        <RequestPage>GetEarthTDT256.jsp</RequestPage>
+        <Delta>90</Delta>
+        <TileSize>256</TileSize>
+      </LayerInfo>
+    </DataServer>
+  </CustomLayers>
+  <LableLayers>
+    <DataServer url="http://192.168.83.87:8080/VEServer/">
+    </DataServer>
+  </LableLayers>
+</xml-body>

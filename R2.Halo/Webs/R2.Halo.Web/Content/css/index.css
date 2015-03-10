@@ -1,0 +1,960 @@
+﻿/*默认样式*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    font-size: 12px;
+}
+/*
+    *
+    *
+    */
+#home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+}
+
+#head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 61px;
+}
+
+#headBackGround {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 51px;
+    background-color: #464646;
+    z-index: 1000;
+    box-shadow: 0px 4px 1px 1px #464646;
+}
+
+#headTitle {
+    width: 200px;
+    height: 54px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -428px;
+    font-size: 22px;
+    line-height: 54px;
+    text-align: left;
+    color: #fff;
+    letter-spacing: 0px;
+    font-family: 黑体;
+}
+
+#logo {
+    width: 51px;
+    height: 65px;
+    background-image: url("../images/img/logo.png");
+    position: absolute;
+    z-index: 2000;
+    left: 50%;
+    margin-left: -480px;
+}
+
+#userInfo {
+    width: 160px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: 320px;
+    z-index: 2000;
+    top: 12px;
+    cursor: pointer;
+}
+
+#navHome {
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    left: 50%;
+    z-index: 2000;
+    top: 16px;
+    margin-left: 500px;
+    cursor: pointer;
+    background-image: url("../images/img/navhome.png");
+}
+
+#navOut {
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    left: 50%;
+    z-index: 2000;
+    top: 17px;
+    margin-left: 540px;
+    cursor: pointer;
+    background-image: url("../images/img/navout.png");
+}
+
+#userName {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 黑体;
+    text-align: right;
+    right: 25px;
+}
+
+#menuTipIcon {
+    width: 14px;
+    height: 8px;
+    background-image: url("../images/img/menuarrow.png");
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+
+#userMenuPanel {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    z-index: 5000;
+    background-image: url("../images/img/MenuPanel.png");
+    display: none;
+}
+
+#munuHead {
+    display: none;
+    width: 138px;
+    height: 25px;
+}
+
+#menuContent {
+    width: 138px;
+    height: 120px;
+    margin-top: 18px;
+}
+
+.menuItem {
+    width: 138px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-indent: 15px;
+    color: #707070;
+    font-size: 14px;
+    font-family: 黑体;
+}
+
+    .menuItem a {
+        outline: none;
+        text-decoration: none;
+        color: #707070;
+        font-size: 14px;
+        font-family: 黑体;
+        width: 130px;
+        display: block;
+    }
+
+        .menuItem a:hover {
+            color: #5DD1C1;
+        }
+
+    .menuItem:hover {
+        color: #5DD1C1;
+    }
+
+    .menuItem:nth-child(2) {
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+#menuBottom {
+    display: none;
+    width: 140px;
+    height: 5px;
+}
+
+#content {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    width: 100%;
+}
+
+#childIframeDiv {
+    position: absolute;
+    top: 61px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    display: none;
+}
+
+#childIframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+/************App展示页面***********/
+#AppDisplayPage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 960px;
+    margin-left: -480px;
+    display: none;
+}
+
+.appGroupBox {
+    width: 960px;
+    margin-top: 25px;
+}
+
+.appGroupName {
+    width: 960px;
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 黑体;
+    color: #464646;
+    border-bottom:1px solid #efefef;
+}
+
+.appGroupContent {
+    width: 960px;
+}
+
+.appBox {
+    width: 160px;
+    height: 180px;
+    float: left;
+}
+
+.appMain {
+    width: 150px;
+    height: 160px;
+    margin-top: 20px;
+}
+
+    .appMain img {
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+        margin-left: 19px;
+        cursor: pointer;
+    }
+
+.appExplain {
+    width: 98px;
+    height: 50px;
+    margin-top: 20px;
+    /*margin-left: 15px;*/
+}
+
+.appExplain1, .appExplain2 {
+    width: 98px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    color: #a9a9a9;
+}
+
+/*********************管理员权限页面*******************/
+#AdminPowerPage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 960px;
+    margin-left: -480px;
+    display: none;
+}
+
+.adminHomeTip {
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    font-family: 黑体;
+    font-size: 18px;
+    line-height: 40px;
+    margin-top: 17px;
+}
+
+#adminRoleContent {
+    width: 960px;
+    min-height: 205px;
+    margin-top: 25px;
+}
+
+#adminRoleAdd {
+    width: 138px;
+    height: 138px;
+    border: 1px dashed #e1e1e1;
+    border-radius: 8px;
+    cursor: pointer;
+    float: left;
+}
+
+#adminRoleAddIcon {
+    width: 74px;
+    height: 74px;
+    margin-left: 33px;
+    margin-top: 33px;
+    background-image: url("../images/img/bigAddIcon.png");
+}
+
+.adminRoleDiv {
+    width: 138px;
+    height: 138px;
+    border: 1px solid #92d4f3;
+    border-radius: 8px;
+    margin-left: 65px;
+    margin-bottom: 65px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    line-height: 140px;
+    color: #606060;
+    font-size: 14px;
+    font-family: 黑体;
+    background-color: #f7fefd;
+}
+
+#adminUserContent {
+    width: 960px;
+    min-height: 120px;
+    margin-top: 25px;
+}
+
+#adminUserAdd {
+    width: 78px;
+    height: 78px;
+    border: 1px dashed #e1e1e1;
+    border-radius: 78px;
+    cursor: pointer;
+    float: left;
+}
+
+#adminUserAddIcon {
+    width: 36px;
+    height: 36px;
+    margin-top: 22px;
+    margin-left: 22px;
+    background-image: url("../images/img/littleAddIcon.png");
+}
+
+.adminUserDiv {
+    width: 80px;
+    height: 120px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.adminUserIcon {
+    width: 78px;
+    height: 78px;
+    border: 1px solid #f1d2a1;
+    border-radius: 78px;
+    line-height: 78px;
+    text-align: center;
+    cursor: pointer;
+    color: #606060;
+    font-family: 黑体;
+}
+
+.adminUserInfo {
+    width: 78px;
+    height: 30px;
+    margin-top: 5px;
+    font-family: 黑体;
+    font-size: 14px;
+    color: #bababa;
+    line-height: 30px;
+    text-align: center;
+}
+
+.addRoleBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10100;
+    background: url("../images/img/greyBack.png") repeat;
+    overflow: hidden;
+}
+
+.addRoleBox {
+    width: 400px;
+    min-height: 300px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 180px;
+}
+
+.addRoleHead {
+    width: 400px;
+    height: 46px;
+    background-color: #909090;
+}
+
+.addRoleHeadTip {
+    width: 200px;
+    height: 46px;
+    text-align: left;
+    line-height: 46px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 黑体;
+    text-indent: 20px;
+}
+
+.addRoleClose {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    background-image: url("../images/img/addRoleColse.png");
+}
+
+.addRoleInputBox {
+    width: 368px;
+    height: 39px;
+    margin-left: 16px;
+    margin-top: 14px;
+}
+
+.addRoleInputBoxHidden {
+    display: none;
+}
+
+.addRoleFirstLoginTip {
+    width: 300px;
+    height: 40px;
+    margin-left: 85px;
+}
+
+    .addRoleFirstLoginTip input {
+        vertical-align: top;
+        width: 14px;
+        height: 14px;
+        margin-top: 3px;
+        float: left;
+    }
+
+.addRoleFirstLoginTipLabel {
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 20px;
+    color: #bababa;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: 黑体;
+}
+
+.addRoleSubmit {
+    width: 368px;
+    height: 39px;
+    margin-left: 16px;
+    background-color: #33C9B6;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 39px;
+    color: #fff;
+    text-align: center;
+}
+
+.addRoleTip {
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    color: #464646;
+    font-family: 黑体;
+    float: left;
+}
+
+.addRoleInputDiv {
+    width: 230px;
+    height: 34px;
+    border: 1px solid #bababa;
+    float: left;
+    margin-top: 2px;
+}
+
+    .addRoleInputDiv input {
+        width: 220px;
+        height: 28px;
+        margin-left: 5px;
+        margin-top: 3px;
+        border: none;
+        outline: none;
+    }
+
+.addRoleModifyPwd {
+    width: 60px;
+    height: 40px;
+    float: left;
+    margin-left: 5px;
+    line-height: 40px;
+    color: #bababa;
+    font-size: 14px;
+    font-family: 黑体;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+/*角色添加和管理页面css*/
+#RoleManagePage {
+    position: absolute;
+    top: 0;
+    width: 960px;
+    left: 50%;
+    margin-left: -480px;
+    display: none;
+}
+
+.roleManageHead {
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+}
+
+.roleManageItem {
+    width: 105px;
+    height: 40px;
+    text-align: left;
+    font-size: 18px;
+    font-family: 黑体;
+    float: left;
+    line-height: 40px;
+    color: #464646;
+}
+
+.roleManageName {
+    width: 214px;
+    height: 34px;
+    border: 1px solid #bbbbbb;
+    margin-top: 20px;
+}
+
+    .roleManageName input {
+        width: 204px;
+        height: 30px;
+        border: none;
+        outline: none;
+        margin-left: 5px;
+        margin-top: 2px;
+        font-family: 黑体;
+        font-size: 14px;
+        color: #464646;
+    }
+
+.roleManageTip {
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 18px;
+    color: #464646;
+    font-family: 黑体;
+    margin-top: 35px;
+}
+
+.roleManageItemTip {
+    width: 960px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    color: #464646;
+    border-bottom: 1px solid #efefef;
+    margin-top: 10px;
+    position: relative;
+}
+
+.roleManageOpenTipStyle {
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #bababa;
+    cursor: pointer;
+}
+
+.roleManageAvailableAppBox {
+    width: 960px;
+    height: 140px;
+    text-align: center;
+    line-height: 140px;
+    color: #bbbbbb;
+    font-family: 宋体;
+}
+
+.roleManageAllAppBox {
+    width: 960px;
+    height: 220px;
+    text-align: center;
+    line-height: 140px;
+    color: #bbbbbb;
+    font-family: 宋体;
+}
+
+.roleManageAvailableUserBox {
+    width: 960px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    color: #bbbbbb;
+    font-family: 宋体;
+}
+
+.roleManageAllUserBox {
+    width: 960px;
+    height: 240px;
+    text-align: center;
+    line-height: 150px;
+    color: #bbbbbb;
+    font-family: 宋体;
+}
+
+.roleManageBottomBox {
+    width: 960px;
+    height: 130px;
+    margin-top: 75px;
+    border-top: 1px solid #efefef;
+}
+
+.roleManageBtnBox {
+    width: 310px;
+    height: 35px;
+    margin-left: 325px;
+    margin-top: 47px;
+}
+
+#roleManageSubmitBtn {
+    width: 143px;
+    height: 35px;
+    background-color: #33C9B6;
+    float: left;
+}
+
+#roleManageCancelBtn {
+    width: 143px;
+    height: 35px;
+    background-color: #909090;
+    margin-left: 24px;
+    float: left;
+}
+
+.roleManageBtnStyle {
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    font-family: 黑体;
+    cursor: pointer;
+}
+
+    .roleManageBtnStyle:hover {
+        opacity: 0.6;
+    }
+
+.roleManageAllAppIcon, .roleManageAvailableAppIcon {
+    width: 70px;
+    height: 70px;
+    margin-top: 40px;
+    margin-left: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+.roleManageAllUserDiv, .roleManageAvailableDiv {
+    width: 70px;
+    height: 70px;
+    border: 1px solid blue;
+    float: left;
+    border-radius: 70px;
+    text-align: center;
+    line-height: 70px;
+    margin-top: 50px;
+    margin-left: 35px;
+    color: #606060;
+    cursor: pointer;
+}
+/*个人中心*/
+#PersonalZonePage {
+    width: 960px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -480px;
+}
+
+.zoneHead {
+    width: 300px;
+    height: 40px;
+    text-align: left;
+    font-size: 18px;
+    font-family: 黑体;
+    line-height: 40px;
+    color: #464646;
+    margin-top: 25px;
+}
+
+.zoneTipItem {
+    width: 960px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    color: #464646;
+    border-bottom: 1px solid #efefef;
+    margin-top: 10px;
+    position: relative;
+}
+
+.zoneCommonAppBox {
+    width: 960px;
+    height: 150px;
+}
+
+.zoneAvailableAppBox {
+    width: 960px;
+    height: 150px;
+}
+
+.zoneBottomBox {
+    width: 960px;
+    height: 130px;
+    margin-top: 75px;
+    border-top: 1px solid #efefef;
+}
+
+.zoneBtnBox {
+    width: 310px;
+    height: 35px;
+    margin-left: 325px;
+    margin-top: 47px;
+}
+
+.zoneBtnStyle {
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    font-family: 黑体;
+    cursor: pointer;
+}
+
+    .zoneBtnStyle:hover {
+        opacity: 0.6;
+    }
+
+#zoneSubmitBtn {
+    width: 143px;
+    height: 35px;
+    background-color: #33C9B6;
+    float: left;
+}
+
+#zoneCancelBtn {
+    width: 143px;
+    height: 35px;
+    background-color: #909090;
+    margin-left: 24px;
+    float: left;
+}
+
+.zoneCommonIcon, .zoneAvailableIcon {
+    width: 70px;
+    height: 70px;
+    margin-top: 40px;
+    margin-left: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+/*账号设置css*/
+#UserSettingPage {
+    width: 960px;
+    position: absolute;
+    left: 50%;
+    margin-left: -480px;
+    top: 0;
+    display: none;
+}
+
+.userSetHead {
+    width: 300px;
+    height: 40px;
+    text-align: left;
+    font-size: 18px;
+    font-family: 黑体;
+    line-height: 40px;
+    color: #464646;
+    margin-top: 25px;
+}
+
+.userSetUserInfoBox {
+    width: 350px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.userSetInfoRow {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.userSetInfoTip {
+    width: 58px;
+    height: 40px;
+    float: left;
+    color: #464646;
+    font-size: 14px;
+    line-height: 40px;
+    font-family: 黑体;
+    text-align: right;
+}
+
+.userSetInfo {
+    width: 250px;
+    height: 40px;
+    float: left;
+    color: #464646;
+    line-height: 40px;
+    font-family: 黑体;
+    font-size: 14px;
+    text-indent: 15px;
+}
+
+#userSetModifyBtn {
+    width: 40px;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    color: #c4c4c4;
+    font-family: 黑体;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.userSetModifyBox {
+    width: 350px;
+    height: 200px;
+    border: 1px solid #bababa;
+    display: none;
+}
+
+.userSetModifyRow {
+    width: 350px;
+    height: 35px;
+    margin-top: 10px;
+}
+
+    .userSetModifyRow:nth-child(1) {
+        margin-top: 15px;
+    }
+
+    .userSetModifyRow:nth-child(4) {
+        margin-top: 15px;
+    }
+
+.userSetModifyTip {
+    width: 85px;
+    height: 35px;
+    float: left;
+    color: #464646;
+    line-height: 35px;
+    text-align: right;
+    font-size: 14px;
+    font-family: 黑体;
+}
+
+.userSetModifyInputDiv {
+    width: 250px;
+    height: 35px;
+    border: 1px solid #909090;
+    float: left;
+}
+
+    .userSetModifyInputDiv input {
+        width: 240px;
+        height: 30px;
+        border: none;
+        outline: none;
+        margin-left: 5px;
+        margin-top: 2px;
+        color: #909090;
+    }
+
+#userSetSubmitBtn {
+    margin-left: 85px;
+    float: left;
+    background-color: #33C9B6;
+}
+
+    #userSetSubmitBtn:hover {
+        opacity: 0.6;
+    }
+
+#userSetCancelBtn {
+    margin-left: 26px;
+    float: left;
+    background-color: #909090;
+}
+
+    #userSetCancelBtn:hover {
+        opacity: 0.6;
+    }
+
+.userSetBtnStyle {
+    width: 112px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+    font-family: 黑体;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.userSetReturnBtn {
+    width: 75px;
+    height: 26px;
+    margin-left: 275px;
+    margin-top: 25px;
+    text-align: center;
+    line-height: 26px;
+    background-color: #33C9B6;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 黑体;
+}
+
+    .userSetReturnBtn:hover {
+        opacity: 0.6;
+    }

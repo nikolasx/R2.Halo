@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<node>
+  <pid>0</pid>
+  <id>1</id>
+  <text>图层控制</text>
+  <path>www.e</path>
+  <ip>192.168.83.188</ip>
+  <port>6163</port>
+  <hasChildren>true</hasChildren>
+
+  <node>
+    <pid>1</pid>
+    <id>1_1</id>
+    <text>基础地理图层</text>
+    <path>w</path>
+    <ip>192.168.83.188</ip>
+    <port>6163</port>
+    <hasChildren>true</hasChildren>
+    <imgPath>a1.png</imgPath>
+
+    <node>
+      <pid>1_1</pid>
+      <id>1_1_1</id>
+      <text>需预警区域</text>
+      <path>gdbp://MapGisLocal/JndzWarning/sfcls/jnjwdxzq.wp_clip</path>
+      <ip>192.168.83.188</ip>
+      <port>6163</port>
+      <hasChildren>false</hasChildren>
+      <imgPath>a1.png</imgPath>
+    </node>
+    <node>
+      <pid>1_1</pid>
+      <id>1_1_2</id>
+      <text>雨量监测站点</text>
+      <path>gdbp://MapGisLocal/JndzWarning/sfcls/RainfallStationLayer.wt</path>
+      <ip>192.168.83.188</ip>
+      <port>6163</port>
+      <hasChildren>false</hasChildren>
+      <imgPath>a1.png</imgPath>
+    </node>
+    <node>
+      <pid>1_1</pid>
+      <id>1_1_3</id>
+      <text>乡镇</text>
+      <path>gdbp://MapGisLocal/JndzWarning/sfcls/TOWN.WT</path>
+      <ip>192.168.83.188</ip>
+      <port>6163</port>
+      <hasChildren>false</hasChildren>
+      <imgPath>a1.png</imgPath>
+    </node>
+    <node>
+      <pid>1_1</pid>
+      <id>1_1_4</id>
+      <text>村</text>
+      <path>gdbp://MapGisLocal/JndzWarning/sfcls/country.wt</path>
+      <ip>192.168.83.188</ip>
+      <port>6163</port>
+      <hasChildren>false</hasChildren>
+      <imgPath>a1.png</imgPath>
+    </node>
+
+  </node>
+
+
+
+  <node>
+    <pid>1</pid>
+    <id>1_2</id>
+    <text>专题图</text>
+    <path>w</path>
+    <ip>192.168.83.188</ip>
+    <port>6163</port>
+    <hasChildren>true</hasChildren>
+    <imgPath>a1.png</imgPath>
+
+    <node>
+      <pid>1_2</pid>
+      <id>1_2_1</id>
+      <text>专题图层</text>
+      <path>gdbp://MapGisLocal/JndzWarning/sfcls/jnjwdxzq.wp_clip</path>
+      <ip>192.168.83.188</ip>
+      <port>6163</port>
+      <hasChildren>false</hasChildren>
+      <imgPath>a1.png</imgPath>
+    </node>
+   
+
+  </node>
+  
+</node>

@@ -1,0 +1,200 @@
+/*结果框的样式*/
+/*强制页面使用滚动条*/
+  * { margin:0;padding:0;font-family:'Microsoft YaHei';font-size:12px; }
+  input[type="text"] { border:none;outline:none;  }
+  textarea{ border:none;outline:none;  }
+.result{ background-color:#F6F6F6; width:960px; margin-left:auto; margin-right:auto; height: 98%; padding-top:10px;  }
+ /*四个tab页的样式*/
+ul.navTabs{ height: 25px; line-height: 25px; list-style: none; background-color:#DCDCDC; margin-top:0; padding:0 0 0 10px; border-bottom:2px solid #DCDCDC;}
+.navTabs li { font-weight:normal; font-size:16px; float: left; display: inline;margin: 0 1px 0px -1px; padding: 0 11px 0px; cursor: pointer; background: #DCDCDC; position: relative; border:1px solid #DCDCDC;}
+.navTabs li.tab_current { color: #444; background: #f6f6f6; padding: 2px 11px -1px; border: 1px solid #C9C9C9; border-bottom: 1px solid #f6f6f6; }
+.navTabs li:hover { color: #fa8803; padding:2px 11px -1px; background: #FFFFDF; border: 1px solid #FFCA95; border-bottom: 1px solid #f6f6f6;}
+    /*内容框样式*/
+.content { color:#505050; margin:6px auto; height:94%; width:950px; border:1px solid #C9C9C9;}
+   /*各tab页的详细内容的样式*/ 
+.info{ display: none; padding: 0 0 1px 0;}
+.info ul{ border-left: 1px solid #CAD8E4;border-top: 1px solid #CAD8E4;list-style-image: none;list-style-type: none; width: 930px; margin-right: auto; margin-left: auto; padding: 0px;}
+.info ul li{ float: left; border-right: 1px solid #CAD8E4; border-bottom: 1px solid #CAD8E4; line-height: 30px; height: 30px;}
+.info.visible{ display: block; }
+.title{ background-color: #F4F8FB; width: 133px; text-align: center;}
+.titles{ background:#F4F8FB; text-align:center; float:left;}
+.titleI{ background-color: #F4F8FB; width: 163px; text-align: center;}
+.contentsI{ background-color: #FFFFFF; width: 757px; padding-left: 8px;}
+.contentsII{background-color: #FFFFFF; width: 292px; padding-left: 8px;}
+.contentI{ background-color: #FFFFFF; width: 787px; padding-left: 8px;}
+.contentII{ background-color: #FFFFFF; width: 322px; padding-left: 8px;}
+label{ vertical-align:middle;}
+Input{ vertical-align:middle;}
+ /*滑坡地质灾害样式*/
+/*地理位置样式*/
+.geoLocations{ border-bottom:1px solid #CAD8E4; text-align:center; float:left;}
+.coordi{ height:60px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; width:330px; margin-top:0; float:left;} 
+.coordelev{ height:30px; width:322px;  float:left; padding-left:8px;}
+.elevation{ height:30px; border-right:1px solid #CAD8E4; background-color:#F4F8FB; width:82px; margin-top:0; text-align:center; float:left; }
+.latValue{ height:30px; margin-left:0; border-right:1px solid #CAD8E4; width:133px; background-color:#F4F8FB; float:left; text-align:center;}
+/*滑坡环境及基本特征样式*/
+.coast{ background-color:#F4F8FB;border-right:1px solid #CAD8E4; margin-top:0; float:left; text-align:center;}
+.coastT{ background-color:#F4F8FB; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4; margin-top:0; float:left; text-align:center; height:30px;}
+.coastTT{ background-color:#F4F8FB; border-bottom:1px solid #CAD8E4; margin-top:0; float:left; text-align:center; height:30px;}
+.coastZWI{border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; margin-top:0; float:left; height:30px; text-align:center; }
+.coastZWII{ border-bottom:1px solid #CAD8E4; margin-top:0; float:left; height:30px; text-align:center;}
+.coastZWIII{ margin-top:0; border-right:1px solid #CAD8E4; float:left; height:30px; text-align:center; }
+.coastZWIV{border-right:1px solid #CAD8E4; margin-top:0; float:left; height:30px; text-align:center;}
+ /*影响因素及稳定性分析样式*/
+.factorT{ height:30px; width:102px; border-bottom:1px solid #CAD8E4; text-align:center;  float:left;}
+.factorC{ height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;}
+/*.factorT{ height:30px; width:102px; border-bottom:1px solid #CAD8E4; text-align:center;  float:left;}
+.factorC{ height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787; padding-left:8px;}*/
+
+/*---------------------------崩塌地质灾害样式--------------------------------------*/
+
+/*水文*/
+.hydrology{border-bottom:1px solid #CAD8E4; float:left; text-align:center;}
+/*降雨量*/
+.raintitleBt{width:53px; height:30px; float:left; border-bottom:1px solid #CAD8E4;}
+.rainconBt{width:370px;height:30px; border-bottom:1px solid #CAD8E4; padding-left:8px;}
+/*堆积体和已造成危害*/
+.accDamaTitleI{ height:30px; width:107px; border-bottom:1px solid #CAD8E4;float:left;}
+.accDamaConI{width:293px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; padding-left:8px;}
+.accDamaTitleII{ height:30px; width:100px; border-bottom:1px solid #CAD8E4; float:left;}
+.accDamaConII{ width:368px; padding-left:8px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;}
+/*崩塌环境*/
+/*地质环境*/
+.gititleI{width:77px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; background-color:#F4F8FB; text-align:center; float:left;}
+.gicontentI{width:294px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; padding-left:8px;}
+.gititleII{width:100px; background-color:#F4F8FB; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; text-align:center;}
+.gicontentII{width:370px; border-bottom:1px solid #CAD8E4; padding-left:8px;}
+/*危岩体*/
+/*外形特征*/
+.outlinetitle{width:88px; border-right:1px solid #CAD8E4; float:left; height:30px;line-height:30px;}
+.outlinecontent{width:80px; height:30px;border-right:1px solid #CAD8E4; padding-left:8px; float:left;text-align:center;}
+/*结构特征之岩质*/
+.rocktitle{border-right:1px solid #CAD8E4; float:left; height:30px;}
+.rockcontent{ border-right:1px solid #CAD8E4;height:30px; padding-left:8px; float:left;text-align:center;}
+/*结构特征之控制结构面*/
+.controltitle{border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4; background:#F4F8FB; height:30px; text-align:center; float:left;}
+.controlcontent{ border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; padding-left:8px; float:left;text-align:center;}
+/*变形破坏迹象*/
+.varianttitle{height:30px; background:#F4F8FB; text-align:center; border-bottom:1px solid #CAD8E4;line-height:30px;}
+.variantcontent{ height:30px;border-bottom:1px solid #CAD8E4; padding-left:8px;}
+.steadyTitle{ border-right:1px solid #CAD8E4; background:#F4F8FB; text-align:center; float:left; height:30px;}
+/*结构特征之地质*/
+.geotitle{border-bottom:1px solid #CAD8E4;height:30px; background:#F4F8FB; text-align:center; line-height:30px;}
+/*地下水*/
+.gwtitle{border-right:1px solid #CAD8E4; float:left;}
+.gwcontent{ border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+input[type="text"]{
+border:none; height:27px;line-height:27px;
+}
+
+/*-------------------------------------泥石流灾害样式-------------------------------------*/
+/*地理位置*/
+.coordis{height:44px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; width:300px; margin-top:0; float:left; }
+.coordselev{ height:22px; width:292px; float:left; padding-left:8px;}
+.elevations{height:22px; border-right:1px solid #CAD8E4; background-color:#F4F8FB; width:102px; margin-top:0; text-align:center; float:left;  }
+.latsValue{ height:22px;  margin-left:0;  border-right:1px solid #CAD8E4;  width:163px;  background-color:#F4F8FB;  float:left;  text-align:center; }
+/*降雨特征值、沟口扇形地、土地利用以及不良地质体样式*/
+.rtitlesI{width:117px; height:30px; float:left; border-bottom:1px solid #CAD8E4;}
+.rtitlesII{ width:163px; height:30px; border-bottom:1px solid #CAD8E4;}
+.rcontents{width:292px; height:30px; border-bottom:1px solid #CAD8E4; padding-left:8px;}
+/*灾害史*/
+.dTitle{width:79px; height:216px;border-right:1px solid #CAD8E4; float:left;}
+.disasterTitle{height:61px; background:#F4F8FB; border-bottom:1px solid #CAD8E4; text-align:center;}
+.disasterContent{height:30px; width:71px; border-bottom:1px solid #CAD8E4; padding-left:8px;border-right:1px solid #cad8e4; overflow:hidden;}
+.disasterContentI{height:30px;width:72px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; padding-left:8px; float:left;overflow:hidden;}
+.disasterContentII{height:30px; width:145px; border-bottom:1px solid #CAD8E4; padding-left:8px;}
+.disasterContentIII{height:30px; width:72px; border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+/*.disasterhouseI{height:22px;width:31px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+.disasterContentIII{height:22px; width:31px; border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+.disasterContentIV{height:22px; width:31px; padding-left:8px; float:left;}*/
+/*泥石流特征*/
+.nslFeatureT{height:30px; border-bottom:1px solid #CAD8E4; background:#F4F8FB; text-align:center;}
+.nslFT{width:239px; border-right:1px solid #CAD8E4; float:left;}
+.nslFCon{width:231px; height:30px;border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+/*综合评判*/
+.syntheticTI{width:102px; height:30px; border-bottom:1px solid #CAD8E4; float:left; text-align:center;}
+.scoreT{width:48px; border-right:1px solid #CAD8E4; float:left;}
+.scoreCon{width:40px; height:23px;border-right:1px solid #CAD8E4; padding-left:8px; float:left;}
+/*-------------------------------------预案查询------------------------------------*/
+/*-------------------------------------地面塌陷------------------------------------*/
+.mdtxdtitle{border-bottom:1px solid #CAD8E4;height:61px;width:424px;}
+.tdyrtxdtitle{border-bottom:1px solid #CAD8E4;height:30px;width:424px;}
+.mdtxxtitle{width:153px;border-right:1px solid #CAD8E4;float:left;height:61px;line-height:61px;}
+.tdyrtxxtitle{width:153px;border-right:1px solid #CAD8E4;float:left;height:29px;}
+.mdtxcontent{width:265px;float:left;padding-left:5px;height:61px;line-height:61px;}
+.mtycontent{width:265px;float:left;padding-left:5px;height:30px;}
+/*------------------抬头-------------------*/
+#emergencyPlan{font-family:微软雅黑;margin:0; padding:0; width:802px; height:100%; position:absolute; top:25px; left:280px; padding-bottom:20px;}
+#emergencyPlan .emergencyPlanTabs{margin:0; padding:0; height:30px;}
+#emergencyPlan .emergencyPlanTabs li{ font-family:微软雅黑; height:30px;font-size:14px; line-height:23px; list-style:none; position:relative; float:left;display: inline; margin: 0 1px -1px 0; border-top:1px solid #DCDCDC; padding: 0 11px 1px; text-align:center;}
+#emergencyPlan .emergencyPlanTabs li:hover { color: #fa8803; background: #F3F3F3; cursor:pointer;padding:2px 11px -1px;  text-align:center;}
+#emergencyPlan .emergencyPlan_tab{   background: #f3f3f3;}
+#emergencyPlan #emergencyplantab1{ margin-left:20px;}
+#emergencyPlan .emergencyPlandiv{margin:0; padding:0; width:230px;}
+.emergencyData{display: none;}
+#emergencyPlan .visible{ display:block;}
+        
+/*--地质灾害隐患点防灾预案表--*/ 
+#emergencyPlanBaseData{ margin:0; padding:0; width:800px; height:595px; background-color:#F3F3F3;border:1px solid #C9C9C9; border-top:1px solid #F3F3F3;  font-size:12px;}
+#emergencyPlanBaseData li{ list-style:none; background-color:#FFFFFF; position:relative; float:left; width:210px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; margin:0; height:22px; padding:0; line-height:22px;}
+#emergencyPlanBaseData ul{ margin:0; padding:0;cursor:pointer;}
+#emergencyPlanBaseData div{ margin:0; padding:0; text-align:left;}
+#emergencyPlanBaseData .title{ text-align:center; width:160px; background-color:#F4F8FB;}
+#emergencyPlanBaseData .main{border:1px solid green; width:750px; padding:0;margin-left:25px;}
+#emergencyPlanBaseData #main8{ padding:0px; border:1px solid #CAD8E4; height:44px; margin-top:20px;}
+#emergencyPlanBaseData #main9{ padding:0px; border:1px solid #CAD8E4; height:44px;}
+#emergencyPlanBaseData #main10{ padding:0px; border:1px solid #CAD8E4; height:67px;}        
+#emergencyPlanBaseData #main11{ padding:0px; border:1px solid #CAD8E4; height:90px;}
+#emergencyPlanBaseData #main12{ padding:0px; border:1px solid #CAD8E4; height:297px;}
+        
+    /*--地质灾害隐患点工作明白卡信息--*/ 
+#clearCardData{ margin:0; padding:0; width:800px; height:550px; background-color:#F3F3F3;border:1px solid #C9C9C9; border-top:1px solid #F3F3F3; font-size:12px;}
+#clearCardData li{ list-style:none; background-color:#FFFFFF; position:relative; float:left; width:210px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; margin:0; height:22px; padding:0; line-height:22px;}
+#clearCardData ul{ margin:0; padding:0; cursor:pointer;}
+#clearCardData div{ margin:0; padding:0; text-align:left;}
+#clearCardData .title{ text-align:center; width:160px; background-color:#F4F8FB; cursor:pointer; }
+#clearCardData .main{border:1px solid green; width:750px; padding:0; margin-left:25px;}
+#clearCardData #main13{ padding:0px; border:1px solid #CAD8E4; height:22px; margin-top:20px;}
+#clearCardData #main14{ padding:0px; border:1px solid #CAD8E4; height:91px; }
+#clearCardData #main15{ padding:0px; border:1px solid #CAD8E4; height:158px;}        
+#clearCardData #main16{ padding:0px; border:1px solid #CAD8E4; height:229px;}
+        
+/*---地质灾害避险明白信息---*/
+#threatenedClearCardData1{ margin:0; padding:0; width:800px; height:370px; background-color:#F3F3F3;border:1px solid #C9C9C9; border-top:1px solid #F3F3F3; font-size:12px;}
+#threatenedClearCardData1 li{ list-style:none; background-color:#FFFFFF; position:relative; float:left; width:213px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; margin:0; height:22px; padding:0; line-height:22px;}
+#threatenedClearCardData1 ul{ margin:0; padding:0; cursor:pointer;}
+#threatenedClearCardData1 div{ margin:0; padding:0; text-align:left;}
+#threatenedClearCardData1 .title{ text-align:center; width:160px; background-color:#F4F8FB; cursor:pointer; }
+#threatenedClearCardData1 .main{border:1px solid green; width:750px; padding:0;margin-left:25px;}
+#threatenedClearCardData1 #main1{ padding:0px; border:1px solid #CAD8E4; height:22px;}
+#threatenedClearCardData1 #main2{ padding:0px; border:1px solid #CAD8E4; height:21px;}
+#threatenedClearCardData1 #main3{ padding:0px; border:1px solid #CAD8E4; height:67px;}        
+#threatenedClearCardData1 #main4{ padding:0px; border:1px solid #CAD8E4; height:44px;}
+#threatenedClearCardData1 #main5{ padding:0px; border:1px solid #CAD8E4; height:44px;}
+#threatenedClearCardData1 #main6{ padding:0px; border:1px solid #CAD8E4; height:115px;}       
+
+/*-------------------------------------预案查询结束------------------------------------*/
+
+/*---重点灾害点展示---*/
+#keydisanewpage .titlekey{ height:30px;width:940px; border-bottom:1px solid #949494; border-right:1px solid #949494; margin:auto; text-align:center;}
+#keydisanewpage .likey{height:30px; border-left:1px solid #949494; float:left;}
+#keydisanewpage .wlikey{height:40px;width:558px; float:left;}
+/*---应急专家信息管理style---*/
+.showExpertsWhole{ width:805px; margin-left:78px; background-color:#FFFFFF; height:auto; border-left:1px solid #CAD8E4; border-top:1px solid #CAD8E4}
+#showDlExpertsDiv .expertsShowRowq{ width:805px; height:30px; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4;}
+#showDlExpertsDiv .expertsShowRow{ width:805px; height:31px; border-right:1px solid #CAD8E4;}
+#showDlExpertsDiv .InfoNo{ width:100px; height:30px; line-height:30px; text-align:center; border-right:1px solid #CAD8E4;  float:left}
+#showDlExpertsDiv .ExpertPosition{ width:150px; height:30px; line-height:30px; text-align:center; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4;float:left}
+#showDlExpertsDiv .ExpertName{width:150px; height:30px; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4; line-height:30px; text-align:center;float:left}
+#showDlExpertsDiv .ExpertPhone{width:200px; height:30px; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4; line-height:30px; text-align:center;float:left}
+#showDlExpertsDiv .ExpertUpdate{width:200px; height:30px;line-height:30px; text-align:center;float:left;}
+#showDlExpertsDiv .operateInfo{width:40px; cursor:pointer; height:30px;line-height:30px; text-align:center;float:left; color:#FF6C00}
+#showDlExpertsDiv .operateInfot{width:100px; cursor:pointer; height:30px;line-height:30px; text-align:center;float:left; color:#FF6C00; border-bottom:1px solid #CAD8E4}
+#showDlExpertsDiv .expertId,#editDlExpertsDiv .expertId{ display:none}
+#showDlExpertsDiv .InfoNo1,#editDlExpertsDiv .InfoNo1{ width:100px; height:30px; line-height:30px; text-align:center; border-right:1px solid #CAD8E4;  float:left}
+#editDlExpertsDiv .ExpertUpdate1{width:112px; height:30px;line-height:30px; text-align:center;float:left;}
+#editDlExpertsDiv .operateInfo1{width:55px; cursor:pointer; height:60px;line-height:60px; text-align:center;float:left; color:#FF6C00}
+#editDlExpertsDiv .ExpertPhone{width:200px; height:30px; border-right:1px solid #CAD8E4; border-bottom:1px solid #CAD8E4; line-height:30px; text-align:center;float:left}
+#editDlExpertsDiv .expertsShowRow{ width:805px; height:31px; border-right:1px solid #CAD8E4;}
+
+.baseheng{margin:0px 5px 10px 1px;height:2px;width:960px;background-image:url(../images/pic/53.png);}

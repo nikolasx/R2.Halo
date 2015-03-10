@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        var baseUrl = '@Url.Content("~/Apps/Apps.WorkCardInput/")'; //全局的URl，解决iis中路径的问题
+    </script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/OpenLayers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/zdclient.js")" type="text/javascript"></script>
+   
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Global/global.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/ulselect.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Global/isTheValueLegal.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Global/init.js")" type="text/javascript"></script>       
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/style.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/uiContent.css")" type="text/css" rel="stylesheet" />    
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/uiContent.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/layQueryResult.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/fangzaikaBixianka.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/fakeData.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/disaQuery.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/ZHGL/disaQuery.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/ToolBarStyle.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Global/addContent.js")" type="text/javascript"></script>
+
+    @*雨量管理js文件夹 ZHAOs 2014年4月3日16:05:42*@
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/YLGL/rainManage.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/YLGL/rainManageQuery.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/YLGL/rainManage.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/YLGL/rainManageQuery.css")" type="text/css" rel="stylesheet" />
+    @*End雨量管理*@
+
+
+    @*start csw*@
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/ZHGL/style_popup.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/ZHGL/showQueryResult.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/ZHGL/RrPopup.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/NestFramedCloud.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/RrPopup.js")" type="text/javascript"></script>
+    @*end csw*@
+
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/warningResultAnalysis.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/QXYJ/warningResultAnalysis.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/earlywarningresultlayeroperation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/earlywarning.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/warningAnalyse.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/warnsetting.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/QXYJ/warninganalyse.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/historywarning.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/resultIssue.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/QXYJ/historywarning.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/QXYJ/signAndApprove.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Content/QXYJ/excelAndGraph.css")" type="text/css" rel="stylesheet" />
+    
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/treeLayerManage/treeLayerManage.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/treeLayerManage/treeLayerStyle.css")" type="text/css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/Libs/lhgcalendar.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/isTheValueMudFlow.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/isTheValueLandSlide.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/ZHGL/clearData.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/xingzhengquGrade.js")"></script>
+
+    <script src="@Url.Content("~/Apps/Apps.WorkCardInput/Scripts/QXYJ/GISLayerToDraw.js")"></script>
+    
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

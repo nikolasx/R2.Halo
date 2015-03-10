@@ -1,0 +1,318 @@
+﻿    * {
+        font-family:'Microsoft YaHei';font-size:12px;margin:0;padding:0;
+    }
+    .rainManageDiv{
+        /*border:1px solid #808080;*/
+        width:380px;height:500px;position:relative;
+    }
+.rm_rangeInput {
+    margin:0;
+}
+.rm_dateLine {
+    margin:0 10px 0 10px;
+}
+
+.rm_part {
+    width:360px;
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    border-bottom:1px dashed #BFBFBF;
+    height:80px;
+}
+
+.rm_part input, .rainManageDiv select {
+    border:1px solid #BFBFBF;
+    padding-left:5px;
+    height:25px;
+    background-color:white;
+    color:black;
+}
+
+.rm_part_title {
+    height:15px;
+    margin-top:10px;
+}
+
+.rm_part_title div {
+    float:left;
+}
+
+
+
+/*第一个条件 */
+#rm_part1 label {
+    margin-left:15px;
+    font-size:14px;
+}
+
+.rm_step_coin {
+    margin-left:2px;
+    width:20px;
+    height:20px;
+    background-image:url(../images/numicon.png);
+    position:relative;
+}
+
+#rm_dateRangeDiv {
+    height:25px;
+    margin-bottom:20px;
+    width:100%;
+    margin-left:10px;
+    margin-top:30px;
+}
+
+#rm_dateRangeDiv input {
+    width:120px;
+    float:left;
+    /*border:1px solid #BFBFBF;
+    padding-left:5px;
+    height:25px;
+    background-color:white;
+    color:black;*/
+}
+
+#rm_dateRangeDiv div, #rm_dateRangeDiv label {
+    float:left;     
+    font-size:14px;      
+    margin-left:5px; 
+    line-height:20px;
+}
+
+
+#rm_totalRainSetDiv {
+    width:100%;
+    height:30px;
+}
+#rm_totalRainSetDivBar {
+    margin-top:25px;
+    height:25px;
+    width:100%;
+    margin-left:10px;
+}
+
+#rm_totalRainSetDivBar label {
+    float:left;    
+    margin-left:5px;
+    font-size:14px;    
+    line-height:20px;
+}
+
+#rm_part3 {
+    border-bottom:none;
+    height:60px;
+}
+
+.rm_totalRainSetInput {
+    width:60px;
+    float:left;
+    margin: 0 5px 0 5px;
+    padding-left:2px;
+    color:#FF671C;
+    height:25px;
+}
+#rm_totalRainSetYLDiv {
+    float:left;
+    height:20px;
+    line-height:20px;font-size:14px;
+    margin:0 5px 0 5px;
+}
+.rm_totalRainSetSelect {
+    float:left;
+    margin: 0 5px 0 5px;
+}
+#rm_part4 {
+    border-bottom:none;
+    height:25px;
+}
+#rm_OK_btn {
+    width: 50px;
+    height: 24px;        
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+    float: right;
+    margin-right:3px;        
+    color:#12307D;
+    font-size:14px;
+}
+
+#rm_OK_btn:hover {
+    color:#018DC3;
+    cursor:pointer;
+}
+#rm_OK_btn:hover {
+    color:#8AB7D6;
+}
+.rm_stepcoin_right 
+{
+    line-height:18px;
+    color:#12307D;
+    margin-left:5px;
+    font-size:14px;
+}
+
+#rm_keyword {
+    margin-top:15px;
+    /*padding-left:5px;*/
+    width:274px;
+    /*height:25px;*/
+    /*background-color:white;
+    color:#B1A8A8;*/
+}
+
+#rm_step1 {            
+    background-position-x:0px;
+}
+
+#rm_step2 {
+    background-position-x:-20px;
+}
+
+
+#rm_step3 {
+    background-position-x:-40px;
+}
+
+#rm_dateEnd {
+    margin-left:4px;
+}
+
+.rainManageDiv select {
+    /*height:25px;
+    border:1px solid #BFBFBF;
+    background-color:white;
+    color:#B1A8A8;
+    padding-left:5px;*/
+}
+
+.rm_totalRainSetSelect{
+    width:40px;
+}
+
+
+
+
+#rm_OK_Bar {
+    height:30px;
+    width:100px;
+    float:right;
+}
+
+.rainManageDivClone {
+    border:1px solid #808080;
+    width:380px;height:500px;position:relative;
+    background:#F4F4F4;
+}
+
+/*以下是查询结果部分的样式ZHAOS 2014年4月4日9:48:32*/
+        #rainManageDivClone{
+            border:1px solid #808080;
+            width:380px;height:500px;
+        }
+        .warnTitle {
+               width:100%;
+                height:22px;    
+                border-bottom:1px solid #c0c0c0;
+                background:url(../images/left_menu.png);
+                line-height:22px;
+                text-align:center;
+        }
+        #rm_resultDiv {
+            width:370px;
+            margin:0 auto;
+             border:1px solid #bfbfbf;
+            height:100%;
+            margin-top:3px;
+            background:#F4F4F4;
+        }
+        #rm_resultDivHead {
+            width:100%;
+            height:22px;
+            margin-top:3px;
+        }
+        #rm_resultDivCoin {
+            float:left;
+            width:20px;height:20px;
+            background-image:url(../images/numicon.png);
+            position:relative;
+        }
+        #rm_displayTypeDiv {
+            float:left;
+            line-height:18px;
+            color:#12307D;
+            margin-left:5px;
+        }
+        #rm_switchBtn {
+            float:right;
+        }
+        .rm_tableChartDiv {
+            height:320px;width:100%;
+            background:#ffffff;
+        }
+        #rm_table {
+            border-collapse:collapse;
+            width:95%;height:80%;
+            margin:0 auto;
+            position:relative;top:5px;
+        }
+        #rm_table tr {
+            height:20px;
+            cursor:pointer;
+        }
+            #rm_table tr:hover {
+                background:#D6E0EA;
+            }
+        #rm_table tr td {
+            font-size:12px;
+            text-align:center;
+            line-height:20px;
+            font-weight:600;
+            border:1px solid #BFBFBF;
+
+        }
+        #rm_pageCtlDiv {
+            height:30px;width:100%;
+            margin-top:15px;
+        }
+        #rm_page5BtnDiv {
+            width:250px;
+            float:right;
+            height:100%;
+        }
+        .rm_pageBtn{
+            float:left;
+            margin-right:10px;
+            cursor:pointer;
+
+        }
+            .rm_pageBtn:hover {
+                color:#05669C;
+            }
+        #rm_pageInfoDiv {
+            float:left;
+            margin-right:10px;
+        }
+
+        #rm_resultBackDiv {
+            width:100%;
+            height:30px;
+            margin-top:20px;
+            
+        }
+        #rm_backBtn {
+             height:24px;
+            text-align:center;
+            line-height:24px;
+            width:100px;
+            float:right;
+            color:#12307D;
+            font-size:14px;
+            cursor:pointer;
+            
+            
+        }
+            #rm_backBtn:hover {
+                
+                color:#398DCE;
+            }

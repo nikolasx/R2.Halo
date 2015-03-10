@@ -1,0 +1,1028 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2.Disaster.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:MvcApplication5.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:MvcApplication5.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,MvcApplication5.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,MvcApplication5.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:MvcApplication5.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},MvcApplication5.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:MvcApplication5.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:MvcApplication5.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:MvcApplication5.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.#ctor(MvcApplication5.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:MvcApplication5.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,MvcApplication5.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:MvcApplication5.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:MvcApplication5.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcApplication5.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:MvcApplication5.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:MvcApplication5.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MvcApplication5.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1">
+            <summary>
+            实体类控制器基类
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <typeparam name="U">实体主键类型</typeparam>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.#ctor(R2.Disaster.Service.IEntityServiceBase{`0})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="domainServiceBase"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.Get(System.Object)">
+            <summary>
+            通过主键编号查询
+            <param name="id">主键编号</param>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.Update(`0)">
+            <summary>
+            更新
+            </summary>
+            <param name="entity">需要更新的实体对象</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.Delete(`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="entity">需要删除的实体对象</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.DeleteKey(System.Object)">
+            <summary>
+            删除
+            </summary>
+            <param name="id">需要删除的实体对象的主键</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.New(`0)">
+            <summary>
+            新增
+            被新增的实体，必须有其相对应的PhyGeoDiaster信息存在，且PrePlan的主键（外键）
+            必须同PhyGeoDiaster主键相同；
+            如果新增的PrePlan实体没有对应的PhyGeoDiaster，则应当调用PhyGeoDiaster的New接口
+            并给PhyGeoDiaster的PrePlan导航属性赋值，以完成在新增PrePlan的信息的同时，PhyGeoDiaster
+            物理点信息也同样有相应的信息
+            </summary>
+            <param name="entity">需要新增的实体</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.NewSet(System.Collections.Generic.List{`0})">
+            <summary>
+            新增（一组）
+            </summary>
+            <param name="entities">一组相关实体</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.UpdateSet(System.Collections.Generic.List{`0})">
+            <summary>
+            更新（一组）
+            </summary>
+            <param name="entities">一组相关实体</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.DeleteSet(System.Collections.Generic.List{`0})">
+            <summary>
+            删除（一组）
+            </summary>
+            <param name="entities">一组相关实体</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.EntityControllerBase`1.DeleteKeySet(System.Collections.Generic.List{System.Object})">
+            <summary>
+            删除（一组）
+            </summary>
+            <param name="ids">一组实体的主键</param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Emergency.EmergencySurveyReportController">
+            <summary>
+            应急调查报告
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyRelationEntityController`1.GetByPhyId(System.Int32)">
+            <summary>
+            通过物理点主键编号查询
+            <param name="id">物理点主键编号</param>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Emergency.EmergencySurveyReportController.#ctor(R2.Disaster.Service.GeoDisaster.Emergency.IEmergencySurveyReportService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="emergencyReportService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController">
+            <summary>
+            地质灾害综合信息服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.#ctor(R2.Disaster.Service.GeoDisaster.Investigation.IComprehensiveService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cpsService"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetCompleteByUId(System.String)">
+            <summary>
+            通过统一编号查询灾害点地质调查综合信息
+            </summary>
+            <param name="uid">统一编号</param>
+            <returns>地质灾害完整信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetByKeyWord(System.String)">
+            <summary>
+            通过关键字检索灾害点简要信息，关键字将检索灾害点名称、灾害点地理位置、统一编号
+            </summary>
+            <param name="keyWord">关键字</param>
+            <returns>符合条件的实体信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetByCircle(System.Double,System.Double,System.Double)">
+            <summary>
+            空间“圆”查询
+            </summary>
+            <param name="x">圆心X</param>
+            <param name="y">圆心Y</param>
+            <param name="radius">半径</param>
+            <returns>符合条件的实体信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetByRect(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            空间“矩形”查询
+            </summary>
+            <param name="x1">矩形左下角点X</param>
+            <param name="x2">矩形右上角X</param>
+            <param name="y1">矩形左下角Y</param>
+            <param name="y2">矩形右上角Y</param>
+            <returns>符合条件的实体信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetById(System.Int32)">
+            <summary>
+            通过主键编号获取灾害点简要实体
+            </summary>
+            <param name="id">灾害点唯一编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetByConditions(R2.Disaster.WebAPI.ServiceModel.GeoDisaster.Investigation.InvestigationQueryCondition)">
+             <summary>
+             通过行政区编码、灾害类型、险情大小、灾情大小查询灾害点简要信息（POST）
+             </summary>
+            <param name="condition">InvestigationCondition类型</param>
+             <returns>地质调查实体简要信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Investigation.InvestigationController.GetByConditions(System.Nullable{R2.Disaster.CoreEntities.Domain.GeoDisaster.EnumGeoDisasterType},System.String,System.String,System.String)">
+            <summary>
+             通过行政区编码、灾害类型、险情大小、灾情大小查询灾害点简要信息（Get）
+            </summary>
+            <param name="type">类型</param>
+            <param name="gbcode">行政区编码</param>
+            <param name="dangerLev">险情等级</param>
+            <param name="situationLev">灾情等级</param>
+            <returns>地质调查实体简要信息</returns>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MassPreController">
+            <summary>
+            群测群防基本信息服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MassPreController.#ctor(R2.Disaster.Service.GeoDisaster.MassPres.IMassPreService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="massPreService"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MassPreController.GetByUid(System.String)">
+            <summary>
+            根据统一编号查询
+            </summary>
+            <param name="uid">统一编号</param>
+            <returns>满足条件的群测群防基本信息实体</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MassPreController.GetByKeyWord(System.String)">
+            <summary>
+            关键字查询，关键字将检索名称和统一编号
+            </summary>
+            <param name="keyword">关键字</param>
+            <returns>一组满足条件的实体</returns>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MonthlyReportController">
+            <summary>
+            月报速报基本服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.MonthlyReportController.#ctor(R2.Disaster.Service.GeoDisaster.MassPres.IMonthlyReportService)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController">
+            <summary>
+            防灾预案相关服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.#ctor(R2.Disaster.Service.GeoDisaster.MassPres.IPrePlanService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="preplanService"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.Get(System.Int32)">
+            <summary>
+            通过主键编号查询
+            <param name="id">主键编号</param>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.GetByPhyId(System.Int32)">
+            <summary>
+            通过Phy物理点编号查询
+            </summary>
+            <param name="id">物理点相关唯一编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.GetByUId(System.String)">
+            <summary>
+            通过统一编号查询
+            </summary>
+            <param name="uid">统一编号编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.GetByKeyWords(System.String)">
+            <summary>
+            通过关键字检索
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.Update(R2.Disaster.CoreEntities.Domain.GeoDisaster.MassPres.PrePlan)">
+            <summary>
+            更新
+            </summary>
+            <param name="preplan">需要更新的实体对象</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.Delete(R2.Disaster.CoreEntities.Domain.GeoDisaster.MassPres.PrePlan)">
+            <summary>
+            删除
+            </summary>
+            <param name="preplan">需要删除的实体对象</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id">需要删除的实体对象的主键</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.MassPres.PrePlanController.New(R2.Disaster.CoreEntities.Domain.GeoDisaster.MassPres.PrePlan)">
+            <summary>
+            新增
+            被新增的实体，必须有其相对应的PhyGeoDiaster信息存在，且PrePlan的主键（外键）
+            必须同PhyGeoDiaster主键相同；
+            如果新增的PrePlan实体没有对应的PhyGeoDiaster，则应当调用PhyGeoDiaster的New接口
+            并给PhyGeoDiaster的PrePlan导航属性赋值，以完成在新增PrePlan的信息的同时，PhyGeoDiaster
+            物理点信息也同样有相应的信息
+            </summary>
+            <param name="preplan">需要新增的防灾预案实体</param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController">
+            <summary>
+            地质灾害物理点实体控制器
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.#ctor(R2.Disaster.Service.GeoDisaster.IPhyGeoDisasterService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="phyService"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetById(System.Int32)">
+            <summary>
+            通过编号获取物理点简要信息
+            </summary>
+            <param name="id">物理点编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetByCustomizeId(System.String)">
+            <summary>
+            根据自定义编号查询物理点简要信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            lx 2014年8月4日15:39:22
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetByIds(System.String)">
+            <summary>
+            根据一组物理点Id，获取一组物理点简要信息
+            </summary>
+            <param name="ids">多个物理点的Id，使用“，”分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetByExpressionDynamic(System.Xml.Linq.XElement)">
+            <summary>
+            自定义查询条件，建议高级用户及服务无法满足查询条件时使用
+            自定义查询条件以动态表达式树（Dynamic ExpresstionTree）的形式组合
+            </summary>
+            <param name="x">由ExpressionSerilizer序列化得到，相关使用方法请参考RRDL</param>
+            <returns>物理点完整信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetByExpression(System.Xml.Linq.XElement)">
+            <summary>
+            自定义查询条件，建议高级用户及服务无法满足查询条件时使用
+            自定义查询条件以表达式树（ExpresstionTree）的形式组合
+            </summary>
+            <param name="x">由ExpressionSerilizer序列化得到，相关使用方法请参考RRDL</param>
+            <returns>物理点完整信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.GetIndicator(System.String)">
+            <summary>
+            根据多个物理点的唯一编号，获取一个指明该物理点各项属性是否存在的指示器
+            </summary>
+            <param name="phyIds">多个物理点Id，使用“，”分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.Get(System.String)">
+             <summary>
+             通过名称、地理位置进行物理点检索
+             可以将需要忽略的条件设置为Null
+             </summary>
+            <param name="keyword">关键字</param>
+             <returns>物理点简要信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.Get(System.String,System.Nullable{R2.Disaster.CoreEntities.Domain.GeoDisaster.EnumGeoDisasterType})">
+            <summary>
+            通过行政区编码，灾害类型进行查询(Get)
+            </summary>
+            <param name="gbcode">行政区编码</param>
+            <param name="type">灾害类型</param>
+            <returns>物理点简要信息</returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.PhyGeoDisasterController.Get(R2.Disaster.WebAPI.ServiceModel.GeoDisaster.PhyGeoDisasterQueryCondition)">
+            <summary>
+            通过组合条件查询
+            </summary>
+            <param name="conditions">多条件组合</param>
+            <returns>物理点简要信息</returns>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationComprehensiveController">
+            <summary>
+            移民搬迁
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationComprehensiveController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationComprehensiveService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rcService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationDebrisFlowCheckController">
+            <summary>
+            移民搬迁核查结果认定表（泥石流）
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationDebrisFlowCheckController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationDebrisFlowCheckService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="debrisFlowService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandCollapseCheckController">
+            <summary>
+            移民搬迁核查结果认定表（地面塌陷）
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandCollapseCheckController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationLandCollapseCheckService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="landCollapseService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandSlideCheckController">
+            <summary>
+            移民搬迁核查结果认定表（滑坡）
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandSlideCheckController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationLandSlideCheckService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="landSlideService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandSlipCheckController">
+            <summary>
+            移民搬迁核查结果认定表（崩塌）
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationLandSlipCheckController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationLandSlipCheckService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="landSlipService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationPlaceEvaluationController">
+            <summary>
+            移民搬迁安置地评价表
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationPlaceEvaluationController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationPlaceEvaluationService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="evaluationService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationSlopeCheckController">
+            <summary>
+            移民搬迁核查结果认定表（斜坡）
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.GeoDisaster.Relocation.RelocationSlopeCheckController.#ctor(R2.Disaster.Service.GeoDisaster.Relocation.IRelocationSlopeCheckService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="slopeService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.MineRecovery.MineArchiveController">
+            <summary>
+            矿山复绿基础档案表
+            </summary>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.MineRecovery.MineEnvironmentSurveyController">
+            <summary>
+            矿山复绿环境调查表
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.MineRecovery.MineEnvironmentSurveyController.#ctor(R2.Disaster.Service.MineRecovery.IMineEnvironmentSurveyService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="mintEnvironmentService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.MineRecovery.MineRemoteSensingCardController">
+            <summary>
+            矿山复绿遥感解译卡
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.MineRecovery.MineRemoteSensingCardController.#ctor(R2.Disaster.Service.MineRecovery.IMineRemoteSensingCardService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="remoteCardService"></param>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController">
+            <summary>
+            雨量站点服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController.#ctor(R2.Disaster.Service.Monitor.IRainfallStationService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rainfallStationService"></param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController.GetByName(System.String)">
+            <summary>
+            根据站点名称查询
+            </summary>
+            <param name="name">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController.GetByGBCode(System.String)">
+            <summary>
+            根据行政区编号查询
+            </summary>
+            <param name="code">编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController.GetByCircle(System.Double,System.Double,System.Double)">
+            <summary>
+            根据空间圆判断位置是否在圆内
+            </summary>
+            <param name="x">圆心X</param>
+            <param name="y">圆心Y</param>
+            <param name="radius">半径</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallStationController.GetByRect(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            根据空间矩形判断位置是否在矩形内
+            </summary>
+            <param name="x1"></param>
+            <param name="x2"></param>
+            <param name="y1"></param>
+            <param name="y2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Controllers.Monitor.RainfallController">
+            <summary>
+            雨量站点服务
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallController.#ctor(R2.Disaster.Service.Monitor.IRainfallService)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallController.GetSum(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            根据站点编号查询一段时间累积雨量
+            </summary>
+            <param name="stime">起始时间</param>
+            <param name="etime">终止时间</param>
+            <param name="stationIds">一组站点Id，“，”分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallController.GetByStationIdsWithTiming(System.DateTime,System.String)">
+            <summary>
+            查询一个时间点上的，所有满足StationIds条件的雨量值
+            </summary>
+            <param name="timing"></param>
+            <param name="stationIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Controllers.Monitor.RainfallController.GetGroupByStation(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            根据雨量站点，查询一段时间内每个时间点的雨量值，并且按照雨量站点分类返回
+            </summary>
+            <param name="stime"></param>
+            <param name="etime"></param>
+            <param name="stationIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:R2.Disaster.WebAPI.Infrastructure.AutoMapperResolvers.AttributeCountResolver`2">
+            <summary>
+            自定义AutoMapperResolver
+            </summary>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Infrastructure.AutoMapperResolvers.AttributeCountResolver`2.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">指明需要解析的属性名称</param>
+        </member>
+        <member name="M:R2.Disaster.WebAPI.Infrastructure.AutoMapperResolvers.AttributeCountResolver`2.ResolveCore(`0)">
+            <summary>
+            判断PhyGeoDisaster下面的某一属性是否存在，如果存在则返回True，否则False
+            </summary>
+            <param name="source">当前PhyGeoDisaster</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

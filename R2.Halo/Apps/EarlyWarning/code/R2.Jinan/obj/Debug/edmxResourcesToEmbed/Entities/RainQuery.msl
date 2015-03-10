@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="R2JNRainfailModelStoreContainer" CdmEntityContainer="RainQueryEntities">
+    <EntitySetMapping Name="CollectYbRains">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.CollectYbRain">
+        <MappingFragment StoreEntitySet="CollectYbRain">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="CollectTime" ColumnName="CollectTime" />
+          <ScalarProperty Name="YbRainfall" ColumnName="YbRainfall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FactorWeights">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.FactorWeight">
+        <MappingFragment StoreEntitySet="FactorWeights">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainfallStations">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.RainfallStation">
+        <MappingFragment StoreEntitySet="RainfallStations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+          <ScalarProperty Name="StationAddress" ColumnName="StationAddress" />
+          <ScalarProperty Name="StationProvince" ColumnName="StationProvince" />
+          <ScalarProperty Name="StationCity" ColumnName="StationCity" />
+          <ScalarProperty Name="StationTown" ColumnName="StationTown" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainThresholdValues">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.RainThresholdValue">
+        <MappingFragment StoreEntitySet="RainThresholdValues">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainWarningLevels">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.RainWarningLevel">
+        <MappingFragment StoreEntitySet="RainWarningLevels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LevelName" ColumnName="LevelName" />
+          <ScalarProperty Name="RainThresholdID" ColumnName="RainThresholdID" />
+          <ScalarProperty Name="LowInterval" ColumnName="LowInterval" />
+          <ScalarProperty Name="HighInterval" ColumnName="HighInterval" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YBRain_24hours">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.YBRain_24hours">
+        <MappingFragment StoreEntitySet="YBRain_24hours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="YBMaxHRain" ColumnName="YBMaxHRain" />
+          <ScalarProperty Name="YBSumRain" ColumnName="YBSumRain" />
+          <ScalarProperty Name="YBDate" ColumnName="YBDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YBRain_48hours">
+      <EntityTypeMapping TypeName="R2.JNRainfailModel.YBRain_48hours">
+        <MappingFragment StoreEntitySet="YBRain_48hours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StationId" ColumnName="StationId" />
+          <ScalarProperty Name="YBMaxHRain" ColumnName="YBMaxHRain" />
+          <ScalarProperty Name="YBSumRain" ColumnName="YBSumRain" />
+          <ScalarProperty Name="YBDate" ColumnName="YBDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

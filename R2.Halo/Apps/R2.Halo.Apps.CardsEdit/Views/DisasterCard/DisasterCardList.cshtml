@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "DisasterCardList";
+Layout ="~/Apps/Apps.CardsEdit/Views/Shared/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/BaseInfoEditor.css")" rel="stylesheet" ) />
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/baseInfoCardEditor.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/global/data.js")"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        if ($("#CardType").text() == "workCard") {
+            $("#workCardRadio").attr("checked", "checked");
+        } else {
+            $("#escapeCardRadio").attr("checked", "checked");
+        }
+    })
+</script>
+<div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;">
+    <div class="CardListMain" style="position:absolute; width:100%; top:3px; left:0; bottom:0px; overflow-x:hidden;">
+        <div style="position:absolute;width:103%; height:100%; overflow-y:scroll;">
+            <div style="display: none" id="CardType">@ViewBag.cardType</div>
+
+            <div id="BIT_content">
+                <div id="BIT_Top">
+                    <div id="BIT_SelectBox" style="height: 45px; padding-top: 5px; width: 878px">
+                        <div class="boxline" style="letter-spacing: 1px;">
+                            <div id="bit_srdiv">
+                                <span>关键字:</span>
+                                <input id="txtValue" type="text" value="输入灾害点编号或名称" onfocus='if(value==defaultValue){value=""}' onblur="if(!value) value=defaultValue" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="BIT_SubBut" style="height: 55px; width: 55px;">
+                        <div id="Submit" style="height: 53px; width: 53px; line-height: 52px; margin-top: 0px;">查询</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="LeftTitle">查询结果页面</div>
+                    <div id="Gridview">
+                        @*<div id="header">
+                                <div class="header_class" style="width: 70px;">序号</div>
+                                <div class="header_class" style="width: 160px;">统一编号</div>
+                                <div class="header_class" style="width: 210px;">名称</div>
+                                <div class="header_class" style="width: 200px;">灾害位置</div>
+                                <div class="header_class" style="width: 160px;">监测负责人</div>
+                                <div class="header_class" style="border-right: 1px solid #CAD8E4; width: 143px;">操作</div>
+                            </div>*@
+                        <div id="infodata"></div>
+                        <div class="dataline_Pagemana" style="border: 1px solid #CAD8E4; border-top: none; width: 948px; color: black; padding-top: 10px; margin-bottom: 20px;">
+                            <div class="allPage" style="width: 550px; margin-top: 3px;"></div>
+                            <div class="firstPage" style="margin-top: 3px;">首页</div>
+                            <div class="PrePage" style="margin-top: 3px;">上一页</div>
+                            <div class="nextPage" style="margin-top: 3px;">下一页</div>
+                            <div class="lastPage" style="margin-top: 3px;">尾页</div>
+                            <div class="gotoPage">跳转到&nbsp;<input id="pageIndex" value="" style="width: 40px;" onkeypress="if ((event.keyCode<48 || event.keyCode>57) && event.keyCode!=46) event.returnValue=false;" maxlength="5" />&nbsp;页</div>
+                            <div class="pagesubmit">
+                                <input id="btnGotopage" type="button" style="width: 50px; height: 24px; text-align: center; margin-left: 5px; cursor: pointer; margin-top: -3px;" value="确 定" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //var fullPanel2 = {};
+        //fullPanel2.data = null;
+        //fullPanel2.showByIFrame = function (url) {
+        //    $(".full_Iframe2").attr("src", "");
+        //    $(".CardListMain").stop().animate({ left: "-100%" }, 500);
+        //    $("#fullPanel2").stop().animate({ left: '0' }, 500, function () {
+        //        $(".full_Iframe2").attr("src", url);
+        //    });
+
+        //};
+        //fullPanel2.closeByIFrame = function () {
+        //    $(".full_Iframe2").attr("src", "");
+        //    $("#fullPanel").stop().animate({ left: "0" }, 500);
+        //    $("#fullPanel2").stop().animate({ left: '100%' }, 500, function () {
+        //    });
+        //}
+        //fullPanel2.closeByIFrameGoHome = function () {
+        //    $(".full_Iframe").attr("src", "");
+        //    $(".full_Iframe2").attr("src", "");
+        //    $("#ui_whole").stop().animate({ left: "0" }, 500);
+        //    $("#fullPanel").stop().css("left", "100%");
+        //    $("#fullPanel2").stop().animate({ left: '100%' }, 500, function () {
+        //    });
+        //}
+    </script>
+
+    <div id="fullPanel2" style="position:absolute;left:100%;top:3px;width:100%;height:100%;overflow:hidden;">
+        <iframe class="full_Iframe2" name="full_Iframe2" style="border:none; width:100%;height:100%;" frameborder="0" src="#"></iframe>
+    </div>
+</div>

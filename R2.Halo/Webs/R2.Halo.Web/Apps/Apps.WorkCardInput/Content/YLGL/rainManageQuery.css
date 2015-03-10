@@ -1,0 +1,131 @@
+﻿body {
+
+}
+
+ul {
+    margin:0;
+    padding:0;
+}
+
+ul li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+#ui_left_qrBody {
+    height:100%;
+    width:100%;
+}
+
+#ui_left_qrStateInfo {
+    height:32px;
+    width:99.5%;
+    margin-right:2px;
+    background-color:#DBDBDB;
+    border:1px solid #C0C0C0;
+}
+
+.ui_left_qrStateInfoLitem {
+    margin-left:10px;
+    width:70px;
+    float:left;
+    font-size:14px;
+    line-height:30px;
+}
+
+/*返回*/
+.ui_left_qrStateInfoRitem {
+    margin-top:10px;
+    float:right;
+    margin-right:20px;
+    width:40px;
+    height:13px;
+    cursor:pointer;
+    background:url(../../Content/images/returnback.png)  0 -13px no-repeat;
+}
+
+/*标题*/
+#ui_left_listHead {
+    height:33px;
+    width:99.5%;
+    color:#555555;
+    font-size:14px;
+}
+
+.ui_left_listHeadItem {
+    height:100%;
+    float:left;
+    line-height:30px;
+}
+
+.ui_left_listHeadItemId {
+    margin-left:35px;
+    width:65px;
+    margin-right:10px;
+}
+
+
+/*结果列表内容*/
+#ui_left_listBody {
+    width:99.5%;
+    min-height:500px;
+    max-height:88%;
+    background-color:#F4F4F4;
+    padding-left:5px;
+    overflow:auto;
+}
+
+#ui_left_listBody ul li {
+    width:97%;
+    height:32px;
+    border:1px solid #DADADA;
+    border-radius:1px;
+    margin-bottom:8px;
+    line-height:30px;
+    color:#1C1D1E;
+    cursor:pointer;
+}
+
+#ui_left_listBody ul li:hover {
+    background-color:#E3EBF1;
+}
+
+.ui_left_listBodyUnselect {
+    background-color:#FFFFFF;
+}
+
+.ui_left_listBodySelected {
+    background-color:#E3EBF1;
+}
+
+.ui_left_listItemInfo {
+    float:left;
+    height:100%;
+    color:#303030;
+}
+
+.ui_left_listItemInfoNum {
+    width:30px;
+    text-align:center;
+}
+
+.ui_left_listItemInfoId {
+    width:45px;
+    margin-right:30px;
+}
+
+.ui_left_listItemInfoName,.ui_left_listHeadItemName {
+    width:80px;
+    margin-right:10px;
+}
+
+.ui_left_listItemInfoRegion, .ui_left_listHeadItemRegion {
+    width:60px;
+    margin-right:20px;
+}
+
+.ui_left_listItemInfoSum, .ui_left_listHeadItemSum {
+    width:50px;
+}
+

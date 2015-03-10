@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "基础信息编辑";
+    Layout ="~/Apps/Jn.DbDeleteAndEdit/Views/JnDbDeleteAndEdit/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoEditor.css")" rel="stylesheet" />
+
+@*<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> *@
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/data.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoEditor.js")"></script> 
+
+
+@*<div id="BIT_Editor">基础信息编辑</div>*@
+<div id="BIT_content">
+    <div id="BIT_Top">
+        <div id="BIT_SelectBox">
+            <div class="boxline">
+                <div id="bit_srdiv"><span>关键字:</span><div><input id="txtValue" type="text" value="输入灾害点编号或名称" onfocus='if(value==defaultValue){value=""}'  onblur="if(!value) value=defaultValue" /></div></div>
+                <div id="dangerClassDmtx">
+                    <span>规模等级:</span>
+                            <input type="checkbox" id="xqdjdxDmtxqx" name="xqdjDmtx1" value="全选" class="checkBox1" checked style="cursor:pointer"/><label for="xqdjdxDmtxqx" class="labelSpace4" style="cursor:pointer">全选</label>
+                            <input type="checkbox" id="xqdjxxDmtx" name="xqdjDmtx1" value="小型" class="checkBox1" checked style="cursor:pointer"/><label for="xqdjxxDmtx" class="labelSpace4" style="cursor:pointer">小型</label>
+                            <input type="checkbox" id="xqdjzxDmtx" name="xqdjDmtx1" value="中型" class="checkBox1" checked style="cursor:pointer"/><label for="xqdjzxDmtx" class="labelSpace4" style="cursor:pointer">中型</label>
+			                <input type="checkbox" id="xqdjdxDmtx" name="xqdjDmtx1" value="大型" class="checkBox1" checked style="cursor:pointer"/><label for="xqdjdxDmtx" class="labelSpace4" style="cursor:pointer">大型</label>
+                            <input type="checkbox" id="xqdjtdxDmtx" name="xqdjDmtx1" value="特大型" class="checkBox1" checked style="cursor:pointer"/><label for="xqdjtdxDmtx" class="labelSpace4" style="cursor:pointer">特大型</label>
+                </div>
+                </div>
+            <div id="bit_zhxl" class="boxline">
+                 <span>灾害类型:</span>
+                            <input type="checkbox" id="xqdjtdxDmtxqx" name="xqdjDmtx2" value="全选" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjtdxDmtxqx" class="labelSpace4" style="cursor:pointer">全选</label>
+                            <input type="checkbox" id="xqdjxxDmtxhp" name="xqdjDmtx2" value="滑坡" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjxxDmtxhp" class="labelSpace4" style="cursor:pointer">滑坡</label>
+			                <input type="checkbox" id="xqdjdxDmtxbt" name="xqdjDmtx2" value="崩塌" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjdxDmtxbt" class="labelSpace4" style="cursor:pointer">崩塌</label>
+                            <input type="checkbox" id="xqdjtdxDmtxnsl" name="xqdjDmtx2" value="泥石流" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjtdxDmtxnsl" class="labelSpace4" style="cursor:pointer">泥石流</label>
+                            <input type="checkbox" id="xqdjzxDmtxdmtx" name="xqdjDmtx2" value="地面塌陷" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjzxDmtxdmtx" class="labelSpace4" style="cursor:pointer">地面塌陷</label>
+			                @*<input type="checkbox" id="xqdjdxDmtxdmcj" name="xqdjDmtx2" value="地面沉降" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjdxDmtxdmcj" class="labelSpace4" style="cursor:pointer">地面沉降</label>*@
+                            <input type="checkbox" id="xqdjtdxDmtxdlf" name="xqdjDmtx2" value="地裂缝" class="checkBox2" checked style="cursor:pointer"/><label for="xqdjtdxDmtxdlf" class="labelSpace4" style="cursor:pointer">地裂缝</label>
+                            
+            </div>
+        </div>
+        <div id="BIT_SubBut">
+            <div id="Submit">查询</div>
+        </div>
+
+    </div>
+    <div>
+        <div class="LeftTitle">查询结果页面</div>
+        <div id="Gridview">
+            <div id="header">
+                <div class="header_class" style=" width:50px;">序号</div>
+                <div class="header_class" style=" width:130px;">统一编号</div>
+                <div class="header_class" style=" width:240px;">名称</div>
+                <div class="header_class" style=" width:240px;">发生地点</div>
+                <div class="header_class" style=" width:140px;">灾害类型</div>
+                <div class="header_class" style="border-right:1px solid #CAD8E4;width:143px;">操作</div>
+            </div>
+            <div id="infodata">
+
+            @*<div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">1</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>
+
+            <div class="dataline">
+                <div class="dataline_class" style=" width:50px;">2</div>
+                <div class="dataline_class" style=" width:170px;">370102020003</div>
+                <div class="dataline_class" style=" width:200px;"> 济南市**县**区</div>
+                <div class="dataline_class" style=" width:240px;">济南市**县**区</div>
+                <div class="dataline_class" style=" width:140px;">危险斜坡</div>
+                <div class="dataline_class" style="border-right:1px solid #CAD8E4;width:143px;">
+                    <div class="btndelete">删除</div>
+                    <div class="btneditor"><a href="#" style="text-decoration:none;">编辑</a></div>
+                </div>
+            </div>*@
+
+            </div>
+
+            <div class="dataline_Pagemana" style=" border:1px solid #CAD8E4; border-top:none; width:948px;color:black; padding-top:10px;margin-bottom:20px;">
+                 <div  class="allPage"></div>
+                <div class="firstPage">首页</div>
+                <div class="PrePage">上一页</div>
+                <div class="currentPage"></div>
+                <div class="nextPage">下一页</div>
+                <div class="lastPage">尾页</div>
+                <div class="gotoPage">跳转到&nbsp;<input id="pageIndex" value=""  style="width:40px;"  onkeypress="if ((event.keyCode<48 || event.keyCode>57) && event.keyCode!=46) event.returnValue=false;" MaxLength="5" />&nbsp;页</div>
+                <div class="pagesubmit"><input id="btnGotopage" type="button" style="width:40px;"  value="确定"/></div>
+            </div>
+
+
+        </div>
+
+       @* <div id="pageMana">
+            <div  class="allPage">共查询到1100条数据</div>
+            <div class="firstPage">首页</div>
+            <div class="PrePage">上一页</div>
+            <div class="currentPage">1/62</div>
+            <div class="nextPage">下一页</div>
+            <div class="lastPage">尾页</div>
+            <div class="gotoPage">跳转到<input id="pageIndex" value=""  style="width:40px;"/>页</div>
+            <div class="pagesubmit"><input type="button" style="width:40px;"  value="确定"/></div>
+        </div>*@
+
+
+    </div>
+</div>
+ 
+

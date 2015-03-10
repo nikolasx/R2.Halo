@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A35EEB0E-144A-4C26-8A86-BD316A5A654F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>R2.Disaster.CoreEntities</RootNamespace>
+    <AssemblyName>R2.Disaster.CoreEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\WebAPI\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\R2.Disaster.CoreEntities.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\GeoDisaster\ControlSystem\Relocation.cs" />
+    <Compile Include="Domain\GeoDisaster\Emergency\EmergencySurveyReport.cs" />
+    <Compile Include="Domain\GeoDisaster\GeoDisasterEntity.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\Comprehensive.cs" />
+    <Compile Include="Domain\GeoDisaster\Emergency\DamageReport.cs" />
+    <Compile Include="Domain\GeoDisaster\Emergency\EmergencySurvey.cs" />
+    <Compile Include="Domain\GeoDisaster\EnumGeoDisasterType.cs" />
+    <Compile Include="Domain\GeoDisaster\GBCode.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\LandSlip.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\DebrisFlow.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\LandSubsidence.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\Slope.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\LandFracture.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\LandSlide.cs" />
+    <Compile Include="Domain\GeoDisaster\Investigation\LandCollapse.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\MassPatrol.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\MassPre.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\MonthlyReport.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\PrePlan.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\WorkingGuideCard.cs" />
+    <Compile Include="Domain\GeoDisaster\MassPres\AvoidRiskCard.cs" />
+    <Compile Include="Domain\MineRecovery\MineArchive.cs" />
+    <Compile Include="Domain\MineRecovery\MineEnvironmentSurvey.cs" />
+    <Compile Include="Domain\MineRecovery\MineRemoteSensingCard.cs" />
+    <Compile Include="Domain\GeoDisaster\PhyRelationEntity.cs" />
+    <Compile Include="Domain\GeoDisaster\PotentialThreats\Threat.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationComprehensive.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationDebrisFlow.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationDebrisFlowCheck.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandCollapse.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandCollapseCheck.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandFracture.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandSlide.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandSlideCheck.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandSlip.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandSlipCheck.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationLandSubsidence.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationPlaceEvaluation.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationSlope.cs" />
+    <Compile Include="Domain\GeoDisaster\Relocation\RelocationSlopeCheck.cs" />
+    <Compile Include="Domain\Monitor\ForecastRainfall.cs" />
+    <Compile Include="Domain\Monitor\Rainfall.cs" />
+    <Compile Include="Domain\Monitor\RainfallStation.cs" />
+    <Compile Include="Domain\GeoDisaster\PhyGeoDisaster.cs" />
+    <Compile Include="SampleData\Book.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData\Category.cs" />
+    <Compile Include="SampleData\Computer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="- 2013.xls" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

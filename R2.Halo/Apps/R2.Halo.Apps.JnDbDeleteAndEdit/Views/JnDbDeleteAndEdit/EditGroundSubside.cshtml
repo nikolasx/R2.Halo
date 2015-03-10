@@ -1,0 +1,899 @@
+﻿@{
+    ViewBag.Title = "基础信息编辑";
+Layout ="~/Apps/Jn.DbDeleteAndEdit/Views/JnDbDeleteAndEdit/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoType_in.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/baseinvestigatequeryresult.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoFun_Img.css")" rel="stylesheet") />
+
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.MultiFile.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.form.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/base.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/EditGroundSubside.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/judgeFunc.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoEditorFun.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/data.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoVideoFun.js")"></script>
+
+@*<div id="BIT_head">基本信息的编辑</div>*@
+<div id="BIT_ContentDiv">
+  
+    <div id="BIT_right" style="float:none;">
+        <div id="BIT_right_head">
+            <input type="hidden" value="@ViewBag.groundSubsideId" id="groundSubsideId"/>
+           @* <span>基本信息编辑</span>*@
+            <div class="BIT_right_img" id="BIT_right_img_Return"></div>
+            <div class="BIT_right_img" id="BIT_right_img_UpdateCollapse"></div>
+
+            <div class="importwarn" style="margin-left:35px;">注：橙色字段为必填信息，请填写完整。</div>
+        </div>
+         <div class="BIT_right_disaType4 BIT_right_disaType" style="display:block;">
+             <div class="BIT_right_neck">
+                <div class="BIT_right_neck_cell" style="color: #33699C;">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面塌陷基本信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面塌陷发育特征</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面塌陷形成条件</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面塌陷图形信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面塌陷照片管理</span>
+                </div>
+            </div>  
+
+                
+
+            <div class="BIT_right_table" style="display: block;">
+                <div class="info visible" id="basicDmtx" style=" margin: 0 auto; font-size:12px;height:92%;overflow:auto; ">
+                    <ul style=" height:1053px;" >
+                        <li class="title"><div class="biTianTitle" style="color: #fc7d3f;">名称</div></li><li class="contentII"><div id="nameDmtx"><input class="biTianCon" type="text" id="nameDmtxInput"/></div></li>
+                        @*<li class="title"><div>统一编号</div></li><li class="contentII"><div  id="uNubDmtx"><input type="text" id="uNubDmtxInput"/></div></li>*@
+                        <li class="title"><div class="biTianTitle" style="color: #fc7d3f;">统一编号</div></li><li class="contentII"><div  id="uNubDmtx"><label id="uNubFastenDmtxInput"  class="noChangeInput uNubFastenInput" style="width:60px; color:#666; padding-right:2px; float:left;">37010104</label><input class="biTianCon" type="text" id="uNubAgileDmtxInput" disabled="disabled" style="float:left;display:inline;width:150px;text-align:left;border-bottom:1px solid red;color:#FC7D3F;" value="请输入4位数字组成统一编号" onfocus="if(value==defaultValue){value=''}"  onblur="if(!value)value=defaultValue"/></div></li>
+                        <li class="title"><div>野外编号</div></li><li class="contentII"><div id="fNubDmtx"><input type="text" id="fNubDmtxInput"/></div></li>
+                        <li class="title"><div>室内编号</div></li><li class="contentII"><div id="rNubDmtx"><input type="text" id="rNubDmtxInput"/></div></li>
+                        <li class="title"><div>省&nbsp;&nbsp;&nbsp;&nbsp;名</div></li><li class="contentII"><div  id="provinceDmtx" style="color:#666">山东省</div></li>
+                       <li class="title"><div class="biTianTitle" style="color: #fc7d3f;">县&nbsp;&nbsp;&nbsp;&nbsp;名</div></li><li class="contentII"><div  id="countyDmtx">
+                       <select class="noChangeInput xianming" id="countyDmtxInput" style="width:320px; border:none; height:26px;" disabled="disabled">
+                            <option value="370101">市辖区</option>
+                            <option value="370188">高新区</option>
+                            <option value="370102">历下区</option>
+                            <option value="370103">市中区</option>
+                            <option value="370104">槐荫区</option>
+                            <option value="370105">天桥区</option>
+                            <option value="370112">历城区</option>
+                            <option value="370113">长清区</option>
+                            <option value="370124">平阴县</option>
+                            <option value="370125">济阳县</option>
+                            <option value="370126">商河县</option>
+                            <option value="370181">章丘市</option>
+                       </select></div></li>
+                       <li class="title"><div>街&nbsp;&nbsp;&nbsp;&nbsp;道</div></li><li class="contentI">
+                       <div  id="streetDmtx">@*<input type="text" id="streetDmtxInput" style="width:782px;"/>*@
+                        <input class="country" id="streetDmtxInput" style="width:250px; border:none;"/>
+                       </div></li> 
+                        <!--------------------------------------------地理位置---------------------------------------------------------------------->
+                        <li class="title" style=" height:122px;" >
+                         <div style=" width:133px;">
+                            <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height: 122px; float:left;">地<br/>理<br/>位<br/>置</div>
+                            <div class="geoLocations biTianTitle" style=" height:30px; width:102px; color:#fc7d3f">发生地点</div>
+                            <div class="geoLocations" style=" height:60px; width:102px;">
+                                        <div style="width:50px; border-right:1px solid #CAD8E4; text-align:center; float:left;">坐标<br/>(m)</div> 
+                                        <div class="geoLocations" style=" height:30px; width:51px;">X</div>
+                                        <div style=" height:30px; width:51px; text-align:center; float:left;">Y</div>
+                                </div>
+                                <div class="biTianTitle" style=" height:30px; width:102px; float:left; text-align:center; color:#fc7d3f">经度</div>
+                         </div>
+                         </li>
+
+                        <li class="contentI" style=" height:122px; padding-left:0; width:795px;">
+                        <div>
+                            <div id="locationDmtx" style=" height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;"><input type="text" id="locationDmtxInput" style="width:785px;"/></div>
+                            <div class="coordi">
+                                <div class="coordelev" id="xCoordinateDmtx" style="border-bottom:1px solid #CAD8E4;"><input type="text" id="xCoordinateDmtxInput" style="width:317px;"/></div>
+                                <div class="coordelev" id="yCoordinateDmtx" ><input type="text" id="yCoordinateDmtxInput" style="width:317px; height:25px"/></div>
+                            </div>
+            
+                                <div style=" height:60px; margin-left:0; border-bottom:1px solid #CAD8E4; width:464px; float:left;">
+                                    <div style=" width:133px; height:60px; line-height:60px; border-right:1px solid #CAD8E4; float:left; background-color:#F4F8FB;  text-align:center;"> 标高(m)</div>
+                                    <div class="coordelev" id="biaogaoDmtx" style=" height:60px; line-height:60px; margin-top:0;"><input type="text" id="combDmtxInput" style="width:317px;"/></div>
+                                </div>
+            
+                            <div>
+                                <!--lyj-->
+                                @*<div class="coordelev" id="longitudeDmtx" style=" margin-top:0; border-right:1px solid #CAD8E4;"><input class="biTianCon" type="text" id="longitudeDmtxInput" style="width:317px;"/></div>*@
+                                <div class="coordelev" id="longitudeDmtx" style=" margin-top:0; border-right:1px solid #CAD8E4;">
+                                    <div class="coastZWIII" id="lonDUDmtx" style="width:65px;padding-left:5px;border:none;"><input class="biTianCon" type="text" id="lonDUDmtxInput" style="width:50px; margin-left:10px; padding-right:5px; text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">°</div>
+                                    <div class="coastZWIII" id="lonFenDmtx" style="width:66px;border:none;"><input class="biTianCon" type="text" id="lonFenDmtxInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">′</div>
+                                    <div class="coastZWIII" id="lonMiaoDmtx" style="width:66px;border:none;"><input class="biTianCon" type="text" id="lonMiaoDmtxInput" style="width:50px;padding-right:5px; text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">″</div>
+                                </div>
+                                <!--end-->
+                                <div class="latValue biTianTitle" style="color: #fc7d3f;">纬度</div>
+                                <!--lyj-->
+                                @*<div class="coordelev" id="latitudeDmtx" style="margin-top:0;"><input class="biTianCon" type="text" id="latitudeDmtxInput" style="width:317px;"/></div>*@
+                                <div class="coordelev" id="latitudeDmtx" style="margin-top:0;">
+                                    <div class="coastZWIII" id="latDUDmtx" style="width:65px;padding-left:5px;border:none;"><input class="biTianCon" type="text" id="latDUDmtxInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">°</div>
+                                    <div class="coastZWIII" id="latFenDmtx" style="width:66px;border:none;"><input class="biTianCon" type="text" id="latFenDmtxInput" style="width:50px;padding-right:5px;  text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">′</div>
+                                    <div class="coastZWIII" id="latMiaoDmtx" style="width:66px;border:none;"><input class="biTianCon" type="text" id="latMiaoDmtxInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                                    <div class="coastZWIII" style="width:7px;border-right:none;">″</div>
+                                </div>
+                                <!--end-->
+                            </div>
+                        </div>
+                        </li>
+                        <!-----------------------------------------------其它------------------------------------------------------------------------>
+                        <li class="title"><div>塌陷区地貌特征</div></li>
+                        <li class="contentI"><div id="landformFeatureDmtx">
+                            <div id="landformFeatureDmtxCon" style="display:none;"></div>
+                            <input id="pydmtx" type="checkbox" value="平原"/><label class="labelSpace4">平原</label><input id="sjaddmtx" type="checkbox" value="山间凹地" /><label class="labelSpace4">山间凹地</label>
+                            <input id="hbjddmtx" type="checkbox" value="河边阶地" /><label class="labelSpace4">河边阶地</label><input id="spdmtx" type="checkbox" value="山坡" /><label class="labelSpace4">山坡</label>
+                            <input id="sddmtx" type="checkbox" value="山顶" /><label class="labelSpace4">山顶</label>
+                        </div></li>
+                          <!--------------------防治情况----------------->
+                         <li class="title" style=" height:61px;" >
+                         <div style=" width:133px;">
+                            <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height: 61px; float:left;">防治<br/>情况</div>
+                                <div style=" height:30px; width:102px; float:left; text-align:center;border-bottom:1px solid #CAD8E4;">防治措施及效果</div>
+                                <div style=" height:30px; width:102px; float:left; text-align:center;">防治建议</div>
+                         </div>
+                         </li>
+                           <li class="contentI" style=" height:61px; padding-left:0; width:795px;">
+                            <div id="precsandEffectDmtx" style="height:30px;width:787px; padding-left:8px;margin-top:0;border-bottom:1px solid #CAD8E4;"><input type="text" id="precsandEffectDmtxInput" style="width:782px;"/></div>
+                            <div id="preAdviceDmtx" style=" height:30px;margin-top:0; width:787px;padding-left:8px;"><input type="text" id="preAdviceDmtxInput" style="width:782px;"/></div>
+                         </li>
+                       <li class="title" style=" height:495px; text-align:center;" >
+                            <div style="height: 355px;width:30px;border-right:1px solid #CAD8E4;float:left;padding-top:140px;">灾<br />害<br />情<br />况</div>
+                            <div style="height: 496px;width:30px;border-right:1px solid #CAD8E4;float:left;">
+                                <div style="height: 200px;padding-top:140px;width:30px;border-bottom:1px solid #CAD8E4;">已有灾害损失</div>
+                                <div style="height:133px;padding-top:22px;width:30px;float:left;">潜在灾害预测</div>
+                            </div>
+            
+                            <div style="height: 30px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">死亡人口(人)</div>
+                            <div style="height: 30px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">毁田(亩)</div>
+                            <div style="height: 30px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">阻断交通</div>
+                            <div style="height: 30px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">灾情等级</div>
+                            <div style="height: 61px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">地下<br />井巷突水</div>
+                            <div style="height: 104px;padding-top:50px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">地面水源<br />枯竭</div>
+            
+                            <div style="height: 61px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">陷坑发展<br />预测</div>
+                            <div style="height: 61px;width:71px;border-bottom:1px solid #CAD8E4;float:left;">潜在损害<br />预测</div>
+                            <div style="height: 30px;width:71px;float:left;">险情等级</div>
+                         </li>
+                         <li class="contentII"><div id="dieNumDmtx"><input type="text" id="dieNumDmtxInput" style="width:317px;"/></div></li>
+                         <li class="title"><div>直接损失(万元)</div></li><li class="contentII"><div  id="directLossDmtx"><input type="text" id="directLossDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="damageFormDmtx"><input type="text" id="damageFormDmtxInput" style="width:317px;"/></div></li>
+                         <li class="title"><div>毁&nbsp;&nbsp;&nbsp;&nbsp;房(间)</div></li><li class="contentII"><div  id="damageHouseDmtx"><input type="text" id="damageHouseDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="jamTrafficDmtx">
+                            <div id="jamTrafficDmtxCon" style="display:none;"></div>
+                            <input id="railwayJamTraffic" type="checkbox" value="铁路" /><label class="labelSpace4">铁路</label>
+                            <input id="highwayJamTraffic" type="checkbox" value="公路" /><label class="labelSpace4">公路</label>
+                            <input id="communicationJamTraffic" type="checkbox" value="通讯" /><label class="labelSpace4">通讯</label>
+                         </div></li>
+                         <li class="title"><div>阻断交通时间(小时)</div></li><li class="contentII"><div  id="jamTrafficTimeDmtx"><input type="text" id="jamTrafficTimeDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="damageClassDmtx">
+                            <input type="radio" id="zqdjxxDmtx" name="zqdjDmtx" value="小型"/><label class="labelSpace4">小型</label>
+                            <input type="radio" id="zqdjzxDmtx" name="zqdjDmtx" value="中型"/><label class="labelSpace4">中型</label>
+			                <input type="radio" id="zqdjdxDmtx" name="zqdjDmtx" value="大型"/><label class="labelSpace4">大型</label>
+                            <input type="radio" id="zqdjtdxDmtx" name="zqdjDmtx" value="特大型"/><label class="labelSpace4">特大型</label>
+                         </div></li>
+                         <li class="title"><div>淹埋地面物资</div></li><li class="contentII"><div  id="buryregionGoodsDmtx"><input type="text" id="buryregionGoodsDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="dxjxtsDmtx">
+                            <div id="dxjxtsDmtxCon" style="display:none;"></div>
+                            <input id="waterIncreaseDmtx" type="checkbox" value="水量增大"/><label class="labelSpace4">水量增大</label>
+                         </div></li>
+                         <li class="title"><div>水量增大量(m³/S)</div></li><li class="contentII"><div  id="waterIncreaseVolumeDmtx"><input type="text" id="waterIncreaseVolumeDmtxInput" style="width:317px;"/></div></li>
+                        <li class="contentI">
+                            <input id="disasterOrLossDmtx" type="checkbox" value="成灾，损失"/><label class="labelSpace4">成灾，损失</label>
+                            <input id="yanjingLossDmtx" type="checkbox" value="淹井损失"/><label class="labelSpace4">淹井损失</label>
+                        </li>
+                        <li class="contentII"><div id="floorWaterDrainDmtx">
+                            <div id="floorWaterDrainDmtxCon" style="display:none;"></div>
+                            <input id="rainFlowDecreaseDmtx" type="checkbox" value="河水流量减少"/><label class="labelSpace4">河水流量减少</label>
+                         </div></li>
+                         <li class="title"><div>河水流量减少量(m³/S)</div></li><li class="contentII"><div  id="rainFlowDecreaseVolumeDmtx"><input type="text" id="rainFlowDecreaseVolumeDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="cutoffDmtx">
+                            <input id="cutoffDmtxCon" type="checkbox" value="断流"/><label class="labelSpace4">断流</label>
+                         </div></li>
+                         <li class="title"><div>断&nbsp;流&nbsp;量(m³/S)</div></li><li class="contentII"><div  id="cutoffVolumeDmtx"><input type="text" id="cutoffVolumeDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="springDecreaseDmtx">
+                            <input id="springDecreaseDmtxCon" type="checkbox" value="井泉水流量减少"/><label class="labelSpace4">井泉水流量减少</label>
+                         </div></li>
+                         <li class="title"><div>井泉水流量减少量(m³/S)</div></li><li class="contentII"><div  id="springDecreaseVolumeDmtx"><input type="text" id="springDecreaseVolumeDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentII"><div id="waterLevelDecreaseDmtx">
+                            <input id="waterLevelDecreaseDmtxCon" type="checkbox" value="水位降低"/><label class="labelSpace4">水位降低</label>
+                         </div></li>
+                         <li class="title"><div>水位降低深度(m)</div></li><li class="contentII"><div  id="waterLevelDecreaseDepthDmtx"><input type="text" id="waterLevelDecreaseDepthDmtxInput" style="width:317px;"/></div></li>
+                         <li class="contentI">
+                            <input id="driedup" type="checkbox" value="干枯"/><label class="labelSpace4">干枯</label>
+                        </li>
+
+                        <li >
+                                <div >
+                                    <div class="coastT" style="width:158px; ">新增陷坑(个)</div>
+                                    <div class="coastT" style="width:158px; ">扩大陷区(K㎡)</div>
+                                    <div class="coastT" style="width:158px; ">出现新陷区(处)</div>
+                                    <div class="coastT" style="width:217px; ">面积(K㎡)</div>
+                                    <div class="coastT" style="width:100px;border-right:none; ">威胁人口（人）</div>
+                               </div>
+                        </li>
+                         <li >
+                                <div >
+                                    <div class="coastZWI" style="width:153px;padding-left:5px; "><input type="text" id="xzxkgsDmtxInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:153px; padding-left:5px;"><input type="text" id="kdxqmjDmtzInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:153px;padding-left:5px; "><input type="text" id="cxxxqcsDmtxInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:212px;padding-left:5px; "><input type="text" id="mjDmtxInput" style="width:210px;"/></div>
+                                    <div class="coastZWI" style="width:95px;padding-left:5px;border-right:none; "><input type="text" id="wxrkDmtxInput" style="width:93px;"/></div>
+                               </div>
+                        </li>
+                        <li >
+                                <div >
+                                    <div class="coastT" style="width:158px; ">毁田(亩)</div>
+                                    <div class="coastT" style="width:158px; ">毁房(间)</div>
+                                    <div class="coastT" style="width:158px; ">断路(小时)</div>
+                                    <div class="coastT" style="width:217px; ">其&nbsp;&nbsp;&nbsp;&nbsp;它</div>
+                                    <div class="coastT" style="width:100px;border-right:none; ">威胁财产(万元)</div>
+                               </div>
+                        </li>
+                        <li >
+                                <div >
+                                    <div class="coastZWI" style="width:153px;padding-left:5px; "><input type="text" id="htmsDmtxInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:153px;padding-left:5px;"><input type="text" id="hfjsDmtxInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:153px;padding-left:5px; "><input type="text" id="dlxssDmtxInput" style="width:151px;"/></div>
+                                    <div class="coastZWI" style="width:212px;padding-left:5px; "><input type="text" id="otherwhDmtxInput" style="width:210px;"/></div>
+                                    <div class="coastZWI" style="width:95px;padding-left:5px;border-right:none; "><input type="text" id="wxccDmtxInput" style="width:93px;"/></div>
+                               </div>
+                        </li>
+                       <li class="contentI"><div id="dangerClassDmtx">
+                            <input type="radio" id="xqdjxxDmtx" name="xqdjDmtx" value="小型"/><label class="labelSpace4">小型</label>
+                            <input type="radio" id="xqdjzxDmtx" name="xqdjDmtx" value="中型"/><label class="labelSpace4">中型</label>
+			                <input type="radio" id="xqdjdxDmtx" name="xqdjDmtx" value="大型"/><label class="labelSpace4">大型</label>
+                            <input type="radio" id="xqdjtdxDmtx" name="xqdjDmtx" value="特大型"/><label class="labelSpace4">特大型</label>
+                       </div></li>
+                       <li class="title"><div>地面塌陷情况</div></li><li class="contentI"><div  id="dmtxqingkuangDmtx"><input type="text" id="dmtxqingkuangDmtxInput" style="width:782px;"/></div></li> 
+       
+                        <li class="title"><div>隐&nbsp;患&nbsp;点</div></li>
+                       <li class="contentII"><div  id="dangerpointerDmtx">
+                            <div id="dangerpointerDmtxCon" style="display:none;"></div>
+                            <input id="havedpointDmtx" type="radio" name="yhddmtx" value="true"/><label class="labelSpace4">有&nbsp;&nbsp;</label><input  id="nodpointDmtx" type="radio" name="yhddmtx" value="false"/><label class="labelSpace4">无</label>
+                       </div></li>
+                       <li class="title"><div>防灾预案</div></li>
+                       <li class="contentII"><div  id="pdPlanDmtx">
+                            <div id="pdPlanDmtxCon" style="display:none;"></div>
+                            <input id="havepdplanDmtx" type="radio" name="fzyadmtx" value="true"/><label class="labelSpace4">有&nbsp;&nbsp;</label><input id="nopdplanDmtx" type="radio" name="fzyadmtx" value="false" /><label class="labelSpace4">无</label>
+                       </div></li>
+                       <li class="title"><div>多&nbsp;媒&nbsp;体</div></li>
+                       <li class="contentII"><div  id="mediaDmtx">
+                            <div id="mediaDmtxCon" style="display:none;"></div>
+                            <input id="havemediaDmtx" type="radio" name="dmtdmtx" value="true"/><label class="labelSpace4">有&nbsp;&nbsp;</label><input id="nomediaDmtx" type="radio" name="dmtdmtx" value="false" /><label class="labelSpace4">无</label>
+                       </div></li>
+                       <li class="title"><div>群测人员</div></li><li class="contentII"><div  id="gmPersonDmtx"><input type="text" id="gmPersonDmtxInput"/></div></li>
+                       <li class="title"><div>村&nbsp;&nbsp;&nbsp;&nbsp;长</div></li><li class="contentII"><div  id="vHeadDmtx"><input type="text" id="vHeadDmtxInput" /></div></li>
+                       <li class="title"><div>电&nbsp;&nbsp;&nbsp;&nbsp;话</div></li><li class="contentII"><div  id="phoneDmtx"><input type="text" id="phoneDmtxInput"/></div></li>
+      
+                        <li class="title"><div>调查负责人</div></li><li class="contentII"><div  id="investiPersonDmtx"><input type="text" id="investiPersonDmtxInput"/></div></li>
+                        <li class="title"><div>审&nbsp;核&nbsp;人</div></li><li class="contentII"><div  id="auditDmtx"><input type="text" id="auditDmtxInput"/></div></li>
+                        <li class="title"><div>填&nbsp;表&nbsp;人</div></li><li class="contentII"><div  id="fillerDmtx"><input type="text" id="fillerDmtxInput"/></div></li>
+                         <li class="title"><div>填表日期</div></li><li class="contentII"><div  id="dateDmtx"><input type="text" id="dateDmtxInput"/></div></li>
+                        <li class="title"><div>调查单位</div></li><li class="contentI"><div  id="investiUnitDmtx"><input type="text" id="investiUnitDmtxInput" style="width:782px;"/></div></li>
+        
+                    </ul>
+ </div>
+            </div>   
+            <div class="BIT_right_table" style="display: none;">
+                <!----------------------------------------------地面塌陷发育特征开始div----------------------------------------------------->
+             <div class="info visible" style=" margin: 0 auto; font-size:12px;height:92%;overflow:auto; ">
+                <ul style=" height:682px; width:929px" >
+             <!----------------------------------------------发育特征------------------------->
+                      <li class="title" style=" height:682px; text-align:center;  width:30px;" >
+                        <div style="height: 265px; padding-top:240px;">发<br />育<br />特<br />征</div></li>
+                    <li class="contentI" style=" height:682px; padding-left:0; width:897px;">
+                    <div>
+                    <!--------------陷坑单体----------->
+                        <div style="border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;margin-top:0; float:left; width:897px;height:248px;">
+                            <div class="coast" style="width:102px; height:248px; line-height:248px;">陷坑单体</div>
+                            <div >
+                                <div class="coastT" style="width:120px; ">坑号</div>
+                                <div class="coastT" style="width:145px; ">形状</div>
+                                <div class="coastT" style="width:120px; ">坑口规模(㎡)</div>
+                                <div class="coastT" style="width:130px; ">深度(m)</div>
+                                <div class="coastT" style="width:120px; ">变形面积(㎡)</div>
+                                <div class="coastT" style="width:154px;border-right:none; ">规模等级</div>
+                            </div>
+                            <div>
+                                <div class="coastZWI" id="dfkenghaoOnedmtx" style="width:120px;"><input type="text" id="dfkenghaoOnedmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                @*<div class="coastZWI" id="dfxingzhuangOnedmtx" style="width:145px;"><input type="text" id="dfxingzhuangOnedmtxInput" style="width:135px;"/></div>*@
+                                <div class="coastZWI" id="dfxingzhuangOnedmtx" style="width:145px;">
+                                    <input id="yuanxone" type="radio" name="xkdtxzone" value="圆形" /><label class="labelSpace2" for="yuanxone">圆形</label>
+                                    <input id="fangxone" type="radio" name="xkdtxzone" value="方形" /><label class="labelSpace2" for="fangxone">方形</label>
+                                    <input id="juxone" type="radio" name="xkdtxzone" value="矩形" /><label class="labelSpace2" for="juxone">矩形</label>
+                                </div>
+                                <!--end-->
+                                <div class="coastZWI" id="dfkkgmOnedmtx" style="width:120px;"><input type="text" id="dfkkgmOnedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfshenduOnedmtx" style="width:130px;"><input type="text" id="dfshenduOnedmtxInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="dfbxmjOnedmtx" style="width:120px;"><input type="text" id="dfbxmjOnedmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dfgmdjOnedmtx" style="width:154px;border-right:none;">@*<input type="text" id="dfgmdjOnedmtxInput" style="width:144px;"/>*@
+                                    <select id="dfgmdjOnedmtxInput" style="border:none;width:150px;">
+                                        <option value=""></option>
+                                        <option value="小型">小型</option>
+                                        <option value="中型">中型</option>
+                                        <option value="大型">大型</option>
+                                        <option value="特大型">特大型</option>
+                                    </select>
+                                </div>
+                                <!--end-->
+                             </div>
+                             <div>
+                                <div class="coastZWI" id="dfkenghaoTwodmtx" style="width:120px;"><input type="text" id="dfkenghaoTwodmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                @*<div class="coastZWI" id="dfxingzhuangTwodmtx" style="width:145px;"><input type="text" id="dfxingzhuangTwodmtxInput" style="width:135px;"/></div>*@
+                                <div class="coastZWI" id="dfxingzhuangTwodmtx" style="width:145px;">
+                                    <input id="yuanxtwo" type="radio" name="xkdtxztwo" value="圆形" /><label class="labelSpace2" for="yuanxtwo">圆形</label>
+                                    <input id="fangxtwo" type="radio" name="xkdtxztwo" value="方形" /><label class="labelSpace2" for="fangxtwo">方形</label>
+                                    <input id="juxtwo" type="radio" name="xkdtxztwo" value="矩形" /><label class="labelSpace2" for="juxtwo">矩形</label>
+                                </div>
+                                <!--end-->
+                                <div class="coastZWI" id="dfkkgmTwodmtx" style="width:120px;"><input type="text" id="dfkkgmTwodmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfshenduTwodmtx" style="width:130px;"><input type="text" id="dfshenduTwodmtxInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="dfbxmjTwodmtx" style="width:120px;"><input type="text" id="dfbxmjTwodmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dfgmdjTwodmtx" style="width:154px;border-right:none;">@*<input type="text" id="dfgmdjTwodmtxInput" style="width:144px;"/>*@
+                                    <select id="dfgmdjTwodmtxInput" style="border:none;width:150px;">
+                                        <option value=""></option>
+                                        <option value="小型">小型</option>
+                                        <option value="中型">中型</option>
+                                        <option value="大型">大型</option>
+                                        <option value="特大型">特大型</option>
+                                    </select>
+                                </div>
+                                <!--end-->
+                             </div>
+                             <div>
+                                <div class="coastZWI" id="dfkenghaoThreedmtx" style="width:120px;"><input type="text" id="dfkenghaoThreedmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                @*<div class="coastZWI" id="dfxingzhuangThreedmtx" style="width:145px;"><input type="text" id="dfxingzhuangThreedmtxInput" style="width:135px;"/></div>*@
+                                <div class="coastZWI" id="dfxingzhuangThreedmtx" style="width:145px;">
+                                    <input id="yuanxthree" type="radio" name="xkdtxzthree" value="圆形" /><label class="labelSpace2" for="yuanxthree">圆形</label>
+                                    <input id="fangxthree" type="radio" name="xkdtxzthree" value="方形" /><label class="labelSpace2" for="fangxthree">方形</label>
+                                    <input id="juxthree" type="radio" name="xkdtxzthree" value="矩形" /><label class="labelSpace2" for="juxthree">矩形</label>
+                                </div>
+                                <!--end-->
+                                <div class="coastZWI" id="dfkkgmThreedmtx" style="width:120px;"><input type="text" id="dfkkgmThreedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfshenduThreedmtx" style="width:130px;"><input type="text" id="dfshenduThreedmtxInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="dfbxmjThreedmtx" style="width:120px;"><input type="text" id="dfbxmjThreedmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dfgmdjThreedmtx" style="width:154px;border-right:none;">@*<input type="text" id="dfgmdjThreedmtxInput" style="width:144px;"/>*@
+                                    <select id="dfgmdjThreedmtxInput" style="border:none;width:150px;">
+                                        <option value=""></option>
+                                        <option value="小型">小型</option>
+                                        <option value="中型">中型</option>
+                                        <option value="大型">大型</option>
+                                        <option value="特大型">特大型</option>
+                                    </select>
+                                </div>
+                                <!--end-->
+                             </div>
+                            <div >
+                                <div class="coastT" style="width:120px; ">长轴方向</div>
+                                <div class="coastT" style="width:145px; ">充水水位深(m)</div>
+                                <div class="coastT" style="width:120px; ">水位变动(m)</div>
+                                <div class="coastT" style="width:130px; ">发生时间</div>
+                                <div class="coastT" style="width:275px;border-right:none; ">发展变化</div>
+                            </div>
+                            <div>
+                                <div class="coastZWI" id="dfczfxOnedmtx" style="width:120px;"><input type="text" id="dfczfxOnedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfcsswsOnedmtx" style="width:145px;"><input type="text" id="dfcsswsOnedmtxInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="dfswbdOnedmtx" style="width:120px;"><input type="text" id="dfswbdOnedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dffssjOnedmtx" style="width:130px;"><input type="text" id="dffssjOnedmtxInput" style="width:120px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dffzbhOnedmtx" style="width:275px;border-right:none;">@*<input type="text" id="dffzbhOnedmtxInput" style="width:265px;"/>*@
+                                    <input id="tingzhione" type="radio" name="fzbhxkdtone" value="停止" /><label class="labelSpace4" for="tingzhione">停止</label>
+                                    <input id="szfzone" type="radio" name="fzbhxkdtone" value="尚在发展" /><label class="labelSpace4" for="szfzone">尚在发展</label>
+                                </div>
+                                <!--lyj-->
+                             </div>
+                             <div>
+                                <div class="coastZWI" id="dfczfxTwodmtx" style="width:120px;"><input type="text" id="dfczfxTwodmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfcsswsTwodmtx" style="width:145px;"><input type="text" id="dfcsswsTwodmtxInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="dfswbdTwodmtx" style="width:120px;"><input type="text" id="dfswbdTwodmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dffssjTwodmtx" style="width:130px;"><input type="text" id="dffssjTwodmtxInput" style="width:120px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dffzbhTwodmtx" style="width:275px;border-right:none;">@*<input type="text" id="dffzbhTwodmtxInput" style="width:265px;"/>*@
+                                    <input id="tingzhitwo" type="radio" name="fzbhxkdttwo" value="停止" /><label class="labelSpace4" for="tingzhitwo">停止</label>
+                                    <input id="szfztwo" type="radio" name="fzbhxkdttwo" value="尚在发展" /><label class="labelSpace4" for="szfztwo">尚在发展</label>
+                                </div>
+                                <!--end-->
+                             </div>
+                             <div>
+                                <div class="coastZWI" id="dfczfxThreedmtx" style="width:120px;border-bottom:none;"><input type="text" id="dfczfxThreedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfcsswsThreedmtx" style="width:145px;border-bottom:none;"><input type="text" id="dfcsswsThreedmtxInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="dfswbdThreedmtx" style="width:120px;border-bottom:none;"><input type="text" id="dfswbdThreedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dffssjThreedmtx" style="width:130px;border-bottom:none;"><input type="text" id="dffssjThreedmtxInput" style="width:120px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="dffzbhThreedmtx" style="width:275px;border-right:none;border-bottom:none;">@*<input type="text" id="dffzbhThreedmtxInput" style="width:265px;"/>*@
+                                    <input id="tingzhithree" type="radio" name="fzbhxkdtthree" value="停止" /><label class="labelSpace4" for="tingzhithree">停止</label>
+                                    <input id="szfzthree" type="radio" name="fzbhxkdtthree" value="尚在发展" /><label class="labelSpace4" for="szfzthree">尚在发展</label>
+                                </div>
+                                <!--end-->
+                             </div>
+                        </div>
+                    <!--------------陷坑群体----------->
+                      <div style="border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;margin-top:0; float:left; width:897px;height:155px;">
+                          <div class="coast" style="width:102px; height:155px;">
+                            <div style="width:30px; height:155px;line-height:75px;border-right:1px solid #CAD8E4;float:left;">陷坑群体</div>
+                            <div style="width:71px; height:30px;line-height:30px;float:left;border-bottom:1px solid #CAD8E4;">坑&nbsp;&nbsp;数</div>
+                            <div style="width:71px; height:112px;float:left;padding-top:10px;">分布、发育及发生发展情况</div>
+                          </div>
+                         <div style=" height:30px;margin-top:0; width:786px;padding-left:8px;border-bottom:1px solid #CAD8E4;float:left;"><input type="text" id="xkqtksDmtxInput" style="width:782px;"/></div>
+                          <div style="float:left;">
+                                <div class="coastT" style="width:120px; ">分布面积(㎡)</div>
+                                <div class="coastT" style="width:145px; ">排列形式</div>
+                                <div class="coastT" style="width:120px; ">最小坑口口径(m)</div>
+                                <div class="coastT" style="width:130px; ">最大坑口口径(m)</div>
+                                <div class="coastT" style="width:120px; ">坑的最小深度(m)</div>
+                                <div class="coastT" style="width:154px;border-right:none; ">坑的最大深度(m)</div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="qffbmjdmtx" style="width:120px;"><input type="text" id="qffbmjdmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWI" id="qfplxsdmtx" style="width:145px;">@*<input type="text" id="qfplxsdmtxInput" style="width:135px;"/>*@
+                                    <input id="qjsxkqt" type="radio" name="plxsxkqt" value="群集式" /><label class="labelSpace4" for="qjsxkqt">群集式</label>
+                                    <input id="clsxkqt" type="radio" name="plxsxkqt" value="长列式" /><label class="labelSpace4" for="clsxkqt">长列式</label>
+                                </div>
+                                <!--end-->
+                                <div class="coastZWI" id="qfzxkkkjdmtx" style="width:120px;"><input type="text" id="qfzxkkkjdmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qfzdkkkjdmtx" style="width:130px;"><input type="text" id="qfzdkkkjdmtxInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="qfkdzxsddmtx" style="width:120px;"><input type="text" id="qfkdzxsddmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWII" id="qfkdzdsddmtx" style="width:154px;border-right:none;"><input type="text" id="qfkdzdsddmtxInput" style="width:144px;"/></div>
+                             </div>
+                          <div style="float:left;">
+                                <div class="coastT" style="width:120px; ">长列方向</div>
+                                <div class="coastT" style="width:145px; ">始发时间</div>
+                                <div class="coastT" style="width:120px; ">盛发开始时间</div>
+                                <div class="coastT" style="width:130px; ">盛发截止时间</div>
+                                <div class="coastT" style="width:120px; ">停止时间</div>
+                                <div class="coastT" style="width:154px;border-right:none; ">尚在发展</div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="qfclfxdmtx" style="width:120px;border-bottom:none;"><input type="text" id="qfclfxdmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qfsfsjdmtx" style="width:145px;border-bottom:none;"><input type="text" id="qfsfsjdmtxInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="qfsfkssjdmtx" style="width:120px;border-bottom:none;"><input type="text" id="qfsfkssjdmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qfsfjzsjdmtx" style="width:130px;border-bottom:none;"><input type="text" id="qfsfjzsjdmtxInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="qftzsjdmtx" style="width:120px;border-bottom:none;"><input type="text" id="qftzsjdmtxInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWII" id="qfszfzdmtx" style="width:154px;border-right:none;border-bottom:none;">@*<input type="text" id="qfszfzdmtxInput" style="width:144px;"/>*@
+                                    <input id="qzqfzxkqt" type="radio" name="szfzxkqt" value="趋增强" /><label class="labelSpace4" for="qzqfzxkqt">趋增强</label>
+                                    <input id="qjrfzxkqt" type="radio" name="szfzxkqt" value="趋减弱" /><label class="labelSpace4" for="qjrfzxkqt">趋减弱</label>
+                                </div>
+                                <!--end-->
+                             </div>
+                      </div>
+                    <!--------------伴生裂缝----------->
+                    <div style="border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;margin-top:0; float:left; width:897px;height:277px;">
+                         <div class="coast" style="width:102px; height:277px;">
+                            <div style="width:30px; height:277px;line-height:120px;border-right:1px solid #CAD8E4;float:left;">伴生裂缝</div>
+                            <div style="width:71px; height:123px;line-height:120px;float:left;border-bottom:1px solid #CAD8E4;">单缝特征</div>
+                            <div style="width:71px; height:115px;float:left;">
+                                <div style="width:30px; height:103px;float:left;border-right:1px solid #CAD8E4;padding-top:50px;">群缝特征</div>
+                                <div style="width:40px; height:143px;float:left;padding-top:10px;">分布、发育及发生发展情况</div>
+                            </div>
+                          </div>
+                          <div style="float:left;">
+                                <div class="coastT" style="width:35px; ">缝号</div>
+                                <div class="coastT" style="width:84px; ">形态</div>
+                                <div class="coastT" style="width:72px; ">倾向(°)</div>
+                                <div class="coastT" style="width:72px; ">倾角(°)</div>
+                                <div class="coastT" style="width:120px; ">延伸方向</div>
+                                <div class="coastT" style="width:65px; ">长度(m)</div>
+                                <div class="coastT" style="width:64px; ">宽度(m)</div>
+                                <div class="coastT" style="width:120px; ">深度(m)</div>
+                                <div class="coastT" style="width:154px;border-right:none; ">性质</div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="dfbslffhOnedmtx" style="width:35px; "><input type="text" id="dfbslffhOnedmtxInput" style="width:25px;"/></div>
+                                <div class="coastZWI" id="dfbslfxOnetdmtx" style="width:84px; "><input type="text" id="dfbslfxOnetdmtxInput" style="width:74px;"/></div>
+                                <div class="coastZWI" id="dfbslfqxOnedmtx" style="width:72px; "><input type="text" id="dfbslfqxOnedmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfqjOnedmtx" style="width:72px; "><input type="text" id="dfbslfqjOnedmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfysfxOnedmtx" style="width:120px; "><input type="text" id="dfbslfysfxOnedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfbslfcdOnedmtx" style="width:65px; "><input type="text" id="dfbslfcdOnedmtxInput" style="width:55px;"/></div>
+                                <div class="coastZWI" id="dfbslfkdOnedmtx" style="width:64px; "><input type="text" id="dfbslfkdOnedmtxInput" style="width:54px;"/></div>
+                                <div class="coastZWI" id="dfbslfsdonedmtx" style="width:120px; "><input type="text" id="dfbslfsdonedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWII" id="dfbslfxzOnedmtx" style="width:154px;border-right:none; "><input type="text" id="dfbslfxzOnedmtxInput" style="width:144px;"/></div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="dfbslffhTwodmtx" style="width:35px; "><input type="text" id="dfbslffhTwodmtxInput" style="width:25px;"/></div>
+                                <div class="coastZWI" id="dfbslfxtTwodmtx" style="width:84px; "><input type="text" id="dfbslfxtTwodmtxInput" style="width:74px;"/></div>
+                                <div class="coastZWI" id="dfbslfqxTwodmtx" style="width:72px; "><input type="text" id="dfbslfqxTwodmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfqjTwodmtx" style="width:72px; "><input type="text" id="dfbslfqjTwodmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfysfxTwodmtx" style="width:120px; "><input type="text" id="dfbslfysfxTwodmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfbslfcdTwodmtx" style="width:65px; "><input type="text" id="dfbslfcdTwodmtxInput" style="width:55px;"/></div>
+                                <div class="coastZWI" id="dfbslfkdTwodmtx" style="width:64px; "><input type="text" id="dfbslfkdTwodmtxInput" style="width:54px;"/></div>
+                                <div class="coastZWI" id="dfbslfsdTwodmtx" style="width:120px; "><input type="text" id="dfbslfsdTwodmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWII" id="dfbslfxzTwodmtx" style="width:154px;border-right:none; "><input type="text" id="dfbslfxzTwodmtxInput" style="width:144px;"/></div>
+                            </div>
+                            <div style="float:left;">
+                                <div class="coastZWI" id="dfbslffhThreedmtx" style="width:35px; "><input type="text" id="dfbslffhThreedmtxInput" style="width:25px;"/></div>
+                                <div class="coastZWI" id="dfbslfxtThreedmtx" style="width:84px; "><input type="text" id="dfbslfxtThreedmtxInput" style="width:74px;"/></div>
+                                <div class="coastZWI" id="dfbslfqxThreedmtx" style="width:72px; "><input type="text" id="dfbslfqxThreedmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfqjThreedmtx" style="width:72px; "><input type="text" id="dfbslfqjThreedmtxInput" style="width:62px;"/></div>
+                                <div class="coastZWI" id="dfbslfysfxThreedmtx" style="width:120px; "><input type="text" id="dfbslfysfxThreedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="dfbslfcdThreedmtx" style="width:65px; "><input type="text" id="dfbslfcdThreedmtxInput" style="width:55px;"/></div>
+                                <div class="coastZWI" id="dfbslfkdThreedmtx" style="width:64px; "><input type="text" id="dfbslfkdThreedmtxInput" style="width:54px;"/></div>
+                                <div class="coastZWI" id="dfbslfsdThreedmtx" style="width:120px; "><input type="text" id="dfbslfsdThreedmtxInput" style="width:110px;"/></div>
+                                <div class="coastZWII" id="dfbslfxzThreedmtx" style="width:154px;border-right:none; "><input type="text" id="dfbslfxzThreedmtxInput" style="width:144px;"/></div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastT" style="width:120px; ">缝数</div>
+                                <div class="coastT" style="width:145px; ">分布面积(k㎡)</div>
+                                <div class="coastT" style="width:120px; ">间距(m)</div>
+                                <div class="coastT" style="width:130px; ">排列形式</div>
+                                <!--lyj-->
+                                @*<div class="coastT" style="width:59px; ">倾向(°)</div>
+                                <div class="coastT" style="width:60px; ">倾角(°)</div>*@
+                                <div class="coastT" style="width:120px; ">产状</div>
+                                <!--end-->
+                                <div class="coastT" style="width:154px;border-right:none; ">阶步指向</div>
+                            </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="qffs" style="width:120px;"><input type="text" id="qffsInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qffbmj" style="width:145px;"><input type="text" id="qffbmjInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="qfjj" style="width:120px;"><input type="text" id="qfjjInput" style="width:110px;"/></div>
+                                <!--lyj-->
+                                <div class="coastZWI" id="qfplxs" style="width:130px;">@*<input type="text" id="qfplxsInput" style="width:120px;"/>*@
+                                    <input id="qjsqfbslf" type="radio" name="plxsqfbslf" value="群集式" /><label class="labelSpace2" for="qjsqfbslf">群集式</label>
+                                    <input id="clsqfbslf" type="radio" name="plxsqfbslf" value="长列式" /><label class="labelSpace2" for="clsqfbslf">长列式</label>
+                                </div>
+                                @*<div class="coastZWI" id="qfczqx" style="width:59px;"><input type="text" id="qfczqxInput" style="width:49px;"/></div>
+                                <div class="coastZWI" id="qfczqj" style="width:60px;"><input type="text" id="qfczqjInput" style="width:50px;"/></div>*@
+                                <div class="coastZWI" id="qfczqx" style="width:55px;border-right:none;"><input type="text" id="qfczqxInput" style="width:49px;"/></div>
+                                <div class="coastZWI" style="width:8px;border-right:none;">∠</div>
+                                <div class="coastZWI" id="qfczqj" style="width:56px;"><input type="text" id="qfczqjInput" style="width:50px;"/></div>
+                                <!--end-->
+                                <div class="coastZWII" id="qfjbzx" style="width:154px;border-right:none;"><input type="text" id="qfjbzxInput" style="width:144px;"/></div>
+                             </div>
+                          <div class="coastT" style="width:794px;border-right:none;height:60px;">
+                            <div class="coastT" style="width:794px;border-right:none;height:30px;">缝的规模</div>
+                                <div class="coastT" style="width:120px; ">最小长度值(m)</div>
+                                <div class="coastT" style="width:145px; ">最大长度值(m)</div>
+                                <div class="coastT" style="width:120px; ">最小宽度值(m)</div>
+                                <div class="coastT" style="width:130px; ">最大宽度值(m)</div>
+                                <div class="coastT" style="width:120px; ">最小深度值(m)</div>
+                                <div class="coastT" style="width:154px;border-right:none; ">最大深度值(m)</div>
+                          </div>
+                          <div style="float:left;">
+                                <div class="coastZWI" id="qfzxcdz" style="width:120px;border-bottom:none;"><input type="text" id="qfzxcdzInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qfzdcdz" style="width:145px;border-bottom:none;"><input type="text" id="qfzdcdzInput" style="width:135px;"/></div>
+                                <div class="coastZWI" id="qfzxkdz" style="width:120px;border-bottom:none;"><input type="text" id="qfzxkdzInput" style="width:110px;"/></div>
+                                <div class="coastZWI" id="qfzdkdz" style="width:130px;border-bottom:none;"><input type="text" id="qfzdkdzInput" style="width:120px;"/></div>
+                                <div class="coastZWI" id="qfzxsdz" style="width:120px;border-bottom:none;"><input type="text" id="qfzxsdzInput" style="width:110px;"/></div>
+                                <div class="coastZWII" id="qfzdsdz" style="width:154px;border-right:none;border-bottom:none;"><input type="text" id="qfzdsdzInput" style="width:144px;"/></div>
+                             </div>
+                    </div>
+                    </div>
+                    </li>
+                </ul>
+             </div>
+  <!----------------------------------------------地面塌陷发育特征结束div----------------------------------------------------->
+            </div>
+            <div class="BIT_right_table" style="display: none;">
+                  <!----------------------------------------------地面塌陷形成条件开始div----------------------------------------------------->
+                <div class="info visible" style=" margin: 0 auto; font-size:12px;height:92%;overflow:auto; ">
+                    <!--lyj-->
+                    <ul style=" height:992px; width:929px" >
+                    <!--end-->
+                         <li class="title" style=" width:928px;height:30px;" ><div>
+                             <div style="float:left;width:78px;border-right:1px solid #CAD8E4;">形成条件</div>
+                             <div style="float:left;width:424px;border-right:1px solid #CAD8E4;">地质环境条件</div>
+                             <div style="float:left;width:424px;">诱发动力因素</div>
+                         </div></li>
+                         <!--lyj-->
+                         <li id="dmtxcylx" class="title" style=" height:960px;width:78px; text-align:center;" >
+                            <div style="height: 564px;width:30px;border-right:1px solid #CAD8E4;float:left;padding-top:396px;">成<br />因<br />类<br />型</div>
+                         <!--end-->
+                            <div id="factorTypeDmtxCon" style="display:none;"></div>
+                            <div style="float:left;height:250px;width:47px;padding-top:152px;border-bottom:1px solid #CAD8E4;">
+                                <input id="mdxtxdmtx" name="cylxdmtx" type="radio" value="冒顶型塌陷"/><label class="labelSpace4">冒顶型塌陷</label>
+                            </div>
+                            <div style="float:left;height:204px;width:47px;padding-top:75px; border-bottom:1px solid #CAD8E4;">
+                                <input id="yrxtxdmtx" name="cylxdmtx" type="radio" value="岩溶型塌陷"/><label class="labelSpace4">岩溶型塌陷</label>
+                            </div>
+                            <!--lyj-->
+                            <div style="float:left;height:110px;width:47px;padding-top:87px;">
+                            <!--end-->
+                                <input id="tdxtxdmtx" name="cylxdmtx" type="radio" value="土洞型塌陷" /><label class="labelSpace4">土洞型塌陷</label>
+                            </div>
+                         </li>
+                         <li id="mdxtxInput" style="height:402px;width:849px;">
+                            <div style="height:402px;width:424px;border-right:1px solid #CAD8E4; float:left;">
+                                 <div class="mdtxdtitle" style="height:61px;">
+                                    <div class="title mdtxxtitle" style="height:61px;">冒顶塌陷土层时代</div>
+                                    <div class="mdtxcontent" style="height:61px;"><input type="text" id="mdtxtcsdDmtxInput"/></div>
+                                </div>
+                                 <div class="mdtxdtitle">
+                                    <div class="title mdtxxtitle">冒顶塌陷土层土性</div>
+                                    <div  class="mdtxcontent"><input type="text" id="mdtxtctxDmtxInput"/></div>
+                                 </div>
+                                 <div class="mdtxdtitle">
+                                    <div class="title mdtxxtitle">冒顶塌陷土层厚度(m)</div>
+                                    <div  class="mdtxcontent"><input type="text" id="mdtxtchdDmtxInput"/></div>
+                                 </div>
+                                 <div class="mdtxdtitle">
+                                    <div class="title mdtxxtitle">冒顶塌陷岩层时代</div>
+                                    <div  class="mdtxcontent"><input type="text" id="mdtxycsdDmtxInput"/></div>
+                                 </div>
+                                 <div class="mdtxdtitle">
+                                    <div class="title mdtxxtitle">冒顶塌陷岩层岩性</div>
+                                    <div  class="mdtxcontent"><input type="text" id="mdtxycyxDmtxInput"/></div>
+                                 </div>
+                                 <div class="mdtxdtitle">
+                                    <div class="title mdtxxtitle">冒顶塌陷岩层厚度(m)</div>
+                                    <div  class="mdtxcontent"><input type="text" id="mdtxychdDmtxInput"/></div>
+                                 </div>
+                                 <div style="height:21px;width:424px;">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷地下水位埋深(m)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxdxswmsDmtxInput"/></div>
+                                 </div>
+                            </div>
+                            <div style="height:290px;width:424px;float:left;">
+                                 <div class="mdtxdtitle" style="height:61px;">
+                                    <div class="title mdtxxtitle" style="height:61px;">诱发动力因素类型</div>
+                                    <div class="mtycontent" id="mdtxYouFaYinSu" style="height:42px; ">
+                                        <div id="mdtxyfdlysCon" style="display:none;"></div>
+                                        <input type="checkbox" name="dmtxYFDLYS" id="mdtxkdwjdbmlDmtx" value="坑道挖掘顶板冒落"/><label class="labelSpace4">坑道挖掘顶板冒落</label><br />
+                                        <input type="checkbox" name="dmtxYFDLYS" id="mdtxdsdbpsDmtx" value="洞室顶部破碎岩土体地下水流强烈下泄"/><label class="labelSpace4">洞室顶部破碎岩土体地下水流强烈下泄</label>
+                                  </div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷矿层厚度(m)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxkchdDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷开采时间</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxkcsjDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷开采深度(m)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxkcsdDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷开采厚度(m)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxkcaihdDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷开采方法</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxkcffDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷工作面推进速度(m/d)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxgzmtjsdDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷顶板管理方法</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxdbglffDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷采空区形态</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxckqxtDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷采空区规模(m³)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxckqgmDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷采出量(m³)</div>
+                                    <div class="mtycontent"><input type="text" id="mdtxcclDmtxInput"/></div>
+                                 </div>
+                                 <div style="height:21px;width:424px;">
+                                    <div class="title tdyrtxxtitle">冒顶塌陷重复采动</div>
+                                    <div class="mtycontent" id="mdtxcfcd">
+                                        <input type="radio" name="dmtxMDTX" id="cfcdShiDmtx" value="true"/><label class="labelSpace4">是</label>
+                                        <input type="radio" name="dmtxMDTX" id="cfcdFouDmtx" value="false"/><label class="labelSpace4">否</label>
+                                    </div>
+                                 </div>
+                            </div>
+                         </li>
+                         <li id="ryxtxInput" style="height:279px;width:849px;">
+                            <div style="height:279px;width:424px;border-right:1px solid #CAD8E4; float:left;">
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷地层时代</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxdcsdDmtxInput"/></div>
+                                </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷地层岩性</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxdcyxDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷岩层倾向</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxycqxDmtxInput"/></div>
+                                 </div>
+                                  <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷岩层倾角</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxycqjDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷断裂情况</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxdlqkDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷溶洞发育情况</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxrdfyqkDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle" id="rybtycfycd">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷岩层发育程度</div>
+                                    <div class="mtycontent">
+                                        <div id="yrtxycfycdCon" style="display:none;"></div>
+                                         <input type="radio" name="dmtxYRTX" id="yrtxycfyqDmtx" value="强"/><label class="labelSpace4">强</label>
+                                        <input type="radio" name="dmtxYRTX" id="yrtxycfyrDmtx" value="弱"/><label class="labelSpace4">弱</label>
+                                    </div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle" >岩溶塌陷塌顶溶洞埋深(m)</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxtdrdmsDmtxInput"/></div>
+                                 </div>
+                                 <div style="height:21px;width:424px;">
+                                    <div class="title tdyrtxxtitle">岩溶塌陷地下水位埋深(m)</div>
+                                    <div class="mtycontent"><input type="text" id="yrtxdxswmsDmtxInput"/></div>
+                                 </div>
+                            </div>
+                            <div id="rytxyfdlys" style="height:169px;width:416px;float:left;padding-left:8px; padding-top:110px;">
+                                <div id="yrtxyfdlysDmtxCon" style="display:none;"></div>
+                                <input name="dmtxYYTXYFYS" id="dzyfdlysDmtx" type="checkbox" value="地震"/><label class="labelSpace4">地震&nbsp;&nbsp;&nbsp;</label>
+                                <input name="dmtxYYTXYFYS"  id="qtzdyfdlysDmtx" type="checkbox" value="其它振动"/><label class="labelSpace4">其它振动&nbsp;&nbsp;&nbsp;</label>
+                                <input name="dmtxYYTXYFYS"  id="dmjzyfdlysDmtx" type="checkbox" value="地面加载"/><label class="labelSpace4">地面加载&nbsp;&nbsp;&nbsp;</label>
+                                <input name="dmtxYYTXYFYS"  id="skxsyfdlysDmtx" type="checkbox" value="水库蓄水"/><label class="labelSpace4">水库蓄水&nbsp;&nbsp;&nbsp;</label><br />
+                                <input name="dmtxYYTXYFYS"  id="qtswzbyfdlysDmtx" type="checkbox" value="其它水位骤变"/><label class="labelSpace4">其它水位骤变&nbsp;&nbsp;&nbsp;</label>
+                                <input name="dmtxYYTXYFYS"  id="rsbsyfdlysDmtx" type="checkbox" value="溶蚀剥蚀"/><label class="labelSpace4">溶蚀剥蚀</label>
+                            </div>
+                         </li>
+                         <!--lyj-->
+                         <li id="tdxtxInput" style="height:277px;width:849px;">
+                            <div style="height:277px;width:424px;border-right:1px solid #CAD8E4; float:left;">
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷单层土性</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxdctxDmtxInput"/></div>
+                                </div>
+                                <!--end-->
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷单层土厚(m)</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxdcthDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷双层上部土性</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxscsbtxDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷双层上部土厚(m)</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxscsbthDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷双层下部土性</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxscxbtxDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷双层下部土厚(m)</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxscxbthDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷下伏基岩时代</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxxfjysdDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">土洞塌陷下伏基岩岩性</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxxfjyyxDmtxInput"/></div>
+                                 </div>
+                                 <div style="height:30px;width:424px;">
+                                    <div class="title tdyrtxxtitle">土洞塌陷地下水位埋深(m)</div>
+                                    <div class="mtycontent"><input type="text" id="tdtxdxswmsDmtxInput" style="height:24px"/></div>
+                                 </div>
+                            </div>
+                             <!--lyj-->
+                            <div style="height:197px;width:424px;float:left;">
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">诱发动力因素类型</div>
+                                    <div class="mtycontent" id="tddlYouFaYinSu">
+                                       <input name="dmtxTDYFYS" id="sjcstdtxDmtx" type="checkbox" value="深井抽水"/><label class="labelSpace4">深井抽水&nbsp;&nbsp;&nbsp;</label>
+                                       <input name="dmtxTDYFYS" id="jhswbhtdtxDmtx" type="checkbox" value="江河水位变化"/><label class="labelSpace4">江河水位变化&nbsp;&nbsp;&nbsp;</label><br />
+                                        @*<input name="dmtxTDYFYS" id="dmjztdtxDmtx" type="checkbox" value="地面加载"/><label class="labelSpace4">地面加载&nbsp;&nbsp;&nbsp;</label>
+                                        <input name="dmtxTDYFYS" id="zdtdtxDmtx" type="checkbox" value="振动"/><label class="labelSpace4">振动</label>*@
+                                  </div>
+                                 </div>
+                                 <!--end-->
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">井位塌陷区方向</div>
+                                    <div class="mtycontent"><input type="text" id="jwtxqfxDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">井位塌陷区距离(m)</div>
+                                    <div class="mtycontent"><input type="text" id="jwtxqjlDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">井位塌陷区抽水降深(m)</div>
+                                    <div class="mtycontent"><input type="text" id="jwtxqcsjsDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">井位塌陷区日出水量(m³)</div>
+                                    <div class="mtycontent"><input type="text" id="jhswtxqrcslDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">江河水位塌陷区方向</div>
+                                    <div class="mtycontent"><input type="text" id="jhswtxqfxDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">江河水位塌陷区距离(m)</div>
+                                    <div class="mtycontent"><input type="text" id="jhswtxqjlDmtxInput"/></div>
+                                 </div>
+                                 <div class="tdyrtxdtitle">
+                                    <div class="title tdyrtxxtitle">江河水位塌陷区水位变幅(m)</div>
+                                    <div class="mtycontent"><input type="text" id="jhswtxqswbfDmtxInput"/></div>
+                                 </div>
+                                 <div style="height:30px;width:424px;">
+                                    <div class="title tdyrtxxtitle">江河水位塌陷区变化类型</div>
+                                    <!--lyj-->
+                                    <div class="mtycontent" id="jhswtxqbhlxDmtx">@*<input type="text" id="jhswtxqbhlxDmtxInput"/>*@
+                                        <input id="dmjztdtxDmtx" type="checkbox" value="地面加载"/><label class="labelSpace4">地面加载&nbsp;&nbsp;&nbsp;</label>
+                                        <input id="zdtdtxDmtx" type="checkbox" value="振动"/><label class="labelSpace4">振动</label>
+                                        @*<input type="radio" id="jhswtxqbhlxdmjzDmtx" value="地面加载"/><label class="labelSpace4">地面加载</label>
+                                        <input type="radio" id="jhswtxqbhlxzdDmtx" value="振动"/><label class="labelSpace4">振动</label>*@
+                                    </div>
+                                    <!--end-->
+                                 </div>
+                            </div>
+                           @* <div id="tdtxyfdlys" style="height:199px;width:416px;float:left;padding-left:8px; line-height:199px;">
+                                <div id="tdyfdlysDmtxCon" style="display:none;"></div>
+                                <input id="sjcstdtxDmtx" type="checkbox" value="深井抽水"/><label class="labelSpace4">深井抽水&nbsp;&nbsp;&nbsp;</label>
+                                <input id="jhswbhtdtxDmtx" type="checkbox" value="江河水位变化"/><label class="labelSpace4">江河水位变化&nbsp;&nbsp;&nbsp;</label>
+                                <input id="dmjztdtxDmtx" type="checkbox" value="地面加载"/><label class="labelSpace4">地面加载&nbsp;&nbsp;&nbsp;</label>
+                                <input id="zdtdtxDmtx" type="checkbox" value="振动"/><label class="labelSpace4">振动</label>
+                            </div>*@
+                         </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="BIT_right_table" style="display: none;">
+                <div class="info visible" id="imageDmtx" style=" margin: 0 auto; font-size:12px;">
+                 <ul style=" height:482px;">
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">平面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="planDmtx" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">剖面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="profileDmtx" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                 </ul>
+       </div>
+            </div>
+            <div class="BIT_right_table" style="display: none; font-size:13px;">
+                <div class="BIT_HP_ZPGL" style="width:100%; height:200px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">上传照片</div>
+                    <div id="dmtx_BaseImg" style="height: 160px; width: 100%;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div>
+                </div>
+                
+                <div class="BIT_HP_ZPGL" style="width: 100%; height: 220px; border: 1px solid #CAD8E4;">
+                    <div style="width: 100%; height: 36px; line-height: 36px; text-align: center; background: #f4f8fb; border-bottom: 1px solid #CAD8E4;">视频上传</div>
+                    <div id="dmtx_Videos" style="height: 180px; width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

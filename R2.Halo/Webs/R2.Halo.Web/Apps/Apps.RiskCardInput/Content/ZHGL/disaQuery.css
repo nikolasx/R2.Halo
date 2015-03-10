@@ -1,0 +1,215 @@
+﻿.queryMain {
+    position:absolute;
+    width:100%;
+    top:0px;
+    bottom:0px;
+    letter-spacing:1px;
+    overflow:hidden;
+}
+.queryTitle {
+    width:100%;
+    height:22px;    
+    border-bottom:1px solid #c0c0c0;
+    background:url(../images/left_menu.png);
+    line-height:22px;
+    text-align:center;
+}
+.queryArea {
+    width:100%;
+    position:absolute;
+    top:28px;
+    bottom:0;
+}
+.queryArea1 {
+    left:0;
+}
+.query_titlep {
+    padding-top:4px;
+}
+.query_icon, .query_title {
+    float:left;
+    display:block;  
+}
+.query_icon {
+    width:20px;
+    height:20px;
+    background:url(../images/numicon.png) no-repeat;
+    text-align:center;
+    margin:0 5px;
+}
+.query_name {
+    line-height:18px;
+    color:#015889;
+}
+.qyRegion {
+    width:366px;
+    height:260px;
+    background:#f4f4f4;
+    border:1px solid #bfbfbf;
+    margin:6px;
+}
+.qyrow {
+    width:100%;
+    height:35px;
+    line-height:35px;
+    padding:7px 0 3px;
+    color:#222;
+}
+.qyrow3 {
+    height:70px;
+}
+.selabel {
+    width:105px;
+    height:35px;
+    float:left;
+    text-align:right;
+}
+.qySelect {
+    width:250px;
+    height:25px;
+    padding:5px;
+    float:left;
+}
+#qyType {
+    height:70px;
+}
+.chklabel {
+    float:left;
+    line-height:26px;
+    text-indent:3px;
+    margin-right:25px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+.qyTypeBox {
+    float:left;
+    margin-top:7px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+.qybtn {
+    width:65px;
+    height:24px;
+    border:1px solid #bfbfbf;
+    background:url(../images/btn_bg.png);
+    text-align:center;
+    line-height:24px;
+    cursor:pointer;
+    float:right;
+    margin-right:20px;
+    margin-top:5px;
+    color:#015889;
+}
+    .qybtn:hover {
+        background-position:0 -25px;
+    }
+.qybtn1:hover {
+    color:#0380c6;
+}
+.qyRegion2 {
+    height:70px;
+    background:#fff;
+    border:none;
+}
+.query_icon2 {
+    background-position:-20px 0;
+}
+.qyOther {
+    width:155px;
+    height:60px;
+    background:#f4f4f4;
+    border:1px solid #dbdbdb;
+    float:left;
+    margin-left:20px;
+    margin-top:5px;
+    color:#015889;
+    cursor:pointer;
+}
+    .qyOther:hover {
+        border:1px solid #3f8ab4;
+    }
+    .qyOther div {
+        width:auto;
+        height:30px;
+        margin:auto;
+        margin-top:15px;
+        line-height:30px;
+        text-indent:45px;
+        background:url(../images/query_icons.png) no-repeat;
+    }
+.qyFont div {
+    width:110px;
+}
+.qySpace div {
+    width:100px;
+    background-position:0 -30px;
+}
+.queryArea2,.queryArea3 {
+    left:380px
+}
+.qyFontLabel {
+    float:left;
+    margin-left:30px;
+    line-height:24px;
+}
+.qyFontInput {
+    float:left;
+    width:260px;
+    padding:0 5px;
+    height:24px;
+    background:#fff;
+    border:1px solid #bfbfbf;
+    color:#666;
+}
+.qyRegion3 {
+    height:90px;
+    padding-top:20px;
+    margin-top:10px;
+}
+.qybtn2 {
+    margin-top:20px;
+}
+.qyRange div {
+    width:100px;
+    background-position:0 -60px;
+}
+.qySpace div {
+    width:100px;
+    background-position:0 -30px;
+}
+.qybtn2 {
+    margin-top:20px;
+}
+.qyRegion4 {
+    height:180px;
+    background:#fff;
+    border:none;
+}
+.qyOther2 {
+    width:332px;
+    height:70px;
+    background:#f4f4f4;
+    border:1px solid #dbdbdb;
+    float:left;
+    margin-left:20px;
+    margin-top:10px;
+    color:#333;
+    cursor:pointer;
+}
+    .qyOther2 div {
+        width:135px;
+        height:40px;
+        margin:auto;
+        margin-top:15px;
+        line-height:40px;
+        text-indent:80px;
+    }
+.qySquare div {
+    background:url(../images/query_icons2.png) no-repeat;
+}
+.qyCircle div {
+    background:url(../images/query_icons2.png) no-repeat 0 -40px;
+}
+    .qyOther2:hover {
+        border:1px solid #3f8ab4;
+    }

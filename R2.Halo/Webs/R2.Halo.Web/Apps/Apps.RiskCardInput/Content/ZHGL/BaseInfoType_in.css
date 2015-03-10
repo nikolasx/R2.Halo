@@ -1,0 +1,373 @@
+﻿* {
+    margin:0;
+    padding:0;
+    font-family:'Microsoft YaHei';
+}
+body {
+    overflow:auto;
+    padding-bottom:50px;
+    color:#333;
+}
+#BIT_head {
+    width:100%;
+    height:42px;
+    background-image:url(../images/head.png);
+    background-repeat:repeat-x;
+    font-size:18px;
+    color:white;
+    text-align:center;
+    line-height:42px;
+    letter-spacing:10px;
+}
+.importwarn {
+    float:left;
+    color:#ff6400;
+    margin-top:17px;
+    margin-left:15px;
+}
+#BIT_ContentDiv {
+    border:1px solid #CAD8E4;
+    margin:0 auto;
+    width:1200px;
+    height:auto;
+    overflow:hidden;
+    margin-top:20px;
+    padding-bottom:20px;
+    position:relative
+}
+#BIT_left {
+    width:200px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+}
+
+#BIT_right {
+    width:999px;
+    height:100%;
+    float:right;
+    min-height:500px;
+    margin:0 auto;
+}
+.BIT_left_cell_head {
+    width:179px;
+    height:40px;
+    font-size:14px;
+    line-height:40px;
+    text-align:left;
+    padding-left:20px;
+    border-right:1px solid #CAD8E4;
+    border-bottom:1px solid #CAD8E4;
+    color:#33699C;
+}
+.BIT_left_cell {
+    width:169px;
+    font-size:14px;
+    line-height:40px;
+    text-indent:20px;
+    padding-left:30px;
+    background-color:#F4F8FB;
+    border-right:1px solid #CAD8E4;
+    border-bottom:1px solid #CAD8E4;
+    cursor:pointer;
+    /*background:url("../../Content/images/崩塌1.png") no-repeat 20px center;*/
+}
+.left_cell_hp {
+    background:url(../../Content/images/滑坡.png) no-repeat 20px center;
+}
+.left_cell_bt {
+    background:url(../../Content/images/崩塌.png) no-repeat 20px center;
+}
+.left_cell_nsl {
+    background:url(../../Content/images/泥石流.png) no-repeat 20px center;
+}
+.left_cell_dlf {
+    background:url(../../Content/images/地裂缝.png) no-repeat 20px center;
+}
+.left_cell_wxxp {
+    background:url(../../Content/images/斜坡.png) no-repeat 20px center;
+}
+.left_cell_dmtx{
+    background:url(../../Content/images/塌陷.png) no-repeat 20px center;
+}
+.left_cell_dmcj{
+    background:url(../../Content/images/滑坡.png) no-repeat 20px center;
+}
+/*.BIT_left_cell:hover {
+    background-color:white;
+    border-right:none;
+    color:#16548E;
+}*/
+.BIT_left_cell_bottom {
+    border-right:1px solid #CAD8E4;
+    height:1200px;
+}
+/**/
+#BIT_right_head {
+    width:100%;
+    height:50px;
+}
+#BIT_right_head span {
+    font-size:15px;
+    margin-left:20px;
+    float:left;
+    height:30px;
+    line-height:30px;
+    margin-top:10px;
+}
+.BIT_right_img {
+    height:30px;
+    width:100px;
+    float:right;
+    cursor:pointer;
+    background:#ffffff;
+    margin-top:15px;
+}
+#BIT_right_img_UpdateGroundSettle {
+    background:url(../../Content/images/save.png) no-repeat;
+}
+#BIT_right_img_UpdateCollapse {
+    background:url(../../Content/images/save.png) no-repeat;
+}
+#BIT_right_img_UpdateLandSlide {
+    background:url(../../Content/images/save.png) no-repeat;
+}
+#BIT_right_img_UpdateMudFlow {
+    background:url(../../Content/images/save.png) no-repeat;
+}
+#BIT_right_img_GoHome {
+    background:url(../../Content/images/gohome.png) no-repeat;
+    position:absolute;
+    right:0;
+    margin-right:0;
+}
+#BIT_right_img_Return {
+    background:url(../../Content/images/goback.png) no-repeat;
+}
+
+.BIT_right_img_For_Clear {
+    background-image: url(../../Content/images/cancel.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.BIT_right_img_For_save {
+background-image: url(../../Content/images/save.png); background-repeat: no-repeat; background-position: center;
+}
+.BIT_right_neck {
+    width:100%;
+    height:30px;
+    font-size:13px;
+    margin-bottom:10px;    
+}
+.BIT_right_disaType0 {
+    display:block;
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType1 {
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType2 {
+    display:none;
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType3 {
+    display:none;
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType4 {
+    display:none;
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType5 {
+    display:none;
+    width:100%;
+    height:auto;
+}
+.BIT_right_disaType6 {
+    display:none;
+    width:100%;
+    height:auto;
+}
+
+.BIT_right_neck_cell {
+    float:left;
+    margin-left:20px;
+    cursor:pointer;
+}
+.BIT_right_neck_cell:hover {
+    color:#16548E;
+}
+/*tables*/
+.BIT_right_table {
+    border-collapse:collapse;
+    margin:0 auto;
+    width:990px;
+    margin-top:25px;
+}
+.BIT_right_table tbody {
+    width:100%;
+    height:100%;
+}
+.BIT_right_table tr {
+    height:30px;
+    width:990px;
+}
+.BIT_right_table tr td {
+    border:1px solid #CAD8E4;
+    width:270px;
+    text-align:center;
+    font-size:12px;
+}
+.BIT_colOrange {
+    color:#FC7D3F !important;
+}
+.BIT_tableLeft {
+    background:#F4F8FB;
+    color:#333333;
+    width:190px !important;
+    height:30px;
+}
+.disaTableHPradio,.disaTableHPradio2 {
+    margin-left:15px;
+    float:left;
+}
+.disaTableHPradio_bt {
+    margin-left:40px;
+    float:left;
+}
+.disaTableHPradio_bthjdj {
+    margin-left:28px;
+    float:left;
+}
+.disaTableHPspan,.disaTableHPspan2 {
+    float:left;
+    color:#33699C;
+}
+.disaTableHPradio1 {
+    margin-left:15px;
+    float:left;
+}
+.disaTableHPspan1 {
+    margin-right:20px;
+    float:left;
+    color:#33699C;
+}
+.disaTableHPradio3, .disaTableHPradio4 {
+    margin-left:15px;
+    float:left;
+}
+.disaTableHPspan3, .disaTableHPspan4 {
+    margin-right:40px;
+    float:left;
+    color:#33699C;
+}
+.BIT_table_input {
+    border:none;
+    width:95%;
+    margin-left:5px;
+    height:100%;
+    text-align:left;
+}
+.input_align_left {
+    text-align:left;
+}
+.tb_three_left {
+text-align:left;
+padding-left:6px;
+}
+.BIT_HP_ZPGL {
+    margin-top:30px;
+}
+.BIT_inputFile {
+    width:70px;
+    height:25px;
+    position:absolute;
+    opacity:0;
+    cursor:pointer;
+}
+
+.checkBoxSpace 
+{
+    margin-left:9px;
+}
+.checkBoxSpacetop
+{
+    margin-top:2px;
+}
+.checkBoxSpace_btjhdj 
+{
+    margin-left:15px;
+}
+.labelSpace2
+{
+    margin-left:3px;
+    margin-right:5px;
+}
+
+.disaTableHPradio2 {
+    margin-left:9px;
+    float:left;
+}
+/*ZHAOs 2014年3月4日14:05:06*/
+#BIT_regionname {
+    height:30px;
+    width:200px;
+}
+
+.checkBoxSpace3
+{
+    margin-left:12px;
+}
+.labelSpace3 
+{
+    margin-left:6px;
+}
+.labelSpace4 
+{
+    margin-left:5px;
+    margin-right:10px;
+}
+.BIT_right_neck_cell span {
+    font-size:13px;
+}
+
+
+
+.contentIbtn {
+    width:70px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    border:1px solid #ccc;
+    background:url(../images/btn_bg.png);
+    color:#33699c;
+    cursor:pointer;
+    margin-top:20px;
+    margin-left:10px;
+     float:left;
+}
+.BIT_inputFile_submit {
+    width:70px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    border:1px solid #ccc;
+    background:url(../images/btn_bg.png) 0 -25px;
+    color:#33699c;
+    cursor:pointer;
+    float:right;
+    margin-top:15px;
+}
+.BIT_inputFile_success {
+    float:left;
+    line-height:40px;
+}
+.ImportWaing[type="text"]{
+    border:1px solid red;
+}

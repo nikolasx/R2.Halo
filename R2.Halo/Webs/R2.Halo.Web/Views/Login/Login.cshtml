@@ -1,0 +1,53 @@
+﻿@using System.Web.UI.WebControls
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="@Url.Content("~/Content/css/login.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/js/login/login.js")"></script>
+
+<div id="content">
+    <div id="logo"></div>
+    <div id="logionBox">
+
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+        {
+            <div class="inputBox">
+                @Html.TextBox("userName", "admin", new { @placeholder = "用户名" })
+            </div>
+            <div class="inputBox inputBox2">
+                @Html.Password("pwd", "888888", new { @placeholder = "密码" })
+            </div>
+
+            <div id="tipDiv">
+                <input type="checkbox" checked /><div id="rememberTip">记住我</div>
+                <div id="pwdTip">忘记密码？</div>
+            </div>
+
+            @Html.TextBox("loginSubmit", "登 陆", new { type = "submit" })
+
+            <div id="directScanDiv">
+                <div id="loginResultTip">@ViewBag.loginInfo</div>
+                <div id="directScanTip">直接浏览</div>
+            </div>
+
+        }
+    </div>
+
+
+    @*用于演示的用户账号列表*@
+    <div id="userInfoBox">
+        <ul>
+            <li>Demo访问说明</li>
+            <li>管理员账号：</li>
+            <li>admin</li>
+            <li>普通用户账号:</li>
+            <li>user@mapgis.com</li>
+            <li>录入人员账号:</li>
+            <li>inputer@mapgis.com</li>
+            <li>领导账号:</li>
+            <li>leader@mapgis.com</li>
+            <li>密码均为:888888</li>
+        </ul>
+    </div>
+</div>

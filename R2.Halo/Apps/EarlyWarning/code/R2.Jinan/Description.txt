@@ -1,0 +1,8 @@
+﻿Group: DB-CRUD
+FriendlyName: AppsEarlyWarning
+SystemName: Apps.EarlyWarning
+Version: 1.0
+SupportedVersions: 3.30
+Author: Corner team
+DisplayOrder: 1
+FileName: R2.Halo.Apps.EarlyWarning.dll 

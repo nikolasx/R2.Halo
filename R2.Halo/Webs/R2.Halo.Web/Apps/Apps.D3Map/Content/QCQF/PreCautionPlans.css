@@ -1,0 +1,681 @@
+﻿body {
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+}
+
+#dzzh_PP_Div
+{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#dzzh_PP_Neck
+{
+    float:left;
+    margin-left:10px;
+    height: 70px;
+    width: 98%;
+    border: 1px solid #808080;
+    border-radius:5px 5px;
+}
+
+#dzzh_PP_Neck0, #dzzh_PP_Neck1
+{
+    width: 100%;
+    height: 100%;
+}
+
+#dzzh_PP_body
+{
+    float:left;
+    margin-left:10px;
+    width: 98%;
+    height: 465px;
+    border: 1px solid #808080;
+    border-radius:5px 5px;
+    margin-top: 10px;
+}
+
+#dzzh_PP_iframeDiv
+{
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+#dzzh_PP_iframe
+{
+    width: 100%;
+    height: 98%;
+    border: none;
+    display: none;
+}
+
+#dzzh_PP_regionDiv, #dzzh_PP_staInfo, #dzzh_PP_regionDiv1
+{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+#dzzh_PP_MDTypeDiv, #dzzh_PP_MDTypeDiv1
+{
+    width: 25%;
+    height: 100%;
+    float: right !important;
+}
+
+.dzzh_PP_regionDiv_son, .dzzh_PP_staInfo_son
+{
+    height: 25px;
+    margin-top: 6px;
+}
+
+    .dzzh_PP_regionDiv_son *
+    {
+        float: left;
+    }
+
+#dzzh_PP_regionDiv div *, #dzzh_PP_staInfo div *, #dzzh_PP_regionDiv1 div *, #dzzh_PP_staInfo1 div *
+{
+    float: left;
+}
+
+#dzzh_PP_regionDiv div label, #dzzh_PP_staInfo div label, #dzzh_PP_MDTypeDiv div label, #dzzh_PP_regionDiv1 div label, #dzzh_PP_MDTypeDiv1 div label
+{
+    width: 70px;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    text-align: right;
+}
+
+#dzzh_PP_cityDiv, #dzzh_PP_countyDiv, #dzzh_PP_cityDiv1, #dzzh_PP_countyDiv1, #dzzh_PP_jhcx, #dzzh_PP_dataTypeDiv, #dzzh_PP_dataTypeDiv1
+{
+    width: 181px;
+    height: 25px;
+    border: 1px solid transparent;
+}
+
+#dzzh_PP_gjz
+{
+    border: 1px solid #BFBFBF;
+    width: 181px;
+    height: 25px;
+    position: relative;
+    left: 1px;
+}
+
+
+#dzzh_PP_regionTypeDiv
+{
+    width: 450px;
+    height: 90%;
+    margin: 0 20px 0 20px;
+    position: relative;
+    top: -3px;
+    float: left;
+}
+
+    #dzzh_PP_regionTypeDiv div:first-child
+    {
+        width: 70px;
+        font-size: 12px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 10px;
+        text-align: right;
+        float: left;
+    }
+
+    #dzzh_PP_regionTypeDiv div:last-child
+    {
+        height: 100%;
+        float: left;
+    }
+
+#dzzh_PP_typeTable
+{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    width: 370px;
+}
+
+    #dzzh_PP_typeTable tr td
+    {
+        text-align: center;
+        font-size: 12px;
+    }
+
+.dzzh_PP_td_wide
+{
+    width: 80px !important;
+}
+
+#dzzh_PP_Button, #dzzh_PP_Button1
+{
+    width: 80px;
+    height: 100%;
+    float: right !important;
+    margin-right: 40px;
+}
+
+#dzzh_PP_Btn, #dzzh_PP_Btn1
+{
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    background: #10488C;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 15px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.dzzh_PP_table_tdDiv label
+{
+    position: relative;
+    top: -2px;
+    margin-left: 5px;
+}
+
+
+#dzzh_PP_container
+{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+}
+
+/*--------------------------------*/
+
+#dzzh_PP_container_body
+{
+    width: 95%;
+    height: auto;
+}
+
+#dzzh_PP_container_table
+{
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+}
+
+    #dzzh_PP_container_table tr
+    {
+        height: 25px;
+        cursor: pointer;
+    }
+
+        #dzzh_PP_container_table tr:hover
+        {
+            background: #E9EEF5;
+        }
+
+        #dzzh_PP_container_table tr:first-child:hover
+        {
+            background: white;
+        }
+
+        #dzzh_PP_container_table tr td, #dzzh_PP_container_table tr th
+        {
+            font-size: 12px;
+            text-align: center;
+            line-height: 25px;
+            border-bottom: 1px dashed #CBCBCB;
+        }
+
+            #dzzh_PP_container_table tr td:first-child
+            {
+                width: 50px;
+            }
+
+            #dzzh_PP_container_table tr td:last-child
+            {
+                width: 100px;
+            }
+
+
+
+.dzzh_PPTable_edit, .dzzh_PPTable_del
+{
+    font-size: 12px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    text-decoration: underline;
+    float: left;
+    margin: 0 10px 0 10px;
+    line-height: 25px;
+}
+
+    .dzzh_PPTable_handle:hover, .dzzh_PPTable_del:hover
+    {
+        color: #FF0000;
+    }
+
+
+/*----*/
+#dzzh_container_pgctl
+{
+    width: 95%;
+    height: 30px;
+}
+
+#dzzh_container_pgctlDiv
+{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+#dzzh_CP_right
+{
+    float: right;
+    width: 200px;
+    height: 25px;
+}
+
+#dzzh_CP_left
+{
+    width: 150px;
+    float: right;
+    height: 25px;
+}
+
+.dzzh_CP_pgctl_btn
+{
+    width: 50px;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    cursor: pointer;
+}
+
+    .dzzh_CP_pgctl_btn:hover
+    {
+        color: #10488C;
+    }
+
+#dzzh_CP_left *
+{
+    float: left;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+}
+
+#dzzh_CP_left div
+{
+    width: 15px;
+}
+
+#dzzh_CP_left label
+{
+    color: #10488C;
+    margin: 0 5px 0 5px;
+}
+
+#dzzh_CP_left span
+{
+    margin: 0 5px 0 5px;
+}
+
+/**********************************/
+#detailsBigPanelContent
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/********************/
+.dzzh_PP_radioDiv
+{
+    height: 25px;
+    width: 120px;
+    margin-left: 20px;
+}
+
+    .dzzh_PP_radioDiv *
+    {
+        line-height: 25px;
+        font-size: 12px;
+        color: #FF4800;
+        height: 25px;
+    }
+
+    .dzzh_PP_radioDiv input
+    {
+        width: 25px;
+    }
+
+    .dzzh_PP_radioDiv label
+    {
+        width: 60px !important;
+    }
+
+
+#btnForPublicPrecaution
+{
+    font-size: 12px;
+    width: 80px;
+    color: white;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    background: #10488C;
+    margin-top: 5px;
+    margin-right: 13px;
+}
+/*群测群防   信息录入*/
+#qcqfTotalDiv
+{
+    width: 100%;
+    margin-top: 0px;
+}
+
+.qcqfLeftDiv, .qcqfRightDiv
+{
+    height: 100%;
+    border: 1px solid #808080;
+    border-radius: 5px 5px;
+    padding-bottom: 30px;
+}
+
+.qcqfLeftDiv
+{
+    width: 15%;
+    float: left;
+    margin-left: 10px;
+}
+
+.qcqfRightDiv
+{
+    width: 80%;
+    float: left;
+    margin-left: 5px;
+    overflow: hidden;
+    border-radius: 5px 5px;
+}
+
+.tableTitleDiv
+{
+    width: 100%;
+    height: 32px;
+    border-bottom: 1px solid #cccccc;
+    background: url(../../../../Content/images/grayBar.png) repeat;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tableTitle1
+{
+    width: 100%;
+    text-align: center;
+    float: left;
+    color: #FF4800;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.qcqfLeftTitle
+{
+    background: url(../../../../Content/images/grayBar.png) repeat;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.qcqfTableCtlBtn
+{
+    font-size: 14px;
+    float: right !important;
+    margin-right: 15px;
+}
+
+.tableTitle2
+{
+    width: 70%;
+    text-align: left;
+    float: left;
+    color: #FF4800;
+    margin-left: 15px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tableCtlDiv
+{
+    width: 150px;
+    float: right;
+    height: 100%;
+}
+
+    .tableCtlDiv div
+    {
+        cursor: pointer;
+        color: #FF4800;
+        text-decoration: underline;
+        float: left;
+        width: 50px;
+        margin-right: 10px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+.qcqfTypeDiv
+{
+    height: 32px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    line-height: 32px;
+    border-bottom: 1px dashed #C5C5C5;
+    cursor: pointer;
+}
+
+    .qcqfTypeDiv:hover
+    {
+        background: #EFEFEF;
+        border-bottom: 1px dashed #FF4800;
+    }
+
+.qcqfTypeDiv_selected
+{
+    background: #EFEFEF;
+}
+
+.qcqfTable
+{
+    border-collapse: collapse;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+    .qcqfTable input
+    {
+        height: 32px;
+        line-height: 32px;
+        color: #000000;
+        border: none;
+    }
+
+    .qcqfTable textarea
+    {
+        line-height: 32px;
+        min-height: 32px !important;
+        color: #000000;
+        border: none;
+        width: 90%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .qcqfTable tr
+    {
+        height: 32px;
+    }
+
+        .qcqfTable tr td
+        {
+            border-top: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            border-left: none;
+            border-right: none;
+            text-indent: 9px;
+        }
+
+.qcqfTableTh
+{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    color: #FF4800;
+    background-image: url(../../../../Content/images/grayBar.png);
+    min-height: 30px !important;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#qcqfTablesDiv
+{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.qcqfImgDiv
+{
+    width: 80%;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    margin-left: 10px;
+}
+
+.qcqfImgUploadDiv
+{
+    width: 80%;
+    height: 30px;
+    line-height: 20px;
+    margin: 10px 0 10px 0;
+}
+
+    .qcqfImgUploadDiv input
+    {
+        width: 100%;
+        margin-left: 0 !important;
+        background: #ffffff;
+        border: 1px solid #cccccc;
+    }
+
+.qcqfTableLeftSolid
+{
+    border-left: 1px solid #808080 !important;
+    min-height: 30px !important;
+}
+
+.qcqfTableRighttSolid
+{
+    border-right: 1px solid #808080 !important;
+    min-height: 30px !important;
+}
+
+.qcqfLeftBottom
+{
+    border-bottom: 1px solid #808080 !important;
+    border-bottom-left-radius: 6px;
+}
+
+.qcqfRightBottom
+{
+    border-bottom: 1px solid #808080 !important;
+    border-bottom-right-radius: 6px;
+}
+
+.qcqfTableDashedRight
+{
+    border-right: 1px dashed #cccccc !important;
+}
+
+.qcqfBottom
+{
+    border-bottom: 1px solid #808080 !important;
+}
+
+.qcqfTableLeft
+{
+    width: 100px;
+    text-align: center;
+}
+
+.qcqf_table_citySelect, .qcqf_table_countySelect
+{
+    width: 150px;
+    height: 25px;
+    border: 1px solid #BFBFBF;
+    margin: 0 5px 0 5px;
+}
+.tableTitle
+{
+    float: left;
+    width: 150px;
+    height: 32px;    
+    color: #ff4800;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 15px;
+    line-height: 32px;
+    background: url(../../Content/images/grayBar.png) repeat-x 0 0;
+}
+
+/*标题头*/
+.qcqfShowPageTitle {
+         width:100%;
+    height:42px;
+    background-image:url(../images/head.png);
+    background-repeat:repeat-x;
+    font-size:18px;
+    color:white;
+    text-align:center;
+    line-height:42px;
+    letter-spacing:10px;
+     }
+.BIT_right_img {
+    height:30px;
+    width:100px;
+    float:right;
+    cursor:pointer;
+    background:#ffffff;
+    margin-top:10px;
+}
+.BIT_right_img_For_save {
+        background-image: url(../../Content/images/save.png); background-repeat: no-repeat; background-position: center;
+    }
+.importwarn {
+    float:left;
+    color:#ff6400;
+    margin-top:12px;
+    margin-left:15px;
+}

@@ -1,0 +1,75 @@
+﻿body {
+}
+.lmreturn_to_fx {
+width:40px;
+float:right;
+margin-right:10px;
+margin-top:15px;
+height:13px;
+line-height:13px;
+background:url(../../Content/images/returnback.png) no-repeat right bottom;
+cursor:pointer;
+
+}
+#lMlistdata {
+    width:375px;
+    border-top:1px solid #C0C0C0;
+    border-bottom:1px solid #C0C0C0;
+background:#ffffff;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+
+min-height:300px;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+
+}
+#lm_query_result_box {
+     width:368px;
+    border:1px solid #d3d3d3;
+    margin-left:5px;
+    background-color:#f4f4f4;
+    margin-top:8px;
+
+    min-height:370px;
+    position:absolute;
+    top:80px;
+    bottom:20px;
+}
+
+.lM_tblist {
+width:358px;
+border:1px solid #C0C0C0;
+margin:10px 4px 0px 4px;
+}
+#lMtb_box {
+width:358px;
+border:1px solid #C0C0C0;
+border-bottom:none;
+border-top:none;
+overflow:hidden;
+margin:0px 4px 10px 4px;
+
+min-height:300px;
+    position:absolute;
+    top:3px;
+    bottom:5px;
+}
+.lMcheckbox {
+margin-top:5px !important;
+margin-left:20px  !important;
+}
+#layerManaAll{
+margin-top:5px !important;
+margin-left:20px  !important;
+}
+#showlayerSubmit {
+width:40px;
+margin-right:10px;
+margin-top:10px;
+height:25px;
+float:right;
+cursor:pointer;
+}

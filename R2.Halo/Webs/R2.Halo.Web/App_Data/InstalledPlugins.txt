@@ -1,0 +1,12 @@
+Apps.D2Map
+Apps.CardsEdit
+Test
+Apps.JnDbInsert
+Apps.JnDbDeleteAndEdit
+Apps.D3Map
+Apps.DisasterBaseInfoStatistic
+Apps.RiskCardInput
+Apps.WorkCardInput
+Apps.WarningParameterSet
+Apps.EarlyWarning
+

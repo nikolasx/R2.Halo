@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+	<!-- 右键菜单配置 -->
+	<RightMenu>
+		<SubNode MenuName="放大" MethodType="1000" Icon="" />
+		<SubNode MenuName="缩小" MethodType="1001" Icon="" />
+		<SubNode MenuName="倾角操作" Icon="">
+			<SubNode MenuName="增大倾斜角" MethodType="1002" Icon="" />
+			<SubNode MenuName="减少倾斜角" MethodType="1003" Icon="" />
+		</SubNode>
+		<SubNode MenuName="旋转操作" Icon="">
+			<SubNode MenuName="顺时针旋转" MethodType="1004" Icon="" />
+			<SubNode MenuName="逆时针旋转" MethodType="1005" Icon="" />
+		</SubNode>
+		<SubNode MenuName="复位" MethodType="1010" Icon="" />
+	</RightMenu>
+</xml-body>

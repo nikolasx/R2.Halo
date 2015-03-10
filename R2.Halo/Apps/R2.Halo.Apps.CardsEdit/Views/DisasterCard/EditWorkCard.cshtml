@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "EditWorkCard";
+Layout ="~/Apps/Apps.CardsEdit/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/disasterCard.css")" rel="stylesheet") />
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/disasterCard.js")"></script> 
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/disasterWorkCard.js")"></script> 
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/EditWorkCard.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/global/data.js")"></script>
+
+<input type="hidden" id="editWorkCardId" value="@ViewBag.editWorkCardId" />
+<div id="DC_main">
+    <div class="DC_content">
+        <div class="DC_menu">
+            <div class="DC_nav"><div style="color:#ff6400;">注：橙色字段为必填信息，请填写完整。</div>
+            <span style="font-size: 24px;">&bull;</span><span style="font-size: 14px;">防灾工作明白卡信息展示</span></div>
+            
+            <div class="DC_return" id="returnToHome" title="返回"></div>
+            <div class="DC_clear" id="DC_WorkCardClear"></div>
+            <div class="DC_save" id="editWorkCard"></div>
+            
+
+        </div>
+        <div class="DC_card DC_card_work">
+            <div class="DC_area">
+                <div class="DC_title" style="width:22px; height:134px; padding:10px 6px; line-height:22px;">灾害基本情况</div>
+                <div class="DC_title" style="width:130px; color:#ff6400;">名 称</div>
+                <div class="DC_field gz_name" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_nameInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">野外编号</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px; color:#ff6400;">统一编号</div>
+                <div class="DC_field gz_idNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">灾害位置</div>
+                <div class="DC_field gz_location" style="width:300px;">
+                    <input type="text" style="width:190px;" class="gz_locationInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">灾害类型及其规模</div>
+                <div class="DC_field gz_type" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_typeInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">诱发因素</div>
+                <div class="DC_field gz_cause" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_causeInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">威胁对象</div>
+                <div class="DC_field gz_threaten" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_threatenInput" />
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:22px; height:88px; padding:2px 6px; line-height:22px;">监测预测</div>
+                <div class="DC_title" style="width:130px; color:#ff6400;">监测负责人</div>
+                <div class="DC_field gz_monitorMan" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_monitorManInput" />
+                </div>
+                <div class="DC_title" style="width:130px; color:#ff6400;">联系电话</div>
+                <div class="DC_field gz_monitorManTel" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_monitorManTelInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">监测的主要迹象</div>
+                <div class="DC_field gz_monitorSign" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_monitorSignInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">监测的主要手段和方法</div>
+                <div class="DC_field gz_monitorMethod" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_monitorMethodInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">临灾预报的判断</div>
+                <div class="DC_field gz_forecast" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_forecastInput" />
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:22px; height:134px; padding:10px 6px; line-height:22px;">应急避险撤离</div>
+                <div class="DC_title" style="width:130px;">预定避灾地点</div>
+                <div class="DC_field gz_ydbzdd" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_ydbzddInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">预定疏散路线</div>
+                <div class="DC_field gz_ydsslx" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_ydsslxInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">预定报警信号</div>
+                <div class="DC_field gz_ydbjxh" style="width:169px;">
+                    <input type="text" style="width:160px;" class="gz_ydbjxhInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">疏散命令发布人</div>
+                <div class="DC_field gz_ssmlfbr" style="width:155px;">
+                    <input type="text" style="width:145px;" class="gz_ssmlfbrInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">值班电话</div>
+                <div class="DC_field gz_ssmlfbrNum" style="width:144px;">
+                    <input type="text" style="width:130px;" class="gz_ssmlfbrNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">抢、排险单位</div>
+                <div class="DC_field gz_qpxdw" style="width:169px;">
+                    <input type="text" style="width:160px;" class="gz_qpxdwInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_qpxdwDuty" style="width:155px;">
+                    <input type="text" style="width:145px;" class="gz_qpxdwDutyInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">值班电话</div>
+                <div class="DC_field gz_qpxdwNum" style="width:144px;">
+                    <input type="text" style="width:130px;" class="gz_qpxdwNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">治安保卫单位</div>
+                <div class="DC_field gz_zabwdw" style="width:169px;">
+                    <input type="text" style="width:160px;" class="gz_zabwdwInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_zabwdwDuty" style="width:155px;">
+                    <input type="text" style="width:145px;" class="gz_zabwdwDutyInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">值班电话</div>
+                <div class="DC_field gz_zabwdwNum" style="width:144px;">
+                    <input type="text" style="width:130px;" class="gz_zabwdwNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">医疗救护单位</div>
+                <div class="DC_field gz_yljhdw" style="width:169px;">
+                    <input type="text" style="width:160px;" class="gz_yljhdwInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_yljhdwDuty" style="width:155px;">
+                    <input type="text" style="width:145px;" class="gz_yljhdwDutyInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">值班电话</div>
+                <div class="DC_field gz_yljhdwNum" style="width:144px;">
+                    <input type="text" style="width:130px;" class="gz_yljhdwNumInput" />
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:22px; height:103px; padding:10px 6px; line-height:15px;">工作明白卡信息</div>
+                <div class="DC_title" style="width:130px;">本卡发放单位</div>
+                <div class="DC_field gz_issueUnit" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_issueUnitInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_issueNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_issueNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">日期</div>
+                <div class="DC_field gz_issueDate" style="width:300px;">
+                    <input type="text" style="width:75px; text-align:center;" class="gz_issueDateInputYear" /><label>年</label>
+                    <input type="text" style="width:75px; text-align:center;" class="gz_issueDateInputMonth" /><label>月</label>
+                    <input type="text" style="width:75px; text-align:center;" class="gz_issueDateInputDay" /><label>日</label>
+                </div>
+                <div class="DC_title" style="width:130px;">持卡单位或个人</div>
+                <div class="DC_field gz_hold" style="width:732px;">
+                    <input type="text" style="width:720px;" class="gz_holdInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_holdNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_holdNumInput" />
+                </div>
+                <div class="DC_title" style="width:130px;">日期</div>
+                <div class="DC_field gz_holdDate" style="width:300px;">
+                    <input type="text" style="width:75px; text-align:center;" class="gz_holdDateInputYear" /><label>年</label>
+                    <input type="text" style="width:75px; text-align:center;" class="gz_holdDateInputMonth" /><label>月</label>
+                    <input type="text" style="width:75px; text-align:center;" class="gz_holdDateInputDay" /><label>日</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

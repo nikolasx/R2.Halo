@@ -1,0 +1,9 @@
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Release\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Release\R2.Halo.CoreEntities.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Release\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Release\R2.Halo.CoreEntities.pdb
+G:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Release\R2.Halo.CoreEntities.dll
+G:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Release\R2.Halo.CoreEntities.pdb
+G:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Release\R2.Halo.CoreEntities.dll
+G:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Release\R2.Halo.CoreEntities.pdb
+G:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Release\R2.Halo.CoreEntities.csprojResolveAssemblyReference.cache

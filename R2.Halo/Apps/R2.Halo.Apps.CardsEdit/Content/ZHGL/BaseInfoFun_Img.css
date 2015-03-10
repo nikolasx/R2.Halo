@@ -1,0 +1,96 @@
+﻿body {padding:0px;
+      margin:0px;
+}
+
+/*.UpImageFormDiv {
+    width:787px;
+    height:40px;
+    position:absolute;
+    opacity:0;
+}*/
+.Imgscan {
+height:100px;
+width:75px;
+margin-left:5px;
+margin-top:10px;
+float:left;
+}
+.upPicControlDiv {
+}
+.UpImgInputText {
+    width:60px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    border:1px solid #ccc;
+    background:url(../images/btn_bg.png) repeat-x;
+    color:#33699c;
+    cursor:pointer;
+     float:left;
+}
+.PicScan,.VideoScan {
+    width:16px;
+    height:16px;
+    float:left;
+    background:url(../images/magnifier.png)  no-repeat;
+    cursor:pointer;
+}
+.PicDele,.VideocDele {
+    width:16px;
+    height:16px;
+    float:left;
+    margin-left:8px;
+    background:url(../images/deleteBtn.png) no-repeat;
+    cursor:pointer;
+}
+.MultiFile-label {
+    height:45px;
+    margin-top:5px;
+}
+
+/**预览*/
+.ScanImgDlg {
+    overflow:hidden;
+}
+.ScanModel {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:#333333;
+    z-index:199999;
+}
+.Scanclose {
+    width:75px;
+    height:75px;
+    position:absolute;
+    top:2px;
+    right:2px;
+    background:url(../images/maskClose.png)  no-repeat;
+    z-index:200002;
+    cursor:pointer;
+}
+.Scanclose:hover {
+    background:url(../images/maskClose_hover.png)  no-repeat;
+}
+.Scancontent {
+position:absolute;
+top:5%;
+left:10%;
+right: 10%;
+    bottom: 5%;
+    width: 80%;
+    height: 90%;
+/*width:80%;
+height:90%;*/
+text-align:center;
+z-index:200000;
+overflow:hidden;
+}
+.ScanresultChart {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}

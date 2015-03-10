@@ -1,0 +1,386 @@
+﻿* {
+    padding:0;
+    margin:0;
+    font-family:"微软雅黑";
+}
+body {
+    overflow:hidden;
+}
+#ui_main {
+    overflow:auto;
+    position:absolute;
+    left:0;
+    right:0;
+    height:100%;
+    overflow:hidden;
+}
+ul, li {
+    list-style:none;
+}
+#ui_whole {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-size:12px;
+    position:absolute;
+}
+
+#ui_top {
+    width:100%;
+    height:40px;
+    background:#15486d;
+    border-top:3px solid #116aa9;
+    border-bottom:1px solid #fff;
+}
+.ui_logo {
+    float:left;
+    padding-left:30px;
+    height:20px;
+    margin-top:10px;
+    color:#fff;
+    letter-spacing:1px;
+}
+.logo_Chinese {
+    float:left;
+    font-size:18px;
+}
+.logo_English {
+    font-size:12px;
+    float:left;
+    margin-left:20px;
+    margin-top:5px;
+    color:#ccc;
+}
+.top_right {
+    float:right;
+    width:450px;
+    height:32px;
+    margin-top:6px;
+    line-height:32px;
+}
+.top_admin {
+    float:right;
+    color:#fff;
+    margin-right:15px;
+}
+.top_home, .top_3d, .top_cancel {
+    float:right;
+    width:46px;
+    height:31px;
+    background:url(images/top_right.png) no-repeat;
+    cursor:pointer;
+}
+.top_home {
+    width:45px;
+}
+.top_3d {
+    background-position:-45px 0;
+}
+.top_cancel {
+    background-position:-90px 0;
+ margin-right:5px;   
+}
+.top_3d:hover {
+    background-position:-185px 0;
+}
+.top_cancel:hover {
+    background-position:-230px 0;
+}
+
+#ui_content {
+    width:100%;
+    position:absolute;
+    top:44px;
+    bottom:0;
+    overflow:hidden
+}
+#ui_left {
+    width:382px;
+    height:100%;
+    position:absolute;
+    background:#fff;
+    z-index:5000;
+}
+#ui_left1, #ui_left2{
+    width:382px;
+    height:100%;
+    position:absolute;
+    z-index:5000;
+    background:#fff;
+    display:none;
+}
+.ui_menuTitle {
+    width:380px;
+    height:22px;
+    border:1px solid #c0c0c0;
+    background:url(images/left_menu.png);
+}
+.mtitle_icon {
+    width:16px;
+    height:22px;
+    float:left;
+    background:url(images/menutitle_icon.png) no-repeat left center;
+    margin-left:10px;
+}
+.mtitle_txt {
+    float:left;
+    height:22px;
+    line-height:22px;
+    color:#222222;
+    font-size:13px;
+    cursor:pointer;
+}
+.ui_menuBox {
+    border-left:#c0c0c0 1px solid;
+    width:381px;
+    height:142px;
+    position:relative;
+    z-index:5000;
+}
+    .ui_menuBox .ui_menuli {
+        width:127px;
+        height:71px;
+        float:left;
+        background:url(images/menu_bg.png) no-repeat;
+        cursor:pointer;
+    }
+.ui_menu_pic {
+    width:100px;
+    height:31px;
+    margin-left:14px;
+    margin-top:20px;
+    margin-bottom:20px;
+    background:url(images/menu.png) no-repeat;
+}
+.second_menu,.third_menu {
+    width:126px;
+    height:auto;
+    border:1px solid #c0c0c0;
+    border-top:none;
+    background:#fff;
+    position:absolute;
+    margin-left:-1px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.third_menu {
+    border-top:1px solid #c0c0c0;
+}
+.second_nav,.third_nav {
+    width:126px;
+    height:26px;
+    background:#fff;
+    line-height:26px;
+    cursor:pointer;
+}
+    .second_nav:hover,.third_nav:hover {
+        background:#e3e3e3;
+    }
+    .second_nav div,.third_nav div{
+        width:76px;
+        height:26px;
+        float:left;
+    }
+    .second_nav span {
+        width:20px;
+        height:20px;
+        margin:4px 15px 2px;
+        float:left;
+        background:url(images/second_menu.png) no-repeat;
+    }
+    .third_nav span {
+        width:20px;
+        height:20px;
+        margin:4px 15px 2px;
+        float:left;
+        background:url(images/second_menu.png) no-repeat;
+    }
+.third_menu {
+    margin-left:126px;
+}
+.third_menu1 .third_nav span {
+    background:url(images/third_menu1.png) no-repeat;
+}
+.second_query_static_span {
+        width:20px;
+        height:20px;
+        margin:4px 15px 2px;
+        float:left;
+    background:url(images/third_menu1.png) no-repeat  !important;
+}
+#ui_right {
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    border:1px solid #c0c0c0;
+}
+#fullMap {
+    width:100%;
+    height:100%;
+}
+#MapTools
+{
+    width:36px;
+    height:200px;
+    position:absolute;
+    z-index:1000;
+    right:30px;
+    bottom:30px;
+}
+#MapTools .dragdrawBtn
+{
+    width:36px;
+    height:36px;
+    float:left;
+    margin-bottom:10px;
+    background:url(images/ui_tools.png) no-repeat;
+    cursor:pointer;
+}
+.lr_slide {
+    width:10px;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    background:rgba(0,0,0,0.25);
+    z-index:5000;
+}
+.lr_slide1 {
+    left:382px;
+    border-left:1px solid #fff;
+}
+.slide_btn,.slide_btn2,.slide_btn3,.slide_btn3_1 {
+    width:17px;
+    height:74px;
+    position:absolute;
+    left:0;
+    top:50%;
+    margin-top:-37px;
+    background:url(images/splitShow.png);
+    cursor:pointer;
+}
+
+#contentPanel {
+    width:100%;
+    position:absolute;
+    top:44px;
+    bottom:0;
+    left:100%;
+}
+
+.ui_Iframe {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+
+
+
+.ui_Content {
+    width:380px;
+    border:1px solid #C0C0C0;
+    margin-top:5px;
+    position:absolute;
+    top:170px;
+    bottom:0;
+    background:#fff;
+}
+
+#fullPanel {
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:100%;
+}
+
+.full_Iframe {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+
+#fullPanel2 {
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:100%;
+}
+
+.full_Iframe2 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+
+.userclass {
+    float:left;
+    color:#fff;
+    margin-right:5px;
+}
+#userMana {
+     float:left;
+    color:#fff;
+    margin-right:5px;
+}
+.usersxl {
+    float:left;
+    width:16px;
+    height:16px;
+    margin-right:5px;
+    background:url(../../Content/images/login/07.png) no-repeat;
+    margin-top:6px;
+    cursor:pointer;
+}
+.userBox {
+    top:55px;
+    right:120px;
+    width:95px;
+    height:97px;
+    background-color:blue;
+    display:none;
+    position:absolute;
+    background:url(../../Content/images/login/06.png) no-repeat;
+     z-index:1000;
+}
+.ResetUser {
+    width:81px;
+    height:25px;
+    background:url(../../Content/images/login/01.png) no-repeat center center;
+    margin-top:12px;
+    cursor:pointer;
+}
+.ModifyPwd {
+    width:81px;
+    height:25px;
+    background:url(../../Content/images/login/02.png) no-repeat center center;
+    margin-top:2px;
+    cursor:pointer;
+}
+.ManaUser {
+    width:81px;
+    height:25px;
+    background:url(../../Content/images/login/03.png) no-repeat center center;
+    margin-top:2px;
+    cursor:pointer;
+}
+
+
+
+/*等待页面*/
+.ui_wait .ui_waitMask{position: absolute; top:0; left:0; width:100%; height:100%; overflow: hidden; background: #000; z-index:20000; overflow:hidden;
+           filter:alpha(opacity=65); -khtml-opacity: 0.65; opacity: 0.65;}
+.ui_wait .ui_waitContent{position:absolute;  top:50%; margin-top:-110px; width:100%; height:220px;
+                z-index:20001; overflow:hidden; }
+.ui_wait .ui_waitImg{position:absolute; left:50%; margin-left:-62px;width:124px; height:124px; background:url("images/wait.gif");}
+.ui_wait .ui_waitTxt{position:absolute; top:150px; width:100%; font-size:16px; font-weight:bold;color:#FFFFFF; text-align:center;}
+.ui_wait .ui_waitTip{ margin-top:10px; font-size:14px; font-weight:normal; color:#BFF774;}

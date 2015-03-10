@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+Layout ="~/Apps/Apps.D3Map/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Apps.D3Map/Content/QXYJ/Layermana.css")" type="text/css" rel="stylesheet" />
+<link href="@Url.Content("~/Apps/Apps.D3Map/Content/QXYJ/luobaoqu.css")" type="text/css" rel="stylesheet" />
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/Index/customhelp.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/Index/showUser.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/Index/indexUser.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/global/data.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/global/TileLayer.Metro.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.D3Map/Scripts/Libs/jquery.bgiframe-2.1.2.js")"></script>
+
+<div id="ui_main">
+    <div id="ui_whole">
+
+        <div id="ui_content">
+            <div id="ui_left1"></div>
+            <div id="ui_left2"></div>
+            <div id="ui_left">
+                <div class="ui_Content"></div>
+            </div>
+
+            <div id="ui_right">
+                @*<div class="lr_slide lr_slide1">
+                        <div class="slide_btn"></div>
+                    </div>
+                    <div id="fullMap" oncontextmenu="return false">
+                        <div id="MapTools">
+                            <div id="zoomIn" class="dragdrawBtn" title="放大"></div>
+                            <div id="zoomOut" class="dragdrawBtn" title="缩小"></div>
+                            <div id="drag" class="dragdrawBtn" title="拖动"></div>
+                            <div id="restore" class="dragdrawBtn" title="复位"></div>
+                        </div>
+                    </div>*@
+                <iframe src="@Url.Content("~/Apps/Apps.D3Map/map.htm")" id="appletFrame" name="appletFrame" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div id="contentPanel"> 
+            @*<div class="lr_slide">
+                    <div class="slide_btn2"></div>
+                </div>*@
+            @*<iframe class="ui_Iframe" name="rightIframe" frameborder="0" src="#"></iframe>*@
+            @*<iframe src="~/map.htm" id="appletFrame" name="appletFrame" frameborder="0" scrolling="no"></iframe>*@
+        </div>
+    </div>
+
+</div>

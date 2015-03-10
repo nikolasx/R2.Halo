@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="R2JNDisasterModelStoreContainer" CdmEntityContainer="DisasterJNdzEntities">
+    <EntitySetMapping Name="HedgeCards">
+      <EntityTypeMapping TypeName="R2.JNDisasterModel.HedgeCard">
+        <MappingFragment StoreEntitySet="HedgeCard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="统一编号" ColumnName="统一编号" />
+          <ScalarProperty Name="名称" ColumnName="名称" />
+          <ScalarProperty Name="野外编号" ColumnName="野外编号" />
+          <ScalarProperty Name="规模" ColumnName="规模" />
+          <ScalarProperty Name="位置关系" ColumnName="位置关系" />
+          <ScalarProperty Name="诱发因素" ColumnName="诱发因素" />
+          <ScalarProperty Name="本住户注意事项" ColumnName="本住户注意事项" />
+          <ScalarProperty Name="监测人" ColumnName="监测人" />
+          <ScalarProperty Name="监测人联系电话" ColumnName="监测人联系电话" />
+          <ScalarProperty Name="预警信号" ColumnName="预警信号" />
+          <ScalarProperty Name="预警信号发布人" ColumnName="预警信号发布人" />
+          <ScalarProperty Name="预警信号发布人联系电话" ColumnName="预警信号发布人联系电话" />
+          <ScalarProperty Name="撤离路线" ColumnName="撤离路线" />
+          <ScalarProperty Name="安置单位地点" ColumnName="安置单位地点" />
+          <ScalarProperty Name="安置单位负责人" ColumnName="安置单位负责人" />
+          <ScalarProperty Name="安置单位联系电话" ColumnName="安置单位联系电话" />
+          <ScalarProperty Name="救护单位" ColumnName="救护单位" />
+          <ScalarProperty Name="救护单位负责人" ColumnName="救护单位负责人" />
+          <ScalarProperty Name="救护单位联系电话" ColumnName="救护单位联系电话" />
+          <ScalarProperty Name="本卡发放单位" ColumnName="本卡发放单位" />
+          <ScalarProperty Name="本卡发放单位负责人" ColumnName="本卡发放单位负责人" />
+          <ScalarProperty Name="本卡发放单位联系电话" ColumnName="本卡发放单位联系电话" />
+          <ScalarProperty Name="户主姓名" ColumnName="户主姓名" />
+          <ScalarProperty Name="家庭人数" ColumnName="家庭人数" />
+          <ScalarProperty Name="房屋类型" ColumnName="房屋类型" />
+          <ScalarProperty Name="家庭住址" ColumnName="家庭住址" />
+          <ScalarProperty Name="姓名1" ColumnName="姓名1" />
+          <ScalarProperty Name="性别1" ColumnName="性别1" />
+          <ScalarProperty Name="年龄1" ColumnName="年龄1" />
+          <ScalarProperty Name="姓名2" ColumnName="姓名2" />
+          <ScalarProperty Name="性别2" ColumnName="性别2" />
+          <ScalarProperty Name="年龄2" ColumnName="年龄2" />
+          <ScalarProperty Name="姓名3" ColumnName="姓名3" />
+          <ScalarProperty Name="性别3" ColumnName="性别3" />
+          <ScalarProperty Name="年龄3" ColumnName="年龄3" />
+          <ScalarProperty Name="姓名4" ColumnName="姓名4" />
+          <ScalarProperty Name="性别4" ColumnName="性别4" />
+          <ScalarProperty Name="年龄4" ColumnName="年龄4" />
+          <ScalarProperty Name="姓名5" ColumnName="姓名5" />
+          <ScalarProperty Name="性别5" ColumnName="性别5" />
+          <ScalarProperty Name="年龄5" ColumnName="年龄5" />
+          <ScalarProperty Name="姓名6" ColumnName="姓名6" />
+          <ScalarProperty Name="性别6" ColumnName="性别6" />
+          <ScalarProperty Name="年龄6" ColumnName="年龄6" />
+          <ScalarProperty Name="姓名7" ColumnName="姓名7" />
+          <ScalarProperty Name="性别7" ColumnName="性别7" />
+          <ScalarProperty Name="年龄7" ColumnName="年龄7" />
+          <ScalarProperty Name="姓名8" ColumnName="姓名8" />
+          <ScalarProperty Name="性别8" ColumnName="性别8" />
+          <ScalarProperty Name="年龄8" ColumnName="年龄8" />
+          <ScalarProperty Name="户主签名" ColumnName="户主签名" />
+          <ScalarProperty Name="联系电话" ColumnName="联系电话" />
+          <ScalarProperty Name="日期年" ColumnName="日期年" />
+          <ScalarProperty Name="日期月" ColumnName="日期月" />
+          <ScalarProperty Name="日期日" ColumnName="日期日" />
+          <ScalarProperty Name="编号" ColumnName="编号" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoryEarlyWarnings">
+      <EntityTypeMapping TypeName="R2.JNDisasterModel.HistoryEarlyWarning">
+        <MappingFragment StoreEntitySet="HistoryEarlyWarning">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="layerName" ColumnName="layerName" />
+          <ScalarProperty Name="warningTime" ColumnName="warningTime" />
+          <ScalarProperty Name="operateTime" ColumnName="operateTime" />
+          <ScalarProperty Name="isAnalysis" ColumnName="isAnalysis" />
+          <ScalarProperty Name="defaultResult" ColumnName="defaultResult" />
+          <ScalarProperty Name="analysisResult" ColumnName="analysisResult" />
+          <ScalarProperty Name="rain15Layer" ColumnName="rain15Layer" />
+          <ScalarProperty Name="rainTodayLayer" ColumnName="rainTodayLayer" />
+          <ScalarProperty Name="rainHSumLayer" ColumnName="rainHSumLayer" />
+          <ScalarProperty Name="rainHMaxLayer" ColumnName="rainHMaxLayer" />
+          <ScalarProperty Name="isQPD" ColumnName="isQPD" />
+          <ScalarProperty Name="qpdRoad" ColumnName="qpdRoad" />
+          <ScalarProperty Name="isTownGrade" ColumnName="isTownGrade" />
+          <ScalarProperty Name="townGradeRoad" ColumnName="townGradeRoad" />
+          <ScalarProperty Name="isXQGrade" ColumnName="isXQGrade" />
+          <ScalarProperty Name="xqGradeRoad" ColumnName="xqGradeRoad" />
+          <ScalarProperty Name="isImgResult" ColumnName="isImgResult" />
+          <ScalarProperty Name="ImgResultRoad" ColumnName="ImgResultRoad" />
+          <ScalarProperty Name="grideRole" ColumnName="grideRole" />
+          <ScalarProperty Name="forecastTime" ColumnName="forecastTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PreventionCards">
+      <EntityTypeMapping TypeName="R2.JNDisasterModel.PreventionCard">
+        <MappingFragment StoreEntitySet="PreventionCard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="统一编号" ColumnName="统一编号" />
+          <ScalarProperty Name="名称" ColumnName="名称" />
+          <ScalarProperty Name="野外编号" ColumnName="野外编号" />
+          <ScalarProperty Name="灾害位置" ColumnName="灾害位置" />
+          <ScalarProperty Name="类型及规模" ColumnName="类型及规模" />
+          <ScalarProperty Name="诱发因素" ColumnName="诱发因素" />
+          <ScalarProperty Name="威胁对象" ColumnName="威胁对象" />
+          <ScalarProperty Name="监测负责人" ColumnName="监测负责人" />
+          <ScalarProperty Name="监测负责人联系电话" ColumnName="监测负责人联系电话" />
+          <ScalarProperty Name="监测的主要迹象" ColumnName="监测的主要迹象" />
+          <ScalarProperty Name="监测的主要手段和方法" ColumnName="监测的主要手段和方法" />
+          <ScalarProperty Name="临灾预报的判据" ColumnName="临灾预报的判据" />
+          <ScalarProperty Name="预定避灾地点" ColumnName="预定避灾地点" />
+          <ScalarProperty Name="预定疏散路线" ColumnName="预定疏散路线" />
+          <ScalarProperty Name="预定报警信号" ColumnName="预定报警信号" />
+          <ScalarProperty Name="疏散命令发布人" ColumnName="疏散命令发布人" />
+          <ScalarProperty Name="疏散值班电话" ColumnName="疏散值班电话" />
+          <ScalarProperty Name="抢排险单位" ColumnName="抢排险单位" />
+          <ScalarProperty Name="抢排险负责人" ColumnName="抢排险负责人" />
+          <ScalarProperty Name="抢排险值班电话" ColumnName="抢排险值班电话" />
+          <ScalarProperty Name="治安保卫单位" ColumnName="治安保卫单位" />
+          <ScalarProperty Name="治安保卫负责人" ColumnName="治安保卫负责人" />
+          <ScalarProperty Name="治安保卫值班电话" ColumnName="治安保卫值班电话" />
+          <ScalarProperty Name="医疗救护单位" ColumnName="医疗救护单位" />
+          <ScalarProperty Name="医疗救护负责人" ColumnName="医疗救护负责人" />
+          <ScalarProperty Name="医疗救护值班电话" ColumnName="医疗救护值班电话" />
+          <ScalarProperty Name="本卡发放单位" ColumnName="本卡发放单位" />
+          <ScalarProperty Name="本卡发放单位联系电话" ColumnName="本卡发放单位联系电话" />
+          <ScalarProperty Name="发放日期年" ColumnName="发放日期年" />
+          <ScalarProperty Name="发放日期月" ColumnName="发放日期月" />
+          <ScalarProperty Name="发放日期日" ColumnName="发放日期日" />
+          <ScalarProperty Name="持卡单位或个人" ColumnName="持卡单位或个人" />
+          <ScalarProperty Name="持卡单位或个人联系电话" ColumnName="持卡单位或个人联系电话" />
+          <ScalarProperty Name="持卡日期年" ColumnName="持卡日期年" />
+          <ScalarProperty Name="持卡日期月" ColumnName="持卡日期月" />
+          <ScalarProperty Name="持卡日期日" ColumnName="持卡日期日" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="R2.JNDisasterModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

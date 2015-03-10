@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Apps/Apps.WarningParameterSet/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Apps.WarningParameterSet/Content/QXYJ/Layermana.css")" type="text/css" rel="stylesheet" />
+<link href="@Url.Content("~/Apps/Apps.WarningParameterSet/Content/QXYJ/luobaoqu.css")" type="text/css" rel="stylesheet" />
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/QXYJ/layersMana.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/Index/customhelp.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/Index/showUser.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/Index/indexUser.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/QXYJ/luobaoqu.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/QXYJ/lbqResultAnalysis.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/global/fakeddata.js")"></script>
+<script src="@Url.Content("~/Apps/Apps.WarningParameterSet/Scripts/global/TileLayer.Metro.js")"></script>
+
+<div id="ui_main">
+    <div id="ui_whole">
+        @*<div id="ui_top">
+            <div class="ui_logo">
+                <div class="logo_Chinese">济南地质灾害气象风险预警预报系统</div>
+                <div class="logo_English">Jinan Geo-hazard Early-Warning System</div>
+            </div>
+            <div class="top_right">
+                <div class="top_cancel"></div>
+                <div class="top_3d"></div>
+                <div class="top_home"></div>
+                <div class="top_admin">
+                    <div class="userclass">admin | 济南市地质环境站管理员</div>
+                    <div id="userMana"><div class="usersxl"></div><div class="userBox">
+                            <div class="ResetUser"></div><div class="ModifyPwd"></div><div class="ManaUser"></div>
+                      </div></div>
+                    
+                </div>
+            </div>
+        </div>*@
+        <div id="ui_content">
+            <div id="ui_left1"></div>
+            <div id="ui_left2"></div>
+            <div id="ui_left">
+                <div class="ui_menu">
+                    <div class="ui_menuTitle">
+                        <div class="mtitle_icon"></div>
+                        <div class="mtitle_txt">菜单</div>
+                    </div>
+                    <ul class="ui_menuBox">
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                        <li class="ui_menuli">
+                            <div class="ui_menu_pic"></div>
+                            <ul class="second_menu"></ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ui_Content"></div>
+
+            </div>
+            <div id="ui_right">
+                <div class="lr_slide lr_slide1">
+                    <div class="slide_btn"></div>
+                </div>
+                <div id="fullMap" oncontextmenu="return false">
+                    <div id="MapTools">
+                        <div id="zoomIn" class="dragdrawBtn" title="放大"></div>
+                        <div id="zoomOut" class="dragdrawBtn" title="缩小"></div>
+                        <div id="drag" class="dragdrawBtn" title="拖动"></div>
+                        <div id="restore" class="dragdrawBtn" title="复位"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contentPanel">
+            <div class="lr_slide">
+                <div class="slide_btn2"></div>
+            </div>
+            <iframe class="ui_Iframe" name="rightIframe" frameborder="0" src="#"></iframe>
+        </div>
+    </div>
+
+    <div id="fullPanel">
+        <div class="lr_slide" style="top:42px">
+            <div class="slide_btn3"></div>
+        </div>
+        <iframe class="full_Iframe" name="rightIframe" frameborder="0" src="#"></iframe>
+    </div>
+   <div id="fullPanel2">
+        <div class="lr_slide" style="top:42px">
+            <div class="slide_btn3_1"></div>
+        </div>
+        <iframe class="full_Iframe2" name="rightIframe2" frameborder="0" src="#"></iframe>
+    </div>
+</div>

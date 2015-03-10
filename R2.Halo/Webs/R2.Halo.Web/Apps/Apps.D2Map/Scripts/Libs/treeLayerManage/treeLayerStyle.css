@@ -1,0 +1,239 @@
+﻿
+/*-------------------tree-------------------*/
+*
+{
+    font-family:"微软雅黑";
+}
+.parentDivClass
+{
+    margin-left:1px;
+}
+ul
+{
+    margin:0;
+    padding:0;
+    font-size:13px;
+    color:#333;
+}
+ul li
+{
+    margin:0;
+    padding:0;
+    list-style:none;
+}    
+
+/*
+*结点的字体和颜色
+*/
+.colorClass_0
+{
+    font-size:15px;
+}
+.colorClass_1
+{
+    color:#333;
+    font-size:14px;
+}
+.colorClass_2
+{
+    color:#333;
+    font-size:14px;
+}
+.treeNode_cursor
+{
+    display:block;
+    line-height:18px;
+    height:18px;
+}
+.noCursor
+{
+    width:2px;
+    height:18px;
+   
+}
+/*
+.imgIcon
+{
+    width:16px;
+    height:18px;
+}
+*/
+.imgInstance
+{
+    width:16px;
+    height:18px;
+}
+.treeNodeIcon
+{
+    margin:0;
+    margin-left:2px;
+    height:15px;
+    width:15px;
+   
+}
+.layerImg
+{
+    height:20px;
+    width:20px;
+}
+.checkBox_che {
+    background:url(images/checkBox_che.png) 0 1px no-repeat;
+}
+.checkBox_un {
+    background:url(images/checkBox_un.png) 0 1px no-repeat;
+}
+.treeNodeDiv
+{
+     white-space:nowrap;
+     padding-bottom:0px;
+}
+.a_nodeText
+{
+    text-decoration:none;
+    padding-left:2px;
+    padding-top:1px;
+    margin-top:0;
+}
+/*主题是line */
+.imgInstance_line
+{
+    background:url(images/line1.gif) 0 0 no-repeat;
+}
+.imgInstance_line_end ,.treeNode_line_end_expanded_space
+{
+    background:url(images/line_end.gif) 0 0 no-repeat;
+}
+
+.treeNode_line_expanded,.treeNode_line_end_expanded
+{
+    background:url(images/line_open.gif) 0 0 no-repeat;
+}
+.treeNode_line_collapsed,.treeNode_line_end_collapsed
+{
+     background:url(images/line_close.gif) 0 0 no-repeat;
+}
+
+/*
+主题是arrow
+*/
+.treeNode_arrow_expanded,.treeNode_arrow_end_expanded
+{
+    background:url(images/arrow_expanded.png) 0 2px no-repeat;
+}
+.treeNode_arrow_collapsed,.treeNode_arrow_end_collapsed
+{
+     background:url(images/arrow_collapsed.png) 0 2px no-repeat;
+}
+
+
+.treeNode_line_expanded_space,.treeNode_arrow_expanded_space
+{
+    background:url(images/line2.gif) 0 0 no-repeat;
+}
+.treeNode_line_leaf
+{
+    background:url(images/leaf.png) 0 0 no-repeat;
+}
+
+
+.treeNode_leaf
+{
+    background:url(images/leaf.gif) 0 0 no-repeat;
+}
+
+.treeNode_show
+{
+    background:url(images/2.png) 0 0 no-repeat;
+}
+.treeNode_hide
+{
+    background:url(images/3.png) 0 0 no-repeat;
+}
+.renameTxt
+{
+    height:18px;
+    width:90px;
+    background-color:#CCE8CF;
+    margin-left:0;
+    padding-left:3px;
+}
+
+/*subNode*/
+.subTreeNode
+{
+     display:block;
+}
+.subTreeNode li
+{
+    padding:0;
+    
+    display:block;
+}
+
+/*
+*右键菜单
+*/
+
+#RrTree_rightMenu
+{
+    width:90px;
+    position:absolute;
+    border:1px outset #ccc;
+    display:none;
+    background-color:#F5F5F5;
+    font-size:14px;
+}
+.rightMenuUl li
+{
+    margin:1px;
+    background:url(images/li_bg.png) 0 0 no-repeat;
+    height:20px;
+    padding:1px;
+    border-width:0;
+    border:1px solid #f5f5f5;
+    text-align:center;
+}
+.rightMenuUl li a
+{
+    width:84px;
+    height:20px;
+    display:block;
+    text-decoration:none;
+    color:Black;
+}
+
+/*
+*folder时，节点click
+*/
+.select_node
+{
+/*
+    background-color:#D9E9FC;
+    border:1px solid #7DA2CE;
+*/
+    color:#017586;
+}
+
+/*
+*view，layer时，节点click
+*/
+ .select_node1
+{
+    /*color:#017586;*/
+    color:#ff6400;
+}
+/*hover
+*
+*/
+.nodeTextHover
+{
+    color:#017586;
+}
+
+.rightMenuLiHover
+{
+    padding:1px !important;
+    background:url(images/liHover_bg.png) 0 0 no-repeat !important;
+    border:1px solid #b4c7d7 !important;
+    /*border:#000 1px solid;*/
+}

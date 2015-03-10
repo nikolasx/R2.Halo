@@ -1,0 +1,246 @@
+﻿*{
+    padding:0px;
+    margin:0px;
+}
+body {
+    overflow:auto;
+    padding-bottom:50px;
+    color:#333;
+}
+
+.QcqfHead {
+    width:100%;
+    height:42px;
+    background-image:url(../images/head.png);
+    background-repeat:repeat-x;
+    font-size:18px;
+    color:white;
+    text-align:center;
+    line-height:42px;
+    letter-spacing:10px;
+}
+.QcqfContainerDiv {
+     border:1px solid #CAD8E4;
+    margin:0 auto;
+    width:1200px;
+    height:auto;
+    overflow:hidden;
+    margin-top:20px;
+    padding-bottom:20px;
+    position:relative;
+}
+.Qcqf_cell_head {
+    width:379px;
+    font-size:14px;
+    line-height:40px;
+    text-indent:20px;
+    padding-left:30px;
+    float:left;
+}
+    .Qcqf_cell_head span {
+    margin-left:20px;
+    width:80px;
+    font-size:14px;
+    line-height:38px;
+    text-indent:15px;
+    cursor:pointer;
+    }
+.operating {
+    background-color:#CAD8E4;
+}
+.noeditorOperating {
+    display:none;
+}
+.qcqftable {
+    border-collapse:collapse;
+    margin:0px auto;
+    margin-top:20px;
+    width:900px;
+}
+.qcqftable  tbody{
+   width:100%;
+   height:100%;
+}
+.qcqftable  tr{
+   width:900px;
+   height:30px;
+}
+.qcqftable  tr td{
+   width:270px;
+   height:30px;
+   text-align:center;
+   border:1px solid #CAD8E4;
+    font-size:12px;
+}
+.qcqf_td_text {
+border:none;
+width:100%;
+}
+.qcqf_save {
+float:right;
+width:70px;
+    font-size:14px;
+    line-height:40px;
+    text-indent:20px;
+    padding-left:30px;
+    margin-right:50px;
+    cursor:pointer;
+}
+
+/***查询***/
+#qcqf_query {
+    width:750px;
+    float:left;
+    margin-left:50px;
+    padding-top:10px;
+}
+#qcqf_query span{
+    font-weight:bold;
+line-height:35px;
+float:left;
+margin-left:0px;
+}
+.query_head {
+    width:100px;
+    font-size:14px;
+    line-height:40px;
+    text-indent:10px;
+    font-weight:normal;
+}
+
+#qcqf_query input{
+    width:450px;
+    height:30px;
+    border:1px solid #CAD8E4;
+float:left;
+padding-left:5px;
+margin-left:15px;
+margin-top:2px;
+}
+.qcqf_query_btn {
+    float:left;
+width:40px;
+    font-size:14px;
+    line-height:40px;
+    text-indent:5px;
+    padding-left:0px;
+    margin-right:0px;
+    text-align:center;
+    cursor:pointer;
+}
+/***查询结果展示***/
+.qcqf_show_result {
+    width:900px;
+    border:1px solid  #CAD8E4;
+    height:380px;
+    margin-left:150px;
+    margin-top:50px;
+}
+.qcqf_tr {
+    width:900px;
+    border-bottom:1px solid  #CAD8E4;
+    height:30px;
+}
+.qcqf_td {
+    width:180px;
+    border-right:1px solid  #CAD8E4;
+    float:left;
+    line-height:30px;
+    text-align:center;
+    overflow:hidden;
+    height:30px;
+}
+.qcqf_td2 {
+    width:175px;
+    float:left;
+    line-height:30px;
+    text-align:center;
+    height:30px;
+}
+.qcqf_td_delete {
+    width:85px;
+    float:left;
+    line-height:30px;
+    text-align:center;
+    cursor:pointer;
+}
+.qcqf_td_editor {
+    width:85px;
+    float:left;
+    line-height:30px;
+    text-align:center;
+    cursor:pointer;
+}
+
+#qcqf_show_data_tr .qcqf_tr:hover {
+background-color:#EEF3F6;
+cursor:pointer;
+}
+
+
+/*faye*/
+#pageMana {
+width:100%;
+margin-top:5px;
+margin-bottom:15px;
+height:35px;
+float:left;
+border:1px solid #CAD8E4;
+}
+.allPage {
+float:left;
+width:350px;
+margin-left:15px;height:30px;
+}
+.firstPage {
+width:50px;
+float:left;
+height:30px;
+text-align:center;
+cursor:pointer;
+}
+.PrePage {
+width:50px;
+float:left;
+height:30px;
+text-align:center;
+cursor:pointer;
+}
+.currentPage {
+width:50px;
+height:30px;
+float:left;
+height:30px;
+text-align:center;
+}
+.nextPage {
+width:50px;
+float:left;
+text-align:center;
+height:30px;
+cursor:pointer;
+}
+.lastPage {
+width:50px;
+float:left;
+height:30px;
+text-align:center;
+cursor:pointer;
+}
+.gotoPage {
+    width:100px;
+    float:left;
+    height:30px;
+text-align:center;
+}
+.pagesubmit {
+    width:50px;
+    float:left;
+    height:30px;
+text-align:center;
+cursor:pointer;
+}
+.pageHidden_sqir
+{
+    color:#838383;
+}

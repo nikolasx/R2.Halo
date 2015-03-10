@@ -1,0 +1,33 @@
+﻿
+<link href="@Url.Content("~/Content/css/index.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/js/global.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/index.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/appdisplaypanel.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/adminpowerpanel.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/rolemanagepanel.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/personalzone.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/usersetting.js")"></script>
+<script src="@Url.Content("~/Scripts/js/home/util.js")"></script>
+
+<div id="home">
+    @*头部*@
+    <header id="head">
+        <div id="headBackGround">
+            <div id="headTitle">地质灾害聚合器</div>
+        </div>
+        <div id="logo"></div>
+        <div id="userInfo"></div>
+        <div id="navHome" title="主页"></div>
+    </header>
+    @*框架主页内容*@
+    <article id="content">
+        @*App主页展示*@
+        <div id="AppDisplayPage"></div>
+        <div id="AdminPowerPage"></div>
+        <div id="RoleManagePage"></div>
+        <div id="PersonalZonePage"></div>
+        <div id="UserSettingPage"></div>
+    </article>
+
+    <div id="childIframeDiv"><iframe id="childIframe"></iframe></div>
+</div>

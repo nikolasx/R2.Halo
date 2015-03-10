@@ -1,0 +1,4 @@
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Debug\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\bin\Debug\R2.Halo.CoreEntities.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Debug\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Core\R2.Halo.CoreEntities\obj\Debug\R2.Halo.CoreEntities.pdb

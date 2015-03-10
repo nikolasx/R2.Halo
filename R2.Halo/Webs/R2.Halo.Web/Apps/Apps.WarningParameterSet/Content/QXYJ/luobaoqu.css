@@ -1,0 +1,69 @@
+﻿body {
+}
+#lbqResTable
+{
+    width: 355px;
+    margin-left: 5px;
+    margin-top: 10px;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+}
+    #lbqResTable tr
+    {
+        height: 30px;
+        background-color: #FFFFFF;
+    }
+
+    #lbqResTable tbody tr
+    {
+        cursor: pointer;
+    }
+
+        #lbqResTable tbody tr:hover
+        {
+            background-color: #D6E0EA;
+        }
+
+    #lbqResTable tr th
+    {
+        border: 1px solid #c0c0c0;
+    }
+
+    #lbqResTable tr td
+    {
+        border: 1px solid #c0c0c0;
+        text-align: center;
+    }
+
+#btn_disasters,#btn_queryperson {
+     width: 90px;
+    height: 30px;
+    /*border: 1px solid #bfbfbf;*/
+    /*background: url(../images/btn_bg.png);*/
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    float: left;
+    margin-left: 60px !important;
+    margin-top: 10px;
+    color:#015889;
+    font-size:14px;
+    position:relative;
+    top:0px;
+}
+#btn_reture {
+     width: 90px;
+    height: 30px;
+    /*border: 1px solid #bfbfbf;*/
+    /*background: url(../images/btn_bg.png);*/
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    float: right;
+    margin-right: 47px !important;
+    margin-top: 10px;
+    color:#015889;
+    font-size:14px;
+    position:relative;
+    top:0px;
+}

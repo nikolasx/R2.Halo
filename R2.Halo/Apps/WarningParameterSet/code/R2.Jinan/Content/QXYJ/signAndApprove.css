@@ -1,0 +1,167 @@
+﻿/*签批单 ZHAOs 2014年3月14日10:09:37*/
+* {
+    margin:0;
+    padding:0;
+    font-family:'Microsoft YaHei';
+}
+#content {
+    width:380px;
+    height:100%;
+    float:left;
+    overflow-x:hidden;
+    overflow:auto;
+}
+#qpd_head {
+    margin:5px 0 5px 0;
+    width:370px;
+    height:8%;
+    text-align:center;
+    line-height:50px;
+    background:#DCE9F1;
+    font-size:18px;
+    color:#FF6600;
+     margin-left:2px;
+}
+#qpd_neck {
+    height:30px;
+    width:370px;
+     margin-left:2px;
+}
+#qpd_neck div {
+    float:left;
+}
+#qpd_one {
+    width: 20px;
+    height: 30px;
+    background: url(../images/numicon.png) no-repeat;
+    background-position:left;
+    background-repeat:no-repeat;
+    text-align: center;
+    margin: 0 5px;
+}
+#qpd_two {
+    height: 30px;
+    line-height:30px;
+}
+#qpd_three {
+    float:right !important;
+}
+#qpd_line {
+    height:1px;
+    width:100%;
+    background:#CBCACA;
+}
+
+#qpd_table_head {
+    width:370px;
+    height:40px;
+    text-align:center;    
+    line-height:40px;
+    font-size:14px;
+     margin-left:2px;
+}
+#qpd_table {
+    border-collapse:collapse;
+    font-size:12px;
+    width:370px;
+    margin-left:2px;
+}
+#qpd_table tr {
+    /*height:30px;*/
+}
+#qpd_table tr td{
+    border:1px solid #ccc;
+    width:100px;
+    text-align:center;
+    vertical-align:middle;
+}
+.qpd_tdLeft {
+    text-align:right !important;
+    color:#444444;
+    width:70px !important;
+    padding-right:5px;
+}
+.qpd_tdRight {
+    border-right:1px solid #CCCCCC;
+}
+.qpd_input {
+    color:#FF6600;
+    width:90%;
+    margin-left:10px;
+    height:100%;
+    border:none;
+}
+.qpd_shortInput {
+    color:#FF6600;
+    width:40%;    
+    height:120%;
+    border:none;
+}
+#qpd_yjResult {
+     height:30px;
+    width:370px;
+     margin-left:2px;
+}
+.wrafunTitleCount1 {
+     width: 20px;
+    height: 30px;
+    background: url(../images/numicon.png) no-repeat;
+    background-position:center;
+    background-repeat:no-repeat;
+    text-align: center;
+    margin: 0 5px;
+    float:left;
+}
+.qpd_fxyjjg {
+    width:200px;
+    margin-left:3px;
+    height:30px;
+    line-height:30px;
+    float:left;
+}
+#qpd_textarea {
+    width:370px;
+    border:1px solid #CBCACA;
+     margin-left:2px;
+}
+#qpd_buttons {
+    width:280px;
+    float:right; 
+    margin-top:5px;  
+    cursor:pointer; 
+    height:25px;
+}
+.qpd_btn {
+    /*background:#F2F2F2;
+    text-align:center;
+    width:70px;
+    margin-left:20px;
+    height:30px;
+    line-height:30px;
+    float:left;
+    font-size:12px;
+    color:#508B02;*/
+    width: 75px;
+    height: 24px;
+    /*border: 1px solid #bfbfbf;*/
+    /*background: url(../images/btn_bg.png);*/
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+    float: right;
+    margin-right: 15px;    
+    color:#015889;
+    font-size:14px;
+}
+.qpd_btn:hover {
+    /*background:#90B957;
+    color:white;*/
+     /*background-position: 0 -25px;*/
+        color:#018DC3;
+}
+.warBox2 {
+    position:absolute;
+    left:-380px;
+    z-index:9999;
+    margin-left:2px;
+}

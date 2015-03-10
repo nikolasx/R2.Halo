@@ -1,0 +1,871 @@
+﻿@{
+    ViewBag.Title = "基础信息编辑";
+Layout ="~/Apps/Jn.DbDeleteAndEdit/Views/JnDbDeleteAndEdit/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoType_in.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/baseinvestigatequeryresult.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoFun_Img.css")" rel="stylesheet") />
+
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.MultiFile.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.form.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/base.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/EditMudFlow.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/judgeFunc.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoEditorFun.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/data.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoVideoFun.js")"></script>
+
+@*<div id="BIT_head">基本信息的编辑</div>*@
+<div id="BIT_ContentDiv">
+  
+    <div id="BIT_right" style="float:none;">
+        <div id="BIT_right_head">
+            <input type="hidden" value="@ViewBag.mudFlowId" id="mudFlowId"/>
+           @* <span>基本信息编辑</span>*@
+            <div class="BIT_right_img" id="BIT_right_img_Return"></div>
+            <div class="BIT_right_img" id="BIT_right_img_UpdateMudFlow"></div>
+            <div class="importwarn" style="margin-left:35px;">注：橙色字段为必填信息，请填写完整。</div>
+        </div>
+
+           <div class="BIT_right_disaType2 BIT_right_disaType" style="display:block;">
+             <div class="BIT_right_neck">
+                <div class="BIT_right_neck_cell" style="color: #33699C;">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">泥石流基本信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">主要参数及现状</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">灾害史及综合评判</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">泥石流图形信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">泥石流照片管理</span>
+                </div>
+            </div>
+            @*这里是五个表格，郭毅*@
+             @* 以下是六个table*@
+            <table class="BIT_right_table" style="display: block;width:930px;">
+                <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">名称</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="nameNslInput"/>
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">统一编号</td>
+                    <td>
+                        <label style=" float:left;display:inline;height:27px;line-height:27px;color:gray;width:30px;" title="请在最后填入四位数字编号">3701</label>                        
+                        <label id="UN_regionLSLCode" style="float:left;display:inline;height:27px;line-height:27px;color:gray;width:30px;">0103</label>                        
+                        <input style="float:left;display:inline;width:150px;text-align:left;border-bottom:1px solid red;color:#FC7D3F;" type="text" class="BIT_table_input" id="unifiedNumberLSL" value="请输入4位数字组成统一编号" onfocus="if(value==defaultValue){value=''}"  onblur="if(!value)value=defaultValue" disabled="disabled"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">室内编号</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="rNubNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">水系名称</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="riverNameNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">省名</td>
+                    <td>
+                        <div style="float:left;margin-left:10px; color:#666;" id="provinceNslInput">山东省</div>
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">县名</td>
+                    <td>
+                        <select class="noChangeInput xianming" style="width:100%;height:30px;border:none;text-align:left;" id="countyNsl" disabled="disabled">
+                                <option value="370101">市辖区</option>
+                                <option value="370188">高新区</option>
+                                <option value="370102">历下区</option>
+                                <option value="370103">市中区</option>
+                                <option value="370104">槐荫区</option>
+                                <option value="370105">天桥区</option>
+                                <option value="370112">历城区</option>
+                                <option value="370113">长清区</option>
+                                <option value="370124">平阴县</option>
+                                <option value="370125">济阳县</option>
+                                <option value="370126">商河县</option>
+                                <option value="370181">章丘市</option>
+                         </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">发生地点</td>
+                    <td colspan="3">
+                        <input type="text" class="BIT_table_input" style="float:left;margin-left:10px;" id="locationNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">坐标X</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="xCoordinateNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">坐标Y</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="yCoordinateNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">最大标高</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="combNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">最小标高</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="toeNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">经度</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" style="width:50px; height:28px; padding-right:5px;text-align:right;" id="jingduLSLDu"/>°
+                        <input type="text" class="BIT_table_input"style="width:50px;height:28px; padding-right:5px;text-align:right;" id="jingduLSLFen"/>′
+                        <input type="text" class="BIT_table_input" style="width:50px;height:28px; padding-right:5px;text-align:right;" id="jingduLSLMiao"/>″
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">纬度</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" style="width:50px; height:28px; padding-right:5px;text-align:right;" id="weiduLSLDu" />°
+                        <input type="text" class="BIT_table_input"style="width:50px;height:28px; padding-right:5px;text-align:right; " id="weiduLSLFen"/>′
+                        <input type="text" class="BIT_table_input" style="width:50px;height:28px; padding-right:5px;text-align:right;" id="weiduLSLMiao"/>″
+                    </td>
+                </tr>
+                <tr>
+                  @*  <td class="BIT_tableLeft">滑坡情况</td>
+                    <td colspan="3">
+                        <input type="text" class="BIT_table_input" />
+                    </td>*@
+                     <td class="BIT_tableLeft">主河名称</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="mainRiverNameNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">相对主河位置</td>
+                    <td id="comMainRiverLocationNsl">
+                        <input type="radio" name="disaTableHPradio31" value="左岸" class="checkBoxSpace" /><span class="labelSpace1">左岸</span>
+                        <input type="radio" name="disaTableHPradio31" value="右岸" class="checkBoxSpace" /><span class="labelSpace1">右岸</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">沟口距离</td>
+                    <td>
+                        <input type="text" class="BIT_table_input"  id="ditchDistanceNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">流动方向</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="flowDirectionNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">沙石流类型</td>
+                    <td id="typeNsl">
+                        <input type="radio" name="disaTableHPradio1" value="泥流" class="checkBoxSpace" /><span class="labelSpace">泥流</span>
+                        <input type="radio" name="disaTableHPradio1" value="泥石流" class="checkBoxSpace" /><span class="labelSpace">泥石流</span>
+                        <input type="radio" name="disaTableHPradio1" value="水石流" class="checkBoxSpace" /><span class="labelSpace">水石流</span>
+                    </td>
+                    <td class="BIT_tableLeft">易发程度</td>
+                    <td id="occurProbalityNsl">
+                        <input type="radio" name="disaTableHPradio2" value="易发" class="checkBoxSpace" /><span class="labelSpace">易发</span>
+                        <input type="radio" name="disaTableHPradio2" value="中等" class="checkBoxSpace" /><span class="labelSpace">中等</span>
+                        <input type="radio" name="disaTableHPradio2" value="不易发" class="checkBoxSpace" /><span class="labelSpace">不易发</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">发展阶段</td>
+                    <td colspan="3" id="developStageNsl">
+                        <input type="radio" name="disaTableHPradio3" value="形成期" class="checkBoxSpace" /><span class="labelSpace">形成期</span>
+                        <input type="radio" name="disaTableHPradio3" value="发展期" class="checkBoxSpace" /><span class="labelSpace">发展期</span>
+                        <input type="radio" name="disaTableHPradio3" value="衰退期" class="checkBoxSpace" /><span class="labelSpace">衰退期</span>
+                        <input type="radio" name="disaTableHPradio3" value="停歇或终止期" class="checkBoxSpace" /><span class="labelSpace">停歇或终止期</span>
+                        <input type="radio" name="disaTableHPradio3" value="取消" class="checkBoxSpace" /><span class="labelSpace">取消</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft"  style="color:#fc7d3f">隐 患 点</td>
+                    <td id="dangerPointNsl">
+                        <input type="radio" name="disaTableHPradio4" value="true" class="checkBoxSpace" /><span class="labelSpace">有</span>
+                        <input type="radio" name="disaTableHPradio4" value="false" class="checkBoxSpace" /><span class="labelSpace">无</span>
+                    </td>
+                    <td class="BIT_tableLeft"  style="color:#fc7d3f">防灾预案</td>
+                    <td id="pdPlanNsl">
+                        <input type="radio" name="disaTableHPradio5" value="true" class="checkBoxSpace" /><span class="labelSpace">有</span>
+                        <input type="radio" name="disaTableHPradio5" value="false" class="checkBoxSpace" /><span class="labelSpace">无</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft"  style="color:#fc7d3f">多媒体</td>
+                    <td id="mediaNsl">
+                        <input type="radio" name="disaTableHPradio6" value="true" class="checkBoxSpace" /><span class="labelSpace">有</span>
+                        <input type="radio" name="disaTableHPradio6" value="false" class="checkBoxSpace" /><span class="labelSpace1">无</span>
+                    </td>
+                    <td class="BIT_tableLeft">监测建议</td>
+                    <td id="monitorAdviceNsl">
+                        <input type="radio" name="disaTableHPradio7" value="true" class="checkBoxSpace" /><span class="labelSpace">有</span>
+                        <input type="radio" name="disaTableHPradio7" value="false" class="checkBoxSpace" /><span class="labelSpace">无</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">防治建议</td>
+                    <td colspan="3">
+                        <input type="text" class="BIT_table_input" style="float:left;margin-left:10px;" id="fzjyNSL"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">泥石流情况</td>
+                    <td colspan="3">
+                        <input type="text" class="BIT_table_input" style="float:left;margin-left:10px;" id="qingkuangNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">群测人员</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="gmPersonNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">村长</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="vHeadNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">调查单位</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="investiUnitNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">填表人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="fillerNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">审核人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="auditNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">调查负责人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="investiPersonNslInput"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">填表日期</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="dateNslInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">电话</td>
+                    <td>
+                         <input type="text" class="BIT_table_input" id="phoneNslInput"/>
+                    </td>
+                </tr>
+            </table>
+            <div class="BIT_right_table info"  style="display: none;">
+                <div style="height: 99%; display: block;" class="info">
+                    <ul style=" height:758px;border-left:1px solid #cad8e4;">
+                        <li class="titleI"><div>水动力类型</div></li>
+		                <li class="contentsII" ><div id="waterHydroTypeNsl">
+                            <div id="waterHydroTypeNslCon" style="display:none;"></div>
+		                    <input id="bysdllxNsl" type="checkbox" value="暴雨" class="checkBoxSpace"/><label class="labelSpace">暴雨</label>
+		                    <input id="bcsdllxNsl" type="checkbox" value="冰川" class="checkBoxSpace"/><label class="labelSpace">冰川</label>
+		                    <input id="kjsdllxNsl" type="checkbox" value="溃决" class="checkBoxSpace"/><label class="labelSpace">溃决</label>
+		                    <input id="dxssdllxNsl" type="checkbox" value="地下水"class="checkBoxSpace"/><label class="labelSpace">地下水</label>
+		                </div></li>
+ 		                <li class="titleI" ><div>补给区位置</div></li>
+		                <li class="contentsII" ><div id="supplyLocationNsl">
+                            <div id="supplyLocationNslCon" style="display:none;"></div>
+		                    <input id="sybjqNsl" type="checkbox" value="上游" class="checkBoxSpace"/><label class="labelSpace">上游</label>
+		                    <input id="zybjqNsl" type="checkbox" value="中游" class="checkBoxSpace"/><label class="labelSpace">中游</label>
+		                    <input id="xybjqNsl" type="checkbox" value="下游" class="checkBoxSpace"/><label class="labelSpace">下游</label>
+		                </div></li>
+		                <li class="titleI" ><div>泥砂补给途径</div></li>
+                        <!--lyj-->
+                        <li class="contentsI"><div id="supplyWayNsl">
+                            <div id="supplyWayNslCon" style="display:none;"></div>
+		                    <input id="msnsbjNsl" type="checkbox" value="面蚀" class="checkBoxSpace"/><label class="labelSpace">面蚀</label>
+		                    <input id="gabhnsbjNsl" type="checkbox" value="沟岸崩滑" class="checkBoxSpace"/><label class="labelSpace">沟岸崩滑</label>
+		                    <input id="gdzbynsbjNsl" type="checkbox" value="沟底再搬运" class="checkBoxSpace"/><label class="labelSpace">沟底再搬运</label>
+		                </div></li>
+		                <li class="titleI"><div>地震烈度(度)</div></li>	
+                        <li class="contentsI"><div id="eqIntensityNslInput">
+                        <!--添加-->
+			                <input type="radio" name="earthLDNsl" value="I" class="checkBoxSpace"/><label class="labelSpace">I</label>
+                            <input type="radio" name="earthLDNsl" value="II" class="checkBoxSpace"/><label class="labelSpace">II</label>
+			                <input type="radio" name="earthLDNsl" value="III" class="checkBoxSpace"/><label class="labelSpace">III</label>
+                            <input type="radio" name="earthLDNsl" value="Ⅳ" class="checkBoxSpace"/><label class="labelSpace">Ⅳ</label>
+                            <input type="radio" name="earthLDNsl" value="V" class="checkBoxSpace"/><label class="labelSpace">V</label>
+                            <input type="radio" name="earthLDNsl" value="VI" class="checkBoxSpace"/><label class="labelSpace">VI</label>
+			                <input type="radio" name="earthLDNsl" value="VII" class="checkBoxSpace"/><label class="labelSpace">VII</label>
+                            <input type="radio" name="earthLDNsl" value="VIII" class="checkBoxSpace"/><label class="labelSpace">VIII</label>
+                            <input type="radio" name="earthLDNsl" value="IX" class="checkBoxSpace"/><label class="labelSpace">IX</label>
+                            <input type="radio" name="earthLDNsl" value="X" class="checkBoxSpace"/><label class="labelSpace">X</label>
+			                <input type="radio" name="earthLDNsl" value="XI" class="checkBoxSpace"/><label class="labelSpace">XI</label>
+                            <input type="radio" name="earthLDNsl" value="XII" class="checkBoxSpace"/><label class="labelSpace">XII</label>
+                            <!--添加-->
+                            <!--lyj-->
+		                </div></li>
+		                <li class="titleI"><div>地质构造</div></li>
+                        <li class="contentsI"><div id="geoStructureNsl">
+                            <div id="geoStructureNslCon" style="display:none;"></div>
+			                <input id="dgdcdzgzNsl" type="checkbox" value="顶沟断层" class="checkBoxSpace"/><label class="labelSpace">顶沟断层</label>
+                            <input id="ggdcdzgzNsl" type="checkbox" value="过沟断层" class="checkBoxSpace"/><label class="labelSpace">过沟断层</label>
+                            <input id="tsqdzgzNsl" type="checkbox" value="抬升区" class="checkBoxSpace"/><label class="labelSpace">抬升区</label>
+                            <input id="cjqdzgzNsl" type="checkbox" value="沉降区" class="checkBoxSpace"/><label class="labelSpace">沉降区</label>
+			                <input id="dxdzgzNsl" type="checkbox" value="单斜" class="checkBoxSpace"/><label class="labelSpace">单斜</label>
+                            <input id="zzdzgzNsl" type="checkbox" value="褶皱" class="checkBoxSpace"/><label class="labelSpace">褶皱</label>
+		                </div></li>
+		
+                        <!-------------------------------------------降雨特征值-------------------------------------------------------->
+		                <li class="titleI" style=" height:123px;">
+		                <div style=" width:45px; height:123px; float:left; border-right:1px solid #cad8e4; line-height:40px;">降雨<br />特征值(mm)</div>
+                        <div style=" width:117px; float:left;">
+		                <div class="rtitlesI">H年最大降雨量</div>
+		                <div class="rtitlesI">H日最大降雨量</div>
+		                <div class="rtitlesI">H时最大降雨量</div>
+		                <div style=" width:117px; height:22px; float:left;">H十分钟最大降雨量</div>
+		                </div>
+                        </li>
+                        <li class="contentsI" style=" height:123px; width:765px; padding-left:0;">
+                            <div style=" width:300px; height:123px; float:left; border-right:1px solid #cad8e4;" >
+                                <div class="rcontents" id="yearMaxSRainfallNsl"><input type="text" id="yearMaxSRainfallNslInput"/></div>
+                                <div class="rcontents" id="dayMaxSRainfallNsl"><input type="text" id="dayMaxSRainfallNslInput"/></div>
+                                <div class="rcontents" id="hourMaxSRainfallNsl"><input type="text" id="hourMaxSRainfallNslInput"/></div>
+                                <div class="rcontents" id="tenminutesMaxSRainfallNsl" style=" width:292px; height:22px; padding-left:8px;border-bottom:none;"><input type="text" id="tenminutesMaxSRainfallNslInput"/></div>
+                            </div>
+                            <div class="titles" style=" width:163px; height:123px; border-right:1px solid #cad8e4;" >
+                                <div class="rtitlesII">H年平均降雨量</div>
+                                <div class="rtitlesII">H日平均降雨量</div>
+                                <div class="rtitlesII">H时平均降雨量</div>
+                                <div style=" width:163px; height:22px;">H十分钟平均降雨量</div>
+                            </div>
+                            <div style=" width:300px; height:123px; float:left;" >
+                                <div class="rcontents" id="yearAverageSRainfallNsl"><input type="text" id="yearAverageSRainfallNslInput"/></div>
+                                <div class="rcontents" id="dayAverageSRainfallNsl"><input type="text" id="dayAverageSRainfallNslInput"/></div>
+                                <div class="rcontents" id="hourAverageSRainfallNsl"><input type="text" id="hourAverageSRainfallNslInput"/></div>
+                                <div class="rcontents" id="tenminutesAverageSRainfallNsl" style=" width:292px; height:22px; padding-left:8px;border-bottom:none;"><input type="text" id="tenminutesAverageSRainfallNslInput"/></div>
+                            </div>
+                        </li>
+                        <!-------------------------------------------沟口扇形地特征-------------------------------------------------------->
+		                <li class="titleI" style=" height:123px;">
+		                <div style=" width:45px; height:123px; float:left; border-right:1px solid #cad8e4; line-height:40px;">沟口<br />扇形地<br />特征</div>
+		                <div class="rtitlesI">扇&nbsp;&nbsp;长(m)</div>
+		                <div class="rtitlesI">扇形地完整性(%)</div>
+		                <div class="rtitlesI">扩散角(°)</div>
+		                <div style=" width:117px; height:22px; float:left;">挤压大河</div>
+                        </li>
+                        <li class="contentsI" style=" height:123px; width:765px; padding-left:0;">
+                            <div style=" width:300px; height:92px; float:left; border-right:1px solid #cad8e4;" >
+                                <div class="rcontents" id="sectorLengthNsl"><input type="text" id="sectorLengthNslInput"/></div>
+                                <div class="rcontents" id="sectorIntegrityNsl"><input type="text" id="sectorIntegrityNslInput"/></div>
+                                <div class="rcontents" id="sectorDiffusionAngleNsl"><input type="text" id="sectorDiffusionAngleNslInput"/></div>
+                            </div>
+                            <div class="titles" style=" width:163px; height:92px; border-right:1px solid #cad8e4;" >
+                                <div class="rtitlesII">扇&nbsp;&nbsp;宽(m)</div>
+                                <div class="rtitlesII">扇面冲於变幅(±m)</div>
+                                <div class="rtitlesII">发展趋势</div>
+                            </div>
+                            <div style=" width:300px; height:68px; float:left;" >
+                                <div class="rcontents" id="sectorWidthNsl"><input type="text" id="sectorWidthNslInput"/></div>
+                                <div class="rcontents" id="sectorLuffPunchNsl"><input type="text" id="sectorLuffPunchNslInput"/></div>
+                                <div class="rcontents" id="sectorDevelopTrendNsl">
+                                    <div id="sectorDevelopTrendNslCon" style="display:none;"></div>
+                                    <input id="yggksxdfzqsNsl" type="radio" name="fzqsnsl" value="於高" class="checkBoxSpace"/><label class="labelSpace">於高</label>
+                                    <input id="xqgksxdfzqsNsl" type="radio" name="fzqsnsl" value="下切" class="checkBoxSpace"/><label class="labelSpace">下切</label>
+                                </div>
+                            </div>
+                            <div id="compressRiverNsl" style=" width:757px; height:23px; float:left; padding-left:8px;">
+                                <div id="compressRiverNslCon" style="display:none;"></div>
+                                <input id="hlwqzlpyjydhNsl" type="radio" name="jydhnsl" value="河流弯曲主流偏移" class="checkBoxSpace"/><label class="labelSpace">河流弯曲主流偏移</label>
+                                <input id="zlpyjydhNsl" type="radio" name="jydhnsl" value="主流偏移" class="checkBoxSpace"/><label class="labelSpace">主流偏移</label>
+                                <input id="zlzzgswpyjydhNsl" type="radio" name="jydhnsl" value="主流只在高水位偏移" class="checkBoxSpace"/><label class="labelSpace">主流只在高水位偏移</label>
+                                <input id="zlbpjydhNsl" type="radio" name="jydhnsl" value="主流不偏" class="checkBoxSpace"/><label class="labelSpace">主流不偏</label>
+                            </div>
+                        </li>
+                        <!-------------------------------------------土地利用------------------------------------------------------------>		
+		                <li class="titleI" style=" height:123px;">
+		                    <div style=" width:45px; height:123px; float:left; border-right:1px solid #cad8e4; line-height:40px;">土地<br />利用<br />(%)</div>
+		                    <div class="rtitlesI">森&nbsp;&nbsp;林</div>
+		                    <div class="rtitlesI">草&nbsp;&nbsp;地</div>
+		                    <div class="rtitlesI">缓坡耕地</div>
+		                    <div style=" width:117px; height:22px; float:left;">建筑用地</div>
+		                </li>
+		                <li class="contentsI" style=" height:123px; width:765px; padding-left:0;">
+		                    <div style=" width:300px; height:123px; float:left; border-right:1px solid #cad8e4;" >
+		                        <div class="rcontents" id="forestNsl"><input type="text" id="forestNslInput"/></div>
+		                        <div class="rcontents" id="grasslandsNsl"><input type="text" id="grasslandsNslInput"/></div>
+		                        <div class="rcontents" id="gentleSlopeCultivatedLandNsl"><input type="text" id="gentleSlopeCultivatedLandNslInput"/></div>
+		                        <div class="rcontents" id="buildLandNsl"><input type="text" id="buildLandNslInput"/></div>
+		                    </div>
+		                    <div class="titles" style=" width:163px; height:123px; border-right:1px solid #cad8e4;" >
+                                <div class="rtitlesII">灌&nbsp;&nbsp;丛</div>
+                                <div class="rtitlesII">荒&nbsp;&nbsp;地</div>
+                                <div class="rtitlesII">陡坡耕地</div>
+		                        <div style=" width:163px; height:22px;">其&nbsp;&nbsp;它</div>
+                            </div>
+		                    <div style=" width:300px; height:123px; float:left;" >
+		                        <div class="rcontents" id="shrubNsl"><input type="text" id="shrubNslInput"/></div>
+		                        <div class="rcontents" id="wastelandNsl"><input type="text" id="wastelandNslInput"/></div>
+		                        <div class="rcontents" id="slopeCultivatedLandNsl"><input type="text" id="slopeCultivatedLandNslInput"/></div>
+		                        <div class="rcontents" id="otherLandNsl" style=" width:292px; height:30px; padding-left:8px;"><input type="text" id="otherLandNslInput" style="width:280px"/></div>
+		                    </div>
+		                </li>
+		
+		                <li class="titleI"><div style="color:#fc7d3f">防治措施现状</div></li>	
+                        <li class="contentsII"><div id="preventMeasureNsl">
+                            <div id="preventMeasureNslNsl" style="display:none;"></div>
+                            <input id="havepreMeaNsl" type="radio" name="fzcsnsl" value="true" class="checkBoxSpace"/><label class="labelSpace">有</label>
+			                <input id="nopreMeaNsl" type="radio" name="fzcsnsl" value="false"  class="checkBoxSpace"/><label class="labelSpace">无</label>
+		                </div></li>
+		                <li class="titleI"><div>防治措施类型</div></li>	
+                        <li class="contentsII"><div id="preventMeasureTypeNsl">
+                            <div id="preventMeasureTypeNslCon" style="display:none;"></div>
+         	                <input id="wlfzcsNsl" type="checkbox" value="稳拦" class="checkBoxSpace"/><label class="labelSpace">稳拦</label>
+                            <input id="pdfzcsNsl" type="checkbox" value="排导" class="checkBoxSpace"/><label class="labelSpace">排导</label>
+                            <input id="brfzcsNsl" type="checkbox" value="避绕" class="checkBoxSpace"/><label class="labelSpace">避绕</label>
+                            <input id="swgcfzcsNsl" type="checkbox" value="生物工程" class="checkBoxSpace"/><label class="labelSpace">生物工程</label>
+		                </div></li>
+		                <li class="titleI"><div style="color:#fc7d3f">监测措施</div></li>	
+                        <li class="contentsII"><div id="monitorMeasureNsl">
+                            <div id="monitorMeasureNslCon" style="display:none;"></div>
+                            <input id="havemoMeaNsl" type="radio" name="jccsnsl" value="true" class="checkBoxSpace"/><label class="labelSpace">有</label>
+			                <input id="nomoMeaNsl" type="radio" name="jccsnsl" value="false" class="checkBoxSpace"/><label class="labelSpace">无</label>
+		                </div></li>
+		                <li class="titleI"><div>监测措施类型</div></li>	
+                        <li class="contentsII"><div id="monitorMeasureTypeNsl">
+                            <div id="monitorMeasureTypeNslCon" style="display:none;"></div>
+         	                <input id="yqjccsNsl" type="checkbox" value="雨情" class="checkBoxSpace"/><label class="labelSpace">雨情</label>
+                            <input id="nwjccsNsl" type="checkbox" value="泥位" class="checkBoxSpace"/><label class="labelSpace">泥位</label>
+                            <input id="zrzsjccsNsl" type="checkbox" value="专人职守" class="checkBoxSpace"/><label class="labelSpace">专人职守</label>
+		                </div></li>
+
+		                <li class="titleI" style=" height:106px;">
+		                    <div style=" width:45px; height:106px; float:left; border-right:1px solid #cad8e4; line-height:30px;">威胁<br />危害<br />对象</div>
+		                    <div class="rtitlesI">威胁人口(人)</div>
+		                    @*<div class="rtitlesI" style=" height:23px;">灾情等级</div>*@
+                            <div class="rtitlesI" style=" height:30px;">险情等级</div>
+		                    <div style=" width:117px; height:44px; float:left; line-height:44px;">类&nbsp;&nbsp;型</div>
+                        </li>
+		                <li class="contentsI" style=" height:106px; width:765px; padding-left:0;">
+                            <div class="rcontents" id="threatenNubhNsl" style="border-right:1px solid #cad8e4; float:left;"><input type="text" id="threatenNubhNslInput"/></div>
+		                    <div class="titles" style=" width:163px; height:30px;border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4;">威胁财产(万元)</div>
+		                    <div class="rcontents" id="threatenFortunehNsl" style="float:left;"><input type="text" id="threatenFortunehNslInput"/></div>
+		                    <div id="damageClassNsl" style=" width:757px; height:30px; border-bottom:1px solid #cad8e4; float:left; padding-left:8px;">
+			                    <input type="radio" id="zqdjxxNsl" name="xqdjNsl" value="小型" class="checkBoxSpace"/><label class="labelSpace">小型</label>
+                                <input type="radio" id="zqdjzxNsl" name="xqdjNsl" value="中型" class="checkBoxSpace"/><label class="labelSpace">中型</label>
+			                    <input type="radio" id="zqdjdxNsl" name="xqdjNsl" value="大型" class="checkBoxSpace"/><label class="labelSpace">大型</label>
+                                <input type="radio" id="zqdjtdxNsl" name="xqdjNsl" value="特大型" class="checkBoxSpace"/><label class="labelSpace">特大型</label>
+		                    </div>
+		                    <div id="threatenTypeNsl" style=" width:757px; height:44px; float:left; padding-left:8px;line-height:22px;">
+                                <div id="threatenTypeNslCon" style="display:none;"></div>
+			                    <input id="czwxdxNsl" type="checkbox" value="城镇" class="checkBoxSpace"/><label class="labelSpace">城镇</label>
+                                <input id="czhwxdxNsl" type="checkbox" value="村寨" class="checkBoxSpace"/><label class="labelSpace">村寨</label>
+			                    <input id="tlwxdxNsl" type="checkbox" value="铁路" class="checkBoxSpace"/><label class="labelSpace">铁路</label>
+                                <input id="glwxdxNsl" type="checkbox" value="公路" class="checkBoxSpace"/><label class="labelSpace">公路</label>
+			                    <input id="hywxdxNsl" type="checkbox" value="航运" class="checkBoxSpace"/><label class="labelSpace">航运</label>
+                                <input id="ygqdwxdxNsl" type="checkbox" value="饮灌渠道" class="checkBoxSpace"/><label class="labelSpace">饮灌渠道</label>
+			                    <input id="skwxdxNsl" type="checkbox" value="水库" class="checkBoxSpace"/><label class="labelSpace">水库</label>
+                                <input id="dzwxdxNsl" type="checkbox" value="电站" class="checkBoxSpace"/><label class="labelSpace">电站</label>
+			                    <input id="gcwxdxNsl" type="checkbox" value="工厂" class="checkBoxSpace"/><label class="labelSpace">工厂</label>
+                                <input id="kswxdxNsl" type="checkbox" value="矿山" class="checkBoxSpace"/><label class="labelSpace">矿山</label>
+			                    <input id="ntwxdxNsl" type="checkbox" value="农田" class="checkBoxSpace"/><label class="labelSpace">农田</label>
+                                <input id="slwxdxNsl" type="checkbox" value="森林" class="checkBoxSpace"/><label class="labelSpace">森林</label>
+			                    <input id="sdxlwxdxNsl" type="checkbox" value="输电线路" class="checkBoxSpace"/><label class="labelSpace">输电线路</label>
+			                    <br/>
+                                <input id="txsswxdxNsl" type="checkbox" value="通讯设施" class="checkBoxSpace"/><label class="labelSpace">通讯设施</label>
+			                    <input id="gfsswxdxNsl" type="checkbox" value="国防设施" class="checkBoxSpace"/><label class="labelSpace">国防设施</label>
+		                    </div>
+		                </li>
+	
+		                <li class="titleI" style=" height:92px;">
+		                <div style=" width:45px; height:92px; float:left; border-right:1px solid #cad8e4;">不良<br />地质体<br />情况</div>
+		                <div class="rtitlesI">滑坡规模</div>
+		                <div class="rtitlesI">人工弃体规模</div>
+		                <div style=" width:117px; height:22px; float:left;">自然堆积规模</div>
+		                </li>
+		                <li class="contentsI" style=" height:92px; width:765px; padding-left:0;">
+                        <div style=" width:300px; height:92px; float:left; border-right:1px solid #cad8e4;" >
+                        <div class="rcontents" id="landslidScaleNsl">
+			                <input type="radio" name="hpgmnsl" id="hqgmdNsl" value="大" class="checkBoxSpace"/><label class="labelSpace">大</label>
+			                <input type="radio" name="hpgmnsl" id="hqgmzNsl" value="中" class="checkBoxSpace"/><label class="labelSpace">中</label>
+			                <input type="radio" name="hpgmnsl" id="hqgmxNsl" value="小" class="checkBoxSpace"/><label class="labelSpace">小</label>
+		                </div>
+                        <div class="rcontents" id="artificialAbandonedBodyScaleNsl">
+			                <input type="radio" name="rgqtgmnsl" id="rgqtgmdNsl" value="大" class="checkBoxSpace"/><label class="labelSpace">大</label>
+			                <input type="radio" name="rgqtgmnsl" id="rgqtgmzNsl" value="中" class="checkBoxSpace"/><label class="labelSpace">中</label>
+			                <input type="radio" name="rgqtgmnsl" id="rgqtgmxNsl" value="小" class="checkBoxSpace"/><label class="labelSpace">小</label>
+		                </div>
+                        <div id="naturalStackScaleNsl" style=" width:292px; height:22px; padding-left:8px;">
+			                <input type="radio" name="zrdjgmnsl" id="zrdjgmdNsl" value="大" class="checkBoxSpace"/><label class="labelSpace">大</label>
+			                <input type="radio" name="zrdjgmnsl" id="zrdjgmzNsl" value="中" class="checkBoxSpace"/><label class="labelSpace">中</label>
+			                <input type="radio" name="zrdjgmnsl" id="zrdjgmxNsl" value="小" class="checkBoxSpace"/><label class="labelSpace">小</label>
+		                </div>
+                        </div>
+		                <div class="titles" style=" width:163px; height:92px; border-right:1px solid #cad8e4;" >
+                        <div class="rtitlesII">滑坡活动程度</div>
+                        <div class="rtitlesII">人工弃体活动程度</div>
+                        <div style=" width:163px; height:22px;">自然堆积活动程度</div>
+                        </div>
+		                <div style=" width:300px; height:68px; float:left;" >
+                        <div class="rcontents" id="landslidActivityNsl">
+			                <input type="radio" name="hphdcdnsl" id="hphdcdyzNsl" value="严重" class="checkBoxSpace"/><label class="labelSpace">严重</label>
+			                <input type="radio" name="hphdcdnsl" id="hphdcdzdNsl" value="中等" class="checkBoxSpace"/><label class="labelSpace">中等</label>
+			                <input type="radio" name="hphdcdnsl" id="hphdcdqwNsl" value="轻微" class="checkBoxSpace"/><label class="labelSpace">轻微</label>
+			                <input type="radio" name="hphdcdnsl" id="hphdcdybNsl" value="一般" class="checkBoxSpace"/><label class="labelSpace">一般</label>
+		                </div>
+                        <div class="rcontents" id="artificialAbandonedBodyActivityNsl">
+			                <input type="radio" name="rgqthdcdnsl" id="rgqthdcdyzNsl" value="严重" class="checkBoxSpace"/><label class="labelSpace">严重</label>
+			                <input type="radio" name="rgqthdcdnsl" id="rgqthdcdzdNsl" value="中等" class="checkBoxSpace"/><label class="labelSpace">中等</label>
+			                <input type="radio" name="rgqthdcdnsl" id="rgqthdcdqwNsl" value="轻微" class="checkBoxSpace"/><label class="labelSpace">轻微</label>
+			                <input type="radio" name="rgqthdcdnsl" id="rgqthdcdybNsl" value="一般" class="checkBoxSpace"/><label class="labelSpace">一般</label>
+		                </div>
+                        <div id="naturalStackActivityNsl" style=" width:292px; height:22px; padding-left:8px;">
+			                <input type="radio" name="zrdjhdcdnsl" id="zrdjhdcdyzNsl" value="严重" class="checkBoxSpace"/><label class="labelSpace">严重</label>
+			                <input type="radio" name="zrdjhdcdnsl" id="zrdjhdcdzdNsl" value="中等" class="checkBoxSpace"/><label class="labelSpace">中等</label>
+			                <input type="radio" name="zrdjhdcdnsl" id="zrdjthdcdqwNsl" value="轻微" class="checkBoxSpace"/><label class="labelSpace">轻微</label>
+			                <input type="radio" name="zrdjhdcdnsl" id="zrdjhdcdybNsl" value="一般" class="checkBoxSpace"/><label class="labelSpace">一般</label>
+		                </div>
+                        </div>
+		             </li>
+                   </ul>
+                </div>
+            </div>
+            <div class="BIT_right_table" style="display: none;">
+                <div style="margin: 0px auto; font-size: 12px; display: block;" class="info">
+                    <ul style="height: 836px; border-left:1px solid #cad8e4;">
+                      <!---------------------------------------------灾害史--------------------------------------->
+			            <li class="titleI" style=" height:216px; width:133px;"><div style=" height:216px; line-height:216px; text-align:center;">灾害史</div></li>
+			            <li class="contentsI" style=" height:216px; width:795px; padding-left:0;">
+			            <div class="dTitle">
+			            <div class="disasterTitle">发生<br />时间</div>
+			            <div class="disasterContent" id="oneOccurTimeNsl"><input type="text" id="oneOccurTimeNslInput"/></div>
+			            <div class="disasterContent" id="twoOccurTimeNsl"><input type="text" id="twoOccurTimeNslInput"/></div>
+			            <div class="disasterContent" id="threeOccurTimeNsl"><input type="text" id="threeOccurTimeNslInput"/></div>
+			            <div class="disasterContent" id="fourOccurTimeNsl"><input type="text" id="fourOccurTimeNslInput"/></div>
+			            <div class="disasterContent" id="fiveOccurTimeNsl" style=" height:30px; width:71px; padding-left:8px;"><input type="text" id="fiveOccurTimeNslInput"/></div>
+			            </div>
+			            <div class="dTitle">
+			            <div class="disasterTitle">死亡<br />(人)</div>
+			            <div class="disasterContent" id="oneDieNubNsl"><input type="text" id="oneDieNubNslInput" /></div>
+			            <div class="disasterContent" id="twoDieNubNsl"><input type="text" id="twoDieNubNslInput" /></div>
+			            <div class="disasterContent" id="threeDieNubNsl"><input type="text" id="threeDieNubNslInput" /></div>
+			            <div class="disasterContent" id="fourDieNubNsl"><input type="text" id="fourDieNubNslInput" /></div>
+			            <div class="disasterContent" id="fiveDieNubNsl" style=" height:30px; width:71px; padding-left:8px;"><input type="text" id="fiveDieNubNslInput" /></div>
+			            </div>
+			            <div class="dTitle">
+			            <div class="disasterTitle">牲畜损失<br />(头)</div>
+			            <div class="disasterContent" id="oneAnimalsLossNsl"><input type="text" id="oneAnimalsLossNslInput" /></div>
+			            <div class="disasterContent" id="twoAnimalsLossNsl"><input type="text" id="twoAnimalsLossNslInput" /></div>
+			            <div class="disasterContent" id="threeAnimalsLossNsl"><input type="text" id="threeAnimalsLossNslInput" /></div>
+			            <div class="disasterContent" id="fourAnimalsLossNsl"><input type="text" id="fourAnimalsLossNslInput"/></div>
+			            <div class="disasterContent" id="fiveAnimalsLossNsl" style=" height:30px; width:71px; padding-left:8px;"><input type="text" id="fiveAnimalsLossNslInput" /></div>
+			            </div>
+
+                        <div style=" width:80px; height:158px; float:left;">
+			            <div class="disasterTitle" style="border-right:1px solid #cad8e4;">
+			            <div style=" height:30px; width:80px; border-bottom:1px solid #cad8e4; ">房屋(间)</div>
+			            <div style=" height:30px; width:39px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; float:left;">全毁</div>
+			            <div style=" height:30px; width:39px; border-bottom:1px solid #cad8e4; float:left;">半毁</div>
+			            </div>
+                        <div class="disasterhouseI" id="oneDoorDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="oneDoorDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="oneDoorDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="oneDoorDamageHalfNslInput" style="width:28px;"/></div>		
+			            <div class="disasterhouseI" id="twoDoorDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="twoDoorDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="twoDoorDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="twoDoorDamageHalfNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="threeDoorDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="threeDoorDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="threeDoorDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="threeDoorDamageHalfNslInput" style="width:28px;"/></div>		
+			            <div class="disasterhouseI" id="fourDoorDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fourDoorDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="fourDoorDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fourDoorDamageHalfNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseIII" id="fiveDoorDamageAllNsl" style="height:30px;width:31px; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fiveDoorDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseIII" id="fiveDoorDamageHalfNsl" style="height:30px;width:31px; border-right:1px solid #cad8e4;padding-left:8px; float:left;"><input type="text" id="fiveDoorDamageHalfNslInput" style="width:28px;"/></div>
+                        </div>
+                        <div style=" width:80px; height:158px; float:left;">
+			            <div class="disasterTitle" style="border-right:1px solid #cad8e4;">
+			            <div style=" height:30px; width:80px; border-bottom:1px solid #cad8e4; ">农田(亩)</div>
+			            <div style=" height:30px; width:39px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; float:left;">全毁</div>
+			            <div style=" height:30px; width:39px; border-bottom:1px solid #cad8e4; float:left;">半毁</div>
+			            </div>
+                        <div class="disasterhouseI" id="oneFarmDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="oneFarmDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="oneFarmDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="oneFarmDamageHalfNslInput" style="width:28px;"/></div>		
+			            <div class="disasterhouseI" id="twoFarmDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="twoFarmDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="twoFarmDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="twoFarmDamageHalfNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="threeFarmDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="threeFarmDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="threeFarmDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="threeFarmDamageHalfNslInput" style="width:28px;"/></div>		
+			            <div class="disasterhouseI" id="fourFarmDamageAllNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fourFarmDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseI" id="fourFarmDamageHalfNsl" style="height:30px;width:31px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fourFarmDamageHalfNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseIII" id="fiveFarmDamageAllNsl" style="height:30px;width:31px; border-right:1px solid #cad8e4; padding-left:8px; float:left;"><input type="text" id="fiveFarmDamageAllNslInput" style="width:28px;"/></div>
+			            <div class="disasterhouseIII" id="fiveFarmDamageHalfNsl" style="height:30px;width:31px; border-right:1px solid #cad8e4;padding-left:8px; float:left;"><input type="text" id="fiveFarmDamageHalfNslInput" style="width:28px;"/></div>
+                        </div>
+			            <div class="dTitle">
+			            <div class="disasterTitle">直接经济损<br />失(万元)</div>
+			            <div class="disasterContent" id="oneEconomyLossNsl"><input type="text" id="oneEconomyLossNslInput" /></div>
+			            <div class="disasterContent" id="twoEconomyLossNsl"><input type="text" id="twoEconomyLossNslInput" /></div>
+			            <div class="disasterContent" id="threeEconomyLossNsl"><input type="text" id="threeEconomyLossNslInput" /></div>
+			            <div class="disasterContent" id="fourEconomyLossNsl"><input type="text" id="fourEconomyLossNslInput" /></div>
+			            <div class="disasterContent" id="fiveEconomyLossNsl" style=" height:30px; width:71px; padding-left:8px;"><input type="text" id="fiveEconomyLossNslInput" /></div>
+			            </div>
+			            <div style=" width:162px; height:158px; float:left;">
+			            <div class="disasterTitle" style="border-right:1px solid #cad8e4;">
+			            <div style=" height:30px; width:162px; border-bottom:1px solid #cad8e4; ">公共设施</div>
+			            <div style=" height:30px; width:80px; border-bottom:1px solid #cad8e4; border-right:1px solid #cad8e4; float:left;">道路(km)</div>
+			            <div style=" height:30px; width:80px; border-bottom:1px solid #cad8e4; float:left;">桥梁(座)</div>
+			            </div>
+			            <div class="disasterContentI" id="oneRoadNsl"><input type="text" id="oneRoadNslInput" /></div>
+			            <div class="disasterContentI" id="oneBridgeNsl"><input type="text" id="oneBridgeNslInput" /></div>		
+			            <div class="disasterContentI" id="twoRoadNsl"><input type="text" id="twoRoadNslInput" /></div>
+			            <div class="disasterContentI" id="twoBridgeNsl"><input type="text" id="twoBridgeNslInput" /></div>
+			            <div class="disasterContentI" id="threeRoadNsl"><input type="text" id="threeRoadNslInput" /></div>
+			            <div class="disasterContentI" id="threeBridgeNsl"><input type="text" id="threeBridgeNslInput" /></div>		
+			            <div class="disasterContentI" id="fourRoadNsl"><input type="text" id="fourRoadNslInput" /></div>
+			            <div class="disasterContentI" id="fourBridgeNsl"><input type="text" id="fourBridgeNslInput" /></div>
+			            <div class="disasterContentIII" id="fiveRoadNsl"><input type="text" id="fiveRoadNslInput" style="width:70px;"/></div>
+			            <div class="disasterContentIII" id="fiveBridgeNsl"><input type="text" id="fiveBridgeNslInput" style="width:70px;"/></div>
+			            </div>
+			            <div style=" width:153px; height:160px; float:left;">
+			            <div class="disasterTitle" style="line-height:45px;">灾情等级</div>
+			            <div class="disasterContentII" id="oneDangerClassNsl">@*<input type="text" id="oneDangerClassNslInput" />*@
+                        <!--lyj-->
+                        <select id="oneDangerClassNslInput" style="border:none;width:145px;height:30px;">
+                            <option value=""></option>
+                            <option value="小型">小型</option>
+                            <option value="中型">中型</option>
+                            <option value="大型">大型</option>
+                            <option value="特大型">特大型</option>
+                        </select>
+                         <!--lyj-->
+                        </div>
+			            <div class="disasterContentII" id="twoDangerClassNsl">@*<input type="text" id="twoDangerClassNslInput" />*@
+			                <!--lyj-->
+                            <select id="twoDangerClassNslInput" style="border:none;width:145px;height:30px;">
+                                <option value=""></option>
+                                <option value="小型">小型</option>
+                                <option value="中型">中型</option>
+                                <option value="大型">大型</option>
+                                <option value="特大型">特大型</option>
+                            </select>
+                         <!--lyj-->
+                        </div>
+			            <div class="disasterContentII" id="threeDangerClassNsl">@*<input type="text" id="threeDangerClassNslInput" />*@
+                            <!--lyj-->
+                           <select id="threeDangerClassNslInput" style="border:none;width:145px;height:30px;">
+                                <option value=""></option>
+                                <option value="小型">小型</option>
+                                <option value="中型">中型</option>
+                                <option value="大型">大型</option>
+                                <option value="特大型">特大型</option>
+                            </select>
+                         <!--lyj-->
+                        </div>
+			            <div class="disasterContentII" id="fourDangerClassNsl">@*<input type="text" id="fourDangerClassNslInput" />*@
+                           <!--lyj-->
+                           <select id="fourDangerClassNslInput" style="border:none;width:145px;height:30px;">
+                                <option value=""></option>
+                                <option value="小型">小型</option>
+                                <option value="中型">中型</option>
+                                <option value="大型">大型</option>
+                                <option value="特大型">特大型</option>
+                            </select>
+                        <!--lyj-->
+                        </div>
+			            <div id="fiveDangerClassNsl" style=" height:22px; width:145px; padding-left:8px;">@*<input type="text" id="fiveDangerClassNslInput" style="width:142px;"/>*@
+                           <!--lyj-->
+                           <select id="fiveDangerClassNslInput" style="border:none;width:145px;height:30px;">
+                                <option value=""></option>
+                                <option value="小型">小型</option>
+                                <option value="中型">中型</option>
+                                <option value="大型">大型</option>
+                                <option value="特大型">特大型</option>
+                            </select>
+                         <!--lyj-->
+                        </div>
+                        </div>
+			            </li>
+			            <!---------------------------------------------泥石流特征----------------------------------->
+			            <li class="titleI" style=" height:61px; width:133px;">
+			            <div style=" height:61px; line-height:61px; text-align:center;">泥石流特征</div>
+			            </li>
+			            <li class="contentsI" style=" height:61px; width:795px; padding-left:0;">
+			            <div class="nslFeatureT">
+			            <div class="nslFT">冲出方量(m³)</div>
+			            <div class="nslFT">泥&nbsp;&nbsp;位(m)</div>
+			            <div style=" width:315px; float:left;">规模等级</div>
+			            </div>
+			            <div style=" height:30px;">
+			            <div class="nslFCon" id="outVolumeNsl"><input type="text" id="outVolumeNslInput" style="width:228px;"/></div>
+			            <div class="nslFCon" id="mudNsl"><input type="text" id="mudNslInput" style="width:228px;"/></div>
+			            <div id="scaleLevelNsl" style=" width:307px; padding-left:8px; float:left;">
+                             <!--lyj-->
+                       @* <input type="text" id="scaleLevelNslInput" style="width:304px;"/>*@
+			                <input type="radio" name="gmfjNSL" value="小型" class="checkBoxSpace"/><label class="labelSpace">小型</label>
+                            <input type="radio" name="gmfjNSL" value="中型" class="checkBoxSpace"/><label class="labelSpace">中型</label>
+			                <input type="radio" name="gmfjNSL" value="大型" class="checkBoxSpace"/><label class="labelSpace">大型</label>
+			                <input type="radio" name="gmfjNSL" value="特大型" class="checkBoxSpace"/><label class="labelSpace">特大型</label>
+                             <!--lyj-->
+                            </div>
+			            </div>
+			            </li>
+                        <li class="titleI" style=" height:61px; width:133px;">
+			            <div style=" height:61px; line-height:61px; text-align:center;">沟口巨石大小(m)</div>
+			            </li>
+                        <li class="contentsI" style=" height:61px; width:795px; padding-left:0;">
+                        <div class="nslFeatureT">
+			            <div class="nslFT">A</div>
+			            <div class="nslFT">B</div>
+			            <div style=" width:315px; float:left;">C</div>
+			            </div>
+                        <div style=" height:30px;">
+			            <div class="nslFCon" id="gkjsdxANsl"><input type="text" id="gkjsdxANslInput" style="width:228px;"/></div>
+			            <div class="nslFCon" id="gkjsdxBNsl"><input type="text" id="gkjsdxBNslInput" style="width:228px;"/></div>
+			            <div id="gkjsdxCNsl" style=" width:307px; padding-left:8px; float:left;"><input type="text" id="gkjsdxCNslInput" style="width:304px;"/></div>
+			            </div>
+                        </li>
+             <!----------------------------------------------综合评判------------------------------------------------>
+ 			            <li class="titleI" style=" height:495px; width:133px;">
+			                <div style=" width:133px;">
+			                    <div style=" width:30px; border-right:1px solid #cad8e4; height: 415px; float:left; line-height:50px;padding-top:80px;">泥<br/>石<br/>流<br/>综<br/>合<br/>评<br/>判</div>
+			                    <div class="syntheticTI">1.不良地质现象</div>
+			                    <div class="syntheticTI">3.沟口扇形地</div>
+			                    <div class="syntheticTI">5.新构造影响</div>
+			                    <div class="syntheticTI">7.冲於变幅(m)</div>
+			                    <div class="syntheticTI">9.岩性因素</div>
+			                    <div class="syntheticTI">11.山坡坡度(°)</div>
+			                    <div class="syntheticTI">13.流域面积(K㎡)</div>
+			                    <div class="syntheticTI">15.堵塞程度</div>
+                                <div class="syntheticTI">评分1</div>
+			                    <div class="syntheticTI">评分3</div>
+			                    <div class="syntheticTI">评分5</div>
+			                    <div class="syntheticTI">评分7</div>
+			                    <div class="syntheticTI">评分9</div>
+			                    <div class="syntheticTI">评分11</div>
+			                    <div class="syntheticTI">评分13</div>
+			                    <div class="syntheticTI" style="border-bottom:none;">评分15</div>
+			                    @*<div style=" width:102px; height:44px; float:left; text-align:center; line-height:44px;">评&nbsp;&nbsp;分</div>*@
+			                </div>
+			            </li>
+ 			            <li class="contentsII" style=" width:322px;"><div id="badGeoPhNsl">
+                            <div id="badGeoPhNslCon" style="display:none;"></div>
+                            <input type="radio" name="bldzxxnsl" id="bldzxxyzNsl" value="严重" title="崩塌滑坡等重力侵蚀严重，多深层滑坡和大型崩塌，表土疏松，冲沟十分发育" class="checkBoxSpace"/><label class="labelSpace">严重</label>
+                            <input type="radio" name="bldzxxnsl" id="bldzxxzdNsl"  value="中等" title="崩塌滑坡发育，多浅层滑坡和中小型崩塌，有零星植被覆盖，冲沟发育" class="checkBoxSpace"/><label class="labelSpace">中等</label>
+                            <input type="radio" name="bldzxxnsl" id="bldzxxqwNsl" value="轻微" title="有零星崩塌、滑坡和冲沟存在" class="checkBoxSpace"/><label class="labelSpace">轻微</label>
+                            <input type="radio" name="bldzxxnsl" id="bldzxxybNsl" value="一般" title="无崩塌、滑坡、冲沟或发育轻微" class="checkBoxSpace"/><label class="labelSpace">一般</label>
+                            <input type="radio" name="bldzxxnsl" id="bldzxxwuNsl" value="取消"/><label>取消</label>
+                        </div></li>
+			            <li class="titleI" style=" width:148px;"><div>2.补给长度比(%)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="supplyLengthNsl"><input type="text" id="supplyLengthNslInput" /></div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="ditchSectorNsl">@*<input type="text" id="ditchSectorNslInput" />*@
+                            <input type="radio" name="gksxdnsl" id="gksxdnslyzNsl" value="大" title="河形弯曲或堵塞，大河主流受挤压偏移" class="checkBoxSpace"/><label class="labelSpace">大</label>
+                            <input type="radio" name="gksxdnsl" id="gksxdnsldNsl"  value="中" title="河形无较大变化，仅大河主流受迫偏移" class="checkBoxSpace"/><label class="labelSpace">中</label>
+                            <input type="radio" name="gksxdnsl" id="gksxdnslqwNsl" value="小" title="河形无变化，大河主流在高水偏，低水不偏" class="checkBoxSpace"/><label>小</label>
+                            <input type="radio" name="gksxdnsl" id="gksxdnslybNsl" value="无" title="无河形变化， 主流不偏" class="checkBoxSpace"/><label class="labelSpace">无</label>
+                            <input type="radio" name="gksxdnsl" id="gksxdnslwuNsl" value="取消"/><label>取消</label>
+                        </div></li>
+			            <li class="titleI" style=" width:148px;"><div>4.主沟纵坡(‰)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="mainDitchLonSlopeNsl"><input type="text" id="mainDitchLonSlopeNslInput" /></div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="newStructureInfluenceNsl">@*<input type="text" id="newStructureInfluenceNslInput" />*@
+                            <select id="newStructureInfluenceNslInput" style="border:none;width:322px;height:30px;">
+                                <option value=""></option>
+                                <option  value="强烈上升区" title="强抬升区，六级以上地震区">强烈上升区</option>
+                                <option value="上升区" title="抬升区，4－6级地震区，有中小支断层或无断层">上升区</option>
+                                <option value="相对稳定区" title="相对稳定区，4级以下地震区，有小断层">相对稳定区</option>
+                                <option value="沉降区" title="沉降区，构造影响小或无影响">沉降区</option>
+                            </select>
+                        </div></li>
+			            <li class="titleI" style=" width:148px;"><div>6.植被覆盖率(%)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="vegetationCoverNsl"><input type="text" id="vegetationCoverNslInput" /></div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="luffPunchNsl"><input type="text" id="luffPunchNslInput" /></div></li>
+			            <li class="titleI" style=" width:148px;"><div>8.松散物储量(m³/k㎡)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="looseMaterialReservesNsl"><input type="text" id="looseMaterialReservesNslInput" /></div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="lithologyFactorNsl">@*<input type="text" id="lithologyFactorNslInput" />*@
+                            <select id="lithologyFactorNslInput" style="border:none;width:322px;height:30px;">
+                                <option value=""></option>
+                                <option  value="软岩，黄土">软岩，黄土</option>
+                                <option value="软硬相间">软硬相间</option>
+                                <option value="风化和节理发育的硬岩">风化和节理发育的硬岩</option>
+                                <option value="硬岩">硬岩</option>
+                            </select>
+                        </div></li>
+			            <li class="titleI" style=" width:148px;"><div>10.沟槽横断面</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="ditchTransverseNsl">@*<input type="text" id="ditchTransverseNslInput" />*@
+                            <select id="ditchTransverseNslInput" style="border:none;width:307px;height:30px;">
+                                <option value=""></option>
+                                <option  value="V型谷(谷中谷，U型谷)">V型谷(谷中谷，U型谷)</option>
+                                <option value="拓展U型谷">拓展U型谷</option>
+                                <option value="复式断面">复式断面</option>
+                                <option value="平坦型">平坦型</option>
+                            </select>
+                        </div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="mountainsideGradientNsl"><input type="text" id="mountainsideGradientNslInput" /></div></li>
+			            <li class="titleI" style=" width:148px;"><div>12.松散物平均度(m)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="looseMaterialAverageNsl"><input type="text" id="looseMaterialAverageNslInput" /></div></li>
+			            <li class="contentsII" style=" width:322px;"><div id="watershedAreaNsl"><input type="text" id="watershedAreaNslInput" /></div></li>
+			            <li class="titleI" style=" width:148px;"><div>14.相对高差(m)</div> </li>
+			            <li class="contentsII" style=" width:307px;"><div id="relativeHeightDiffNsl"><input type="text" id="relativeHeightDiffNslInput" /></div></li>
+			            <li class="contentsI" style=" width:787px;"><div id="blockDegreeNsl">@*<input type="text" id="blockDegreeNslInput" />*@
+                            <input type="radio" name="dscdnsl" id="dscdyzNsl" value="严重" class="checkBoxSpace"/><label class="labelSpace">严重</label>
+                            <input type="radio" name="dscdnsl" id="dscdzdNsl"  value="中等" class="checkBoxSpace"/><label class="labelSpace">中等</label>
+                            <input type="radio" name="dscdnsl" id="dscdqwNsl" value="轻微" class="checkBoxSpace"/><label class="labelSpace">轻微</label>
+                            <input type="radio" name="dscdnsl" id="dscdybNsl" value="一般" class="checkBoxSpace"/><label class="labelSpace">一般</label>
+                            <input type="radio" name="dscdnsl" id="dscdwuNsl" value="取消" class="checkBoxSpace"/><label class="labelSpace">取消</label>
+                        </div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="oneScore"><input type="text" id="oneScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分2</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="twoScore"><input type="text" id="twoScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="threeScore"><input type="text" id="threeScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分4</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="fourScore"><input type="text" id="fourScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="fiveScore"><input type="text" id="fiveScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分6</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="sixScore"><input type="text" id="sixScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="sevenScore"><input type="text" id="sevenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分8</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="eightScore"><input type="text" id="eightScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="nineScore"><input type="text" id="nineScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分10</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="tenScore"><input type="text" id="tenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="elevenScore"><input type="text" id="elevenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分12</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="twelveScore"><input type="text" id="twelveScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="thirteenScore"><input type="text" id="thirteenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>评分14</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="fourteenScore"><input type="text" id="fourteenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+                        <li class="contentsII" style=" width:322px;"><div id="fivteenScore"><input type="text" id="fivteenScoreInput" style="background-color:#ffffff;line-height:30px;"/></div></li>
+			            <li class="titleI" style=" width:148px;"><div>总分</div> </li>
+                        <li class="contentsII" style=" width:307px;"><div id="totalScore"><input type="text" id="totalScoreInput" style="background-color:#ffffff;line-height:30px;overflow:hidden;"/></div></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="BIT_right_table" style="display: none;">
+                <div class="info visible" id="imageLsl" style=" margin: 0 auto; font-size:12px;">
+                 <ul style=" height:482px;">
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">平面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="planLsl" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">剖面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="profileLsl" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                 </ul>
+       </div>
+            </div>
+            <div class="BIT_right_table" style="display: none; font-size:13px;">
+                <div class="BIT_HP_ZPGL" style="width:100%; height:200px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">上传照片</div>
+                    <div id="nsl_BaseImg" style="height: 160px; width: 100%;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div>
+                </div>
+                
+                <div class="BIT_HP_ZPGL" style="width:100%; height:220px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">照片管理</div>
+                    <div id="nsl_Videos" style="height: 180px; width: 100%; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>

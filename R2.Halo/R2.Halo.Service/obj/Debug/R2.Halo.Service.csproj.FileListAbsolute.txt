@@ -1,0 +1,15 @@
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.Service.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.Service.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Disaster.Core.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.Data.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\Autofac.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\EntityFramework.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Disaster.Core.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.CoreEntities.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\R2.Halo.Data.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\Autofac.xml
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\bin\Debug\EntityFramework.xml
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\obj\Debug\R2.Halo.Service.csprojResolveAssemblyReference.cache
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\obj\Debug\R2.Halo.Service.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\R2.Halo.Service\obj\Debug\R2.Halo.Service.pdb

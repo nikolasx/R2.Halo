@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="R2.JNRainfailModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="R2JNRainfailModelStoreContainer">
+    <EntitySet Name="CollectYbRain" EntityType="R2.JNRainfailModel.Store.CollectYbRain" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FactorWeights" EntityType="R2.JNRainfailModel.Store.FactorWeights" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RainfallStations" EntityType="R2.JNRainfailModel.Store.RainfallStations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RainThresholdValues" EntityType="R2.JNRainfailModel.Store.RainThresholdValues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RainWarningLevels" EntityType="R2.JNRainfailModel.Store.RainWarningLevels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YBRain_24hours" EntityType="R2.JNRainfailModel.Store.YBRain_24hours" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YBRain_48hours" EntityType="R2.JNRainfailModel.Store.YBRain_48hours" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_RainWarningLevels_RainThresholdValues" Association="R2.JNRainfailModel.Store.FK_RainWarningLevels_RainThresholdValues">
+      <End Role="RainThresholdValues" EntitySet="RainThresholdValues" />
+      <End Role="RainWarningLevels" EntitySet="RainWarningLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YBRain_48hours_RainfallStation" Association="R2.JNRainfailModel.Store.FK_YBRain_48hours_RainfallStation">
+      <End Role="RainfallStations" EntitySet="RainfallStations" />
+      <End Role="YBRain_48hours" EntitySet="YBRain_48hours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YBRain_YBRain" Association="R2.JNRainfailModel.Store.FK_YBRain_YBRain">
+      <End Role="RainfallStations" EntitySet="RainfallStations" />
+      <End Role="YBRain_24hours" EntitySet="YBRain_24hours" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CollectYbRain">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="varchar(max)" Nullable="false" />
+    <Property Name="CollectTime" Type="varchar(max)" Nullable="false" />
+    <Property Name="YbRainfall" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactorWeights">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RainfallStations">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="StationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="StationName" Type="nvarchar" MaxLength="255" />
+    <Property Name="StationAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="StationProvince" Type="nvarchar" MaxLength="255" />
+    <Property Name="StationCity" Type="nvarchar" MaxLength="255" />
+    <Property Name="StationTown" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RainThresholdValues">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RainWarningLevels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LevelName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RainThresholdID" Type="int" Nullable="false" />
+    <Property Name="LowInterval" Type="float" />
+    <Property Name="HighInterval" Type="float" />
+    <Property Name="Value" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YBRain_24hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="YBMaxHRain" Type="float" Nullable="false" />
+    <Property Name="YBSumRain" Type="float" Nullable="false" />
+    <Property Name="YBDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="YBRain_48hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="YBMaxHRain" Type="float" Nullable="false" />
+    <Property Name="YBSumRain" Type="float" Nullable="false" />
+    <Property Name="YBDate" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_RainWarningLevels_RainThresholdValues">
+    <End Role="RainThresholdValues" Type="R2.JNRainfailModel.Store.RainThresholdValues" Multiplicity="1" />
+    <End Role="RainWarningLevels" Type="R2.JNRainfailModel.Store.RainWarningLevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainThresholdValues">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RainWarningLevels">
+        <PropertyRef Name="RainThresholdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YBRain_48hours_RainfallStation">
+    <End Role="RainfallStations" Type="R2.JNRainfailModel.Store.RainfallStations" Multiplicity="1" />
+    <End Role="YBRain_48hours" Type="R2.JNRainfailModel.Store.YBRain_48hours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainfallStations">
+        <PropertyRef Name="StationId" />
+      </Principal>
+      <Dependent Role="YBRain_48hours">
+        <PropertyRef Name="StationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YBRain_YBRain">
+    <End Role="RainfallStations" Type="R2.JNRainfailModel.Store.RainfallStations" Multiplicity="1" />
+    <End Role="YBRain_24hours" Type="R2.JNRainfailModel.Store.YBRain_24hours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainfallStations">
+        <PropertyRef Name="StationId" />
+      </Principal>
+      <Dependent Role="YBRain_24hours">
+        <PropertyRef Name="StationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

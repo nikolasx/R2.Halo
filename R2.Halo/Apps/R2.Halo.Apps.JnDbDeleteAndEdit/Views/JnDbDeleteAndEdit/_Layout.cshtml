@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        var baseUrl = '@Url.Content("~/Apps/Jn.DbDeleteAndEdit/")'; //全局的URl，解决iis中路径的问题
+        var baseUrl1 = '@Url.Content("~/")';
+    </script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/OpenLayers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/zdclient.js")" type="text/javascript"></script>
+   
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Global/global.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/ulselect.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Global/isTheValueLegal.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Global/init.js")" type="text/javascript"></script>       
+    <link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/style.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/uiContent.css")" type="text/css" rel="stylesheet" />    
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/uiContent.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/layQueryResult.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/fangzaikaBixianka.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/fakeData.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/disaQuery.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/disaImportAPI.js")" type="text/javascript"></script>    
+    <link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/disaQuery.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ToolBarStyle.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Global/addContent.js")" type="text/javascript"></script>
+
+    @*雨量管理js文件夹 ZHAOs 2014年4月3日16:05:42*@
+    @*<script src="@Url.Content("~/Scripts/YLGL/rainManage.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/YLGL/rainManageQuery.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/YLGL/rainManage.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/YLGL/rainManageQuery.css")" type="text/css" rel="stylesheet" />*@
+    @*End雨量管理*@
+
+
+    @*start csw*@
+    @*<link href="@Url.Content("~/Content/ZHGL/style_popup.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/ZHGL/showQueryResult.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/ZHGL/RrPopup.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/Libs/NestFramedCloud.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Libs/RrPopup.js")" type="text/javascript"></script>*@
+    @*end csw*@
+
+@*    <script src="@Url.Content("~/Scripts/QXYJ/warningResultAnalysis.js")"></script>
+    <link href="@Url.Content("~/Content/QXYJ/warningResultAnalysis.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/QXYJ/earlywarningresultlayeroperation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/QXYJ/earlywarning.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/QXYJ/warningAnalyse.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/QXYJ/warnsetting.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/QXYJ/warninganalyse.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/QXYJ/historywarning.js")"></script>
+    <script src="@Url.Content("~/Scripts/QXYJ/resultIssue.js")"></script>
+    <link href="@Url.Content("~/Content/QXYJ/historywarning.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/QXYJ/signAndApprove.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/QXYJ/excelAndGraph.css")" type="text/css" rel="stylesheet" />*@
+    
+    @*<script src="@Url.Content("~/Scripts/Libs/treeLayerManage/treeLayerManage.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Scripts/Libs/treeLayerManage/treeLayerStyle.css")" type="text/css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Scripts/Libs/lhgcalendar.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ZHGL/isTheValueMudFlow.js")"></script>
+    <script src="@Url.Content("~/Scripts/ZHGL/isTheValueLandSlide.js")"></script>
+    <script src="@Url.Content("~/Scripts/ZHGL/clearData.js")"></script>
+    <script src="@Url.Content("~/Scripts/QXYJ/xingzhengquGrade.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/QXYJ/GISLayerToDraw.js")"></script>*@
+    
+</head>
+
+    <body>
+        @RenderBody()
+    </body>
+</html>

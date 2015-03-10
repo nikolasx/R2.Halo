@@ -1,0 +1,339 @@
+﻿body {
+}
+
+*{
+    padding: 0px;
+margin: 0px;
+font-family: "微软雅黑";
+font-size:12px;
+}
+#showQresult
+{
+    width:382px;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:10px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+#sqrheader
+{
+  height:50px;
+  background:none;
+  background-color:#DBDBDB;
+}
+.bd_return
+{
+    height:13px;
+    width:45px;
+    float:right;
+    margin-top:18px;
+    margin-right:10px;
+    background:url(../../Content/images/returnback.png) no-repeat 0 -13px;
+    /*background-position:0px 13px;*/
+    cursor:pointer;
+}
+
+/**列表样式***/
+sqrContent
+{
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    min-height:500px;
+    overflow-y:scroll;
+}
+.sqr_MessBox
+{
+    width:348px;
+    height:120px;
+    margin-left:10px;
+    margin-top:10px;
+    margin-right:15px;
+    border:1px dashed #ffffff;
+    cursor:pointer;
+     float:left;
+    left:0px;
+
+}
+.sqr_MessBox:hover
+{
+    background-color:#eaeaea;
+    border:1px solid #DEDEDE;
+
+}
+.sqr_MessBoxhover
+{
+    background-color:#eaeaea;
+    border:1px solid #DEDEDE;
+
+}
+.sqr_MessBoxTop
+{
+     height:92px;
+     width:348px;
+}
+.sqr_MessBoxleft
+{
+    height:92px;
+    width:200px;
+    float:left;
+    margin:5px 0px 0px 5px;
+    padding:0px 0px;
+}
+.sqr_MessBoxright
+{
+    height:92px;
+    width:130px;
+    float:left;
+    margin:0px;
+    margin-top:8px;
+    padding:0px;
+}
+.sqr_MessBoxBottom
+{
+    height:26px;
+    width:338px;
+    margin:0px 0px 0px 5px;
+    padding:0px 0px;
+    float:left;
+}
+.sqr_MessBoxrightImg
+{
+    border:1px solid #D1D1D1;
+}
+.sqr_MessBoxInfo
+{
+     height:22px;
+    width:200px;
+    float:left;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+.sqr_MessBoxInfoImg
+{
+    height:20px;
+    width:20px;
+    float:left;
+}
+
+.sqr_MessBoxInfoName
+{
+    width:40px;
+    color:#898989;
+     float:left;
+     height:20px;
+}
+.sqr_MessBoxInfoText
+{
+    width:160px;
+    color:#2A2A2A;
+    float:left;
+    margin-left:0px;
+    height:20px;
+    overflow:hidden;
+}
+.sqr_MessBoxInfoText2
+{
+    width:165px;
+    color:#294E85;
+    float:left;
+    margin-left:10px;
+    font-size:13px;
+    height:20px;
+    overflow:hidden;
+}
+
+/**分页**/
+.listPage
+{
+    width:320px;
+    height:50px;
+    line-height:50px;
+    float:left;
+}
+.firstPage_sqir
+{
+   width:40px;
+   float:left;
+   height:50px;
+   margin:0px;
+   padding:0px;
+   margin-left:5px;
+   text-align:center;
+   cursor:pointer;
+}
+.prevPage_sqir
+{
+   width:40px;
+   float:left;
+   height:50px;
+   margin:0px;
+   padding:0px;
+   margin-left:3px;
+   text-align:center;
+}
+.currentPage_sqir
+{
+   width:40px;
+   float:left;
+   height:50px;
+   margin:0px;
+   padding:0px;
+   margin-left:5px;
+   text-align:center;
+}
+.nextPage_sqir
+{
+   width:50px;
+   float:left;
+  cursor:pointer;
+}
+.lastPage_sqir
+{
+   width:50px;
+   float:left;
+   height:50px;
+   margin:0px;
+   padding:0px;
+   margin-left:3px;
+   text-align:center;
+   cursor:pointer;
+}
+.show_all
+{
+   width:67px;
+   float:left;
+   height:50px;
+   margin:0px;
+   padding:0px;
+   margin-left:10px;
+   text-align:center;
+   cursor:pointer;
+   background:url(../../Content/images/show_all.png) no-repeat 0 17px;
+}
+.added {
+    background:url(../../Content/images/cancel_all.png) no-repeat 0 17px;
+}
+
+.prevPage_sqir:hover, prevPage_sqir:hover, nextPage_sqir:hover, lastPage_sqir:hover
+{
+    cursor:pointer;
+}
+.pageHidden_sqir
+{
+    color:#838383;
+}
+/**popop样式**/
+
+.popups
+{
+    width:250px;
+    height:150px;
+}
+.popup_title
+{
+    height:20px;
+    width:230px;
+    margin:2px 10px;
+    padding:0px;
+    border:0px;
+    border-bottom:1px dashed #D1D1D1;
+}
+.popup_content
+{
+    height:80px;
+    
+}
+
+/**ZHAOs  2014年4月1日13:14:18*/
+.cardRight {
+    width: 120px;
+    border: 1px solid #C4C1BC;
+    position:absolute;
+    float:left;
+    top:0px;
+    right:0px;
+    border-bottom:none;
+    border-top:none;
+    z-index:9999;
+    background:white;
+}
+.cardContent {
+    width: 120px;    
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:9999;
+    overflow:auto;
+}
+.cardHead {
+    border:1px solid #CFD6DC;
+    width:100px;    
+    height:50px;
+    cursor:pointer;
+    background-color:white;
+    /*background:url(../../Content/images/right_close.png) no-repeat 0 0;*/
+    font-size:16px;
+    text-align:center;
+    line-height:50px;
+    color:#555555;
+}
+.cardHead:hover {
+    color:#F7733A;
+}
+.cardBottom {
+    border:1px solid #CFD6DC;
+    width:120px;    
+    height:50px;
+    cursor:pointer;
+    background-color:white;
+    background:url(../../Content/images/right_down.png) no-repeat 0 0;
+    position:absolute;
+}
+ .obviousCard {
+    border:1px solid #CFD6DC;
+    width:100px;
+    margin: 0 auto;
+    margin-top:15px;
+    height:50px;
+    cursor:pointer;
+    background-color:#F4F8FB;
+}
+.obviousCard:hover {
+    border:1px solid #0E6AAB;
+}
+.oc_head {
+    width:100%;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    color:#555555;
+    font-size:13px;
+}
+.oc_head:hover {
+    color:#15486D;
+}
+.oc_body {
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    color:#555555;
+    font-size:13px;
+}
+.oc_body:hover {
+    color:#15486D;
+}
+.cardBottom {
+    background:url(../../Content/images/right_down.png) no-repeat 0 0;
+    border:1px solid #CFD6DC;
+    width:100px;
+    margin: 0 auto;
+    margin-top:15px;
+    height:50px;
+    cursor:pointer;
+    background-color:white;
+}

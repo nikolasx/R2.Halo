@@ -1,0 +1,7 @@
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\bin\Debug\R2.Disaster.Core.dll
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\bin\Debug\R2.Disaster.Core.pdb
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\bin\Debug\Autofac.dll
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\bin\Debug\Autofac.xml
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\obj\Debug\R2.Disaster.Core.dll
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\obj\Debug\R2.Disaster.Core.pdb
+F:\WORK FILES\R2AggregationNew\R2.Disaster\Core\R2.Disaster.CoreInfrastructure\obj\Debug\R2.Disaster.Core.csprojResolveAssemblyReference.cache

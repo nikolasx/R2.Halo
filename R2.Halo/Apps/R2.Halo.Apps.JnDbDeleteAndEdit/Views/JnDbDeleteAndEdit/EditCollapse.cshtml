@@ -1,0 +1,871 @@
+﻿@{
+    ViewBag.Title = "基础信息编辑";
+Layout ="~/Apps/Jn.DbDeleteAndEdit/Views/JnDbDeleteAndEdit/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoType_in.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/baseinvestigatequeryresult.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoFun_Img.css")" rel="stylesheet") />
+
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.MultiFile.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.form.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/base.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/EditCollapse.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/judgeFunc.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoEditorFun.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/data.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoVideoFun.js")"></script>
+
+@*<div id="BIT_head">基本信息的编辑</div>*@
+<div id="BIT_ContentDiv">
+  
+    <div id="BIT_right" style="float:none;">
+        <div id="BIT_right_head">
+            <input type="hidden" value="@ViewBag.collapseId" id="collapseId"/>
+           @* <span>基本信息编辑</span>*@
+            <div class="BIT_right_img" id="BIT_right_img_Return"></div>
+            <div class="BIT_right_img" id="BIT_right_img_UpdateCollapse"></div>
+            <div class="importwarn" style="margin-left:35px;">注：橙色字段为必填信息，请填写完整。</div>
+        </div>
+
+          <div class="BIT_right_disaType1 BIT_right_disaType">
+            <div class="BIT_right_neck">
+                <div class="BIT_right_neck_cell" style="color: #33699C;padding-left:13px;">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">崩塌基本信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">崩塌环境及堆积体特征</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">危岩体特征</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">崩塌图形信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">崩塌照片管理</span>
+                </div>
+            </div>
+
+<!----------------------------------崩塌基本信息开始------------------------------------->
+                 <table class="BIT_right_table" style="display: block; width:930px;">
+                    
+                <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">名称</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="bengTaName" />
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">统一编号</td>
+                    <td style="text-align:left;  padding-left:10px;">
+                      
+                    
+                         <label id="btFirstcode" style=" float:left;display:inline;height:27px;line-height:27px;color:gray;width:30px;" title="请在最后填入四位数字编号">3701</label>                        
+                     <label id="bt_regionCode" style="float:left;display:inline;height:27px;line-height:27px;color:gray;width:30px;">0202</label>                        
+                     <input style="float:left;display:inline;width:150px;text-align:left;border-bottom:1px solid red;color:#FC7D3F;" type="text" class="bengTaCode" id="btunifiedNumber" value="请输入4位数字组成统一编号" disabled="disabled"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">野外编号</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btoutdoorNO" />
+                    </td>
+                    <td class="BIT_tableLeft">室内编号</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btindoorNO" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">省名</td>
+                    <td style="text-align:left; padding-left:5px; color:#666;" id="btprovinceBtInput">山东省</td>
+                    <td class="BIT_colOrange BIT_tableLeft">县名</td>
+                    <td>
+                        <select id="BT_countyBt" style="outline:none;border:none; width:280px;height:30px;" disabled="disabled">
+                            <option value="370101">市辖区</option>
+                            <option value="370188">高新区</option>
+                            <option value="370102">历下区</option>
+                            <option value="370103">市中区</option>
+                            <option value="370104">槐荫区</option>
+                            <option value="370105">天桥区</option>
+                            <option value="370112">历城区</option>
+                            <option value="370113">长清区</option>
+                            <option value="370124">平阴县</option>
+                            <option value="370125">济阳县</option>
+                            <option value="370126">商河县</option>
+                            <option value="370181">章丘市</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">街道</td>
+                    <td >
+                        <input type="text" class="BIT_table_input" id="btstreetBt" />
+                    </td>
+                    <td class="BIT_tableLeft">灾害体积</td>
+                    <td >
+                        <input type="text" class="BIT_table_input" id="btdisterV" />
+                    </td>
+                </tr>
+                     <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">发生地点</td>
+                    <td colspan="3" class="tb_three_left" style=" padding-left:5px;text-align:left;">
+                        <input type="text" class="BIT_table_input" id="btlocation" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">坐标X(m)</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btxzuob" />
+                    </td>
+                    <td class="BIT_tableLeft">坐标Y(m)</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btyzuob" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">坡顶标高(m)</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btbiaogd" />
+                    </td>
+                    <td class="BIT_tableLeft">坡脚标高(m)</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btbiaogj" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_colOrange BIT_tableLeft">经度</td>
+                    <td style="text-align:left;padding-left:5px;">
+                        <input type="text" class="BIT_table_input" style="width:50px; height:28px; padding-right:5px; text-align:right;" id="btjdd" />°
+                        <input type="text" class="BIT_table_input"style="width:50px;height:28px; padding-right:5px; text-align:right;" id="btjdf" />′
+                        <input type="text" class="BIT_table_input" style="width:50px;height:28px; padding-right:5px; text-align:right;" id="btjdm"/>″
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">纬度</td>
+                    <td style="text-align:left;padding-left:5px;">
+                        <input type="text" class="BIT_table_input" style="width:50px;height:28px; padding-right:5px; text-align:right;" id="btwdd"  />°
+                        <input type="text" class="BIT_table_input"style="width:50px;height:28px; padding-right:5px; text-align:right;" id="btwdf"  />′
+                        <input type="text" class="BIT_table_input" style="width:50px;height:28px; padding-right:5px; text-align:right;" id="btwdm" />″
+                    </td>
+                </tr>
+           
+                
+                    <tr>
+                    <td class="BIT_tableLeft">崩塌情况</td>
+                    <td colspan="3" class="tb_three_left" style=" padding-left:5px;text-align:left;" >
+                        <input type="text" class="BIT_table_input" id="btcollapseSitInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">崩塌类型</td>
+                    <td colspan="3" id="btbttype">
+                        <input type="radio" name="disaTableHPradio1" class="disaTableHPradio_bt" value="倾倒式" id="tds"/><span class="disaTableHPradio2">倾倒式</span>
+                        <input type="radio" name="disaTableHPradio1" class="disaTableHPradio_bt" value="滑移式" id="hys"/><span class="disaTableHPradio2">滑移式</span>
+                        <input type="radio" name="disaTableHPradio1" class="disaTableHPradio_bt" value="膨胀式" id="pzs"/><span class="disaTableHPradio2">膨胀式</span>
+                        <input type="radio" name="disaTableHPradio1" class="disaTableHPradio_bt" value="拉裂式" id="lls"/><span class="disaTableHPradio2">拉裂式</span>
+                        <input type="radio" name="disaTableHPradio1" class="disaTableHPradio_bt" value="错断式" id="cds"/><span class="disaTableHPradio2">错断式</span>
+                    </td>
+                    
+                </tr>
+
+                     <tr>
+                    
+                    <td class="BIT_tableLeft">斜坡类型</td>
+                    <td colspan="3" id="btxptype">
+                        <input type="radio" name="disaTableHPradio2" class="disaTableHPradio_bt" id="zryz" value="自然岩质"/><span class="disaTableHPradio2">自然岩质</span>
+                        <input type="radio" name="disaTableHPradio2" class="disaTableHPradio_bthjdj" id="rgyz" value="人工岩质"/><span class="disaTableHPradio2">人工岩质</span>
+                        <input type="radio" name="disaTableHPradio2" class="disaTableHPradio_bthjdj" id="zrtz" value="自然土质"/><span class="disaTableHPradio2">自然土质</span>
+                        <input type="radio" name="disaTableHPradio2" class="disaTableHPradio_bthjdj" id="rgtz" value="人工土质"/><span class="disaTableHPradio2">人工土质</span>
+                    </td>
+                </tr>
+                     <tr>
+                    
+                    <td class="BIT_tableLeft">灾害规模等级</td>
+                    <td colspan="3" id="btzhgmdj">
+                        <input type="radio" name="disaTableHPradio2bt" class="disaTableHPradio_bt" value="小型"/><span class="disaTableHPradio2">小型</span>
+                        <input type="radio" name="disaTableHPradio2bt" class="disaTableHPradio_bthjdj" value="中型"/><span class="disaTableHPradio2">中型</span>
+                        <input type="radio" name="disaTableHPradio2bt" class="disaTableHPradio_bthjdj" value="大型"/><span class="disaTableHPradio2">大型</span>
+                        <input type="radio" name="disaTableHPradio2bt" class="disaTableHPradio_bthjdj" value="特大型"/><span class="disaTableHPradio2">特大型</span>
+                    </td>
+                </tr>
+         
+                    <tr>       
+                  <td class="BIT_tableLeft">发生时间</td>
+                <td colspan="3" style="text-align:left;padding-left:5px;" >
+                    <input type="text" class="BIT_table_input" id="btoccurTimeBt" />
+                </td>   
+                
+                </tr>
+                <tr>         
+                 <td class="BIT_tableLeft">土地利用</td>
+                <td colspan="3" id="landuserbt" >
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="耕地" id="gendi"/><span class="disaTableHPradio2">耕地</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="草地" id="caodi"/><span class="disaTableHPradio2">草地</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="灌木" id="guanmu"/><span class="disaTableHPradio2">灌木</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="森林" id="senlin"/><span class="disaTableHPradio2">森林</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="裸露" id="luolu"/><span class="disaTableHPradio2">裸露</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="建筑" id="jianzhu"/><span class="disaTableHPradio2">建筑</span>
+                </td>
+                </tr>
+
+                  <tr>       
+                  <td class=" BIT_colOrange BIT_tableLeft">灾害预案</td>
+                <td  id="pdPlanBt">
+                   <input type="radio" name="disaTableHPradio3bt" class="disaTableHPradio_bt" value="true" /><span class="disaTableHPradio2">有</span>
+                   <input type="radio" name="disaTableHPradio3bt" class="disaTableHPradio_bt" value="false" /><span class="disaTableHPradio2">无</span>
+                </td>   
+                 <td class="BIT_colOrange BIT_tableLeft">隐患点</td>
+                <td  id="dangerPointBt">
+                   <input type="radio" name="disaTableHPradio4bt" class="disaTableHPradio_bt" value="true" /><span class="disaTableHPradio2">有</span>
+                   <input type="radio" name="disaTableHPradio4bt" class="disaTableHPradio_bt" value="false" /><span class="disaTableHPradio2">无</span>
+                </td>
+                </tr>
+                
+                <tr>
+                    
+                    <td class="BIT_tableLeft">监测建议</td>
+                    <td colspan="3" id="btjcjy">
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="定期目视检查" id="dqmsjc"/><span class="disaTableHPradio2">定期目视检查</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="安装简易监测设施" id="azjyjcss"/><span class="disaTableHPradio2">安装简易监测设施</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="地面位移监测" id="dmwyjc"/><span class="disaTableHPradio2">地面位移监测</span>
+                    </td>
+                </tr>
+
+                     <tr>
+                    
+                    <td class="BIT_tableLeft">防治建议</td>
+                    <td colspan="3" id="btfzjy">
+                     <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="群测群防" id="qcqf"/><span class="disaTableHPradio2">群测群防</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="专业监测" id="zyjc"/><span class="disaTableHPradio2">专业监测</span>
+                    <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="搬迁避让" id="bqbr"/><span class="disaTableHPradio2">搬迁避让</span>
+                        <input type="checkbox" name="disaTableHPradio2" class="disaTableHPradio_bt" value="工程治理" id="gczl"/><span class="disaTableHPradio2">工程治理</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="BIT_tableLeft">群测人员</td>
+                    <td>
+                        <input type="text" class="BIT_table_input"  id="gmPersonBtInput"/>
+                    </td>
+                    <td class="BIT_colOrange BIT_tableLeft">多媒体</td>
+                    <td id="mediaBt">
+                        <input type="radio" name="disaTableHPradio3" class="disaTableHPradio_bt" value="true" /><span class="disaTableHPradio2">有</span>
+                        <input type="radio" name="disaTableHPradio3" class="disaTableHPradio_bt" value="false" /><span class="disaTableHPradio2">无</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">村长</td>
+                    <td>
+                        <input type="text" class="BIT_table_input"  id="vHeadBtInput"/>
+                    </td>
+                    <td class="BIT_tableLeft">电话</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="phoneBtInput" />
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td class="BIT_tableLeft">审核情况</td>
+                    <td colspan="3" class="tb_three_left" style=" padding-left:5px;text-align:left;">
+                        <input type="text" class="BIT_table_input" id="btauditCaseBtInput" />
+                    </td>
+                    
+                </tr>
+                  <tr>
+                    <td class="BIT_tableLeft">调查单位</td>
+                    <td colspan="3" class="tb_three_left" style=" padding-left:5px;text-align:left;">
+                        <input type="text" class="BIT_table_input" id="btinvestiUnitBtInput" />
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">调查负责人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btinvestiPersonBtInput" />
+                    </td>
+                    <td class="BIT_tableLeft">填表日期</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btdateBtInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="BIT_tableLeft">填表人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btfillerBtInput" />
+                    </td>
+                    <td class="BIT_tableLeft">审核人</td>
+                    <td>
+                        <input type="text" class="BIT_table_input" id="btauditBtInput" />
+                    </td>
+                </tr>
+            </table>
+<!----------------------------------崩塌基本信息结束------------------------------------->
+
+
+<!----------------------------------崩塌环境及堆积体特征开始------------------------------------->
+            <div class="BIT_right_table info" style=" margin: 0 auto; margin-top:23px; font-size:14px;height:92%;overflow:auto;display:none;">
+                 <ul style=" height:558px;width:930px; overflow:hidden;" >
+    <li class="title" style=" height:219px; width:40px;">
+    <div style=" width:40px; height:219px; border-right:1px solid #CAD8E4;line-height:53px;">崩<br />塌<br />环<br />境</div>
+    </li>
+    <li class="contentI" style=" height:219px; width:888px; padding-left:0; ">
+   <!----------------------------------------------------地质环境---------------------------------------------->
+    <div style="border-bottom:1px solid #CAD8E4;width:888px; height:124px;"> 
+    <div class="titles" style=" width:30px; height:124px; border-right:1px solid #CAD8E4; line-height:30px;">地<br />质<br />环<br />境</div>
+    <div style=" width:77px; float:left;">
+    <div class="gititleI" style=" height:30px;">地层时代</div>
+    <div class="gititleI" style=" height:30px;">地层岩性</div>
+    <div class="gititleI" style=" height:30px;">地质构造</div>
+    <div class="gititleI" style=" height:30px;border-bottom:0px;">地震烈度</div>
+    </div>
+    <div style=" width:300px;float:left;">
+    <div class="gicontentI" id="layerTimeBt" style="height:30px;"><input type="text" id="btlayerTimeBtInput" style="width:288px;"/></div>
+    <div class="gicontentI" id="layerLithologyBt" style="height:30px;"><input type="text" id="layerLithologyBtInput" style="width:288px;"/></div>
+    <div class="gicontentI" id="geoStructureBt" style="height:30px;"><input type="text" id="geoStructureBtInput" style="width:288px;"/></div>
+    @*<div class="gicontentI" id="eqIntensityBt"><input type="text" id="eqIntensityBtInput" style="width:311px;"/></div>*@
+    <div class="gicontentI" id="eqIntensityBt" style="height:30px; border-bottom:0px;"><select id="eqIntensityBtInput" style="height:30px; width:293px; border:none;" >
+        <option value=""></option>
+        <option value="Ⅰ">Ⅰ</option>
+        <option value="Ⅱ">Ⅱ</option>
+        <option value="Ⅲ">Ⅲ</option>
+        <option value="Ⅳ">Ⅳ</option>
+        <option value="Ⅴ">Ⅴ</option>
+        <option value="Ⅵ">Ⅵ</option>
+        <option value="Ⅶ">Ⅶ</option>
+        <option value="Ⅷ">Ⅷ</option>
+        <option value="Ⅸ">Ⅸ</option>
+        <option value="Ⅹ">Ⅹ</option>
+        <option value="XI">XI</option>
+        <option value="XII">XII</option>
+    </select></div>
+    </div>
+    <div style=" width:100px; float:left; margin-left:3px;">
+    <div class="gititleII" style="height:30px;">倾&nbsp;&nbsp;&nbsp;&nbsp;向</div>
+    <div class="gititleII" style="height:30px;">倾&nbsp;&nbsp;&nbsp;&nbsp;角</div>
+    <div class="gititleII" style="height:30px;">微&nbsp;地&nbsp;貌</div>
+    <div style=" width:100px; height:31px; background-color:#F4F8FB; border-right:1px solid #CAD8E4; text-align:center;">地&nbsp;下&nbsp;水</div>
+    </div>
+    <div style=" width:377px; float:left;">
+    <div class="gicontentII" id="shapedcqxBt" style="height:30px;"><input type="text" id="shapedcqxBtInput" style="width:333px;"/></div>
+    <div class="gicontentII" id="shapedcqjBt" style="height:30px;"><input type="text" id="shapedcqjBtInput" style="width:333px;"/></div>
+    <div class="gicontentII" id="earthFaceBt" style="height:30px;line-height:30px;">
+        <div id="earthFaceBtCon" style="display:none;"></div>
+        <!--@*<input type="checkbox"/><label class="labelSpace">陡岩</label>*@-->
+        <input id="dpdmBt" type="radio" class="checkBoxSpace_btjhdj" name="wdmbt"  value="陡坡"/><label class="labelSpace">陡坡</label>
+        <input id="hpdmBt" type="radio" class="checkBoxSpace_btjhdj" name="wdmbt" value="缓坡"/><label class="labelSpace">缓坡</label>
+        <input id="ptdmBt" type="radio" class="checkBoxSpace_btjhdj" name="wdmbt" value="平台"/><label class="labelSpace">平台</label>
+        <input id="dydmBt" type="radio" class="checkBoxSpace_btjhdj" name="wdmbt" value="陡崖"/><label class="labelSpace">陡崖</label>
+    </div>
+    <div id="groundwaterBt" style=" width:337px; height:22px; padding-left:8px;">
+        <div id="groundwaterBtCon" style="display:none;"></div>
+        <input id="kxsBt" type="radio" name="dxsbt" class="checkBoxSpace_btjhdj" value="孔隙水"/><label class="labelSpace">孔隙水</label>
+        <input id="yrsBt" type="radio" name="dxsbt" class="checkBoxSpace_btjhdj" value="岩溶水"/><label class="labelSpace">岩溶水</label> 
+        <input id="lxsBt" type="radio" name="dxsbt" class="checkBoxSpace_btjhdj" value="裂隙水" /><label class="labelSpace">裂隙水</label>
+        <!--@*<input type="checkbox" checked="checked"/><label class="labelSpace">承水压</label> 
+        <input type="checkbox"/><label class="labelSpace">潜水</label>
+        <input type="checkbox"/><label class="labelSpace">上层滞水</label> *@-->
+    </div>
+    </div>
+    </div>
+    <!----------------------------------------------------地理环境--------------------------------------------->
+    <div style="width:888px; height:94px;">
+    <div class="titles" style=" width:30px; height:94px; border-right:1px solid #CAD8E4; line-height:24px;">地<br />理<br />环<br />境</div>
+    <div style=" width:77px; height:94px; float:left;">
+    <div style=" width:77px; height:61px;border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; background-color:#F4F8FB;">
+        <div class="hydrology" style=" width:30px; height:61px;line-height:20px; border-right:1px solid #CAD8E4; float:left;">水<br />文<br />(m)</div>
+        <div class="hydrology" style=" width:46px; height:30px; float:left;border-bottom:1px solid #CAD8E4; text-align:center">丰水位</div>
+        <div class="hydrology" style=" width:46px; height:30px; float:left; text-align:center">枯水位</div>
+    </div>
+    <div class="titles" style=" height:32px; width:77px; border-right:1px solid #CAD8E4;">相对河流位置</div>
+    </div>
+    <div style=" width:304px;float:left;">
+        <div class="gicontentI" id="floodBt"><input type="text" id="floodBtInput" style="width:290px;"/></div>
+        <div class="gicontentI" id="lowWaterBt"><input type="text" id="lowWaterBtInput" style="width:290px;"/></div>
+        <div id="riverBedBt" style=" width:294px;  padding-left:8px;  height:32px; border-right:1px solid #CAD8E4;">
+            <div id="riverBedBtCon" style="display:none;"></div>
+            <input id="hlzaBt" type="checkbox" class="checkBoxSpace_btjhdj" value="左岸"/><label class="labelSpace">左岸</label>
+            <input id="hlyaBt" type="checkbox" class="checkBoxSpace_btjhdj"  value="右岸"/><label class="labelSpace">右岸</label>
+            <input id="hlaaBt" type="checkbox" class="checkBoxSpace_btjhdj"  value="凹岸"/><label class="labelSpace">凹岸</label>
+            <input id="hltaBt" type="checkbox" class="checkBoxSpace_btjhdj" value="凸岸" /><label class="labelSpace">凸岸</label>
+        </div>
+    </div>
+    <div class="titles" style=" width:99px;  border-right:1px solid #CAD8E4;">
+        <div style="width:45px; height:94px; line-height:24px; border-right: 1px solid #CAD8E4; text-align:center; float:left;">降<br />雨<br />量<br />(mm)</div>
+        <div class="raintitleBt">年平均</div>
+        <div class="raintitleBt">日最大</div>
+        <div style=" width:53px; height:30px; float:left; ">时最大</div>
+    </div>
+    <div style=" width:352px; float:left;">
+        <div class="rainconBt" id="yearAvgBt"><input type="text" id="yearAvgBtInput" style="width:333px;"/></div>
+        <div class="rainconBt" id="dayMaxBt"><input type="text" id="dayMaxBtInput" style="width:333px;"/></div>
+        <div id="hourMaxBt" style=" width:337px;height:28px; padding-left:8px;"><input type="text" id="hourMaxBtInput" style="width:333px;"/></div>
+    </div>
+    </div>
+    </li>
+    <!-----------------------------------------------------堆积体特征------------------------------------------>
+    <li class="title" style=" height:185px; width:149px;">
+    <div style=" height:190px; width:40px; line-height:35px; text-align:center; border-right:1px solid #CAD8E4; float:left;">堆<br />积<br />体<br />特<br />征</div>
+    <div class="accDamaTitleI">长&nbsp;度(m)</div>
+    <div class="accDamaTitleI">厚&nbsp;度(m)</div>
+    <div class="accDamaTitleI">坡&nbsp;度(°)</div>
+    <div class="accDamaTitleI">坡面形态</div>
+    <div class="accDamaTitleI">目前稳定状态</div>
+    <div class="accDamaTitleI" >可能失稳因素</div>
+    </li>
+    <li class="contentI" style=" width:780px; height:185px; padding-left:0; border-right:none;">
+    <div style=" float:left;">
+        <div class="accDamaConI" id="accumulationBodyLength "><input type="text" id="accumulationBodyLengthInput" style="width:285px;"/></div>
+        <div class="accDamaConI" id="accumulationBodyThickness"><input type="text" id="accumulationBodyThicknessInput" style="width:285px;"/></div>
+        <div class="accDamaConI" id="accumulationBodyPodu"><input type="text" id="accumulationBodyPoduInput" style="width:285px;"/></div>
+        <div class="accDamaConI" id="slopeShapeBt">
+            <div id="slopeShapeBtCon" style="display:none;"></div>
+            <input id="djtpmxtzBt" type="checkbox" class="checkBoxSpace_btjhdj" value="直"/><label class="labelSpace">直</label>
+            <input id="djtpmxtjBt" type="checkbox" class="checkBoxSpace_btjhdj"  value="阶"/><label class="labelSpace">阶</label>
+            <input id="djtpmxtaBt" type="checkbox" class="checkBoxSpace_btjhdj"  value="凹"/><label class="labelSpace">凹</label>
+            <input id="djtpmxttBt" type="checkbox" class="checkBoxSpace_btjhdj"  value="凸"/><label class="labelSpace">凸</label>
+        </div>
+        <div class="accDamaConI" id="accumulationBodyNSteady">
+            <input id="djtmqwdxhBt" type="radio" name="djtjhbhqsbtN" class="checkBoxSpace_btjhdj" value="稳定性好"/><label class="labelSpace">稳定性好</label>
+            <input id="djtmqwdxcBt" type="radio" name="djtjhbhqsbtN" class="checkBoxSpace_btjhdj" value="稳定性差"/><label class="labelSpace">稳定性差</label>
+            <input id="djtmqwdxjcBt" type="radio" name="djtjhbhqsbtN" class="checkBoxSpace_btjhdj" value="稳定性较差"/><label class="labelSpace">稳定性较差</label>
+        </div>
+    </div>
+    <div class="titles" style=" width:100px; height:154px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;">
+        <div class="accDamaTitleII">宽&nbsp;&nbsp;&nbsp;&nbsp;度(m)</div>
+        <div class="accDamaTitleII">体&nbsp;&nbsp;&nbsp;&nbsp;积(m&sup3;)</div>
+        <div class="accDamaTitleII">坡&nbsp;&nbsp;&nbsp;&nbsp;向(°)</div>
+        <div class="accDamaTitleII">稳&nbsp;定&nbsp;性</div>
+        <div class="accDamaTitleII">今后变化趋势</div>
+    </div>
+    <div style=" width:377px; height:154px; border-bottom:1px solid #CAD8E4; float:left;">
+    <div class="accDamaConII" id="accumulationBodyWidth"><input type="text" id="accumulationBodyWidthInput" style="width:333px;"/></div>
+    <div class="accDamaConII" id="accumulationBodyVolume"><input type="text" id="accumulationBodyVolumeInput" style="width:333px;"/></div>
+    <div class="accDamaConII" id="accumulationBodyPox"><input type="text" id="accumulationBodyPoxInput" style="width:333px;"/></div>
+    <div class="accDamaConII" id="accumulationBodySteady">
+        <input id="djtwdxhBt" type="radio" name="djtwdxbt" class="checkBoxSpace_btjhdj" value="稳定性好"/><label class="labelSpace">稳定性好</label>
+        <input id="djtjhbhqsBt" name="djtwdxbt" type="radio" class="checkBoxSpace_btjhdj" value="稳定性差"/><label class="labelSpace">稳定性差</label>
+        <input id="djtwdxjcBt" type="radio" name="djtwdxbt" class="checkBoxSpace_btjhdj" value="稳定性较差"/><label class="labelSpace">稳定性较差</label>
+    </div>
+    <div class="accDamaConII" id="accumulationBodyCTrend">
+        <input id="djtbhqswdxhBt" name="djtjhbhqsbt" type="radio" class="checkBoxSpace_btjhdj" value="稳定性好"/><label class="labelSpace">稳定性好</label>
+        <input id="djtbhqswdxcBt" type="radio" name="djtjhbhqsbt" class="checkBoxSpace_btjhdj" value="稳定性差"/><label class="labelSpace">稳定性差</label>
+        <input id="djtbhqswdxjcBt" name="djtjhbhqsbt" type="radio" class="checkBoxSpace_btjhdj" value="稳定性较差"/><label class="labelSpace">稳定性较差</label>
+    </div>
+    </div>
+    <div id="accumulationBodyPossibleCause" style=" width:771px; padding-left:8px; height:30px;float:left; border-right:1px solid #CAD8E4;">
+        <div id="accumulationBodyPossibleCauseCon" style="display:none;"></div>
+        <input id="jyswysBt" type="checkbox" class="checkBoxSpace" value="降雨"/><label class="labelSpace">降雨</label>
+        <input id="dzswysBt" type="checkbox" class="checkBoxSpace" value="地震"/><label class="labelSpace">地震</label>
+        <input id="rgjzswysBt" type="checkbox" class="checkBoxSpace" value="人工加载"/><label class="labelSpace">人工加载</label>
+        <input id="kwpjswysBt" type="checkbox" class="checkBoxSpace" value="开挖坡脚"/><label class="labelSpace">开挖坡脚</label>
+        <input id="pjqrswysBt" type="checkbox" class="checkBoxSpace" value="坡脚浸润"/><label class="labelSpace">坡脚浸润</label>
+        <input id="pjcsswysBt" type="checkbox" class="checkBoxSpace" value="坡脚冲刷"/><label class="labelSpace">坡脚冲刷</label>
+        <input id="ptqgswysBt" type="checkbox" class="checkBoxSpace" value="坡体切割"/><label class="labelSpace">坡体切割</label>
+        <input id="fhswysBt" type="checkbox" class="checkBoxSpace" value="风化"/><label class="labelSpace">风化</label>
+        <input id="xhswysBt" type="checkbox" class="checkBoxSpace" value="卸荷"/><label class="labelSpace">卸荷</label>
+        <input id="bpzdswysBt" type="checkbox" class="checkBoxSpace" value="爆破振动"/><label class="labelSpace">爆破振动</label>
+        <input id="dsylswysBt" type="checkbox" class="checkBoxSpace" value="动水压力"/><label class="labelSpace">动水压力</label>
+    </div>
+    </li>
+     <!-----------------------------------------------------------已造成危害-------------------------------------------------------->
+   <li class="title" style=" height:90px; width:149px;">
+    <div style=" height:90px; width:40px; line-height:28px; text-align:center; border-right:1px solid #CAD8E4; float:left;">已<br />造成<br />危害</div>
+    <div class="accDamaTitleI">灾情等级</div>
+    <div class="accDamaTitleI">毁&nbsp;&nbsp;&nbsp;&nbsp;路(条)</div>
+    <div class="accDamaTitleI">毁坏房屋(间)</div>
+    <div class="accDamaTitleI">其它危害</div>
+   </li>
+   <li class="contentI" style=" width:780px; height:90px; padding-left:0;border-right:none;">
+   <div style=" float:left;">
+   <div class="accDamaConI" id="damageClassBt">
+       <input id="zqdjxxBt" type="radio" name="zqdjbt" class="checkBoxSpace_btjhdj" value="小型"/><label class="labelSpace">小型</label>
+       <input id="zqdjzxBt" type="radio" name="zqdjbt" class="checkBoxSpace_btjhdj" value="中型"/><label class="labelSpace">中型</label>
+       <input id="zqdjdxBt" type="radio" name="zqdjbt" class="checkBoxSpace_btjhdj" value="大型"/><label class="labelSpace">大型</label>
+       <input id="zqdjtdxBt" type="radio" name="zqdjbt" class="checkBoxSpace_btjhdj" value="特大型"/><label class="labelSpace">特大型</label>
+   </div>
+   <div class="accDamaConI" id="damageRoadBt"><input type="text" id="damageRoadBtInput" style="width:290px;"/></div>
+   <div class="accDamaConI" id="damageDoorBt" style="height:28px;line-height:28px;"><input type="text" id="damageDoorBtInput" style="width:290px; height:24px;line-height:24px;"/></div>
+   </div>
+   <div class="titles" style=" width:100px; height:90px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;">
+        <div class="accDamaTitleII">死亡人口(人)</div>
+        <div class="accDamaTitleII" >毁&nbsp;&nbsp;&nbsp;&nbsp;渠(条)</div>
+        <div style=" height:23px; width:120px;float:left;">直接损失(元)</div>
+     </div>
+    <div style=" width:344px; height:90px; border-bottom:1px solid #CAD8E4; float:left;">
+        <div class="accDamaConII" id="dieNubBt"><input type="text" id="dieNubBtInput" style="width:333px;"/></div>
+        <div class="accDamaConII" id="damageChannelBt"><input type="text" id="damageChannelBtInput" style="width:333px;"/></div>
+        <div id="directLossBt" style=" width:368px; padding-left:8px; height:28px;line-height:28px; border-right:1px solid #CAD8E4;"><input type="text" id="directLossBtInput" style="width:333px;height:24px;"/></div>
+    </div>
+    <div id="otherDamagerBt" style=" width:789px; padding-left:8px; height:22px;"><input type="text" id="otherDamagerBtInput" style="width:778px;"/></div>
+   </li>
+
+        <!--------------------------------------------------潜在危害------------------------------------------------------------------------->
+   <li class="title" style=" height:60px; width:149px;">
+    <div style=" height:60px; width:40px; line-height:23px; text-align:center; border-right:1px solid #CAD8E4; float:left;">潜在<br />危害</div>
+    <div style=" height:30px; width:108px; border-bottom:1px solid #CAD8E4; float:left;">威胁人口(人)</div>
+    <div style=" height:30px; width:108px;  float:left;">险情等级</div>
+   </li>
+   <li class="contentI" style=" width:780px; height:60px; padding-left:0; border-right:none;">
+   <div id="threatenNubBt" style=" width:293px; padding-left:8px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; float:left;"><input type="text" id="threatenNubBtInput" style="width:284px;"/></div>
+   <div class="titles" style=" height:30px; width:100px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;">威胁财产(万元)</div>
+   <div id="threatenFortuneBt" style=" width:368px; padding-left:8px; height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; float:left;"><input type="text" id="threatenFortuneBtInput" style="width:333px;"/></div>
+   <div id="dangerClassBt" style=" width:771px; padding-left:8px; height:30px;float:left; border-right:1px solid #CAD8E4;">
+        <div id="dangerClassBtCon" style="display:none;"></div>
+       <input id="xqdjxxBt" type="radio" name="xqdjbt" class="checkBoxSpace_btjhdj" value="小型"/><label class="labelSpace">小型</label>
+       <input id="xqdjzxBt" type="radio" name="xqdjbt" class="checkBoxSpace_btjhdj" value="中型"/><label class="labelSpace">中型</label>
+       <input id="xqdjdxBt" type="radio" name="xqdjbt" class="checkBoxSpace_btjhdj" value="大型" /><label class="labelSpace">大型</label>
+       <input id="xqdjtdxBt" type="radio" name="xqdjbt" class="checkBoxSpace_btjhdj" value="特大型"/><label class="labelSpace">特大型</label>
+   </div>
+   </li>
+  </ul>
+           </div>
+<!----------------------------------崩塌环境及堆积体特征结束------------------------------------->
+
+<!----------------------------------危岩体特征特征开始------------------------------------->
+
+            <div class="BIT_right_table" style=" margin: 0 auto; margin-top:23px; width:936px; font-size:14px;height:863px;overflow:auto;display:none;">
+               <ul style=" height:858px; width:933px; ">
+    <li class="title" style=" width:32px; height:858px;float:left;">
+    <div style=" width:30px; height:708px;padding-top:150px; border:1px solid #CAD8E4;line-height:110px; text-align:center;">危<br />岩<br />体<br />特<br />征</div>   
+    </li>
+    <li class="contentI" style=" width:901px; height:858px;float:left; padding-left:0;">
+    <!----------------------------------------------外形特征--------------------------------------------------->
+    <div  style=" width:899px; height:62px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4; ">
+        <div class="titles" style=" width:90px; height:62px; border:1px solid #CAD8E4; border-left:0px; line-height:60px;">外形特征</div>
+        <div class="titles" style=" width:808px; height:30px; border-top:1px solid #CAD8E4; line-height:30px; border-bottom:1px solid #CAD8E4;">
+            <div class="outlinetitle" >坡高(m)</div>
+            <div class="outlinetitle">坡长(m)</div>
+            <div class="outlinetitle">坡宽(m)</div>
+            <div class="outlinetitle">坡度(°)</div>
+            <div class="outlinetitle">坡向(°)</div>
+            <div class="outlinetitle"  style="width:88px;">规模</div>
+            <div style="width:153px; float:left;">规模等级</div>
+        </div>
+        <div style=" width:808px; height:30px; float:left;line-height:28px;">
+            <div class="outlinecontent" id="poHeightBt"><input type="text" id="poHeightBtInput" style="width:80px; height:28px;"/></div>
+            <div class="outlinecontent" id="poLengthBt"><input type="text" id="poLengthBtInput" style="width:80px;height:28px;"/></div>
+            <div class="outlinecontent" id="poWidthBt"><input type="text" id="poWidthBtInput" style="width:80px;height:28px;"/></div>
+            <div class="outlinecontent" id="poDuBt"><input type="text" id="poDuBtInput" style="width:80px;height:28px;"/></div>
+            <div class="outlinecontent" id="poOrientationBt"><input type="text" id="poOrientationBtInput" style="width:80px;height:28px;"/></div>
+            <div class="outlinecontent" id="scaleBt" style="width:80px;" ><input type="text" id="scaleBtInput" style="width:44px;height:28px;"/></div>
+            <div id="scaleLevelBt" style="height:30px;width:229px; float:left; ">
+                <input name="gmdjxxBt" type="radio" class="checkBoxSpace" value="小型" /><label class="labelSpace">小型</label>
+                <input name="gmdjxxBt" type="radio" class="checkBoxSpace" value="中型" /><label class="labelSpace">中型</label>
+                <input name="gmdjxxBt" type="radio" class="checkBoxSpace" value="大型" /><label class="labelSpace">大型</label>
+                <input name="gmdjxxBt" type="radio" class="checkBoxSpace" value="特大型" /><label class="labelSpace">特大型</label>
+            </div>
+    </div>
+</div>
+    <!----------------------------------------------结构特征--------------------------------------------------->
+    <div  style=" width:901px; height:280px; border-bottom:1px solid #CAD8E4;float:left; ">
+        <div class="titles" style=" width:30px; height:279px; float:left; border-right:1px solid #CAD8E4; line-height:50px;">结<br />构<br />特<br />征</div>
+        <div style=" height:186px; width:870px; float:left;">
+        <div class="titles" style=" width:59px; height:186px; border-right:1px solid #CAD8E4; line-height:180px;">岩&nbsp;&nbsp;质</div>
+        <div class="titles" style=" width:808px; height:30px;line-height:30px; border-bottom:1px solid #CAD8E4;border-right:1px solid #CAD8E4;">
+            <div class="rocktitle" style="width:88px;">厚度(m)</div>
+            <div class="rocktitle" style="width:88px;">块度(长*宽*高)</div>
+            <div class="rocktitle" style="width:88px; float:left; ">裂隙组数</div>
+            <div class="rocktitle" style="width:213px;">岩体结构类型</div>
+            <div style="width:320px;float: left;">斜坡结构类型</div>
+        </div>
+        <div style=" width:808px; height:30px; border-bottom:1px solid #CAD8E4; float:left;line-height:28px; border-right:1px solid #CAD8E4;">
+            <div class="rockcontent" id="rockBodyDepth" style="width:80px;"><input type="text" id="rockBodyDepthInput" style="width:75px;height:28px;"/></div>
+            <div class="rockcontent" id="rockLump" style="width:80px"><input type="text" id="rockLumpInput" style="width:75px;height:28px;"/></div>
+            <div class="rockcontent" id="rockFractureNub" style="width:80px;"><input type="text" id="rockFractureNubInput" style="width:75px;height:28px;"/></div>
+            @*<div class="rockcontent" id="rockStruType" style="width:205px;"><input type="text" id="rockStruTypeInput" style="width:201px;"/></div>*@
+            <div class="rockcontent" id="rockStruType" style="width:213px;padding-left:0px;">
+             <select id="rockStruTypeInput" style="height:28px;border:none;width:213px;">
+                    <option value=""></option>
+                    <option value="块体状">块体状</option>
+                    <option value="块状">块状</option>
+                    <option value="层状" >层状</option>
+                    <option value="块裂" >块裂</option>
+                    <option value="碎裂" >碎裂</option>
+                    <option value="散体" >散体</option>
+                </select>
+            </div>
+            
+            @*<div class="rockcontent" id="slopeStruType" style="width:205px;"><input type="text" id="slopeStruTypeInput" style="width:201px;"/></div>*@
+            <div id="slopeStruType" style="width:318px;float: left;">
+                <select id="slopeStruTypeInput1" style="width:157px;border:none;height:28px;">
+                    <option value=""></option>
+                    <option value="变质岩斜坡">变质岩斜坡</option>
+                    <option value="土质斜坡">土质斜坡</option>
+                    <option value="碎屑岩斜坡" >碎屑岩斜坡</option>
+                    <option value="碳酸岩斜坡" >碳酸岩斜坡</option>
+                    <option value="结晶岩斜坡" >结晶岩斜坡</option>
+                </select>
+                <select id="slopeStruTypeInput2" style="width:156px;height:28px;border:none;">
+                    <option value=""></option>
+                    <option value="特殊结构斜坡">特殊结构斜坡</option>
+                    <option value="顺向斜坡">顺向斜坡</option>
+                    <option value="斜向斜坡" >斜向斜坡</option>
+                    <option value="反向斜坡" >反向斜坡</option>
+                    <option value="平缓层斜坡" >平缓层斜坡</option>
+                    <option value="横向斜坡" >横向斜坡</option>
+                </select>
+            </div>         
+            </div>
+        <div style=" width:178px; height:120px; float:left;">
+            <div class="controltitle" style="width:177px;line-height:30px;">控制面结构类型</div>
+            @*<div class="controlcontent" id="oneControlTypeBt" style="width:205px;height:22px;"><input type="text" id="oneControlTypeBtInput" style="width:201px;"/></div>*@
+            <div class="controlcontent" id="oneControlTypeBt" style="width:169px;height:30px; border-right:1px solid #CAD8E4;">
+                <select id="oneControlTypeBtInput" style="height:28px;border:none;width:164px;line-height:28px;">
+                    <option value=""></option>
+                    <option value="层理面">层理面</option>
+                    <option value="片理面或劈理面">片理面或劈理面</option>
+                    <option value="节理裂隙面" >节理裂隙面</option>
+                    <option value="覆岩层与基岩接触面" >覆岩层与基岩接触面</option>
+                    <option value="层内错动带" >层内错动带</option>
+                    <option value="构造错动带" >构造错动带</option>
+                    <option value="断层" >断层</option>
+                </select>
+            </div>
+            @*<div class="controlcontent" id="twoControlTypeBt" style="width:205px;height:22px;"><input type="text" id="twoControlTypeBtInput" style="width:201px;"/></div>*@
+            <div class="controlcontent" id="twoControlTypeBt" style="width:169px;height:30px;  border-right:1px solid #CAD8E4;">
+             <select id="twoControlTypeBtInput" style="height:28px;border:none;width:164px;line-height:28px;">
+                    <option value=""></option>
+                    <option value="层理面">层理面</option>
+                    <option value="片理面或劈理面">片理面或劈理面</option>
+                    <option value="节理裂隙面" >节理裂隙面</option>
+                    <option value="覆岩层与基岩接触面" >覆岩层与基岩接触面</option>
+                    <option value="层内错动带" >层内错动带</option>
+                    <option value="构造错动带" >构造错动带</option>
+                    <option value="断层" >断层</option>
+                </select>
+            </div>
+            @*<div class="controlcontent" id="threeControlTypeBt" style="width:205px;height:22px;"><input type="text" id="threeControlTypeBtInput" style="width:201px;"/></div>*@
+            <div class="controlcontent" id="threeControlTypeBt" style="width:169px;height:31px; border-right:1px solid #CAD8E4; border-bottom:none;">
+            <select id="threeControlTypeBtInput" style="height:28px;border:none;width:164px;line-height:28px;">
+                    <option value=""></option>
+                    <option value="层理面">层理面</option>
+                    <option value="片理面或劈理面">片理面或劈理面</option>
+                    <option value="节理裂隙面" >节理裂隙面</option>
+                    <option value="覆岩层与基岩接触面" >覆岩层与基岩接触面</option>
+                    <option value="层内错动带" >层内错动带</option>
+                    <option value="构造错动带" >构造错动带</option>
+                    <option value="断层" >断层</option>
+                </select>
+            </div>
+        </div>
+        <div style=" height:120px;width:89px;  float:left;">
+        <div class="controltitle" style="width:88px;line-height:30px;border-right:1px solid #CAD8E4;">长度(m)</div>
+        <div class="controlcontent" id="oneControlLengthBt" style="width:80px;height:30px;"><input type="text" id="oneControlLengthBtInput" style="width:80px;"/></div>
+        <div class="controlcontent" id="twoControlLengthBt" style="width:80px;height:30px;"><input type="text" id="twoControlLengthBtInput" style="width:80px;"/></div>
+        <div class="controlcontent" id="threeControlLengthBt" style="width:80px;height:31px; border-bottom:none;"><input type="text" id="threeControlLengthBtInput" style="width:80px;"/></div>
+        </div>
+        <div style=" height:120px; width:53px; border-right:1px solid #CAD8E4; float:left;">
+        <div class="controltitle" style="width:53px;line-height:30px;">间距(m)</div>
+        <div class="controlcontent" id="oneControlDistanceBt" style="width:45px;height:30px;"><input type="text" id="oneControlDistanceBtInput" style="width:41px;"/></div>
+        <div class="controlcontent" id="twoControlDistanceBt" style="width:45px;height:30px;"><input type="text" id="twoControlDistanceBtInput" style="width:41px;"/></div>
+        <div class="controlcontent" id="threeControlDistanceBt" style="width:45px;height:31px;border-bottom:none;"><input type="text" id="threeControlDistanceBtInput" style="width:41px;"/></div>
+        </div>
+        <div style=" width:106px; height:120px; border-right:1px solid #CAD8E4; float:left;">
+            <div class="controltitle" style=" width:106px;line-height:30px;">产状倾向(°)</div>
+            <div class="controlcontent" id="oneInclinationBt" style="width:98px;height:30px;"><input type="text" id="oneInclinationBtInput" style="width:94px;"/></div>
+            <div class="controlcontent" id="twoInclinationBt" style="width:98px;height:30px;"><input type="text" id="twoInclinationBtInput" style="width:94px;"/></div>
+            <div class="controlcontent" id="threeInclinationBt" style="width:98px;height:31px;border-bottom:none;"><input type="text" id="threeInclinationBtInput" style="width:94px;"/></div>
+        </div>
+        <div style="height:120px; width:106px; border-right:1px solid #CAD8E4; float:left;">
+            <div class="controltitle" style=" width:90px; width:106px;line-height:30px;">产状倾角(°)</div>
+            <div class="controlcontent" id="oneIncidenceBt" style="width:98px;height:30px;"><input type="text" id="oneIncidenceBtInput" style="width:94px;"/></div>
+            <div class="controlcontent" id="twoIncidenceBt" style="width:98px;height:30px;"><input type="text" id="twoIncidenceBtInput" style="width:94px;"/></div>
+            <div class="controlcontent" id="threeIncidenceBt" style="width:98px;height:31px;border-bottom:none;"><input type="text" id="threeIncidenceBtInput" style="width:94px;"/></div>
+        </div>
+        <div class="titles" style=" width:273px; height:62px; line-height:62px; border-bottom:1px solid #CAD8E4;border-right:1px solid #CAD8E4;">
+            <div style=" width:152px; height:62px; border-right:1px solid #CAD8E4; float:left;line-height:30px;">全风化带深度(m)</div>
+            <div style="width:120px; height:62px; float:left;line-height:30px; ">卸荷裂隙深度(m)</div>
+        </div>
+        <div style=" width:273px; height:62px; line-height:61px; border-bottom:1px solid #CAD8E4; text-align:center; float:left;border-right:1px solid #CAD8E4;">
+        <div id="weatherBeltDepthBt" style=" vertical-align:middle;width:152px; height:61px; border-right:1px solid #CAD8E4; float:left;text-align:center;line-height:60px;"><input type="text" id="weatherBeltDepthBtInput" style="width:145px;"/></div>
+        <div id="unloadCrackDepthBt" style=" vertical-align:middle; width:112px; height:61px; float:left; text-align:center;line-height:60px;"><input type="text" id="unloadCrackDepthBtInput" style="width:105px;"/></div>
+        </div>
+        </div>
+        <div style=" height:93px; width:870px; float:left; border-top:1px solid #CAD8E4;">
+        <div class="titles" style=" width:59px; height:92px; border-right:1px solid #CAD8E4; line-height:90px;">地&nbsp;&nbsp;质</div>
+        <div class="titles" style=" width:808px; height:30px; border-bottom:1px solid #CAD8E4;border-right:1px solid #CAD8E4;">
+            <div style="width:320px;height:30px; border-right:1px solid #CAD8E4; float:left; line-height:30px;">土体名称及特征</div>
+            <div style="width:473px;height:30px; float:left;line-height:30px;">下伏基岩特征</div>
+        </div>
+       <div style=" width:106px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+           <div class="geotitle" >土体名称</div>
+           <div id="soilNameBt" style=" width:98px; padding-left:8px;text-align:center;" ><input type="text" id="soilNameBtInput" style="width:96px;"/></div>
+       </div>
+       <div style=" width:159px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">密&nbsp;实&nbsp;度</div>
+       <div id="densityBt" style=" width:145px; padding-left:3px; text-align:center;height:30px;line-height:30px;" >
+       @*<input type="text" id="densityBtInput" style="width:96px;"/>*@
+            <input type="radio" name="msdBt"  style="padding-left:3px;line-height:28px;" value="密"/><label class="labelSpace">密</label>
+            <input type="radio" name="msdBt" style="padding-left:3px;line-height:28px;" value="中"/><label class="labelSpace">中</label>
+            <input type="radio" name="msdBt" style="padding-left:3px;line-height:28px;" value="稍"/><label class="labelSpace">稍</label>
+            <input type="radio" name="msdBt" style="padding-left:3px;line-height:28px;" value="松"/><label class="labelSpace">松</label>
+       </div>
+       </div>
+       <div style=" width:53px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">稠&nbsp;&nbsp;度</div>
+       <div id="chouDuBt" style=" width:50px; padding-left:3px;text-align:center;" ><input type="text" id="chouDuBtInput" style="width:45px;"/></div>
+       </div>
+       <div style=" width:106px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">时&nbsp;&nbsp;代</div>
+       <div id="basicRockEraBt" style=" width:98px; padding-left:8px;text-align:center;" ><input type="text" id="basicRockEraBtInput" style="width:96px;"/></div>
+       </div>
+       <div style=" width:105px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">岩&nbsp;&nbsp;性</div>
+       <div id="basicRockNatureBt" style=" width:100px; padding-left:5px;text-align:center;" ><input type="text" id="basicRockNatureBtInput" style="width:95px;"/></div>
+       </div>
+       <div style=" width:97px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">产状倾向(°)</div>
+       <div id="basicRockInclinationBt" style=" width:45px; padding-left:8px;text-align:center;" ><input type="text" id="basicRockInclinationBtInput" style="width:43px;"/></div>
+       </div>
+       <div style=" width:96px; height:62px; float:left; border-right:1px solid #CAD8E4;">
+       <div class="geotitle">产状倾角(°)</div>
+       <div id="basicRockIncidenceBt" style=" width:44px; padding-left:8px;text-align:center;" ><input type="text" id="basicRockIncidenceBtInput" style="width:42px;"/></div>
+       </div>
+       <div style=" width:79px; height:62px; float:left;border-right:1px solid #CAD8E4;">
+       <div class="geotitle">埋&nbsp;&nbsp;深(m)</div>
+       <div id="basicRockDepthBt" style=" width:76px; padding-left:8px;text-align:center;" ><input type="text" id="basicRockDepthBtInput" style="width:65px;"/></div>
+       </div>
+       </div>
+    </div>
+    <!----------------------------------------------变形破坏迹象---------------------------------------------->
+    <div id="coastZWIBT" style=" width:900px; height:390px; border-bottom:1px solid #CAD8E4; float:left; ">
+        <div class="titles" style=" width:90px; height:390px; border-right:1px solid #CAD8E4; line-height:382px;">变形破坏迹象</div>
+        <div style=" width:106px; height:390px; border-right:1px solid #CAD8E4; float:left;">
+        <div class="varianttitle">名&nbsp;&nbsp;称</div>
+        <div class="variantcontent" id="oneVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="拉张裂缝" /><label class="labelSpace">拉张裂缝</label></div>
+        <div class="variantcontent" id="twoVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNamBt" value="剪切裂缝" /><label class="labelSpace">剪切裂缝</label></div>
+        <div class="variantcontent" id="threeVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="地面隆起" /><label class="labelSpace">地面隆起</label></div>
+        <div class="variantcontent" id="fourVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="地面沉降" /><label class="labelSpace">地面沉降</label></div>
+        <div class="variantcontent" id="fiveVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="剥、坠落" /><label class="labelSpace">剥、坠落</label></div>
+        <div class="variantcontent" id="sixVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="树木歪斜" /><label class="labelSpace">树木歪斜</label></div>
+        <div class="variantcontent" id="sevenVariantDaNameBt" style="width:106px;height:44px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="建筑变形" /><label class="labelSpace">建筑变形</label></div>
+        <div id="eightVariantDaNameBt" style=" height:44px; width:106px; padding-left:8px;text-align:center;line-height:40px;"><input type="checkbox" name="xjkhjxNameBt" value="冒渗混水" /><label class="labelSpace">冒渗混水</label></div>
+        </div>
+        <div style=" width:128px; height:390px; border-right:1px solid #CAD8E4; float:left;">
+        <div class="varianttitle" >部&nbsp;&nbsp;位</div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="oneVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="twoVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="threeVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="fourVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="fiveVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="sixVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="sevenVariantLocationBt" style="width:120px;height:44px;text-align:left;overflow:hidden;"></div>
+        <div class="xjbxjjBT" id="eightVariantLocationBt" contenteditable="true" style=" height:44px; width:120px; padding-left:8px;text-align:left;overflow:hidden;"></div>
+        </div>
+        <div style=" width:424px; height:390px; border-right:1px solid #CAD8E4; float:left;">
+        <div class="varianttitle" >特&nbsp;&nbsp;征</div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="oneVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="twoVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="threeVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="fourVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="fiveVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="sixVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="variantcontent xjbxjjBT" contenteditable="true" id="sevenVariantFeatureBt" style="width:416px;height:44px;overflow:hidden;"></div>
+        <div class="xjbxjjBT" id="eightVariantFeatureBt" contenteditable="true" style=" height:44px; width:416px; padding-left:8px;overflow:hidden;"></div>
+        </div>
+        <div style=" width:147px; height:390px; float:left;border-right:1px solid #CAD8E4; ">
+        <div class="varianttitle">初现时间</div>
+        <div class="variantcontent xjbxjjBT" id="oneVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="twoVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="threeVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="fourVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="fiveVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="sixVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="variantcontent xjbxjjBT" id="sevenVariantTimeBt" contenteditable="true" style="width:140px;height:44px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        <div class="xjbxjjBT" id="eightVariantTimeBt" contenteditable="true" style=" height:44px; width:140px; padding-left:8px;line-height:44px;text-align:left;overflow:hidden;line-height:44px;"></div>
+        </div>
+        </div>
+    <!-----------------------------------------------危岩体---------------------------------------------------->
+    <div  style=" width:900px; height:30px; border-bottom:1px solid #CAD8E4;float:left; ">
+        <div class="titles" style=" width:90px; height:30px; border-right:1px solid #CAD8E4;float:left;line-height:30px;">可能失稳因素</div>
+        <div id="highSlopePossibleCauseBt" style=" width:800px; padding-left:8px; height:30px;float:left;line-height:30px;border-right:1px solid #CAD8E4;">
+            <div id="highSlopePossibleCauseBtCon" style="display:none;line-height:30px;"></div>
+        <input id="jywytswysBt" type="checkbox" class="checkBoxSpace" value="降雨"/><label class="labelSpace">降雨</label><input id="dzwytswysBt" class="checkBoxSpace" type="checkbox" value="地震"/><label class="labelSpace">地震</label>
+        <input id="rgjzwytswysBt" type="checkbox" class="checkBoxSpace" value="人工加载"/><label class="labelSpace">人工加载</label><input id="kwpjwytswysBt" type="checkbox" class="checkBoxSpace" value="开挖坡脚"/><label class="labelSpace">开挖坡脚</label>
+        <input id="pjqrwytswysBt" type="checkbox" class="checkBoxSpace" value="坡脚浸润"/><label class="labelSpace">坡脚浸润</label><input id="pjcswytswysBt" type="checkbox" class="checkBoxSpace" value="坡脚冲刷"/><label class="labelSpace">坡脚冲刷</label>
+        <input id="ptqgwytswysBt" type="checkbox" class="checkBoxSpace" value="坡体切割"/><label class="labelSpace">坡体切割</label><input id="fhwytswysBt" type="checkbox" class="checkBoxSpace" value="风化"/><label class="labelSpace">风化</label>
+        <input id="xhwytswysBt" type="checkbox" class="checkBoxSpace" value="卸荷"/><label class="labelSpace">卸荷</label><input id="bpzdwytswysBt" type="checkbox" class="checkBoxSpace" value="爆破振动"/><label class="labelSpace">爆破振动</label>
+        <input id="dsylwytswysBt" type="checkbox" class="checkBoxSpace" value="动水压力"/><label class="labelSpace">动水压力</label>
+        </div>
+     </div>
+    <div  style=" width:899px; height:30px; border-bottom:1px solid #CAD8E4;border-right:1px solid #CAD8E4; float:left; ">
+        <div class="steadyTitle" style="height:30px; width:90px;line-height:30px;">目前稳定状态</div>
+        <div id="highSlopeNowSteadyBt" style=" width:322px; border-right:1px solid #CAD8E4; padding-left:8px;height:30px; float:left;">
+            <div id="highSlopeNowSteadyBtCon" style="display:none;line-height:30px;"></div>
+            <input id="wytmqwdxhBt" type="radio" name="wytmqwdztbt" class="checkBoxSpace" value="稳定性好"/><label class="labelSpace" style="line-height:28px;">稳定性好</label>
+            <input id="wytmqwdxcBt" name="wytmqwdztbt" type="radio" class="checkBoxSpace" value="稳定性差"/><label class="labelSpace" style="line-height:28px;">稳定性差</label>
+            <input id="wytmqwdxjcBt" type="radio" name="wytmqwdztbt" class="checkBoxSpace" value="稳定性较差"/><label class="labelSpace" style="line-height:28px;">稳定性较差</label>
+        </div>
+        <div class="steadyTitle" style=" width:133px;height:30px;line-height:30px;">今后变化趋势</div>
+        <div id="highSlopeChangeTrendBt" style=" width:335px; padding-left:8px; float:left;">
+            <div id="highSlopeChangeTrendBtCon" style="display:none;line-height:30px;"></div>
+        <input id="wytbhqswdxhBt" type="radio" name="wytjhbhqsbt" class="checkBoxSpace" value="稳定性好"/><label class="labelSpace" style="line-height:28px;">稳定性好</label>
+            <input id="wytbhqswdxcBt" type="radio" name="wytjhbhqsbt" class="checkBoxSpace" value="稳定性差"/><label class="labelSpace" style="line-height:28px;">稳定性差</label>
+        <input id="wytbhqswdxjcBt" type="radio" name="wytjhbhqsbt" class="checkBoxSpace" value="稳定性较差"/><label class="labelSpace" style="line-height:28px;">稳定性较差</label>
+        </div>
+    </div>
+    <!----------------------------------------------地下水----------------------------------------------------->
+    <div  style=" width:900px; height:61px; border-bottom:1px solid #CAD8E4; float:left;">
+        <div class="titles" style=" width:90px; height:60px; border-right:1px solid #CAD8E4;line-height:60px;">地&nbsp;下&nbsp;水</div>
+        <div class="titles" style=" width:808px; height:30px;line-height:30px; border-bottom:1px solid #CAD8E4; border-right:1px solid #CAD8E4;">
+        <div class="gwtitle" style=" width:204px;height:30px;line-height:30px;">埋&nbsp;&nbsp;深(m)</div>
+        <div class="gwtitle" style=" width:259px;height:30px;line-height:30px;">露&nbsp;&nbsp;头</div>
+        <div style=" width:337px; float:left;height:30px;line-height:30px;">补给类型</div>
+    </div>
+        <div style=" width:808px; height:30px; float:left; border-right:1px solid #CAD8E4;">
+        <div class="gwcontent" id="gwDepthBt" style=" width:196px;height:30px;"><input type="text" id="gwDepthBtInput" style="width:192px;"/></div>
+        <div class="gwcontent" id="gwHeadBt" style=" width:251px;height:30px;line-height:30px;">
+                <input type="radio" name="dxsltbt" id="chkupQbt" class="checkBoxSpace" value="上升泉"/><label class="labelSpace" style="line-height:28px;">上升泉</label>
+                <input type="radio" name="dxsltbt" id="chkDownQbt" class="checkBoxSpace" value="下降泉"/><label class="labelSpace" style="line-height:28px;">下降泉</label>
+                <input type="radio" name="dxsltbt" id="chksdbt" class="checkBoxSpace" value="湿地"/><label class="labelSpace" style="line-height:28px;">湿地</label>
+        </div>
+        <div id="gwSupplyClassBt" style=" width:322px; padding-left:8px; float:left;">
+             <div id="gwSupplyClassBtCon" style="display:none;line-height:30px;"></div>
+             <input type="checkbox" id="chkRainbt" class="checkBoxSpace" value="降雨"/><label class="labelSpace" style="line-height:28px;">降雨</label>
+             <input type="checkbox" id="chkDWaterbt" class="checkBoxSpace" value="地表水"/><label class="labelSpace" style="line-height:28px;">地表水</label>
+             <input type="checkbox" id="chkPeoplebt" class="checkBoxSpace" value="人工"/><label class="labelSpace" style="line-height:28px;">人工</label>
+             <input type="checkbox" id="chkSnowbt" class="checkBoxSpace" value="融雪"/><label class="labelSpace" style="line-height:28px;">融雪</label>
+        </div>
+    </div>
+  </div>
+ </li>
+</ul>
+            </div>
+<!----------------------------------危岩体特征特征接受------------------------------------->
+            <div class="BIT_right_table" style="display: none;">
+                <div class="info visible" id="imageBt" style=" margin: 0 auto; font-size:12px;">
+                 <ul style=" height:482px;">
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">平面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="planBt" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">剖面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="profileBt" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                 </ul>
+       </div>
+            </div>
+            <div class="BIT_right_table" style="display: none; font-size:13px;">
+                <div class="BIT_HP_ZPGL" style="width:100%; height:200px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">上传照片</div>
+                    <div id="bt_BaseImg" style="height: 160px; width: 100%;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div>
+                </div>
+                
+                <div class="BIT_HP_ZPGL" style="width:100%; height:220px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">照片管理</div>
+                    <div id="bt_Videos" style="height: 180px; width: 100%; ">
+                    </div>
+                </div>
+            </div>
+            
+           </div>
+
+    </div>
+    </div>

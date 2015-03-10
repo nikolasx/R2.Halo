@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="R2.JNRainfailModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RainQueryEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CollectYbRains" EntityType="R2.JNRainfailModel.CollectYbRain" />
+    <EntitySet Name="FactorWeights" EntityType="R2.JNRainfailModel.FactorWeight" />
+    <EntitySet Name="RainfallStations" EntityType="R2.JNRainfailModel.RainfallStation" />
+    <EntitySet Name="RainThresholdValues" EntityType="R2.JNRainfailModel.RainThresholdValue" />
+    <EntitySet Name="RainWarningLevels" EntityType="R2.JNRainfailModel.RainWarningLevel" />
+    <EntitySet Name="YBRain_24hours" EntityType="R2.JNRainfailModel.YBRain_24hours" />
+    <EntitySet Name="YBRain_48hours" EntityType="R2.JNRainfailModel.YBRain_48hours" />
+    <AssociationSet Name="FK_YBRain_48hours_RainfallStation" Association="R2.JNRainfailModel.FK_YBRain_48hours_RainfallStation">
+      <End Role="RainfallStations" EntitySet="RainfallStations" />
+      <End Role="YBRain_48hours" EntitySet="YBRain_48hours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YBRain_YBRain" Association="R2.JNRainfailModel.FK_YBRain_YBRain">
+      <End Role="RainfallStations" EntitySet="RainfallStations" />
+      <End Role="YBRain_24hours" EntitySet="YBRain_24hours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RainWarningLevels_RainThresholdValues" Association="R2.JNRainfailModel.FK_RainWarningLevels_RainThresholdValues">
+      <End Role="RainThresholdValues" EntitySet="RainThresholdValues" />
+      <End Role="RainWarningLevels" EntitySet="RainWarningLevels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CollectYbRain">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="CollectTime" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="YbRainfall" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FactorWeight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Value" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RainfallStation">
+    <Key>
+      <PropertyRef Name="StationId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="StationId" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StationName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StationAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StationProvince" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StationCity" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StationTown" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="YBRain_48hours" Relationship="R2.JNRainfailModel.FK_YBRain_48hours_RainfallStation" FromRole="RainfallStations" ToRole="YBRain_48hours" />
+    <NavigationProperty Name="YBRain_24hours" Relationship="R2.JNRainfailModel.FK_YBRain_YBRain" FromRole="RainfallStations" ToRole="YBRain_24hours" />
+  </EntityType>
+  <EntityType Name="RainThresholdValue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="RainWarningLevels" Relationship="R2.JNRainfailModel.FK_RainWarningLevels_RainThresholdValues" FromRole="RainThresholdValues" ToRole="RainWarningLevels" />
+  </EntityType>
+  <EntityType Name="RainWarningLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LevelName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RainThresholdID" Type="Int32" Nullable="false" />
+    <Property Name="LowInterval" Type="Double" />
+    <Property Name="HighInterval" Type="Double" />
+    <Property Name="Value" Type="Double" Nullable="false" />
+    <NavigationProperty Name="RainThresholdValue" Relationship="R2.JNRainfailModel.FK_RainWarningLevels_RainThresholdValues" FromRole="RainWarningLevels" ToRole="RainThresholdValues" />
+  </EntityType>
+  <EntityType Name="YBRain_24hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="YBMaxHRain" Type="Double" Nullable="false" />
+    <Property Name="YBSumRain" Type="Double" Nullable="false" />
+    <Property Name="YBDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RainfallStation" Relationship="R2.JNRainfailModel.FK_YBRain_YBRain" FromRole="YBRain_24hours" ToRole="RainfallStations" />
+  </EntityType>
+  <EntityType Name="YBRain_48hours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StationId" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="YBMaxHRain" Type="Double" Nullable="false" />
+    <Property Name="YBSumRain" Type="Double" Nullable="false" />
+    <Property Name="YBDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="RainfallStation" Relationship="R2.JNRainfailModel.FK_YBRain_48hours_RainfallStation" FromRole="YBRain_48hours" ToRole="RainfallStations" />
+  </EntityType>
+  <Association Name="FK_YBRain_48hours_RainfallStation">
+    <End Role="RainfallStations" Type="R2.JNRainfailModel.RainfallStation" Multiplicity="1" />
+    <End Role="YBRain_48hours" Type="R2.JNRainfailModel.YBRain_48hours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainfallStations">
+        <PropertyRef Name="StationId" />
+      </Principal>
+      <Dependent Role="YBRain_48hours">
+        <PropertyRef Name="StationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YBRain_YBRain">
+    <End Role="RainfallStations" Type="R2.JNRainfailModel.RainfallStation" Multiplicity="1" />
+    <End Role="YBRain_24hours" Type="R2.JNRainfailModel.YBRain_24hours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainfallStations">
+        <PropertyRef Name="StationId" />
+      </Principal>
+      <Dependent Role="YBRain_24hours">
+        <PropertyRef Name="StationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RainWarningLevels_RainThresholdValues">
+    <End Role="RainThresholdValues" Type="R2.JNRainfailModel.RainThresholdValue" Multiplicity="1" />
+    <End Role="RainWarningLevels" Type="R2.JNRainfailModel.RainWarningLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RainThresholdValues">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RainWarningLevels">
+        <PropertyRef Name="RainThresholdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

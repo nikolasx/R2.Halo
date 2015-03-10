@@ -1,0 +1,246 @@
+﻿@{
+    ViewBag.Title = "Index";
+Layout ="~/Apps/Apps.CardsEdit/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/disasterCard.css")" rel="stylesheet") />
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/disasterCard.js")"></script>
+ <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/EscapseCard.js")"></script>
+
+<div id="DC_head">崩塌、滑坡、泥石流等地质灾害避险工作明白卡</div>
+<div id="DC_main" style="height:860px;">
+    <div class="DC_content">
+        <div class="DC_menu">
+            <div class="DC_nav"><div style="color:#ff6400;">注：橙色字段为必填信息，请填写完整。</div>
+            <span style="font-size: 24px;">&bull;</span><span style="font-size: 14px;">防灾避灾明白卡信息录入</span></div>
+            <div class="DC_clear" id="clearEscapseCard"></div>
+            <div class="DC_save" id="saveEscapseCard"></div>
+        </div>
+        <div class="DC_card DC_card_work">
+            <div class="DC_area">
+                <div class="DC_title" style="width:34px; height:61px; ">个人信息</div>
+                <div class="DC_title" style="width:130px;color:#ff6a00;">户主名称</div>
+                <div class="DC_field gz_name" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_nameInput" id="hzname"/>
+                </div>
+                <div class="DC_title" style="width:130px;">家庭人数</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="homeCount"/>
+                </div>
+                <div class="DC_title" style="width:130px;">房屋类型</div>
+                <div class="DC_field gz_idNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="hometype"/>
+                </div>
+                <div class="DC_title" style="width:130px;">家庭住址</div>
+                <div class="DC_field gz_location" style="width:300px;">
+                    <input type="text" style="width:190px;" class="gz_locationInput" id="homeaddress"/>
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:22px; height:140px; padding:7px 6px; line-height:22px;">家庭成员情况</div>
+                <div class="DC_title" style="width:130px;">姓名</div>
+                <div class="DC_title" style="width:149px;">年龄</div>
+                <div class="DC_title" style="width:150px;">性别</div>
+                <div class="DC_title" style="width:130px;">姓名</div>
+                <div class="DC_title" style="width:149px;">年龄</div>
+                <div class="DC_title" style="width:150px;">性别</div>
+                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename1"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput"  id="preage1"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex1"/>
+                </div>
+                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename2"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage2"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex2"/>
+                </div>
+                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename3"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage3"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex3"/>
+                </div>
+                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename4"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage4"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex4"/>
+                </div>
+                                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename5"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage5"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex5"/>
+                </div>
+                                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename6"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage6"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex6"/>
+                </div>
+                                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename7"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage7"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex7"/>
+                </div>
+                                <div class="DC_field gz_location" style="width:130px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="prename8"/>
+                </div>
+                <div class="DC_field gz_location" style="width:149px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="preage8"/>
+                </div>
+                <div class="DC_field gz_location" style="width:150px;">
+                    <input type="text" style="width:130px;" class="gz_locationInput" id="presex8"/>
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:34px; height:92px;line-height:17px;">监<br />测<br />与<br />预<br />警</div>
+                <div class="DC_title" style="width:130px;">监测人</div>
+                <div class="DC_field gz_name" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_nameInput" id="jianceren"/>
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="jiancephonenumber"/>
+                </div>
+                <div class="DC_title" style="width:130px;">预警信号</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="yujingxinhao"/>
+                </div>
+               <div class="DC_title" style="width:130px;">预警信号发布人</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="yujingxinhaofaburen"/>
+                </div>
+               <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="yujingxinhaofaburenphotonumber"/>
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:34px; height:155px;line-height:20px;padding-top:30px;">灾<br />害<br />基<br />本<br />信<br />息</div>
+                <div class="DC_title" style="width:130px;">名称</div>
+                <div class="DC_field gz_name" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_nameInput" id="disName"/>
+                </div>
+                <div class="DC_title" style="width:130px;">野外编号</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="yeweinumbewr"/>
+                </div>
+                <div class="DC_title" style="width:130px;color:#ff6a00;">统一编号</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="tongyibianhao"/>
+                </div>
+               <div class="DC_title" style="width:130px;">灾害类型</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="distype"/>
+                </div>
+               <div class="DC_title" style="width:130px;line-height:20px;">规模(m<sup>3</sup>)</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="guimo"/>
+                </div>
+                <div class="DC_title" style="width:130px;">规模类型</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="guimoleixing"/>
+                </div>
+                <div class="DC_title" style="width:130px;">灾害与本住户位置关系</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="disTozhuhuguanxi"/>
+                </div>
+                <div class="DC_title" style="width:130px;">灾害诱发因素</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="youfayinsu"/>
+                </div>
+                <div class="DC_title" style="width:130px;">本住户注意事项</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="zhuyishixiang"/>
+                </div>
+            </div>
+            <div class="DC_area">
+                <div class="DC_title" style="width:34px; height:114px;line-height:20px;padding:20px 0px;">撤<br />离<br />与<br />安<br />置</div>
+                <div class="DC_title" style="width:130px;">撤离路线</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:290px;" class="gz_idNumInput" id="chelixianlu"/>
+                </div>
+                <div class="DC_title" style="width:130px;height:61px;line-height:61px;">安置单位地点</div>
+                <div class="DC_field gz_outNum" style="width:300px;height:61px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="anzhidanweiadress"/>
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="anzhidianfuzeren"/>
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="anzhidianfuzerenphotonumber"/>
+                </div>
+                <div class="DC_title" style="width:130px;height:61px;line-height:61px;">救护单位</div>
+                <div class="DC_field gz_outNum" style="width:300px;height:61px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput"id="jiuhudanwei" />
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="jiuhudanweifuzeren"/>
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="jiuhudanweifuzerenphotonumber"/>
+                </div>
+            </div>
+            <div class="DC_area">
+                 <div class="DC_title" style="width:34px; height:83px;line-height:15px;padding:20px 0px;">避<br />险<br />卡</div>
+                 <div class="DC_title" style="width:130px;height:61px;line-height:61px;">本卡发放单位</div>
+                <div class="DC_field gz_outNum" style="width:300px;height:61px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="cardfrom"/>
+                </div>
+                <div class="DC_title" style="width:130px;">负责人</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="cardfromfuzeren"/>
+                </div>
+                <div class="DC_title" style="width:130px;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="cardfromfuzerenphotonumber"/>
+                </div>
+                <div class="DC_title" style="width:130px;">户主填名</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="zhuhutianming"/>
+                </div>
+                <div class="DC_title" style="width:130px; color:#ff6a00;">联系电话</div>
+                <div class="DC_field gz_outNum" style="width:300px;">
+                    <input type="text" style="width:290px;" class="gz_outNumInput" id="zhuhuphotonumber"/>
+                </div>
+                <div class="DC_title" style="width:130px;">日期</div>
+                <div class="DC_field gz_idNum" style="width:732px;">
+                    <input type="text" style="width:50px;padding-left:25px;text-align:center;text-indent:0px;" class="gz_idNumInput" id="cardfromtimeyear"/>年
+                    <input type="text" style="width:30px;text-align:center;text-indent:0px;" class="gz_idNumInput" id="cardfromtimemonth"/>月
+                    <input type="text" style="width:30px;text-align:center;text-indent:0px;" class="gz_idNumInput" id="cardfromtimeday"/>日
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

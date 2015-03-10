@@ -1,0 +1,433 @@
+﻿.histroyWarningMain
+{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.hWarningTitle
+{
+    width: 100%;
+    height: 22px;
+    border-bottom: 1px solid #c0c0c0;
+    background: url(../images/left_menu.png);
+    line-height: 22px;
+    text-align: center;
+}
+
+.hWarningArea
+{
+    width: 100%;
+    position: absolute;
+    top: 28px;
+    bottom: 0;
+}
+
+.hWarning_TitleP
+{
+    padding-top: 4px;
+    height:20px;
+    width:100%;
+}
+
+.hWarn_Icon, .warn_title, .hWarn_Icon_1
+{
+    float: left;
+    display: block;
+}
+
+.hWarn_Icon
+{
+    width: 20px;
+    height: 20px;
+    background: url(../images/numicon.png) no-repeat;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.hWarn_Icon_1
+{
+    width: 20px;
+    height: 20px;
+    background: url(../images/numicon.png) no-repeat;
+    background-position-x: -20px;
+    text-align: center;
+    margin: 0 5px;
+}
+.hw_steps_coin {
+    width:20px;
+    height:20px;
+    display:inline;
+    background-image:url(../images/numicon.png);
+    float:left;
+}
+#hw_steps_coin1 {
+    background-position-x:-20px;
+}
+.hWarn_Name
+{
+    line-height: 18px;
+    color: #015889;
+    float:left;
+}
+
+.hWarnRegion
+{
+    width: 366px;
+    height: 110px;
+    background: #f4f4f4;
+    border: 1px solid #bfbfbf;
+    margin: 6px;
+    position: relative;
+}
+
+.hWarn_Date_Label
+{
+    float: left;
+    margin-top: 29px;
+    margin-left: 20px;
+    color: #2B458A;
+}
+
+.hWarn_Date_Label_1
+{
+    float: left;
+    margin-top: 29px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #bfbfbf;
+}
+
+.hWarn_Date
+{
+    float: left;
+    width: 120px;
+    height: 20px;
+    border: 1px solid #bfbfbf;
+    background: #fff;
+    margin-top: 25px;
+    padding: 2px 5px;
+    color: #666;
+}
+
+.hWarnbtn
+{
+    width: 75px;
+    height: 24px;
+    /*border: 1px solid #bfbfbf;*/
+    /*background: url(../images/btn_bg.png);*/
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    color:#015889;
+    font-size:14px;
+}
+
+    .hWarnbtn:hover
+    {
+        /*background-position: 0 -25px;*/
+        color:#018DC3;
+    }
+
+#hWarnResTable
+{
+    width: 355px;
+    margin-left: 5px;
+    margin-top: 10px;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+}
+
+    #hWarnResTable tr
+    {
+        height: 30px;
+        background-color: #FFFFFF;
+    }
+
+    #hWarnResTable tbody tr
+    {
+        cursor: pointer;
+    }
+
+        #hWarnResTable tbody tr:hover
+        {
+            background-color: #D6E0EA;
+        }
+
+    #hWarnResTable tr th
+    {
+        border: 1px solid #c0c0c0;
+    }
+
+    #hWarnResTable tr td
+    {
+        border: 1px solid #c0c0c0;
+        text-align: center;
+    }
+
+#hWarnPageRegion
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+}
+
+.hWarnPageControl
+{
+    float: left;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    cursor: pointer;
+    color: #000000;
+}
+
+.hWarnPageControlActive
+{
+    color: #FFFFFF;
+}
+
+#hWarnViewAll
+{
+    text-decoration: underline;
+    color: blue;
+}
+
+#hWarnShowAllResult
+{
+    position: absolute;
+    width: 382px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #F4F4F4;
+}
+
+#hWarnShowResTitle
+{
+    height: 22px;
+    width: 380px;
+    line-height: 22px;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    border: 1px solid #CBCACB;
+    background-color: #DDEAF2;
+    text-indent: 10px;
+    z-index:33243;
+}
+
+#hWarnShowResPageControl
+{
+    position: absolute;
+    width: 380px;
+    height: 50px;
+    bottom: 0px;
+    border-bottom: 1px solid #CBCACB;
+    border-left: 1px solid #CBCACB;
+    border-right: 1px solid #CBCACB;
+}
+
+#hWarnShowResContent
+{
+    width: 390px;
+    border-left: 1px solid #CBCACB;
+    border-right: 1px solid #CBCACB;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.hWarnSAPageControl
+{
+    float: left;
+    /*width: 50px;*/
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.hWarnSAPageControlGrey {
+    opacity:0.4;
+}
+
+
+#hWarnSAFirstPage
+{
+    margin-left: 10px;
+}
+
+#hWarnSALastPage
+{
+    margin-left: 10px;
+}
+
+#hWarnSAPageNum
+{
+    margin-left: 10px;
+}
+
+#hWarnSANextPage
+{
+    margin-left: 10px;
+}
+
+#hWarnSALastPage
+{
+    margin-left: 10px;
+}
+
+#hWarnSABack
+{
+    margin-top: 18px;
+    margin-left: 0px;
+    height: 13px;
+    line-height: 24px;
+    width: 40px;
+    /*border: 1px solid #bfbfbf;*/
+    background: url(../images/returnback.png) repeat;
+    color: #316490;
+    float:right;
+    text-align:center;
+    text-indent:0px;
+    /*border:1px solid #bfbfbf;*/
+    margin-right:20px;
+    background-position:0 -13px;
+}
+
+.hWarnShowRes1
+{
+    height: 42px;
+    border: 1px solid #D8D8D8;
+    width: 355px;
+    background-color: #FFFFFF;
+    margin-top: 8px;
+    margin-left: 12px;
+    cursor:pointer;
+}
+
+    .hWarnShowRes1:hover
+    {
+        background-color: #DCEAF1;
+    }
+
+.hWarnShowRes2
+{
+    height: 42px;
+    width: 365px;
+    margin-top: 8px;
+    margin-left: 7px;
+    display:none;
+}
+
+.hWarnShowResChildCGT
+{
+    float: left;
+    width: 65px;
+    height: 42px;
+    margin-left: 15px;
+    background-image: url(IMG/7.png);
+    background-repeat: no-repeat;
+    background-position: -4px -4px;
+    cursor: pointer;
+}
+
+.hWarnShowResChildCGTHasData
+{
+    background-position: -5px -54px;
+}
+
+.hWarnShowResChildCGTChecked
+{
+    background-position: -5px -104px;
+}
+
+.hWarnShowResChildQPD
+{
+    float: left;
+    width: 65px;
+    height: 42px;
+    margin-left: 15px;
+    background-image: url(IMG/7.png);
+    background-repeat: no-repeat;
+    background-position: -85px -4px;
+    cursor: pointer;
+}
+
+.hWarnShowResChildQPDHasData
+{
+    background-position: -84px -54px;
+}
+
+.hWarnShowResChildQPDChecked
+{
+    background-position: -85px -104px;
+}
+
+.hWarnShowResChildYJDJB
+{
+    float: left;
+    width: 80px;
+    height: 42px;
+    margin-left: 15px;
+    background-image: url(IMG/7.png);
+    background-repeat: no-repeat;
+    background-position: -163px -4px;
+    cursor: pointer;
+}
+
+.hWarnShowResChildYJDJBHasData
+{
+    background-position: -163px -54px;
+}
+
+.hWarnShowResChildYJDJBChecked
+{
+    background-position: -163px -104px;
+}
+
+/**/
+.hWarnShowResChildXZDJB
+{
+    float: left;
+    width: 80px;
+    height: 42px;
+    margin-left: 15px;
+    background-image: url(IMG/7.png);
+    background-repeat: no-repeat;
+    background-position: -257px -4px;
+    cursor: pointer;
+}
+
+.hWarnShowResChildXZDJBHasData
+{
+    background-position: -257px -54px;
+}
+
+.hWarnShowResChildXZDJBChecked
+{
+    background-position: -257px -104px;
+}
+
+.hWarnShowResDown
+{
+     background-image: url(../../Content/images/editBtn1.png);
+     margin-left:5px;
+     display:none;
+}
+.hWarnDelete {
+    background-image: url(../../Content/images/deleteBtn.png);
+}
+.hWarnShowResChildYJChecked {
+    background-position-y:-104px;
+}

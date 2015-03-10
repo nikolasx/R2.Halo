@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin: 0; width: 100%; height: 100%">
+<head>
+    <title>VirtureEarth</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="Content/Earth/bubble.css"/>
+    <script src="/Apps/Apps.D3Map/Scripts/Libs/jquery-1.7.1.min.js"></script>
+    <script src="/Apps/Apps.D3Map/Scripts/Libs/jquery.bgiframe-2.1.2.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/StartApplet.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/BaseApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/CloudApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/LabelApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/LayerApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/PlaceMarkApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/SlopGraphApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/SurfaceImageApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/TerrainApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/SurfaceShapeApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/AnnotationApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/NavigateApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/ImitateAnalyse.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/MaxApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/ScreenLegendApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/SpaceShapeApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/SpatialAnalyseApi.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/applet/jslib/ol_EarthCallBack.js"></script>
+    <script type="text/javascript" src="/Apps/Apps.D3Map/Scripts/global/earthmain.js"></script>
+</head>
+    <body style="margin: 0; width: 100%; height: 100%">
+        <div id="isEarthObjExist" style="display: none;">false</div>  <!--ZHAOs 2014年7月29日18:58:26-->
+        <applet id="vejApplet" name="vejApplet" mayscript
+                code="com.sun.opengl.util.JOGLAppletLauncher" width="100%" height="100%"
+                archive="/Apps/Apps.D3Map/applet/applet-launcher.jar,/Apps/Apps.D3Map/applet/jogl/jogl.jar,/Apps/Apps.D3Map/applet/gluegen/webstart/gluegen-rt.jar,/Apps/Apps.D3Map/applet/VirtualEarth.jar">
+            <param name="codebase_lookup" value="false">
+            <param name="subapplet.classname"
+                   value="com.mapgis.vearth.applet.EarthApplet" />
+            <param name="subapplet.displayname" value="Virtual Earth">
+            <param name="noddraw.check" value="true">
+            <param name="progressbar" value="true">
+            <param name="jnlpNumExtensions" value="1">
+            <param name="jnlpExtension1" value="applet/jogl/jogl.jnlp" />
+            <param name="cache_option" value="Plugin">
+            <param name="webconfigPath" value="applet/config/EarthConfig.xml" />
+            <param name="VerticalExaggeration" value="1" />
+        </applet>
+        <div id="ol_bubble_panel"></div>
+        <div id="ol_bubble_panel_monitorsite"></div>
+    </body>
+</html>

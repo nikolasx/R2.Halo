@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="R2.JNDisasterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="R2JNDisasterModelStoreContainer">
+    <EntitySet Name="HedgeCard" EntityType="R2.JNDisasterModel.Store.HedgeCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HistoryEarlyWarning" EntityType="R2.JNDisasterModel.Store.HistoryEarlyWarning" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PreventionCard" EntityType="R2.JNDisasterModel.Store.PreventionCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="R2.JNDisasterModel.Store.User" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="HedgeCard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="统一编号" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="名称" Type="nvarchar" MaxLength="60" />
+    <Property Name="野外编号" Type="nvarchar" MaxLength="50" />
+    <Property Name="规模" Type="nvarchar" MaxLength="50" />
+    <Property Name="位置关系" Type="nvarchar" MaxLength="250" />
+    <Property Name="诱发因素" Type="nvarchar" MaxLength="50" />
+    <Property Name="本住户注意事项" Type="nvarchar" MaxLength="250" />
+    <Property Name="监测人" Type="nvarchar" MaxLength="50" />
+    <Property Name="监测人联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="预警信号" Type="nvarchar" MaxLength="50" />
+    <Property Name="预警信号发布人" Type="nvarchar" MaxLength="50" />
+    <Property Name="预警信号发布人联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="撤离路线" Type="nvarchar" MaxLength="50" />
+    <Property Name="安置单位地点" Type="nvarchar" MaxLength="50" />
+    <Property Name="安置单位负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="安置单位联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="救护单位" Type="nvarchar" MaxLength="50" />
+    <Property Name="救护单位负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="救护单位联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="本卡发放单位" Type="nvarchar" MaxLength="150" />
+    <Property Name="本卡发放单位负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="本卡发放单位联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="户主姓名" Type="nvarchar" MaxLength="50" />
+    <Property Name="家庭人数" Type="int" />
+    <Property Name="房屋类型" Type="nvarchar" MaxLength="50" />
+    <Property Name="家庭住址" Type="nvarchar" MaxLength="255" />
+    <Property Name="姓名1" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别1" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄1" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名2" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别2" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄2" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名3" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别3" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄3" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名4" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别4" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄4" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名5" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别5" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄5" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名6" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别6" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄6" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名7" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别7" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄7" Type="nvarchar" MaxLength="50" />
+    <Property Name="姓名8" Type="nvarchar" MaxLength="50" />
+    <Property Name="性别8" Type="nvarchar" MaxLength="50" />
+    <Property Name="年龄8" Type="nvarchar" MaxLength="50" />
+    <Property Name="户主签名" Type="nvarchar" MaxLength="50" />
+    <Property Name="联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="日期年" Type="nvarchar" MaxLength="50" />
+    <Property Name="日期月" Type="nvarchar" MaxLength="50" />
+    <Property Name="日期日" Type="nvarchar" MaxLength="50" />
+    <Property Name="编号" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HistoryEarlyWarning">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="layerName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="warningTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="operateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="isAnalysis" Type="nvarchar" MaxLength="50" />
+    <Property Name="defaultResult" Type="nvarchar" MaxLength="200" />
+    <Property Name="analysisResult" Type="nvarchar" MaxLength="200" />
+    <Property Name="rain15Layer" Type="nvarchar" MaxLength="400" />
+    <Property Name="rainTodayLayer" Type="nvarchar" MaxLength="400" />
+    <Property Name="rainHSumLayer" Type="nvarchar" MaxLength="400" />
+    <Property Name="rainHMaxLayer" Type="nvarchar" MaxLength="400" />
+    <Property Name="isQPD" Type="nvarchar" MaxLength="50" />
+    <Property Name="qpdRoad" Type="nvarchar" MaxLength="100" />
+    <Property Name="isTownGrade" Type="nvarchar" MaxLength="50" />
+    <Property Name="townGradeRoad" Type="nvarchar" MaxLength="100" />
+    <Property Name="isXQGrade" Type="nvarchar" MaxLength="50" />
+    <Property Name="xqGradeRoad" Type="nvarchar" MaxLength="100" />
+    <Property Name="isImgResult" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImgResultRoad" Type="nvarchar" MaxLength="100" />
+    <Property Name="grideRole" Type="nvarchar" MaxLength="50" />
+    <Property Name="forecastTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PreventionCard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="统一编号" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="名称" Type="nvarchar" MaxLength="50" />
+    <Property Name="野外编号" Type="nvarchar" MaxLength="50" />
+    <Property Name="灾害位置" Type="nvarchar" MaxLength="50" />
+    <Property Name="类型及规模" Type="nvarchar" MaxLength="50" />
+    <Property Name="诱发因素" Type="nvarchar" MaxLength="50" />
+    <Property Name="威胁对象" Type="nvarchar" MaxLength="50" />
+    <Property Name="监测负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="监测负责人联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="监测的主要迹象" Type="nvarchar" MaxLength="50" />
+    <Property Name="监测的主要手段和方法" Type="nvarchar" MaxLength="50" />
+    <Property Name="临灾预报的判据" Type="nvarchar" MaxLength="50" />
+    <Property Name="预定避灾地点" Type="nvarchar" MaxLength="50" />
+    <Property Name="预定疏散路线" Type="nvarchar" MaxLength="50" />
+    <Property Name="预定报警信号" Type="nvarchar" MaxLength="50" />
+    <Property Name="疏散命令发布人" Type="nvarchar" MaxLength="50" />
+    <Property Name="疏散值班电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="抢排险单位" Type="nvarchar" MaxLength="50" />
+    <Property Name="抢排险负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="抢排险值班电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="治安保卫单位" Type="nvarchar" MaxLength="50" />
+    <Property Name="治安保卫负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="治安保卫值班电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="医疗救护单位" Type="nvarchar" MaxLength="50" />
+    <Property Name="医疗救护负责人" Type="nvarchar" MaxLength="50" />
+    <Property Name="医疗救护值班电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="本卡发放单位" Type="nvarchar" MaxLength="50" />
+    <Property Name="本卡发放单位联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="发放日期年" Type="nvarchar" MaxLength="50" />
+    <Property Name="发放日期月" Type="nvarchar" MaxLength="50" />
+    <Property Name="发放日期日" Type="nvarchar" MaxLength="50" />
+    <Property Name="持卡单位或个人" Type="nvarchar" MaxLength="50" />
+    <Property Name="持卡单位或个人联系电话" Type="nvarchar" MaxLength="50" />
+    <Property Name="持卡日期年" Type="nvarchar" MaxLength="50" />
+    <Property Name="持卡日期月" Type="nvarchar" MaxLength="50" />
+    <Property Name="持卡日期日" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="RegionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="RealName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

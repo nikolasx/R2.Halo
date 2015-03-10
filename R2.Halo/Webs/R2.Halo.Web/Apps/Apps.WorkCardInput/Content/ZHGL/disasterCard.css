@@ -1,0 +1,79 @@
+﻿body {
+    overflow:auto;
+}
+#DC_head {
+    width:100%;
+    height:42px;
+    background:url(../images/head.png) repeat-x;
+    font-size:18px;
+    color:white;
+    text-align:center;
+    line-height:42px;
+    letter-spacing:10px;
+    position:fixed;
+    top:0;
+}
+#DC_main {
+    width:900px;
+    height:auto;
+    margin:45px auto 0;
+    margin-top: 2px;
+    color:#333;
+}
+.DC_menu {
+    width:100%;
+    height:30px;
+    line-height:30px;
+}
+.DC_nav {
+    float:left;
+    cursor:pointer;
+}
+    .DC_nav:hover {
+        color:#16548E;
+    }
+    .DC_nav span {
+        float:left;
+        margin-right:5px;
+    }
+.DC_save,.DC_clear {
+    float:right;
+    width:63px;
+    height:22px;
+    background:url(../../Content/images/save.png);
+    margin-top:20px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+.DC_clear {
+    background:url(../../Content/images/cancel.png);
+    margin-left:30px;
+}
+.DC_content {
+    width:100%;
+    height:500px;
+}
+.DC_card {
+    width:899px;
+    height:auto;
+    float:left;
+    border-left:1px solid #ccc;
+    border-top:1px solid #ccc;
+}
+.DC_title {
+    background:#F4F8FB;
+    text-align:center;
+    line-height:30px;
+}
+.DC_title,.DC_field {
+    float:left;
+    height:30px;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+input[type="text"] {
+    border:none;
+    text-indent:10px;
+    height:30px;
+    line-height:30px;
+}

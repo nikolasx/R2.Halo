@@ -1,0 +1,14 @@
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.Repository.dll.config
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.Repository.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.Repository.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\EntityFramework.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\EntityFramework.SqlServer.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.CoreEntities.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.Data.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.CoreEntities.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\R2.Halo.Data.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\EntityFramework.xml
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\bin\Debug\EntityFramework.SqlServer.xml
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\obj\Debug\R2.Halo.Repository.csprojResolveAssemblyReference.cache
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\obj\Debug\R2.Halo.Repository.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Domain\R2.Disaster.Repository\obj\Debug\R2.Halo.Repository.pdb

@@ -1,0 +1,8 @@
+﻿Group: Shipping rate computation
+FriendlyName: TestApp (Test For Halo Project)
+SystemName: Test
+Version: 1.12
+SupportedVersions: 3.30
+Author: nopCommerce team
+DisplayOrder: 1
+FileName: R2.Halo.Apps.Test.dll

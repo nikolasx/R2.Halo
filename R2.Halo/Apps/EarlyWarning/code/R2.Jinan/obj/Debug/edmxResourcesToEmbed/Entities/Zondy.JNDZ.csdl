@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="R2.JNDisasterModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DisasterJNdzEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="HedgeCards" EntityType="R2.JNDisasterModel.HedgeCard" />
+    <EntitySet Name="HistoryEarlyWarnings" EntityType="R2.JNDisasterModel.HistoryEarlyWarning" />
+    <EntitySet Name="PreventionCards" EntityType="R2.JNDisasterModel.PreventionCard" />
+    <EntitySet Name="Users" EntityType="R2.JNDisasterModel.User" />
+  </EntityContainer>
+  <EntityType Name="HedgeCard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="统一编号" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="名称" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="野外编号" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="规模" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="位置关系" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="诱发因素" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="本住户注意事项" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="监测人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="监测人联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预警信号" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预警信号发布人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预警信号发布人联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="撤离路线" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="安置单位地点" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="安置单位负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="安置单位联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="救护单位" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="救护单位负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="救护单位联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="本卡发放单位" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="本卡发放单位负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="本卡发放单位联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="户主姓名" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="家庭人数" Type="Int32" />
+    <Property Name="房屋类型" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="家庭住址" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="姓名1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名4" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别4" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄4" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名5" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别5" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄5" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名6" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别6" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄6" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名7" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别7" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄7" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="姓名8" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="性别8" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="年龄8" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="户主签名" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="日期年" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="日期月" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="日期日" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="编号" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="HistoryEarlyWarning">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="layerName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="warningTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="operateTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isAnalysis" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="defaultResult" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="analysisResult" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="rain15Layer" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="rainTodayLayer" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="rainHSumLayer" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="rainHMaxLayer" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="isQPD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="qpdRoad" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isTownGrade" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="townGradeRoad" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isXQGrade" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="xqGradeRoad" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isImgResult" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ImgResultRoad" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="grideRole" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="forecastTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PreventionCard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="统一编号" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="名称" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="野外编号" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="灾害位置" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="类型及规模" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="诱发因素" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="威胁对象" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="监测负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="监测负责人联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="监测的主要迹象" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="监测的主要手段和方法" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="临灾预报的判据" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预定避灾地点" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预定疏散路线" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="预定报警信号" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="疏散命令发布人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="疏散值班电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="抢排险单位" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="抢排险负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="抢排险值班电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="治安保卫单位" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="治安保卫负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="治安保卫值班电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="医疗救护单位" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="医疗救护负责人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="医疗救护值班电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="本卡发放单位" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="本卡发放单位联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="发放日期年" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="发放日期月" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="发放日期日" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="持卡单位或个人" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="持卡单位或个人联系电话" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="持卡日期年" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="持卡日期月" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="持卡日期日" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="RegionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <Property Name="RealName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,8 @@
+﻿Group: DB-CRUD
+FriendlyName: CardsEdit2
+SystemName: Apps.D3Map
+Version: 1.0
+SupportedVersions: 3.30
+Author: Corner team
+DisplayOrder: 1
+FileName: R2.Halo.Apps.D3Map.dll 

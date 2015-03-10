@@ -1,0 +1,257 @@
+﻿@{
+    ViewBag.Title = "EditGroundSettle";
+Layout ="~/Apps/Jn.DbDeleteAndEdit/Views/JnDbDeleteAndEdit/_Layout.cshtml";
+}
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoType_in.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/baseinvestigatequeryresult.css")" rel="stylesheet") />
+<link href="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Content/ZHGL/BaseInfoFun_Img.css")" rel="stylesheet") />
+
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery-1.7.1.min.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.MultiFile.js")"></script> 
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/Libs/jquery.form.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/baseInfoType_in.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/EditGroundSettle.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/InfoEdit/judgeFunc.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/ZHGL/BaseInfoFun.js")"></script>
+<script src="@Url.Content("~/Apps/Jn.DbDeleteAndEdit/Scripts/data.js")"></script>
+
+
+@*<div id="BIT_head">基本信息的编辑</div>*@
+<div id="BIT_ContentDiv">
+  
+    <div id="BIT_right" style="float:none;">
+        <div id="BIT_right_head">
+            <input type="hidden" value="@ViewBag.groundSettleId" id="groundSettleId"/>
+           @* <span>基本信息编辑</span>*@
+            <div class="BIT_right_img" id="BIT_right_img_Return"></div>
+            <div class="BIT_right_img" id="BIT_right_img_UpdateGroundSettle"></div>
+
+            <div class="importwarn" style="margin-left:35px;">注：橙色字段为必填信息，请填写完整。</div>
+        </div>
+        <div class="BIT_right_disaType5 BIT_right_disaType" style="display:block;">
+             <div class="BIT_right_neck">
+                <div class="BIT_right_neck_cell" style="color: #33699C;">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面沉降基本信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面沉降规模</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">沉降区地下水概况</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面沉降图形信息</span>
+                </div>
+                <div class="BIT_right_neck_cell">
+                    <span style="font-size: 30px;">&bull;</span>
+                    <span style="position: relative; top: -5px;">地面沉降照片管理</span>
+                </div>
+            </div>  
+            <!----------------------------------------------地面沉降基本信息div--------------------------------------------->
+              <div class="BIT_right_table info " id="basicDmcj" style=" margin: 0 auto;margin-top:23px;  font-size:12px; display:block;">
+           <ul style="height:435px;" >
+        <li class="title"><div class="biTianTitle" style="color:#fc7d3f">名&nbsp;&nbsp;&nbsp;&nbsp;称</div></li><li class="contentII"><div id="nameDmcj"><input  class="biTianCon" type="text" id="nameDmcjInput" style="width:90%;" /></div></li>
+        <li class="title"><div class="biTianTitle" style="color:#fc7d3f">统一编号</div></li><li class="contentII"><div  id="uNubDmcj"><label id="uNubFastenDmCJInput"  class="noChangeInput uNubFastenInput" style="width:60px; color:#666; padding-right:2px; float:left;">37010105</label><input class="biTianCon" id="uNubAgileDmcjInput" disabled="disabled"  style="float:left;margin-top:6px;display:inline;width:150px;text-align:left; border:none;background:none;border-bottom:1px solid red;color:#FC7D3F;" value="请输入4位数字组成统一编号" onfocus="if(value==defaultValue){value=''}"  onblur="if(!value)value=defaultValue"/></div></li>
+        <li class="title"><div>野外编号</div></li><li class="contentII"><div id="fNubDmcj"><input type="text" id="fNubDmcjInput" style="width:90%;"/></div></li>
+        <li class="title"><div>室内编号</div></li><li class="contentII"><div id="rNubDmcj"><input type="text" id="rNubDmcjInput" style="width:90%;"/></div></li>
+        <li class="title"><div>省&nbsp;&nbsp;&nbsp;&nbsp;名</div></li><li class="contentII"><div id="provinceDmcj"><label id="provinceDmcjInput" class="shengMing noChangeInput" style="color:#666;">山东省</label></div></li>
+       <li class="title"><div class="biTianTitle" style="color:#fc7d3f">县&nbsp;&nbsp;&nbsp;&nbsp;名</div></li><li class="contentII"><div  id="countyDmcj">
+            <select id="BT_regionname" style="outline:none;border:none; width:100%; height:28px;" disabled="disabled">
+                            <option value="370101">市辖区</option>
+                            <option value="370188">高新区</option>
+                            <option value="370102">历下区</option>
+                            <option value="370103">市中区</option>
+                            <option value="370104">槐荫区</option>
+                            <option value="370105">天桥区</option>
+                            <option value="370112">历城区</option>
+                            <option value="370113">长清区</option>
+                            <option value="370124">平阴县</option>
+                            <option value="370125">济阳县</option>
+                            <option value="370126">商河县</option>
+                            <option value="370181">章丘市</option>
+                        </select>
+         </div></li>
+       <li class="title"><div>街&nbsp;&nbsp;&nbsp;&nbsp;道</div></li><li class="contentI">
+       <div id="streetDmcj"><input type="text" id="streetDmcjInput" style="width:782px;"/>
+            @*<select class="country" id="streetDmcjInput"></select>*@</div>
+       </li>
+      <!-----------------------------------------------------------地理位置------------------------------------------------------------->
+      <li class="title" style=" height:92px;" >
+         <div style=" width:133px;">
+            <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height:92px;padding-top:10px; float:left;">地理<br/>位置</div>
+            <div class="geoLocations biTianTitle" style=" height:30px; width:102px; color:#fc7d3f">发生地点</div>
+            <div class="geoLocations" style=" height:60px; width:102px;border-bottom:none;">
+                   <div style="width:50px;height:60px; border-right:1px solid #CAD8E4; text-align:center; float:left;">坐标<br/>(m)</div> 
+                  <div class="geoLocations" style=" height:30px; width:51px;">X</div>
+                  <div style=" height:30px; width:51px; text-align:center; float:left;">Y</div>
+           </div>
+         </div>
+         </li>
+        <li class="contentI" style=" height:93px; padding-left:0; width:795px;">
+        <div>
+            <div id="locationDmcj" style=" height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;"><input class="biTianCon" type="text" id="locationDmcjInput" style="width:783px;"/></div>
+            <div class="coordi" style="border-bottom:none;height:61px;">
+                <div class="coordelev" id="xCoordinateDmcj" style="border-bottom:1px solid #CAD8E4;"><input type="text" id="xCoordinateDmcjInput" style="width:317px;"/></div>
+                <div class="coordelev" id="yCoordinateDmcj" ><input type="text" id="yCoordinateDmcjInput" style="width:317px;"/></div>
+            </div>
+            <div style=" height:60px; margin-left:0; width:464px; float:left;">
+                <div style=" width:50px;height:61px; border-right:1px solid #CAD8E4; float:left; background-color:#F4F8FB;  text-align:center;"> 经纬<br/>度</div>
+                <div class="elevation biTianTitle" style=" border-bottom:1px solid #CAD8E4; color:#fc7d3f">经度</div>
+                <div class="coordelev" id="longitudeDmcj" style=" border-bottom:1px solid #CAD8E4; margin-top:0;">
+                    <div class="coastZWIII" id="lonDUDmcj" style="width:65px;padding-left:5px;border:none;"><input class="biTianCon" type="text" id="lonDUDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">°</div>
+                    <div class="coastZWIII" id="lonFenDmcj" style="width:66px;border:none;"><input class="biTianCon" type="text" id="lonFenDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">′</div>
+                    <div class="coastZWIII" id="lonMiaoDmcj" style="width:66px;border:none;"><input class="biTianCon" type="text" id="lonMiaoDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">″</div>
+                </div>
+                <div class="elevation biTianTitle" style=" height:30px; color:#fc7d3f">纬度</div>
+                <div class="coordelev" id="latitudeDmcj" style="margin-top:0;">
+                    <div class="coastZWIII" id="latDUDmcj" style="width:65px;padding-left:5px;border:none;"><input class="biTianCon" type="text" id="latDUDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">°</div>
+                    <div class="coastZWIII" id="latFenDmcj" style="width:66px;border:none;"><input class="biTianCon" type="text" id="latFenDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">′</div>
+                    <div class="coastZWIII" id="latMiaoDmcj" style="width:66px;border:none;"><input class="biTianCon" type="text" id="latMiaoDmcjInput" style="width:50px; padding-right:5px; text-align:right;" /></div>
+                    <div class="coastZWIII" style="width:7px;border-right:none;">″</div>
+                </div>
+            </div> 
+        </div>
+        </li>
+        <li class="title" style=" height:92px;" >
+             <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height:92px;float:left;">沉降中心位置</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">行政区域</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">经&nbsp;&nbsp;&nbsp;&nbsp;度</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">纬&nbsp;&nbsp;&nbsp;&nbsp;度</div>
+        </li>
+        <li class="contentI" style=" height:92px; padding-left:0; width:795px;">
+            <div id="administrativeRegionDmcj" style=" height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;"><input class="biTianCon" type="text" id="administrativeRegionDmcjInput" style="width:783px;"/></div>
+            <div id="administrativeRegionLonDmcj" style=" height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;"><input class="biTianCon" type="text" id="administrativeRegionLonDmcjInput" style="width:783px;"/></div>
+            <div id="administrativeRegionLatDmcj" style=" height:30px; border-bottom:1px solid #CAD8E4; margin-top:0; width:787px; padding-left:8px;"><input class="biTianCon" type="text" id="administrativeRegionLatDmcjInput" style="width:783px;"/></div>
+        </li>
+        <li class="title"><div>发生时间</div></li><li class="contentII"><div id="happendTimeDmcj"><input type="text" id="happendTimeDmcjInput"/></div></li>
+        <li class="title"><div>沉降类型</div></li><li class="contentII"><div id="dmcjType"></div><input type="text" id="dmcjTypeInput"/></li>
+        <li class="title"><div>调查负责人</div></li><li class="contentII"><div  id="investigatePrincipalDmcj"><input type="text" id="investigatePrincipalDmcjInput"/></div></li>
+        <li class="title"><div>审核人</div></li><li class="contentII"><div  id="examineAndVerifyPersonDmcj"><input type="text" id="examineAndVerifyPersonDmcjInput"/></div></li>
+        <li class="title"><div>填表人</div></li><li class="contentII"><div  id="fillFormPersonDmcj"><input type="text" id="fillFormPersonDmcjInput"/></div></li>
+        <li class="title"><div>填表日期</div></li><li class="contentII"><div  id="fillFormDateDmcj"><input type="text" id="fillFormDateDmcjInput"/></div></li>
+        <li class="title"><div>调查单位</div></li><li class="contentI"><div  id="investigateUnitDmcj"><input type="text" id="investigateUnitDmcjInput" style="width:783px;"/></div></li>
+ </ul>
+</div>
+            <!----------------------------------------------地面沉降规模div-------------------------------------------------->
+            <div class="BIT_right_table info" id="cjScaleDmcj" style=" margin: 0 auto;margin-top:23px; font-size:12px;height:92%;overflow:auto;">
+     <ul style=" height:562px;" >
+        <li class="title" style=" height:61px;" >
+             <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height:61px;float:left; ">沉降规模</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">沉降区面积(K㎡)</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">历年累计沉降量(mm)</div>
+        </li>
+        <li class="contentII"><div id="cjqAreaDmcj"><input type="text" id="cjqAreaDmcjInput"/></div></li>
+        <li class="title"><div>年平均沉降量(mm)</div></li><li class="contentII"><div  id="yearAverageCjVolumeDmcj"><input type="text" id="yearAverageCjVolumeDmcjInput"/></div></li>
+        <li class="contentII"><div id="accumulateCjVolumeDmcj"><input type="text" id="accumulateCjVolumeDmcjInput"/></div></li>
+        <li class="title"><div>平均沉降速率(mm/a)</div></li><li class="contentII"><div  id="averageCjSpeedDmcj"><input type="text" id="averageCjSpeedDmcjInput"/></div></li>
+        <li class="title" style=" height:365px;" >
+             <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height:265px;float:left;padding-top:100px;">第<br/>四<br/>系<br/>覆<br/>盖<br/>层</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">厚&nbsp;&nbsp;度(m)</div>
+             <div class="geoLocations" style=" height:66px;line-height:66px; width:102px; ">岩&nbsp;&nbsp;&nbsp;&nbsp;性</div>
+             <div class="geoLocations" style=" height:66px;line-height:66px; width:102px; ">结&nbsp;&nbsp;&nbsp;&nbsp;构</div>
+             <div class="geoLocations" style=" height:66px;line-height:66px; width:102px; ">空间变化规律</div>
+             <div class="geoLocations" style=" height:66px;line-height:66px; width:102px; ">水文地质特征</div>
+             <div class="geoLocations" style=" height:66px;line-height:66px; width:102px; ">主要沉降层位</div>
+        </li>
+        <li class="contentI"><div id="dsxfgchdDmcj"><input type="text" id="dsxfgchdDmcjInput" style="width:783px;"/></div> </li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="dsxfgcyxDmcj"><textarea id="dsxfgcyxDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px; overflow:hidden;" ></textarea></div> </li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="dsxfgcjgDmcj"><textarea id="dsxfgcjgDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div> </li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="dsxfgcKjbhglDmcj"><textarea id="dsxfgcKjbhglDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div> </li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="dsxfgcSwdztzDmcj"><textarea id="dsxfgcSwdztzDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div> </li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="dsxfgcZycjccDmcj"><textarea id="dsxfgcZycjccDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div> </li>
+        <li class="title" style="height:66px;line-height:66px;"><div>地形地貌</div></li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div  id="landformReliefDmcj" ><textarea id="landformReliefDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div></li>
+        <li class="title" style="height:66px;line-height:66px;"><div>地质构造及活动情况</div></li>
+        <li class="contentI" style="height:66px;padding-left:0;width:795px;"><div id="geologyStructureAndActivityDmcj"><textarea id="geologyStructureAndActivityDmcjInput"  rows="3" cols="80" style="border:none;margin-top:2px;text-indent:13px; width:793px;overflow:hidden;" ></textarea></div> </li>
+     </ul>
+</div>
+             <!----------------------------------------------沉降区地下水概况div--------------------------------------------->
+              <div class="BIT_right_table info" id="cjdxsgkDmcj" style=" margin: 0 auto;margin-top:23px; font-size:12px;height:92%;overflow:auto;">
+       <ul style=" height:613px;" >
+        <li class="title" style=" height:92px;" >
+             <div class="geoLocation" style=" width:30px; border-right:1px solid #CAD8E4; height:92px;float:left;">沉降区地下水概况</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">年开采量(m³/a)</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">地下水埋深(m)</div>
+             <div class="geoLocations" style=" height:30px; width:102px; ">其&nbsp;&nbsp;&nbsp;&nbsp;它</div>
+        </li>
+        <li class="contentII"><div id="yearMineVolumeDmcj"><input type="text" id="yearMineVolumeDmcjInput"/></div></li>
+        <li class="title"><div>年补给量(m³/a)</div></li><li class="contentII"><div  id="yearSupplyVolumeDmcj"><input type="text" id="yearSupplyVolumeDmcjInput"/></div></li>
+        <li class="contentII"><div id="groundwaterMSDmcj"><input type="text" id="groundwaterMSDmcjInput"/></div></li>
+        <li class="title"><div>年水位变化幅度(m)</div></li><li class="contentII"><div  id="yearWaterLevelChangeRangeDmcj"><input type="text" id="yearWaterLevelChangeRangeDmcjInput"/></div></li>
+        <li class="contentI" id="othergkDmcj" style=" height:30px;"><input type="text" id="othergkDmcjInput" style="width:783px;"/></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>引发沉降原因</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="causePatternDmcj" >
+            <textarea id="causePatternDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>变化规律</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="changePatternDmcj" >
+            <textarea id="changePatternDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>沉降现状</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="actualityDmcj" >
+            <textarea id="actualityDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:66px;"><div>发展趋势</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="growTrendDmcj" >
+            <textarea id="growTrendDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>主要危害</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="mainharmDmcj" >
+            <textarea id="mainharmDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>经济损失</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="economyLossDmcj" >
+            <textarea id="economyLossDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>治理措施</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="administerMeasuresDmcj" >
+            <textarea id="administerMeasuresDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+        <li class="title" style="height:64px;line-height:64px;"><div>治理效果</div></li>
+        <li class="contentI" style="height:64px;padding-left:0px;width:795px;"><div  id="administerResultDmcj" >
+            <textarea id="administerResultDmcjInput"  rows="3" cols="80" style="border:none;margin-top:1px;text-indent:13px; width:793px;overflow:hidden;" ></textarea>
+        </div></li>
+    </ul>
+</div>
+           <div class="BIT_right_table" style="display: none;">
+                <div class="info visible" id="imageDmcj" style=" margin: 0 auto; font-size:12px;">
+                 <ul style=" height:482px;">
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">平面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="planDmcj" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                    <li class="title" style=" height:240px;"><div style=" height:240px; line-height:240px;">剖面图</div></li>
+                    <li class="contentI" style=" height:240px;"><div id="profileDmcj" style=" height:240px;">
+                        @*<div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>*@
+                    </div> </li>
+                 </ul>
+       </div>
+            </div>
+            <div class="BIT_right_table" style="display: none; font-size:13px;">
+                <div class="BIT_HP_ZPGL" style="width:100%; height:220px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">上传照片</div>
+                    <div style="height: 180px; width: 100%;">
+                        <div class="contentIbtn"><input type="file" class="BIT_inputFile" />浏 览</div>
+                    </div>
+                </div>
+                <div style="width:100%;height:30px;"><div class="BIT_inputFile_success">该图片已经上传成功！</div><div class="BIT_inputFile_submit">上传照片</div></div>
+                <div class="BIT_HP_ZPGL" style="width:100%; height:220px;border: 1px solid #CAD8E4;">
+                    <div style="width:100%; height:36px; line-height:36px; text-align:center; background:#f4f8fb;border-bottom: 1px solid #CAD8E4;">照片管理</div>
+                    <div style="height: 180px; width: 100%; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+

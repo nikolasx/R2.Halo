@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        var baseUrl = '@Url.Content("~/Apps/Apps.EarlyWarning/")';//全局的URl，解决iis中路径的问题
+        var baseUrl1 = '@Url.Content("~/")';
+
+    </script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/OpenLayers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/zdclient.js")" type="text/javascript"></script>
+   
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Global/global.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/ulselect.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Global/isTheValueLegal.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Global/init.js")" type="text/javascript"></script>       
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/style.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/uiContent.css")" type="text/css" rel="stylesheet" />    
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/uiContent.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/layQueryResult.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/fangzaikaBixianka.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/fakeData.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/disaQuery.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/disaImportAPI.js")" type="text/javascript"></script>    
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/ZHGL/disaQuery.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/ToolBarStyle.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Global/addContent.js")" type="text/javascript"></script>
+
+    @*雨量管理js文件夹 ZHAOs 2014年4月3日16:05:42*@
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/YLGL/rainManage.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/YLGL/rainManageQuery.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/YLGL/rainManage.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/YLGL/rainManageQuery.css")" type="text/css" rel="stylesheet" />
+    @*End雨量管理*@
+
+
+    @*start csw*@
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/ZHGL/style_popup.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/ZHGL/showQueryResult.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/ZHGL/RrPopup.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/NestFramedCloud.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/RrPopup.js")" type="text/javascript"></script>
+    @*end csw*@
+
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/warningResultAnalysis.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/QXYJ/warningResultAnalysis.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/earlywarningresultlayeroperation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/earlywarning.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/warningAnalyse.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/warnsetting.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/QXYJ/warninganalyse.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/historywarning.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/resultIssue.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/QXYJ/historywarning.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/QXYJ/signAndApprove.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Content/QXYJ/excelAndGraph.css")" type="text/css" rel="stylesheet" />
+    
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/treeLayerManage/treeLayerManage.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/treeLayerManage/treeLayerStyle.css")" type="text/css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/Libs/lhgcalendar.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/isTheValueMudFlow.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/isTheValueLandSlide.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/ZHGL/clearData.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/xingzhengquGrade.js")"></script>
+
+    <script src="@Url.Content("~/Apps/Apps.EarlyWarning/Scripts/QXYJ/GISLayerToDraw.js")"></script>
+    
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

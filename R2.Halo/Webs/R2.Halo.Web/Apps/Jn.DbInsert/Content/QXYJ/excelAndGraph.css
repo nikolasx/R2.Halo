@@ -1,0 +1,137 @@
+﻿* {
+    margin:0;padding:0;font-family:'Microsoft YaHei';font-size:12px;
+}
+#xg_div {
+    width:380px;
+    height:100%;
+}
+#xg_head {
+    width:100%;
+    height:50px;
+    background:#D9E8F1;
+    color:#ff6a00;
+    line-height:50px;
+    font-size:16px;
+    text-align:center;
+}
+#xg_neck {
+     width:100%;
+     height:30px;
+}
+#xg_neck div {
+    float:left;
+}
+#xg_one {
+}
+#xg_two {
+}
+#xg_three {
+
+}
+#xg_selects {
+    width:380px;
+    height:30px;
+}
+#xg_selects select,#xg_selects div {
+    float:left;
+    margin-right:10px;
+}
+#xg_addRegion {
+    background:#DFDFDF;
+    border:1px solid #989898;
+    color:#508B02;
+    width:50px;
+    height:20px;
+    text-align:center;
+    line-height:20px;
+}
+#xg_tableDiv {
+    width:380px;
+    height:450px;
+}
+#xg_table {
+    border-collapse:collapse;
+    width:100%;
+}
+#xg_table tr {
+    height:25px;
+}
+#xg_table tr td {
+        border-bottom:1px solid #D9DADC;
+        border-top:1px solid #D9DADC;
+        border-left:1px dashed #D9DADC;
+        border-right:1px dashed #D9DADC;
+        text-align:center;
+
+    }
+#xg_divBelowTable {
+    width:100%;
+    height:30px;
+}
+#xg_divBelowTable div:hover {
+    background:#F4F4F4;
+    color:#508B02;
+}
+#xg_back,#xg_graphCreate {
+    border:1px solid #989898;
+    color:white;
+    width:70px;
+    height:25px;
+    text-align:center;
+    line-height:25px;
+    cursor:pointer;
+    background:#508B02;
+    float:left;
+    margin-right:20px;
+}
+#xg_back {
+    margin-left:180px;
+}
+#xg_foot {
+    width:100%;
+    height:30px;
+}
+#xg_foot div {
+    float:left;
+    margin-top:10px;
+}
+
+#xg_line {
+    width:100%;
+    height:1px;
+    background:#DFDFDF;
+}
+#xg_bottom {
+    width:100%;
+    height:50px;
+    margin-top:15px;
+}
+#xg_bottom div {
+    float:left;
+    background:#508B02;
+    color:white;
+    border:1px solid #588A16;
+    cursor:pointer;
+    width:70px;
+    height:25px;
+    text-align:center;
+    line-height:25px;
+    margin-left:70px;
+}
+#xg_bottom div:hover {
+    background:#D9E8F1;
+    color:#508B02;
+
+}
+#xg_gradePublish {
+    
+} 
+#xg_yjtPublish {
+}
+/*预览*/
+svg tspan {
+font-size:16px;
+letter-spacing:2px;
+height:18px;
+line-height:16px;
+}

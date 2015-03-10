@@ -1,0 +1,14 @@
+F:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\Description.txt
+F:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\logo.jpg
+F:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\R2.Halo.Apps.Test.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\R2.Halo.Apps.Test.pdb
+F:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.csprojResolveAssemblyReference.cache
+F:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.dll
+F:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.pdb
+G:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\Description.txt
+G:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\logo.jpg
+G:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\R2.Halo.Apps.Test.dll
+G:\WORK FILES\R2AggregationNew\R2.Halo\Webs\R2.Halo.Web\Apps\Test\R2.Halo.Apps.Test.pdb
+G:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.csprojResolveAssemblyReference.cache
+G:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.dll
+G:\WORK FILES\R2AggregationNew\R2.Halo\Apps\R2.Halo.Apps.Test\obj\Release\R2.Halo.Apps.Test.pdb

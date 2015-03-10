@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        var baseUrl = '@Url.Content("~/Apps/Apps.CardsEdit/")'; //全局的URl，解决iis中路径的问题
+        var baseUrl1 = '@Url.Content("~/")';
+    </script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/OpenLayers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/zdclient.js")" type="text/javascript"></script>
+   
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Global/global.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/ulselect.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Global/isTheValueLegal.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Global/init.js")" type="text/javascript"></script>       
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/style.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/uiContent.css")" type="text/css" rel="stylesheet" />    
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/uiContent.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/layQueryResult.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/fangzaikaBixianka.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/fakeData.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit//Scripts/ZHGL/disaQuery.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/disaImportAPI.js")" type="text/javascript"></script>    
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/disaQuery.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ToolBarStyle.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Global/addContent.js")" type="text/javascript"></script>
+
+    @*雨量管理js文件夹 ZHAOs 2014年4月3日16:05:42*@
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/YLGL/rainManage.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/YLGL/rainManageQuery.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/YLGL/rainManage.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/YLGL/rainManageQuery.css")" type="text/css" rel="stylesheet" />
+    @*End雨量管理*@
+
+
+    @*start csw*@
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/style_popup.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/showQueryResult.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/ZHGL/RrPopup.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/NestFramedCloud.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/RrPopup.js")" type="text/javascript"></script>
+    @*end csw*@
+
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/warningResultAnalysis.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/QXYJ/warningResultAnalysis.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/earlywarningresultlayeroperation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/earlywarning.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/warningAnalyse.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/warnsetting.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/QXYJ/warninganalyse.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/historywarning.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/resultIssue.js")"></script>
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/QXYJ/historywarning.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/QXYJ/signAndApprove.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Content/QXYJ/excelAndGraph.css")" type="text/css" rel="stylesheet" />
+    
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/treeLayerManage/treeLayerManage.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/treeLayerManage/treeLayerStyle.css")" type="text/css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/Libs/lhgcalendar.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/isTheValueMudFlow.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/isTheValueLandSlide.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/ZHGL/clearData.js")"></script>
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/xingzhengquGrade.js")"></script>
+
+    <script src="@Url.Content("~/Apps/Apps.CardsEdit/Scripts/QXYJ/GISLayerToDraw.js")"></script>
+    
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

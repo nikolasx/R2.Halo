@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{415DC4A2-12F3-4DD8-A313-F7B56D0E69D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>R2.Disaster.Data</RootNamespace>
+    <AssemblyName>R2.Disaster.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Mapping\GeoDisaster\Emergency\DamageReportMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Emergency\EmergencySurveyMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Emergency\EmergencySurveyReportMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\GBCodeMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\MassPreMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\AvoidRiskCardMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\MonthlyReportMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\WorkingGuideCardMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\PrePlanMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\MassPres\MassPatrolMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\PhyGeoDisasterMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationComprehensiveMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationDebrisFlowCheckMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationDebrisFlowMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandCollapseCheckMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandCollapseMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandFractureMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandSlideCheckMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandSlideMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandSlipCheckMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandSlipMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationLandSubsidenceMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationPlaceEvaluationMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationSlopeCheckMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Relocation\RelocationSlopeMap.cs" />
+    <Compile Include="Mapping\MineRecovery\MineArchivesMap.cs" />
+    <Compile Include="Mapping\MineRecovery\MineEnvironmentSurveyMap.cs" />
+    <Compile Include="Mapping\MineRecovery\MineRemoteSensingCardMap.cs" />
+    <Compile Include="Mapping\Monitor\RainfallStationMap.cs" />
+    <Compile Include="Mapping\Monitor\RainfallMap.cs" />
+    <Compile Include="R2DisasterDatabaseInit.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\ComprehensiveMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\DebrisFlowMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mapping\GeoDisaster\Investigation\LandSubsidenceMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\LandSlipMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\SlopeMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\LandFractureMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\LandSlideMap.cs" />
+    <Compile Include="Mapping\GeoDisaster\Investigation\LandCollapseMap.cs" />
+    <Compile Include="Mapping\Sample\BookMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mapping\Sample\CategoryMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="R2DisasterContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\R2.Disaster.Core.Entities\R2.Disaster.CoreEntities.csproj">
+      <Project>{a35eeb0e-144a-4c26-8a86-bd316a5a654f}</Project>
+      <Name>R2.Disaster.CoreEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\GeoDisaster\PotentialThreats\ThreatMap.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        var baseUrl = '@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/")'; //全局的URl，解决iis中路径的问题
+    </script>
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/OpenLayers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/zdclient.js")" type="text/javascript"></script>
+   
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/ulselect.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/style.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/uiContent.css")" type="text/css" rel="stylesheet" />    
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/uiContent.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ZHGL/disaQuery.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ToolBarStyle.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Global/addContent.js")" type="text/javascript"></script>
+
+    @*雨量管理js文件夹 ZHAOs 2014年4月3日16:05:42*@
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/YLGL/rainManage.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/YLGL/rainManageQuery.css")" type="text/css" rel="stylesheet" />
+    @*End雨量管理*@
+
+
+    @*start csw*@
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ZHGL/style_popup.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ZHGL/showQueryResult.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Content/ZHGL/RrPopup.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/NestFramedCloud.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/RrPopup.js")" type="text/javascript"></script>
+    @*end csw*@
+
+    
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/treeLayerManage/treeLayerManage.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/treeLayerManage/treeLayerStyle.css")" type="text/css" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Apps/Apps.DisasterBaseInfoStatistic/Scripts/Libs/lhgcalendar.js")" type="text/javascript"></script>
+    
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>
